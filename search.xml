@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Java基础</title>
+    <url>/2025/03/05/Java%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/java.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
+<h1 id="概念相关"><a href="#概念相关" class="headerlink" title="概念相关"></a>概念相关</h1><h2 id="Java的特点"><a href="#Java的特点" class="headerlink" title="Java的特点"></a>Java的特点</h2><ol>
+<li><strong>平台无关性</strong>：Java编译器将源码编译为字节码，字节码可以在任何装有Java虚拟机的平台上运行，不需要重新编译。</li>
+<li><strong>面向对象</strong>：Java是一门严格面向对象的语言，几乎一切都是对象。面向对象编程（OOP）特性使得代码更易于维护和重用。</li>
+<li><strong>内存管理</strong>：Java有自己的垃圾回收机制，自动管理内存和不再使用的对象。开发者不用手动管理内存，减少了内存泄露和其他内存相关的问题。</li>
+</ol>
+<h2 id="Java为什么能跨平台"><a href="#Java为什么能跨平台" class="headerlink" title="Java为什么能跨平台"></a>Java为什么能跨平台</h2><p>这主要依赖于Java虚拟机（JVM），开发者编写的Java源代码经编译后得到.class文件，即字节码文件。Java虚拟机可以将字节码翻译为特定平台下的机器码。</p>
+<p>所以运行Java程序必须要有JVM支持，即使将Java程序打包为可执行文件（例如.exe），它也需要JVM的支持。</p>
+<p>跨平台的是Java程序，而JVM是用C&#x2F;C++编写的，不可跨平台，不同平台需要安装适合的JVM。</p>
+<h2 id="JVM-JRE-JDK的关系"><a href="#JVM-JRE-JDK的关系" class="headerlink" title="JVM,JRE,JDK的关系"></a>JVM,JRE,JDK的关系</h2><ul>
+<li>JVM：略</li>
+<li>JDK是Java开发工具包，包含了JVM，编译器，调试器等开发工具，以及一系列的类库（如Java标准库和开发工具库）。即JDK提供了开发、编译、调试和运行Java程序的所需的全部工具和环境。</li>
+<li>JRE是Java运行时环境，是Java程序运行的最小环境，包含了JVM和Java标准库。JRE不包含开发工具，只包含运行Java程序所需的最小环境。</li>
+</ul>
+<h2 id="为什么Java解释和编译都有"><a href="#为什么Java解释和编译都有" class="headerlink" title="为什么Java解释和编译都有"></a>为什么Java解释和编译都有</h2><ul>
+<li>解释性：Java源代码被编译为字节码，JIT会把编译过的机器码保存下来下次使用。</li>
+<li>编译性：JVM中有方法调用计数器，当调用次数达到一定阈值时，JVM会使用JIT编译字节码为机器码，下次再调用时直接执行机器码，提高性能。否则就是用解释器进行解释执行。</li>
+</ul>
+<h2 id="编译型语言和解释型语言的区别"><a href="#编译型语言和解释型语言的区别" class="headerlink" title="编译型语言和解释型语言的区别"></a>编译型语言和解释型语言的区别</h2><ul>
+<li>编译型语言：编译型语言在编译时将源代码编译为目标代码（如机器码），然后再运行目标代码。编译型语言在编译时进行优化，提高性能，但跨平台性差。</li>
+<li>解释型语言：解释型语言在运行时解释执行源代码，无需编译为目标代码。解释型语言在运行时进行优化，跨平台性好，但性能较低。</li>
+</ul>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="八种基本的数据类型"><a href="#八种基本的数据类型" class="headerlink" title="八种基本的数据类型"></a>八种基本的数据类型</h2><p>Java支持的数据类分为两类：基本数据类型和引用数据类型</p>
+<p>基本数据类型有8中，可分为3类：</p>
+<ul>
+<li>数值型：整数型（byte，short，int，long），浮点型（float，double）</li>
+<li>字符型：char</li>
+<li>布尔型：boolean</li>
+</ul>
+<p>引用数据类型有：类、接口、数组…</p>
+<ul>
+<li>注意：<ol>
+<li>1字节（byte,boolean），2字节（short,char），4字节（int，float），8字节（long，double）</li>
+<li>浮点数的默认值为double，若需要float，需在末尾加上f或F。</li>
+<li>整型默认为int，若需要byte，short，long，需在末尾加上b、s、l。</li>
+<li>八种数据类型的包装类：除了char-&gt;Character、int-&gt;Integer，其他都是基本数据类型首字母大写。</li>
+<li>char类型是无符号的，不能为负，所以0开头</li>
+</ol>
+</li>
+</ul>
+<h2 id="int和long之间的转换"><a href="#int和long之间的转换" class="headerlink" title="int和long之间的转换"></a>int和long之间的转换</h2><ul>
+<li>int转long：long数据类型的范围比int大，因此long转int是安全的，可通过直接赋值和强制类型转换实现。</li>
+<li>long转int：long转为int可能会出现数据丢失或溢出的问题，若转换的数据超出int类型的范围，转换的结果是阶段后低位部分。</li>
+</ul>
+<h2 id="数据类型转换方式"><a href="#数据类型转换方式" class="headerlink" title="数据类型转换方式"></a>数据类型转换方式</h2><ul>
+<li>自动类型转换（隐式转换）：目标类型范围大于源类型时，Java会自动将源类型转换为目标类型</li>
+<li>强制类型转换（显式转换）：目标类型范围小于源类型时，需要使用强制类型转换，这可能导致数据丢失或溢出</li>
+<li>字符串转换：Java提供了将字符串转换为其他数据类型的方法，如Integer.parseInt()、Double.parseDouble()等</li>
+<li>数值之间转换：Java提供了将数值转换为其他数据类型的方法，如Integer.valueOf()、Double.valueOf()等</li>
+</ul>
+<h2 id="类型互换可能会出现那些问题"><a href="#类型互换可能会出现那些问题" class="headerlink" title="类型互换可能会出现那些问题"></a>类型互换可能会出现那些问题</h2><ul>
+<li>数据丢失：如果目标类型范围小于源类型范围，可能会出现数据丢失的情况</li>
+<li>数据溢出：如果目标类型范围大于源类型范围，可能会出现数据溢出的情况，转换的结果会额外填充高位部分，但源石数据爆粗不变</li>
+<li>精度损失：在进行浮点类型的转换时，可能发生精度损失</li>
+<li>类型不匹配：在进行类型转换时，需要确保源类型和目标类型是兼容的</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java面试题</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>面试</tag>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+</search>
