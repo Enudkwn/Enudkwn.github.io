@@ -84,7 +84,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/home/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -183,6 +183,14 @@
 
     <div class="main-inner index posts-expand">
 
+
+
+<section class="custom-home-section">
+<div class="home-hero">
+   <h1>欢迎访问我的个人博客</h1>
+   <p>&emsp;&emsp;本博客将持续更新我个人的学习和求职经历，就业目标是找到一份Java后端的工作。此外，后续也许会更新其他学习相关的内容(例如：音乐、外语等)</p>
+ </div>
+</section>
     
 
 
@@ -221,7 +229,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2025-03-05 16:33:52 / 修改时间：22:53:41" itemprop="dateCreated datePublished" datetime="2025-03-05T16:33:52+08:00">2025-03-05</time>
+      <time title="创建时间：2025-03-05 16:33:52 / 修改时间：23:13:48" itemprop="dateCreated datePublished" datetime="2025-03-05T16:33:52+08:00">2025-03-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -323,12 +331,13 @@
 <p>方法调用时，可以直接传入原始数据或对象，编译器同样会进行转换</p>
 <p><strong>自动装箱的弊端</strong></p>
 <p>在一个循环中进行自动装箱，会产生多于的对象影响程序的性能</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++)&#123;sum+=i;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++)&#123; sum+=i; &#125;</span><br></pre></td></tr></table></figure>
 <p>sum + i 中的 + 不适用于Integer对象，程序运行时会先将sum自动拆箱，再进行数值相加的操作，然后再进行自动装箱的操作转换为Integer对象，类似于</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> sum.intValue() + i;<span class="type">Integer</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(result);</span><br></pre></td></tr></table></figure>
 <p>故会在循环中产生大量无用的Integer对象，降低了程序的性能、加重了垃圾回收的工作量</p>
 <h2 id="Java为什么需要Integer"><a href="#Java为什么需要Integer" class="headerlink" title="Java为什么需要Integer"></a>Java为什么需要Integer</h2><p>将int类型包装为Integer对象好处很多，可以把属性(也就是数据)和处理数据的方法结合在一起，例如parseInt()方法</p>
 <p>还有个重要原因就是Java中绝大部分方法或类都是用来处理类类型对象的，例如ArrayList集合类只能以类作为它的存储对象</p>
+<p><strong>泛型中的应用</strong>：在Java中泛型只能使用引用类型</p>
 
       
     </div>
