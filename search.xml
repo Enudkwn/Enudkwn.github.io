@@ -13,17 +13,17 @@
 <p>所以运行Java程序必须要有JVM支持，即使将Java程序打包为可执行文件（例如.exe），它也需要JVM的支持。</p>
 <p>跨平台的是Java程序，而JVM是用C&#x2F;C++编写的，不可跨平台，不同平台需要安装适合的JVM。</p>
 <h2 id="JVM-JRE-JDK的关系"><a href="#JVM-JRE-JDK的关系" class="headerlink" title="JVM,JRE,JDK的关系"></a>JVM,JRE,JDK的关系</h2><ul>
-<li>JVM：略</li>
-<li>JDK是Java开发工具包，包含了JVM，编译器，调试器等开发工具，以及一系列的类库（如Java标准库和开发工具库）。即JDK提供了开发、编译、调试和运行Java程序的所需的全部工具和环境。</li>
-<li>JRE是Java运行时环境，是Java程序运行的最小环境，包含了JVM和Java标准库。JRE不包含开发工具，只包含运行Java程序所需的最小环境。</li>
+<li><strong>JVM</strong>：略</li>
+<li><strong>JDK</strong>是Java开发工具包，包含了JVM，编译器，调试器等开发工具，以及一系列的类库（如Java标准库和开发工具库）。即JDK提供了开发、编译、调试和运行Java程序的所需的全部工具和环境。</li>
+<li><strong>JRE</strong>是Java运行时环境，是Java程序运行的最小环境，包含了JVM和Java标准库。JRE不包含开发工具，只包含运行Java程序所需的最小环境。</li>
 </ul>
 <h2 id="为什么Java解释和编译都有"><a href="#为什么Java解释和编译都有" class="headerlink" title="为什么Java解释和编译都有"></a>为什么Java解释和编译都有</h2><ul>
-<li>解释性：Java源代码被编译为字节码，JIT会把编译过的机器码保存下来下次使用。</li>
-<li>编译性：JVM中有方法调用计数器，当调用次数达到一定阈值时，JVM会使用JIT编译字节码为机器码，下次再调用时直接执行机器码，提高性能。否则就是用解释器进行解释执行。</li>
+<li><strong>解释性</strong>：Java源代码被编译为字节码，JIT会把编译过的机器码保存下来下次使用。</li>
+<li><strong>编译性</strong>：JVM中有方法调用计数器，当调用次数达到一定阈值时，JVM会使用JIT编译字节码为机器码，下次再调用时直接执行机器码，提高性能。否则就是用解释器进行解释执行。</li>
 </ul>
 <h2 id="编译型语言和解释型语言的区别"><a href="#编译型语言和解释型语言的区别" class="headerlink" title="编译型语言和解释型语言的区别"></a>编译型语言和解释型语言的区别</h2><ul>
-<li>编译型语言：编译型语言在编译时将源代码编译为目标代码（如机器码），然后再运行目标代码。编译型语言在编译时进行优化，提高性能，但跨平台性差。</li>
-<li>解释型语言：解释型语言在运行时解释执行源代码，无需编译为目标代码。解释型语言在运行时进行优化，跨平台性好，但性能较低。</li>
+<li><strong>编译型语言</strong>：编译型语言在编译时将源代码编译为目标代码（如机器码），然后再运行目标代码。编译型语言在编译时进行优化，提高性能，但跨平台性差。</li>
+<li><strong>解释型语言</strong>：解释型语言在运行时解释执行源代码，无需编译为目标代码。解释型语言在运行时进行优化，跨平台性好，但性能较低。</li>
 </ul>
 <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="八种基本的数据类型"><a href="#八种基本的数据类型" class="headerlink" title="八种基本的数据类型"></a>八种基本的数据类型</h2><p>Java支持的数据类分为两类：基本数据类型和引用数据类型</p>
 <p>基本数据类型有8中，可分为3类：</p>
@@ -44,21 +44,36 @@
 </li>
 </ul>
 <h2 id="int和long之间的转换"><a href="#int和long之间的转换" class="headerlink" title="int和long之间的转换"></a>int和long之间的转换</h2><ul>
-<li>int转long：long数据类型的范围比int大，因此long转int是安全的，可通过直接赋值和强制类型转换实现。</li>
-<li>long转int：long转为int可能会出现数据丢失或溢出的问题，若转换的数据超出int类型的范围，转换的结果是阶段后低位部分。</li>
+<li><strong>int转long</strong>：long数据类型的范围比int大，因此long转int是安全的，可通过直接赋值和强制类型转换实现。</li>
+<li><strong>long转int</strong>：long转为int可能会出现数据丢失或溢出的问题，若转换的数据超出int类型的范围，转换的结果是阶段后低位部分。</li>
 </ul>
 <h2 id="数据类型转换方式"><a href="#数据类型转换方式" class="headerlink" title="数据类型转换方式"></a>数据类型转换方式</h2><ul>
-<li>自动类型转换（隐式转换）：目标类型范围大于源类型时，Java会自动将源类型转换为目标类型</li>
-<li>强制类型转换（显式转换）：目标类型范围小于源类型时，需要使用强制类型转换，这可能导致数据丢失或溢出</li>
-<li>字符串转换：Java提供了将字符串转换为其他数据类型的方法，如Integer.parseInt()、Double.parseDouble()等</li>
-<li>数值之间转换：Java提供了将数值转换为其他数据类型的方法，如Integer.valueOf()、Double.valueOf()等</li>
+<li><strong>自动类型转换(隐式转换)</strong>：目标类型范围大于源类型时，Java会自动将源类型转换为目标类型</li>
+<li><strong>强制类型转换(显式转换)</strong>：目标类型范围小于源类型时，需要使用强制类型转换，这可能导致数据丢失或溢出</li>
+<li><strong>字符串转换</strong>：Java提供了将字符串转换为其他数据类型的方法，如Integer.parseInt()、Double.parseDouble()等</li>
+<li><strong>数值之间转换</strong>：Java提供了将数值转换为其他数据类型的方法，如Integer.valueOf()、Double.valueOf()等</li>
 </ul>
 <h2 id="类型互换可能会出现那些问题"><a href="#类型互换可能会出现那些问题" class="headerlink" title="类型互换可能会出现那些问题"></a>类型互换可能会出现那些问题</h2><ul>
-<li>数据丢失：如果目标类型范围小于源类型范围，可能会出现数据丢失的情况</li>
-<li>数据溢出：如果目标类型范围大于源类型范围，可能会出现数据溢出的情况，转换的结果会额外填充高位部分，但源石数据爆粗不变</li>
-<li>精度损失：在进行浮点类型的转换时，可能发生精度损失</li>
-<li>类型不匹配：在进行类型转换时，需要确保源类型和目标类型是兼容的</li>
+<li><strong>数据丢失</strong>：如果目标类型范围小于源类型范围，可能会出现数据丢失的情况</li>
+<li><strong>数据溢出</strong>：如果目标类型范围大于源类型范围，可能会出现数据溢出的情况，转换的结果会额外填充高位部分，但源石数据爆粗不变</li>
+<li><strong>精度损失</strong>：在进行浮点类型的转换时，可能发生精度损失</li>
+<li><strong>类型不匹配</strong>：在进行类型转换时，需要确保源类型和目标类型是兼容的</li>
 </ul>
+<h2 id="为什么使用BigDecimal不用Double"><a href="#为什么使用BigDecimal不用Double" class="headerlink" title="为什么使用BigDecimal不用Double"></a>为什么使用BigDecimal不用Double</h2><p>double会出现精度丢失的问题，double执行的是二进制浮点运算，二进制在有些情况不能准确表示小数，就像十进制不能准确表示1&#x2F;3，也就是说二进制表示小数只能表示(1&#x2F;2)^n的任意组合</p>
+<p>这就会导致可能出现0.6无法购买0.5和0.1的商品</p>
+<p>而BigDecimal是使用字符串表示的，可以进行精确计算</p>
+<h2 id="装箱和拆箱是什么"><a href="#装箱和拆箱是什么" class="headerlink" title="装箱和拆箱是什么"></a>装箱和拆箱是什么</h2><p>装箱(boxing)和拆箱(unboxing)是指将基本数据类型和对应的包装类之间进行转换的过程</p>
+<p>赋值时，Java1.5以后，所有的装箱和拆箱都是有编译器完成，进行自动装箱和拆箱</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i;<span class="comment">//自动拆箱</span></span><br></pre></td></tr></table></figure>
+<p>方法调用时，可以直接传入原始数据或对象，编译器同样会进行转换</p>
+<p><strong>自动装箱的弊端</strong></p>
+<p>在一个循环中进行自动装箱，会产生多于的对象影响程序的性能</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++)&#123;sum+=i;&#125;</span><br></pre></td></tr></table></figure>
+<p>sum + i 中的 + 不适用于Integer对象，程序运行时会先将sum自动拆箱，再进行数值相加的操作，然后再进行自动装箱的操作转换为Integer对象，类似于</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> sum.intValue() + i;<span class="type">Integer</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(result);</span><br></pre></td></tr></table></figure>
+<p>故会在循环中产生大量无用的Integer对象，降低了程序的性能、加重了垃圾回收的工作量</p>
+<h2 id="Java为什么需要Integer"><a href="#Java为什么需要Integer" class="headerlink" title="Java为什么需要Integer"></a>Java为什么需要Integer</h2><p>将int类型包装为Integer对象好处很多，可以把属性(也就是数据)和处理数据的方法结合在一起，例如parseInt()方法</p>
+<p>还有个重要原因就是Java中绝大部分方法或类都是用来处理类类型对象的，例如ArrayList集合类只能以类作为它的存储对象</p>
 ]]></content>
       <categories>
         <category>Java面试题</category>
