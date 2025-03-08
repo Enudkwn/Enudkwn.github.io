@@ -19,25 +19,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"enudkwn.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.22.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":-200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="https://enudkwn.github.io/categories/index.html">
+    <meta name="description" content="MySQL面试题，精简于小林coding，仅供学习参考">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL面试题">
+<meta property="og:url" content="https://enudkwn.github.io/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/index.html">
 <meta property="og:site_name" content="Enudkwn&#39;s blog">
+<meta property="og:description" content="MySQL面试题，精简于小林coding，仅供学习参考">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-03-05T07:04:00.000Z">
-<meta property="article:modified_time" content="2025-03-05T08:21:35.519Z">
+<meta property="article:published_time" content="2025-03-06T08:36:20.000Z">
+<meta property="article:modified_time" content="2025-03-08T09:57:18.463Z">
 <meta property="article:author" content="Enudkwn">
+<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://enudkwn.github.io/categories/">
+<link rel="canonical" href="https://enudkwn.github.io/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":true,"permalink":"https://enudkwn.github.io/categories/index.html","path":"categories/index.html","title":"分类"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://enudkwn.github.io/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/","path":"2025/03/06/MySQL面试题/","title":"MySQL面试题"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>分类 | Enudkwn's blog
-</title>
+<title>MySQL面试题 | Enudkwn's blog</title>
   
 
 
@@ -125,7 +129,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -138,6 +142,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">SQL基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NOSQL%E5%92%8CSQL%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.1.</span> <span class="nav-text">NOSQL和SQL的区别</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -184,42 +189,139 @@
 
     </div>
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner post posts-expand">
 
 
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
+  
 
-<h1 class="post-title" itemprop="name headline">分类
-</h1>
 
-<div class="post-meta-container">
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://enudkwn.github.io/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Enudkwn">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Enudkwn's blog">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="MySQL面试题 | Enudkwn's blog">
+      <meta itemprop="description" content="MySQL面试题，精简于小林coding，仅供学习参考">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MySQL面试题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-03-06 16:36:20" itemprop="dateCreated datePublished" datetime="2025-03-06T16:36:20+08:00">2025-03-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-03-08 17:57:18" itemprop="dateModified" datetime="2025-03-08T17:57:18+08:00">2025-03-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">MySQL面试题</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>462</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
 </div>
 
-</header>
+            <div class="post-description">MySQL面试题，精简于小林coding，仅供学习参考</div>
+        </div>
+      </header>
 
-      
-      
-      
-      <div class="post-body"><div class="category-all-page">
-  <div class="category-all-title">
-    目前共计 3 个分类
-  </div>
-  <div class="category-all">
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java%E9%9D%A2%E8%AF%95%E9%A2%98/">Java面试题</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/">MySQL面试题</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E7%A1%80/">数据库基础</a><span class="category-list-count">1</span></li></ul>
-  </div>
-</div>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>(总结于<a target="_blank" rel="noopener" href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
+<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
+<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
+<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
+<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
+<p>选择SQL还是NoSQL,考虑一下因素：</p>
+<p><strong>ACID vs BASE</strong></p>
+<p>关系型数据库支持ACID，即原子性、一致性、隔离性、持久性；相对而言，NoSQL采用更加宽松的模型BASE，即基本可用、软状态、最终一致性</p>
+<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
+<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
+<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
+<p><strong>扩展性对比</strong></p>
+<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
+<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
 
-      </div>
-      
-      
-      
     </div>
 
     
     
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2025/03/05/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="prev" title="Java基础面试题">
+                  <i class="fa fa-angle-left"></i> Java基础面试题
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2025/03/08/MySQL%E5%9F%BA%E7%A1%80/" rel="next" title="MySQL基础">
+                  MySQL基础 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
 
 
 </div>

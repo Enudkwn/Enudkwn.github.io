@@ -1,8 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Java基础</title>
-    <url>/2025/03/05/Java%E5%9F%BA%E7%A1%80/</url>
+    <title>MySQL面试题</title>
+    <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
+<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
+<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
+<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
+<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
+<p>选择SQL还是NoSQL,考虑一下因素：</p>
+<p><strong>ACID vs BASE</strong></p>
+<p>关系型数据库支持ACID，即原子性、一致性、隔离性、持久性；相对而言，NoSQL采用更加宽松的模型BASE，即基本可用、软状态、最终一致性</p>
+<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
+<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
+<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
+<p><strong>扩展性对比</strong></p>
+<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
+<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
+]]></content>
+      <categories>
+        <category>MySQL面试题</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>面试</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL基础</title>
+    <url>/2025/03/08/MySQL%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h2 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h2><ol>
+<li>SQL语句可以单行或多行书写，以<strong>分号结尾</strong>。</li>
+<li>SQL语句可以使用空格&#x2F;缩进来增强语句的可读性。</li>
+<li>MySQL数据库的SQL语句不区分大小写，<strong>关键字</strong>建议使用大写。</li>
+<li>注释：<ul>
+<li>单行注释：–注释内容 或 #注释内容(MySQL特有)</li>
+<li>多行注释：&#x2F;<em>注释内容</em>&#x2F;</li>
+</ul>
+</li>
+</ol>
+<h2 id="DDL-数据定义语言"><a href="#DDL-数据定义语言" class="headerlink" title="DDL(数据定义语言)"></a>DDL(数据定义语言)</h2><ol>
+<li>添加数据：INSERT INTO 表名 (字段1,字段2,…) VALUES (值1,值2,…)</li>
+</ol>
+<h2 id="DML-数据操作语言"><a href="#DML-数据操作语言" class="headerlink" title="DML(数据操作语言)"></a>DML(数据操作语言)</h2><h2 id="DQL-数据查询语言"><a href="#DQL-数据查询语言" class="headerlink" title="DQL(数据查询语言)"></a>DQL(数据查询语言)</h2><h2 id="DCL-数据控制语言"><a href="#DCL-数据控制语言" class="headerlink" title="DCL(数据控制语言)"></a>DCL(数据控制语言)</h2>]]></content>
+      <categories>
+        <category>数据库基础</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
+        <tag>MySQL基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java基础面试题</title>
+    <url>/2025/03/05/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
     <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/java.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
 <h1 id="概念相关"><a href="#概念相关" class="headerlink" title="概念相关"></a>概念相关</h1><h2 id="Java的特点"><a href="#Java的特点" class="headerlink" title="Java的特点"></a>Java的特点</h2><ol>
 <li><strong>平台无关性</strong>：Java编译器将源码编译为字节码，字节码可以在任何装有Java虚拟机的平台上运行，不需要重新编译。</li>
@@ -75,13 +128,51 @@
 <h2 id="Java为什么需要Integer"><a href="#Java为什么需要Integer" class="headerlink" title="Java为什么需要Integer"></a>Java为什么需要Integer</h2><p>将int类型包装为Integer对象好处很多，可以把属性(也就是数据)和处理数据的方法结合在一起，例如parseInt()方法</p>
 <p>还有个重要原因就是Java中绝大部分方法或类都是用来处理类类型对象的，例如ArrayList集合类只能以类作为它的存储对象</p>
 <p><strong>泛型中的应用</strong>：在Java中泛型只能使用引用类型</p>
+<p><strong>转换中的应用</strong>：Java中基本数据类型和引用类型不能直接进行转换，必须通过包装类实现</p>
+<p><strong>集合中的应用</strong>：在Java中集合类中的泛型只能是引用类型，不能是基本数据类型</p>
+<h2 id="int和Integer的区别"><a href="#int和Integer的区别" class="headerlink" title="int和Integer的区别"></a>int和Integer的区别</h2><ul>
+<li><p><strong>基本数据类型和引用类型</strong>：int是基本数据类型，不需要实例化，不用额外分配内存；Integer是引用类型，对象的引用和对象是分开存储的</p>
+</li>
+<li><p><strong>自动装箱拆箱</strong>：略</p>
+</li>
+<li><p><strong>空指针异常</strong>：Integer对象可以表示null，int不能表示null。对被赋予null值的Integer对象进行操作会出现空指针异常</p>
+</li>
+</ul>
+<h2 id="Integer缓存"><a href="#Integer缓存" class="headerlink" title="Integer缓存"></a>Integer缓存</h2><p>Java的Integer类内部实现了一个静态缓存池，用于存储特定范围内的整数值对应的Integer对象</p>
+<p>默认情况下，这个范围为-128至127，即在-128至127之间的整数值，都会被缓存在静态缓存池中，避免每次创建新的Integer对象，提高性能。可通过Integer.valueOf()方法来获取缓存池中的Integer对象，如果缓存池中不存在对应的Integer对象，则创建一个新的对象并放入缓存池中。</p>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="如何理解面向对象，简单说说封装继承多态"><a href="#如何理解面向对象，简单说说封装继承多态" class="headerlink" title="如何理解面向对象，简单说说封装继承多态"></a>如何理解面向对象，简单说说封装继承多态</h2><p>面向对象是一种编程范式，它将现实中的事物抽象为对象，对象具有属性和方法。面向对象的设计思想是以对象为中心，通过对象之间的交互来完成程序的功能，具有灵活性和可扩展性，通过封装和继承可以更好地应对需求变化</p>
+<p>Java面向对象的三大特性：<strong>封装、继承、多态</strong>：</p>
+<ul>
+<li><strong>封装</strong>：封装是指将对象的属性和方法结合在一起，对外隐藏内部的细节，仅通过对象提供的接口与外界交互。增强了安全性并简化编程，使对象更加独立</li>
+<li><strong>继承</strong>：继承是指子类可以继承父类的属性和方法，从而实现代码的重用。子类可以扩展父类的功能，也可以覆盖父类的方法，从而实现代码的复用。</li>
+<li><strong>多态</strong>：多态是指一个对象在不同的情况下具有不同的行为，即对象的行为可以根据对象的状态或者类型而发生变化。多态性可分为编译时多态(重载)和运行时多态(重写)。多态使得对象的行为更加灵活和可扩展，从而提高程序的可维护性。</li>
+</ul>
+<p>多态表现于：</p>
+<ul>
+<li>方法重载：<ul>
+<li>方法重载是指在同一个类中定义多个同名方法，但参数列表不同(参数类型、个数、顺序)，编译时根据参数列表选择对应的方法进行调用。</li>
+<li>示例：对于一个 add 方法，可以定义为 add(int a, int b) 和 add(double a, double b)</li>
+</ul>
+</li>
+<li>方法重写：<ul>
+<li>方法重写是指子类重写父类的方法，使得子类具有父类方法的功能，但可以扩展或修改父类方法的实现。在运行时，JVM会根据对象的实际类型来决定调用哪个方法。</li>
+<li>示例：对于一个 Animal 类，可以定义一个 eat 方法，子类 Cat 和 Dog 都可以重写这个方法，使得 Cat 和 Dog 的 eat 方法具有不同的实现。</li>
+</ul>
+</li>
+<li>接口与实现：<ul>
+<li>多个类可以实现同一个接口，并且用接口类型的引用来调用这些类的方法。这使得程序在面对不同的实现时，保持。一贯的调用方式</li>
+<li>示例：定义一个接口 Animal，包含一个 eat 方法，然后定义两个实现类 Cat 和 Dog，实现 Animal 接口，使得 Cat 和 Dog 具有 eat 方法。</li>
+</ul>
+</li>
+<li></li>
+</ul>
 ]]></content>
       <categories>
         <category>Java面试题</category>
       </categories>
       <tags>
-        <tag>Java</tag>
         <tag>面试</tag>
+        <tag>Java</tag>
         <tag>Java基础</tag>
       </tags>
   </entry>
