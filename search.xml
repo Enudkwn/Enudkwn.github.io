@@ -1,59 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>MySQL面试题</title>
-    <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
-    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
-<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
-<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
-<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
-<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
-<p>选择SQL还是NoSQL,考虑一下因素：</p>
-<p><strong>ACID vs BASE</strong></p>
-<p>关系型数据库支持ACID，即原子性、一致性、隔离性、持久性；相对而言，NoSQL采用更加宽松的模型BASE，即基本可用、软状态、最终一致性</p>
-<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
-<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
-<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
-<p><strong>扩展性对比</strong></p>
-<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
-<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
-]]></content>
-      <categories>
-        <category>MySQL面试题</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-        <tag>面试</tag>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL基础</title>
-    <url>/2025/03/08/MySQL%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h2 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h2><ol>
-<li>SQL语句可以单行或多行书写，以<strong>分号结尾</strong>。</li>
-<li>SQL语句可以使用空格&#x2F;缩进来增强语句的可读性。</li>
-<li>MySQL数据库的SQL语句不区分大小写，<strong>关键字</strong>建议使用大写。</li>
-<li>注释：<ul>
-<li>单行注释：–注释内容 或 #注释内容(MySQL特有)</li>
-<li>多行注释：&#x2F;<em>注释内容</em>&#x2F;</li>
-</ul>
-</li>
-</ol>
-<h2 id="DDL-数据定义语言"><a href="#DDL-数据定义语言" class="headerlink" title="DDL(数据定义语言)"></a>DDL(数据定义语言)</h2><ol>
-<li>添加数据：INSERT INTO 表名 (字段1,字段2,…) VALUES (值1,值2,…)</li>
-</ol>
-<h2 id="DML-数据操作语言"><a href="#DML-数据操作语言" class="headerlink" title="DML(数据操作语言)"></a>DML(数据操作语言)</h2><h2 id="DQL-数据查询语言"><a href="#DQL-数据查询语言" class="headerlink" title="DQL(数据查询语言)"></a>DQL(数据查询语言)</h2><h2 id="DCL-数据控制语言"><a href="#DCL-数据控制语言" class="headerlink" title="DCL(数据控制语言)"></a>DCL(数据控制语言)</h2>]]></content>
-      <categories>
-        <category>数据库基础</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-        <tag>数据库</tag>
-        <tag>MySQL基础</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java基础面试题</title>
     <url>/2025/03/05/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
     <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/java.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
@@ -171,9 +118,98 @@
         <category>Java面试题</category>
       </categories>
       <tags>
-        <tag>面试</tag>
         <tag>Java</tag>
+        <tag>面试</tag>
         <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL基础</title>
+    <url>/2025/03/08/MySQL%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h2 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h2><ol>
+<li>SQL语句可以单行或多行书写，以<strong>分号结尾</strong>。</li>
+<li>SQL语句可以使用空格&#x2F;缩进来增强语句的可读性。</li>
+<li>MySQL数据库的SQL语句不区分大小写，<strong>关键字</strong>建议使用大写。</li>
+<li>注释：<ul>
+<li>单行注释：–注释内容 或 #注释内容(MySQL特有)</li>
+<li>多行注释：&#x2F;*注释内容*&#x2F;</li>
+</ul>
+</li>
+</ol>
+<h2 id="DDL-数据定义语言"><a href="#DDL-数据定义语言" class="headerlink" title="DDL(数据定义语言)"></a>DDL(数据定义语言)</h2><ol>
+<li>数据库操作：<ul>
+<li><strong>SHOW DATABASES;</strong></li>
+<li><strong>CREAT DATABASE</strong> 数据库名;</li>
+<li><strong>USE</strong> 数据库名;</li>
+<li><strong>SELECT DATABASE();</strong></li>
+<li><strong>DROP DATABASE</strong> 数据库名;</li>
+</ul>
+</li>
+<li>表操作：<ul>
+<li><strong>SHOW TABLES;</strong></li>
+<li><strong>CREATE TABLE</strong> 表名 (字段1 数据类型,字段2 数据类型,…);</li>
+<li><strong>DESC</strong> 表名;</li>
+<li><strong>SHOW CREATE TABLE</strong> 表名;</li>
+<li><strong>ALTER TABLE</strong> 表名 <strong>ADD</strong> 字段 数据类型;</li>
+<li><strong>DROP TABLE</strong> 表名;</li>
+</ul>
+</li>
+</ol>
+<h2 id="DML-数据操作语言"><a href="#DML-数据操作语言" class="headerlink" title="DML(数据操作语言)"></a>DML(数据操作语言)</h2><ul>
+<li>添加数据：<strong>INSERT INTO</strong> 表名 (字段1,字段2,…) <strong>VALUES</strong> (值1,值2,…),(值1,值2,…);</li>
+<li>修改数据：<strong>UPDATE</strong> 表名 <strong>SET</strong> 字段1&#x3D;值1,字段2&#x3D;值2,… <strong>WHERE</strong> 条件;</li>
+<li>删除数据：<strong>DELETE FROM</strong> 表名 <strong>WHERE</strong> 条件;</li>
+</ul>
+<h2 id="DQL-数据查询语言"><a href="#DQL-数据查询语言" class="headerlink" title="DQL(数据查询语言)"></a>DQL(数据查询语言)</h2><p><strong>SELECT</strong><br>&emsp;   字段列表 &emsp; -&gt; &emsp; 字段名 [<strong>AS</strong>] 别名<br><strong>FROM</strong><br>&emsp;  表名<br><strong>WHERE</strong><br>&emsp;  条件(分组前过滤) &emsp; -&gt; &emsp; 比较符号, 逻辑符号, like, between and, in,<br><strong>GROUP BY</strong><br>&emsp;  分组字段列表<br><strong>HAVING</strong><br>&emsp;  分组后条件列表(分组后过滤)<br><strong>ORDER BY</strong><br>&emsp;  排序列表 &emsp; -&gt; &emsp; 升序 ASC; 降序 DESC<br><strong>LIMIT</strong><br>&emsp;  分页条件(起始索引; 获取条数)</p>
+<h2 id="DCL-数据控制语言"><a href="#DCL-数据控制语言" class="headerlink" title="DCL(数据控制语言)"></a>DCL(数据控制语言)</h2><ol>
+<li>用户管理：<ul>
+<li><strong>CREATE USER</strong> ‘用户名‘<strong>@</strong>‘主机名’ <strong>IDENTIFIED BY</strong> ‘密码’;</li>
+<li><strong>ALTER USER</strong> ‘用户名‘<strong>@</strong>‘主机名’ <strong>IDENTIFIED WITH mysql_native_password BY</strong> ‘新密码’;</li>
+<li><strong>DROP USER</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
+</ul>
+</li>
+<li>权限控制：<ul>
+<li><strong>SHOW GRANTS FOR</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
+<li><strong>GRANT</strong> 权限列表 <strong>ON</strong> 数据库名.表名 <strong>TO</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
+<li><strong>REVOKE</strong> 权限列表 <strong>ON</strong> 数据库名.表名 <strong>FROM</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>数据库基础</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
+        <tag>MySQL基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL面试题</title>
+    <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
+<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
+<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
+<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
+<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
+<p>选择SQL还是NoSQL,考虑一下因素：</p>
+<p><strong>ACID vs BASE</strong></p>
+<p>关系型数据库支持ACID，即原子性、一致性、隔离性、持久性；相对而言，NoSQL采用更加宽松的模型BASE，即基本可用、软状态、最终一致性</p>
+<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
+<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
+<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
+<p><strong>扩展性对比</strong></p>
+<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
+<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
+]]></content>
+      <categories>
+        <category>MySQL面试题</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
 </search>
