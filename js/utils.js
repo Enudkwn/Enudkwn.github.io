@@ -344,6 +344,26 @@ NexT.utils = {
     });
   },
 
+  /**
+   * Text-to-speech functionality with Japanese support.
+   */
+  registerTextToSpeech() {
+    const speechSynthesis = window.speechSynthesis;
+    if (!speechSynthesis) {
+      console.warn('Speech synthesis is not supported in this browser.');
+      return;
+    }
+
+    document.addEventListener('mouseup', () => {
+      const selectedText = window.getSelection().toString().trim();
+      if (selectedText) {
+        const utterance = new SpeechSynthesisUtterance(selectedText);
+        utterance.lang = 'ja-JP'; // Set language to Japanese
+        speechSynthesis.speak(utterance);
+      }
+    });
+  },
+
   activateNavByIndex(index) {
     const nav = document.querySelector('.post-toc:not(.placeholder-toc) .nav');
     if (!nav) return;
@@ -520,3 +540,5 @@ NexT.utils = {
     };
   }
 };
+
+
