@@ -1,6 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Java基础面试题</title>
+    <url>/2025/03/05/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/java.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
+<h1 id="概念相关"><a href="#概念相关" class="headerlink" title="概念相关"></a>概念相关</h1><h2 id="Java的特点"><a href="#Java的特点" class="headerlink" title="Java的特点"></a>Java的特点</h2><ol>
+<li><strong>平台无关性</strong>：Java编译器将源码编译为字节码，字节码可以在任何装有Java虚拟机的平台上运行，不需要重新编译。</li>
+<li><strong>面向对象</strong>：Java是一门严格面向对象的语言，几乎一切都是对象。面向对象编程（OOP）特性使得代码更易于维护和重用。</li>
+<li><strong>内存管理</strong>：Java有自己的垃圾回收机制，自动管理内存和不再使用的对象。开发者不用手动管理内存，减少了内存泄露和其他内存相关的问题。</li>
+</ol>
+<h2 id="Java为什么能跨平台"><a href="#Java为什么能跨平台" class="headerlink" title="Java为什么能跨平台"></a>Java为什么能跨平台</h2><p>这主要依赖于Java虚拟机（JVM），开发者编写的Java源代码经编译后得到.class文件，即字节码文件。Java虚拟机可以将字节码翻译为特定平台下的机器码。</p>
+<p>所以运行Java程序必须要有JVM支持，即使将Java程序打包为可执行文件（例如.exe），它也需要JVM的支持。</p>
+<p>跨平台的是Java程序，而JVM是用C&#x2F;C++编写的，不可跨平台，不同平台需要安装适合的JVM。</p>
+<h2 id="JVM-JRE-JDK的关系"><a href="#JVM-JRE-JDK的关系" class="headerlink" title="JVM,JRE,JDK的关系"></a>JVM,JRE,JDK的关系</h2><ul>
+<li><strong>JVM</strong>：略</li>
+<li><strong>JDK</strong>是Java开发工具包，包含了JVM，编译器，调试器等开发工具，以及一系列的类库（如Java标准库和开发工具库）。即JDK提供了开发、编译、调试和运行Java程序的所需的全部工具和环境。</li>
+<li><strong>JRE</strong>是Java运行时环境，是Java程序运行的最小环境，包含了JVM和Java标准库。JRE不包含开发工具，只包含运行Java程序所需的最小环境。</li>
+</ul>
+<h2 id="为什么Java解释和编译都有"><a href="#为什么Java解释和编译都有" class="headerlink" title="为什么Java解释和编译都有"></a>为什么Java解释和编译都有</h2><ul>
+<li><strong>解释性</strong>：Java源代码被编译为字节码，JIT会把编译过的机器码保存下来下次使用。</li>
+<li><strong>编译性</strong>：JVM中有方法调用计数器，当调用次数达到一定阈值时，JVM会使用JIT编译字节码为机器码，下次再调用时直接执行机器码，提高性能。否则就是用解释器进行解释执行。</li>
+</ul>
+<h2 id="编译型语言和解释型语言的区别"><a href="#编译型语言和解释型语言的区别" class="headerlink" title="编译型语言和解释型语言的区别"></a>编译型语言和解释型语言的区别</h2><ul>
+<li><strong>编译型语言</strong>：编译型语言在编译时将源代码编译为目标代码（如机器码），然后再运行目标代码。编译型语言在编译时进行优化，提高性能，但跨平台性差。</li>
+<li><strong>解释型语言</strong>：解释型语言在运行时解释执行源代码，无需编译为目标代码。解释型语言在运行时进行优化，跨平台性好，但性能较低。</li>
+</ul>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="八种基本的数据类型"><a href="#八种基本的数据类型" class="headerlink" title="八种基本的数据类型"></a>八种基本的数据类型</h2><p>Java支持的数据类分为两类：基本数据类型和引用数据类型</p>
+<p>基本数据类型有8中，可分为3类：</p>
+<ul>
+<li>数值型：整数型（byte，short，int，long），浮点型（float，double）</li>
+<li>字符型：char</li>
+<li>布尔型：boolean</li>
+</ul>
+<p>引用数据类型有：类、接口、数组…</p>
+<ul>
+<li>注意：<ol>
+<li>1字节（byte,boolean），2字节（short,char），4字节（int，float），8字节（long，double）</li>
+<li>浮点数的默认值为double，若需要float，需在末尾加上f或F。</li>
+<li>整型默认为int，若需要byte，short，long，需在末尾加上b、s、l。</li>
+<li>八种数据类型的包装类：除了char-&gt;Character、int-&gt;Integer，其他都是基本数据类型首字母大写。</li>
+<li>char类型是无符号的，不能为负，所以0开头</li>
+</ol>
+</li>
+</ul>
+<h2 id="int和long之间的转换"><a href="#int和long之间的转换" class="headerlink" title="int和long之间的转换"></a>int和long之间的转换</h2><ul>
+<li><strong>int转long</strong>：long数据类型的范围比int大，因此long转int是安全的，可通过直接赋值和强制类型转换实现。</li>
+<li><strong>long转int</strong>：long转为int可能会出现数据丢失或溢出的问题，若转换的数据超出int类型的范围，转换的结果是阶段后低位部分。</li>
+</ul>
+<h2 id="数据类型转换方式"><a href="#数据类型转换方式" class="headerlink" title="数据类型转换方式"></a>数据类型转换方式</h2><ul>
+<li><strong>自动类型转换(隐式转换)</strong>：目标类型范围大于源类型时，Java会自动将源类型转换为目标类型</li>
+<li><strong>强制类型转换(显式转换)</strong>：目标类型范围小于源类型时，需要使用强制类型转换，这可能导致数据丢失或溢出</li>
+<li><strong>字符串转换</strong>：Java提供了将字符串转换为其他数据类型的方法，如Integer.parseInt()、Double.parseDouble()等</li>
+<li><strong>数值之间转换</strong>：Java提供了将数值转换为其他数据类型的方法，如Integer.valueOf()、Double.valueOf()等</li>
+</ul>
+<h2 id="类型互换可能会出现那些问题"><a href="#类型互换可能会出现那些问题" class="headerlink" title="类型互换可能会出现那些问题"></a>类型互换可能会出现那些问题</h2><ul>
+<li><strong>数据丢失</strong>：如果目标类型范围小于源类型范围，可能会出现数据丢失的情况</li>
+<li><strong>数据溢出</strong>：如果目标类型范围大于源类型范围，可能会出现数据溢出的情况，转换的结果会额外填充高位部分，但源石数据爆粗不变</li>
+<li><strong>精度损失</strong>：在进行浮点类型的转换时，可能发生精度损失</li>
+<li><strong>类型不匹配</strong>：在进行类型转换时，需要确保源类型和目标类型是兼容的</li>
+</ul>
+<h2 id="为什么使用BigDecimal不用Double"><a href="#为什么使用BigDecimal不用Double" class="headerlink" title="为什么使用BigDecimal不用Double"></a>为什么使用BigDecimal不用Double</h2><p>double会出现精度丢失的问题，double执行的是二进制浮点运算，二进制在有些情况不能准确表示小数，就像十进制不能准确表示1&#x2F;3，也就是说二进制表示小数只能表示(1&#x2F;2)^n的任意组合</p>
+<p>这就会导致可能出现0.6无法购买0.5和0.1的商品</p>
+<p>而BigDecimal是使用字符串表示的，可以进行精确计算</p>
+<h2 id="装箱和拆箱是什么"><a href="#装箱和拆箱是什么" class="headerlink" title="装箱和拆箱是什么"></a>装箱和拆箱是什么</h2><p>装箱(boxing)和拆箱(unboxing)是指将基本数据类型和对应的包装类之间进行转换的过程</p>
+<p>赋值时，Java1.5以后，所有的装箱和拆箱都是有编译器完成，进行自动装箱和拆箱</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i;<span class="comment">//自动拆箱</span></span><br></pre></td></tr></table></figure>
+<p>方法调用时，可以直接传入原始数据或对象，编译器同样会进行转换</p>
+<p><strong>自动装箱的弊端</strong></p>
+<p>在一个循环中进行自动装箱，会产生多于的对象影响程序的性能</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++)&#123; sum+=i; &#125;</span><br></pre></td></tr></table></figure>
+<p>sum + i 中的 + 不适用于Integer对象，程序运行时会先将sum自动拆箱，再进行数值相加的操作，然后再进行自动装箱的操作转换为Integer对象，类似于</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> sum.intValue() + i;<span class="type">Integer</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(result);</span><br></pre></td></tr></table></figure>
+<p>故会在循环中产生大量无用的Integer对象，降低了程序的性能、加重了垃圾回收的工作量</p>
+<h2 id="Java为什么需要Integer"><a href="#Java为什么需要Integer" class="headerlink" title="Java为什么需要Integer"></a>Java为什么需要Integer</h2><p>将int类型包装为Integer对象好处很多，可以把属性(也就是数据)和处理数据的方法结合在一起，例如parseInt()方法</p>
+<p>还有个重要原因就是Java中绝大部分方法或类都是用来处理类类型对象的，例如ArrayList集合类只能以类作为它的存储对象</p>
+<p><strong>泛型中的应用</strong>：在Java中泛型只能使用引用类型</p>
+<p><strong>转换中的应用</strong>：Java中基本数据类型和引用类型不能直接进行转换，必须通过包装类实现</p>
+<p><strong>集合中的应用</strong>：在Java中集合类中的泛型只能是引用类型，不能是基本数据类型</p>
+<h2 id="int和Integer的区别"><a href="#int和Integer的区别" class="headerlink" title="int和Integer的区别"></a>int和Integer的区别</h2><ul>
+<li><p><strong>基本数据类型和引用类型</strong>：int是基本数据类型，不需要实例化，不用额外分配内存；Integer是引用类型，对象的引用和对象是分开存储的</p>
+</li>
+<li><p><strong>自动装箱拆箱</strong>：略</p>
+</li>
+<li><p><strong>空指针异常</strong>：Integer对象可以表示null，int不能表示null。对被赋予null值的Integer对象进行操作会出现空指针异常</p>
+</li>
+</ul>
+<h2 id="Integer缓存"><a href="#Integer缓存" class="headerlink" title="Integer缓存"></a>Integer缓存</h2><p>Java的Integer类内部实现了一个静态缓存池，用于存储特定范围内的整数值对应的Integer对象</p>
+<p>默认情况下，这个范围为-128至127，即在-128至127之间的整数值，都会被缓存在静态缓存池中，避免每次创建新的Integer对象，提高性能。可通过Integer.valueOf()方法来获取缓存池中的Integer对象，如果缓存池中不存在对应的Integer对象，则创建一个新的对象并放入缓存池中。</p>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="如何理解面向对象，简单说说封装继承多态"><a href="#如何理解面向对象，简单说说封装继承多态" class="headerlink" title="如何理解面向对象，简单说说封装继承多态"></a>如何理解面向对象，简单说说封装继承多态</h2><p>面向对象是一种编程范式，它将现实中的事物抽象为对象，对象具有属性和方法。面向对象的设计思想是以对象为中心，通过对象之间的交互来完成程序的功能，具有灵活性和可扩展性，通过封装和继承可以更好地应对需求变化</p>
+<p>Java面向对象的三大特性：<strong>封装、继承、多态</strong>：</p>
+<ul>
+<li><strong>封装</strong>：封装是指将对象的属性和方法结合在一起，对外隐藏内部的细节，仅通过对象提供的接口与外界交互。增强了安全性并简化编程，使对象更加独立</li>
+<li><strong>继承</strong>：继承是指子类可以继承父类的属性和方法，从而实现代码的重用。子类可以扩展父类的功能，也可以覆盖父类的方法，从而实现代码的复用。</li>
+<li><strong>多态</strong>：多态是指一个对象在不同的情况下具有不同的行为，即对象的行为可以根据对象的状态或者类型而发生变化。多态性可分为编译时多态(重载)和运行时多态(重写)。多态使得对象的行为更加灵活和可扩展，从而提高程序的可维护性。</li>
+</ul>
+<p>多态表现于：</p>
+<ul>
+<li>方法重载：<ul>
+<li>方法重载是指在同一个类中定义多个同名方法，但参数列表不同(参数类型、个数、顺序)，编译时根据参数列表选择对应的方法进行调用。</li>
+<li>示例：对于一个 add 方法，可以定义为 add(int a, int b) 和 add(double a, double b)</li>
+</ul>
+</li>
+<li>方法重写：<ul>
+<li>方法重写是指子类重写父类的方法，使得子类具有父类方法的功能，但可以扩展或修改父类方法的实现。在运行时，JVM会根据对象的实际类型来决定调用哪个方法。</li>
+<li>示例：对于一个 Animal 类，可以定义一个 eat 方法，子类 Cat 和 Dog 都可以重写这个方法，使得 Cat 和 Dog 的 eat 方法具有不同的实现。</li>
+</ul>
+</li>
+<li>接口与实现：<ul>
+<li>多个类可以实现同一个接口，并且用接口类型的引用来调用这些类的方法。这使得程序在面对不同的实现时，保持。一贯的调用方式</li>
+<li>示例：定义一个接口 Animal，包含一个 eat 方法，然后定义两个实现类 Cat 和 Dog，实现 Animal 接口，使得 Cat 和 Dog 具有 eat 方法。</li>
+</ul>
+</li>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java面试题</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>面试</tag>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MILABO歌词翻译学习</title>
+    <url>/2025/03/09/MILABO%E6%AD%8C%E8%AF%8D%E7%BF%BB%E8%AF%91%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="バレたくはないから歌わないけど"><a href="#バレたくはないから歌わないけど" class="headerlink" title="バレたくはないから歌わないけど"></a>バレたくはないから歌わないけど</h1><p>ba re ta ku wa na i ka ra u ta wa na i ke do<br>不想歌唱是因为我不愿展露</p>
+<h2 id="一、核心词汇"><a href="#一、核心词汇" class="headerlink" title="一、核心词汇"></a>一、核心词汇</h2><table>
+<thead>
+<tr>
+<th>日语词汇</th>
+<th>假名标注</th>
+<th>中文翻译</th>
+<th>词性&#x2F;功能</th>
+<th>学习重点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>バレたく</td>
+<td>ばれたく</td>
+<td>不想暴露</td>
+<td>动词否定愿望形</td>
+<td>动词「バレる」（暴露）的变形</td>
+</tr>
+<tr>
+<td>は</td>
+<td>は</td>
+<td>（强调助词）</td>
+<td>助词</td>
+<td>表对比或强调，用于突出否定</td>
+</tr>
+<tr>
+<td>ない</td>
+<td>ない</td>
+<td>不</td>
+<td>否定助动词</td>
+<td>基础否定后缀</td>
+</tr>
+<tr>
+<td>から</td>
+<td>から</td>
+<td>因为</td>
+<td>接续助词</td>
+<td>因果关系表达</td>
+</tr>
+<tr>
+<td>歌わない</td>
+<td>うたわない</td>
+<td>不唱歌</td>
+<td>动词否定形</td>
+<td>动词「歌う」（唱歌）的否定形</td>
+</tr>
+<tr>
+<td>けど</td>
+<td>けど</td>
+<td>但是</td>
+<td>转折助词</td>
+<td>口语化表达，暗示未言明的情绪</td>
+</tr>
+</tbody></table>
+<h2 id="二、核心句型"><a href="#二、核心句型" class="headerlink" title="二、核心句型"></a>二、核心句型</h2><p><strong>「～たくないから～ないけど」</strong></p>
+<ul>
+<li><p><strong>结构</strong>：<br>[动词ます形（去掉ます） + たくない] + から + [动词ない形] + けど</p>
+</li>
+<li><p><strong>意义</strong>：<br><strong>“因为不想做A，所以不做B，但…”</strong>（隐含矛盾或未完全表达的内容）</p>
+</li>
+</ul>
+<h2 id="三-语法要点"><a href="#三-语法要点" class="headerlink" title="三. 语法要点"></a>三. 语法要点</h2><ul>
+<li><p><strong>愿望否定形「～たくない」</strong><br>表示“不想做某事”，常用于第一人称。</p>
+<blockquote>
+<p>例：食べ<strong>たくない</strong>（不想吃）——食（た）</p>
+</blockquote>
+</li>
+<li><p><strong>因果关系「～から」</strong><br>连接前后句，强调原因导致结果。</p>
+<blockquote>
+<p>例：寒い<strong>から</strong>窓を閉める（因为冷，所以关窗）——寒（ひ）窓（か）閉（し）</p>
+</blockquote>
+</li>
+<li><p><strong>转折助词「けど」</strong><br>句末使用，暗示委婉转折或未尽之意。</p>
+<blockquote>
+<p>例：行きたい<strong>けど</strong>…（我想去，不过…）——行（い）</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="四、学习建议"><a href="#四、学习建议" class="headerlink" title="四、学习建议"></a>四、学习建议</h2><ol>
+<li><strong>重点记忆词汇</strong>：</li>
+</ol>
+<ul>
+<li>必背动词：<strong>歌う</strong>（唱歌）、<strong>バレる</strong>（暴露）</li>
+<li>基础助词：<strong>は</strong>（强调）、<strong>から</strong>（因为）、<strong>けど</strong>（但是）</li>
+</ul>
+<h2 id="五、扩展例句"><a href="#五、扩展例句" class="headerlink" title="五、扩展例句"></a>五、扩展例句</h2><ul>
+<li><p><strong>食べたくはないから食べないけど</strong>——食（た）<br>（因为不想吃，所以不吃，但…）</p>
+</li>
+<li><p><strong>行きたくはないから家にいるけど</strong>——行（い）家（いえ）<br>（因为不想去，所以待在家，但…）</p>
+</li>
+</ul>
+<hr>
+<h1 id="想ってないとかじゃないの"><a href="#想ってないとかじゃないの" class="headerlink" title="想ってないとかじゃないの"></a>想ってないとかじゃないの</h1><p>o mo tte na i to ka ja na i no<br>并不是没有这么想过啊</p>
+<h1 id="いつも御別ればかり-考える人生も"><a href="#いつも御別ればかり-考える人生も" class="headerlink" title="いつも御別ればかり 考える人生も"></a>いつも御別ればかり 考える人生も</h1><p>对总是考虑着离别的人生</p>
+<h1 id="積極的に嬉しいから"><a href="#積極的に嬉しいから" class="headerlink" title="積極的に嬉しいから"></a>積極的に嬉しいから</h1><p>我也是感到积极高兴的</p>
+<h1 id="会えばきっと足りなくて"><a href="#会えばきっと足りなくて" class="headerlink" title="会えばきっと足りなくて"></a>会えばきっと足りなくて</h1><p>若只是相见 我一定不会满足</p>
+<h1 id="会話の切れ端まで-歌詞で覚えるの"><a href="#会話の切れ端まで-歌詞で覚えるの" class="headerlink" title="会話の切れ端まで 歌詞で覚えるの"></a>会話の切れ端まで 歌詞で覚えるの</h1><p>就连会话的断片 我都会用歌词去记忆</p>
+<h1 id="向いてくる"><a href="#向いてくる" class="headerlink" title="向いてくる"></a>向いてくる</h1><p>你面向我了</p>
+<h1 id="引っ付く横長の目-鬱陶しいけど"><a href="#引っ付く横長の目-鬱陶しいけど" class="headerlink" title="引っ付く横長の目 鬱陶しいけど"></a>引っ付く横長の目 鬱陶しいけど</h1><p>对那吸引我的炯炯眼神感到烦躁</p>
+<h1 id="逃げる準備に疲れたわ"><a href="#逃げる準備に疲れたわ" class="headerlink" title="逃げる準備に疲れたわ"></a>逃げる準備に疲れたわ</h1><p>但我已经懒得躲闪</p>
+<h1 id="あなたに幾度も-触れたって"><a href="#あなたに幾度も-触れたって" class="headerlink" title="あなたに幾度も 触れたって"></a>あなたに幾度も 触れたって</h1><p>无论触碰你多少次</p>
+<h1 id="大体ちょっとだけ頓知"><a href="#大体ちょっとだけ頓知" class="headerlink" title="大体ちょっとだけ頓知"></a>大体ちょっとだけ頓知</h1><p>大概都会有一丝闪念</p>
+<h1 id="空回りの本心-隠せちゃう"><a href="#空回りの本心-隠せちゃう" class="headerlink" title="空回りの本心 隠せちゃう"></a>空回りの本心 隠せちゃう</h1><p>使得我藏匿这爱胡思乱想的内心</p>
+<h1 id="あたしのこと知らないで-因果応報叱らないで"><a href="#あたしのこと知らないで-因果応報叱らないで" class="headerlink" title="あたしのこと知らないで 因果応報叱らないで"></a>あたしのこと知らないで 因果応報叱らないで</h1><p>不要去了解我 也不要用因果报应咒骂我</p>
+<h1 id="あたしのこと知らないで-因果応報叱らないで-1"><a href="#あたしのこと知らないで-因果応報叱らないで-1" class="headerlink" title="あたしのこと知らないで 因果応報叱らないで"></a>あたしのこと知らないで 因果応報叱らないで</h1><p>不要去了解我 也不要用因果报应咒骂我</p>
+<h1 id="あたしのこと知らないで-因果応報叱らないで-2"><a href="#あたしのこと知らないで-因果応報叱らないで-2" class="headerlink" title="あたしのこと知らないで 因果応報叱らないで"></a>あたしのこと知らないで 因果応報叱らないで</h1><p>不要去了解我 也不要用因果报应咒骂我</p>
+<h1 id="あたしのこと嫌わないで"><a href="#あたしのこと嫌わないで" class="headerlink" title="あたしのこと嫌わないで"></a>あたしのこと嫌わないで</h1><p>不要讨厌我啊</p>
+<h1 id="もっと-仕草に揺れて-抑えきれないほどに"><a href="#もっと-仕草に揺れて-抑えきれないほどに" class="headerlink" title="もっと 仕草に揺れて 抑えきれないほどに"></a>もっと 仕草に揺れて 抑えきれないほどに</h1><p>就像快要无法控制一般 我的举止开始动摇</p>
+<h1 id="リズムがなきゃ話も味っけない"><a href="#リズムがなきゃ話も味っけない" class="headerlink" title="リズムがなきゃ話も味っけない"></a>リズムがなきゃ話も味っけない</h1><p>要是不来点节奏 这对话也显得乏味</p>
+<h1 id="ミラーボール怖がって-アコギ持ち替えたら"><a href="#ミラーボール怖がって-アコギ持ち替えたら" class="headerlink" title="ミラーボール怖がって アコギ持ち替えたら"></a>ミラーボール怖がって アコギ持ち替えたら</h1><p>我害怕灯球 但若给我换上一把木吉他</p>
+<h1 id="まだ-恥ずかしく踊れるから"><a href="#まだ-恥ずかしく踊れるから" class="headerlink" title="まだ 恥ずかしく踊れるから"></a>まだ 恥ずかしく踊れるから</h1><p>我就能羞涩地继续这段舞蹈</p>
+<h1 id="ずっと-浅はかです-帰りたくないけれど"><a href="#ずっと-浅はかです-帰りたくないけれど" class="headerlink" title="ずっと 浅はかです 帰りたくないけれど"></a>ずっと 浅はかです 帰りたくないけれど</h1><p>一直都是肤浅的样子 我不想回到过去</p>
+<h1 id="言わないで-もう身体に慣れない"><a href="#言わないで-もう身体に慣れない" class="headerlink" title="言わないで もう身体に慣れない"></a>言わないで もう身体に慣れない</h1><p>所以别说了 身体已经感到别扭</p>
+<h1 id="変わってゆくから-私ねもっと"><a href="#変わってゆくから-私ねもっと" class="headerlink" title="変わってゆくから 私ねもっと"></a>変わってゆくから 私ねもっと</h1><p>会改变的 我啊 会更努力的</p>
+<h1 id="ねぇ、見届けて-欲しがりでも"><a href="#ねぇ、見届けて-欲しがりでも" class="headerlink" title="ねぇ、見届けて 欲しがりでも"></a>ねぇ、見届けて 欲しがりでも</h1><p>呐，亲眼见证我 哪怕这只是我的欲求</p>
+<h1 id="どう思っているとか"><a href="#どう思っているとか" class="headerlink" title="どう思っているとか"></a>どう思っているとか</h1><p>关于我的各种想法</p>
+<h1 id="伝えるのが-恥ずかしいんじゃなくて"><a href="#伝えるのが-恥ずかしいんじゃなくて" class="headerlink" title="伝えるのが 恥ずかしいんじゃなくて"></a>伝えるのが 恥ずかしいんじゃなくて</h1><p>并不是不好意思袒露</p>
+<h1 id="ハッピーな永遠歌〜"><a href="#ハッピーな永遠歌〜" class="headerlink" title="ハッピーな永遠歌〜"></a>ハッピーな永遠歌〜</h1><p>而是这代表永恒的快乐歌谣</p>
+<h1 id="告げそうになるから-控えさせてね-それだけ"><a href="#告げそうになるから-控えさせてね-それだけ" class="headerlink" title="告げそうになるから 控えさせてね それだけ"></a>告げそうになるから 控えさせてね それだけ</h1><p>我马上就能向你传达了 所以请你再等等噢 仅此而已</p>
+<h1 id="またすぐ否定的になってしまうけど"><a href="#またすぐ否定的になってしまうけど" class="headerlink" title="またすぐ否定的になってしまうけど"></a>またすぐ否定的になってしまうけど</h1><p>虽然马上又会再否定自己</p>
+<h1 id="もしこの世の歌を-書き終えても"><a href="#もしこの世の歌を-書き終えても" class="headerlink" title="もしこの世の歌を 書き終えても"></a>もしこの世の歌を 書き終えても</h1><p>若是把这个世界的歌都写到枯竭</p>
+<h1 id="あなたに振り向いて欲しい-最後の歌〜"><a href="#あなたに振り向いて欲しい-最後の歌〜" class="headerlink" title="あなたに振り向いて欲しい 最後の歌〜"></a>あなたに振り向いて欲しい 最後の歌〜</h1><p>我还是会留下一首希望能使你回眸的最终曲</p>
+<h1 id="誰かのまつげと-草臥れたリスケ"><a href="#誰かのまつげと-草臥れたリスケ" class="headerlink" title="誰かのまつげと 草臥れたリスケ"></a>誰かのまつげと 草臥れたリスケ</h1><p>是谁的睫毛 与这令人厌烦的日程表</p>
+<h1 id="夜は長くて-酔うのに必死ね"><a href="#夜は長くて-酔うのに必死ね" class="headerlink" title="夜は長くて 酔うのに必死ね"></a>夜は長くて 酔うのに必死ね</h1><p>夜还很长 拼了命只是为了将自己灌醉</p>
+<h1 id="もっと-仕草に揺れて-抑えきれないほどに-1"><a href="#もっと-仕草に揺れて-抑えきれないほどに-1" class="headerlink" title="もっと 仕草に揺れて 抑えきれないほどに"></a>もっと 仕草に揺れて 抑えきれないほどに</h1><p>就像快要无法控制一般 我的身体开始律动</p>
+<h1 id="リズムがなきゃ話も味っけない-1"><a href="#リズムがなきゃ話も味っけない-1" class="headerlink" title="リズムがなきゃ話も味っけない"></a>リズムがなきゃ話も味っけない</h1><p>要是没有了节拍 这对话也会显得乏味</p>
+<h1 id="ミラーボール怖がって-アコギ持ち替えたら-1"><a href="#ミラーボール怖がって-アコギ持ち替えたら-1" class="headerlink" title="ミラーボール怖がって アコギ持ち替えたら"></a>ミラーボール怖がって アコギ持ち替えたら</h1><p>我害怕灯球 但若给我换上一把木吉他</p>
+<h1 id="ねぇ、見届けて-欲しがりでも-1"><a href="#ねぇ、見届けて-欲しがりでも-1" class="headerlink" title="ねぇ、見届けて 欲しがりでも"></a>ねぇ、見届けて 欲しがりでも</h1><p>呐，亲眼见证这一切 哪怕这只是我的欲求</p>
+<h1 id="あたしのこと知らないで-因果応報叱らないで-3"><a href="#あたしのこと知らないで-因果応報叱らないで-3" class="headerlink" title="あたしのこと知らないで 因果応報叱らないで"></a>あたしのこと知らないで 因果応報叱らないで</h1><p>不要去了解我 也不要用因果报应咒骂我</p>
+<h1 id="あたしのこと知らないで-因果応報叱らないで-4"><a href="#あたしのこと知らないで-因果応報叱らないで-4" class="headerlink" title="あたしのこと知らないで 因果応報叱らないで"></a>あたしのこと知らないで 因果応報叱らないで</h1><p>不要去了解我 也不要用因果报应咒骂我</p>
+<h1 id="あたしのこと識らないで-因果応報叱らないで"><a href="#あたしのこと識らないで-因果応報叱らないで" class="headerlink" title="あたしのこと識らないで 因果応報叱らないで"></a>あたしのこと識らないで 因果応報叱らないで</h1><p>不要去了解我 也不要用因果报应咒骂我</p>
+<h1 id="私のこと嫌わないで"><a href="#私のこと嫌わないで" class="headerlink" title="私のこと嫌わないで"></a>私のこと嫌わないで</h1><p>不要讨厌我啊</p>
+<h1 id="もっと-仕草に揺れて-抑えきれないほどに-2"><a href="#もっと-仕草に揺れて-抑えきれないほどに-2" class="headerlink" title="もっと 仕草に揺れて 抑えきれないほどに"></a>もっと 仕草に揺れて 抑えきれないほどに</h1><p>就像快要无法控制一般 我的动作更加摇摆</p>
+<h1 id="リズムが泣きゃ-話も味っけない"><a href="#リズムが泣きゃ-話も味っけない" class="headerlink" title="リズムが泣きゃ 話も味っけない"></a>リズムが泣きゃ 話も味っけない</h1><p>若是旋律变得悲伤 这对话也会显得乏味</p>
+<h1 id="ミラーボール怖がって-アコギ持ち替えたら-2"><a href="#ミラーボール怖がって-アコギ持ち替えたら-2" class="headerlink" title="ミラーボール怖がって アコギ持ち替えたら"></a>ミラーボール怖がって アコギ持ち替えたら</h1><p>我害怕灯球 但若能将木吉他换个握法</p>
+<h1 id="まだ-恥ずかしく踊れるから-1"><a href="#まだ-恥ずかしく踊れるから-1" class="headerlink" title="まだ 恥ずかしく踊れるから"></a>まだ 恥ずかしく踊れるから</h1><p>我依然能羞涩地继续这段舞蹈</p>
+<h1 id="ずっと-浅はかです-帰りたくないけれど-1"><a href="#ずっと-浅はかです-帰りたくないけれど-1" class="headerlink" title="ずっと 浅はかです 帰りたくないけれど"></a>ずっと 浅はかです 帰りたくないけれど</h1><p>一直都是肤浅的样子 我不想回到过去</p>
+<h1 id="言わないで-もう身体に鳴れない"><a href="#言わないで-もう身体に鳴れない" class="headerlink" title="言わないで もう身体に鳴れない"></a>言わないで もう身体に鳴れない</h1><p>所以别说了 这些声音已经无法在我的内心回响</p>
+<h1 id="変わってゆくから-私ねもっと-1"><a href="#変わってゆくから-私ねもっと-1" class="headerlink" title="変わってゆくから 私ねもっと"></a>変わってゆくから 私ねもっと</h1><p>会改变的 我啊 会更努力的</p>
+<h1 id="寝ぇ-見届けて-欲しがりでも-zz"><a href="#寝ぇ-見届けて-欲しがりでも-zz" class="headerlink" title="寝ぇ 見届けて 欲しがりでも zz"></a>寝ぇ 見届けて 欲しがりでも zz</h1><p>睡吧 然后见证我的未来 哪怕这只是我的欲求 zz</p>
+]]></content>
+      <categories>
+        <category>日语歌词翻译学习</category>
+      </categories>
+      <tags>
+        <tag>MILABO</tag>
+        <tag>ZTMY</tag>
+        <tag>日语</tag>
+        <tag>歌词翻译</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL基础</title>
     <url>/2025/03/08/MySQL%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h2 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h2><ol>
@@ -172,331 +449,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MILABO歌词翻译学习</title>
-    <url>/2025/03/09/MILABO%E6%AD%8C%E8%AF%8D%E7%BF%BB%E8%AF%91%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="バレたくはないから歌わないけど"><a href="#バレたくはないから歌わないけど" class="headerlink" title="バレたくはないから歌わないけど"></a>バレたくはないから歌わないけど</h1><p>ba re ta ku wa na i ka ra u ta wa na i ke do<br>不想歌唱是因为我不愿展露</p>
-<h2 id="一、核心词汇"><a href="#一、核心词汇" class="headerlink" title="一、核心词汇"></a>一、核心词汇</h2><table>
-<thead>
-<tr>
-<th>日语词汇</th>
-<th>假名标注</th>
-<th>中文翻译</th>
-<th>词性&#x2F;功能</th>
-<th>学习重点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>バレたく</td>
-<td>ばれたく</td>
-<td>不想暴露</td>
-<td>动词否定愿望形</td>
-<td>动词「バレる」（暴露）的变形</td>
-</tr>
-<tr>
-<td>は</td>
-<td>は</td>
-<td>（强调助词）</td>
-<td>助词</td>
-<td>表对比或强调，用于突出否定</td>
-</tr>
-<tr>
-<td>ない</td>
-<td>ない</td>
-<td>不</td>
-<td>否定助动词</td>
-<td>基础否定后缀</td>
-</tr>
-<tr>
-<td>から</td>
-<td>から</td>
-<td>因为</td>
-<td>接续助词</td>
-<td>因果关系表达</td>
-</tr>
-<tr>
-<td>歌わない</td>
-<td>うたわない</td>
-<td>不唱歌</td>
-<td>动词否定形</td>
-<td>动词「歌う」（唱歌）的否定形</td>
-</tr>
-<tr>
-<td>けど</td>
-<td>けど</td>
-<td>但是</td>
-<td>转折助词</td>
-<td>口语化表达，暗示未言明的情绪</td>
-</tr>
-</tbody></table>
-<h2 id="二、核心句型"><a href="#二、核心句型" class="headerlink" title="二、核心句型"></a>二、核心句型</h2><p><strong>「～たくないから～ないけど」</strong></p>
-<ul>
-<li><p><strong>结构</strong>：<br>[动词ます形（去掉ます） + たくない] + から + [动词ない形] + けど</p>
-</li>
-<li><p><strong>意义</strong>：<br><strong>“因为不想做A，所以不做B，但…”</strong>（隐含矛盾或未完全表达的内容）</p>
-</li>
-</ul>
-<h2 id="三-语法要点"><a href="#三-语法要点" class="headerlink" title="三. 语法要点"></a>三. 语法要点</h2><ul>
-<li><p><strong>愿望否定形「～たくない」</strong><br>表示“不想做某事”，常用于第一人称。</p>
-<blockquote>
-<p>例：食べ<strong>たくない</strong>（不想吃）——食（た）</p>
-</blockquote>
-</li>
-<li><p><strong>因果关系「～から」</strong><br>连接前后句，强调原因导致结果。</p>
-<blockquote>
-<p>例：寒い<strong>から</strong>窓を閉める（因为冷，所以关窗）——寒（ひ）窓（か）閉（し）</p>
-</blockquote>
-</li>
-<li><p><strong>转折助词「けど」</strong><br>句末使用，暗示委婉转折或未尽之意。</p>
-<blockquote>
-<p>例：行きたい<strong>けど</strong>…（我想去，不过…）——行（い）</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="四、学习建议"><a href="#四、学习建议" class="headerlink" title="四、学习建议"></a>四、学习建议</h2><ol>
-<li><strong>重点记忆词汇</strong>：</li>
-</ol>
-<ul>
-<li>必背动词：<strong>歌う</strong>（唱歌）、<strong>バレる</strong>（暴露）</li>
-<li>基础助词：<strong>は</strong>（强调）、<strong>から</strong>（因为）、<strong>けど</strong>（但是）</li>
-</ul>
-<h2 id="五、扩展例句"><a href="#五、扩展例句" class="headerlink" title="五、扩展例句"></a>五、扩展例句</h2><ul>
-<li><p><strong>食べたくはないから食べないけど</strong>——食（た）<br>（因为不想吃，所以不吃，但…）</p>
-</li>
-<li><p><strong>行きたくはないから家にいるけど</strong>——行（い）家（いえ）<br>（因为不想去，所以待在家，但…）</p>
-</li>
-</ul>
-<hr>
-<h1 id="想ってないとかじゃないの"><a href="#想ってないとかじゃないの" class="headerlink" title="想ってないとかじゃないの"></a>想ってないとかじゃないの</h1><p>o mo tte na i to ka ja na i no<br>并不是没有这么想过啊</p>
-<p>いつも御別ればかり 考える人生も</p>
-<p>对总是考虑着离别的人生</p>
-<p>積極的に嬉しいから</p>
-<p>我也是感到积极高兴的</p>
-<p>会えばきっと足りなくて</p>
-<p>若只是相见 我一定不会满足</p>
-<p>会話の切れ端まで 歌詞で覚えるの</p>
-<p>就连会话的断片 我都会用歌词去记忆</p>
-<p>向いてくる</p>
-<p>你面向我了</p>
-<p>引っ付く横長の目 鬱陶しいけど</p>
-<p>对那吸引我的炯炯眼神感到烦躁</p>
-<p>逃げる準備に疲れたわ</p>
-<p>但我已经懒得躲闪</p>
-<p>あなたに幾度も 触れたって</p>
-<p>无论触碰你多少次</p>
-<p>大体ちょっとだけ頓知</p>
-<p>大概都会有一丝闪念</p>
-<p>空回りの本心 隠せちゃう</p>
-<p>使得我藏匿这爱胡思乱想的内心</p>
-<p>あたしのこと知らないで 因果応報叱らないで</p>
-<p>不要去了解我 也不要用因果报应咒骂我</p>
-<p>あたしのこと知らないで 因果応報叱らないで</p>
-<p>不要去了解我 也不要用因果报应咒骂我</p>
-<p>あたしのこと知らないで 因果応報叱らないで</p>
-<p>不要去了解我 也不要用因果报应咒骂我</p>
-<p>あたしのこと嫌わないで</p>
-<p>不要讨厌我啊</p>
-<p>もっと 仕草に揺れて 抑えきれないほどに</p>
-<p>就像快要无法控制一般 我的举止开始动摇</p>
-<p>リズムがなきゃ話も味っけない</p>
-<p>要是不来点节奏 这对话也显得乏味</p>
-<p>ミラーボール怖がって アコギ持ち替えたら</p>
-<p>我害怕灯球 但若给我换上一把木吉他</p>
-<p>まだ 恥ずかしく踊れるから</p>
-<p>我就能羞涩地继续这段舞蹈</p>
-<p>ずっと 浅はかです 帰りたくないけれど</p>
-<p>一直都是肤浅的样子 我不想回到过去</p>
-<p>言わないで もう身体に慣れない</p>
-<p>所以别说了 身体已经感到别扭</p>
-<p>変わってゆくから 私ねもっと</p>
-<p>会改变的 我啊 会更努力的</p>
-<p>ねぇ、見届けて 欲しがりでも</p>
-<p>呐，亲眼见证我 哪怕这只是我的欲求</p>
-<p>どう思っているとか</p>
-<p>关于我的各种想法</p>
-<p>伝えるのが 恥ずかしいんじゃなくて</p>
-<p>并不是不好意思袒露</p>
-<p>ハッピーな永遠歌〜</p>
-<p>而是这代表永恒的快乐歌谣</p>
-<p>告げそうになるから 控えさせてね それだけ</p>
-<p>我马上就能向你传达了 所以请你再等等噢 仅此而已</p>
-<p>またすぐ否定的になってしまうけど</p>
-<p>虽然马上又会再否定自己</p>
-<p>もしこの世の歌を 書き終えても</p>
-<p>若是把这个世界的歌都写到枯竭</p>
-<p>あなたに振り向いて欲しい 最後の歌〜</p>
-<p>我还是会留下一首希望能使你回眸的最终曲</p>
-<p>誰かのまつげと 草臥れたリスケ</p>
-<p>是谁的睫毛 与这令人厌烦的日程表</p>
-<p>夜は長くて 酔うのに必死ね</p>
-<p>夜还很长 拼了命只是为了将自己灌醉</p>
-<p>もっと 仕草に揺れて 抑えきれないほどに</p>
-<p>就像快要无法控制一般 我的身体开始律动</p>
-<p>リズムがなきゃ話も味っけない</p>
-<p>要是没有了节拍 这对话也会显得乏味</p>
-<p>ミラーボール怖がって アコギ持ち替えたら</p>
-<p>我害怕灯球 但若给我换上一把木吉他</p>
-<p>ねぇ、見届けて 欲しがりでも</p>
-<p>呐，亲眼见证这一切 哪怕这只是我的欲求</p>
-<p>あたしのこと知らないで 因果応報叱らないで</p>
-<p>不要去了解我 也不要用因果报应咒骂我</p>
-<p>あたしのこと知らないで 因果応報叱らないで</p>
-<p>不要去了解我 也不要用因果报应咒骂我</p>
-<p>あたしのこと識らないで 因果応報叱らないで</p>
-<p>不要去了解我 也不要用因果报应咒骂我</p>
-<p>私のこと嫌わないで</p>
-<p>不要讨厌我啊</p>
-<p>もっと 仕草に揺れて 抑えきれないほどに</p>
-<p>就像快要无法控制一般 我的动作更加摇摆</p>
-<p>リズムが泣きゃ 話も味っけない</p>
-<p>若是旋律变得悲伤 这对话也会显得乏味</p>
-<p>ミラーボール怖がって アコギ持ち替えたら</p>
-<p>我害怕灯球 但若能将木吉他换个握法</p>
-<p>まだ 恥ずかしく踊れるから</p>
-<p>我依然能羞涩地继续这段舞蹈</p>
-<p>ずっと 浅はかです 帰りたくないけれど</p>
-<p>一直都是肤浅的样子 我不想回到过去</p>
-<p>言わないで もう身体に鳴れない</p>
-<p>所以别说了 这些声音已经无法在我的内心回响</p>
-<p>変わってゆくから 私ねもっと</p>
-<p>会改变的 我啊 会更努力的</p>
-<p>寝ぇ 見届けて 欲しがりでも zz</p>
-<p>睡吧 然后见证我的未来 哪怕这只是我的欲求 zz</p>
-<p>这是MILABO的歌词，根据这个歌词给零基础日语学生一个教学</p>
-]]></content>
-      <categories>
-        <category>日语歌词翻译学习</category>
-      </categories>
-      <tags>
-        <tag>MILABO</tag>
-        <tag>ZTMY</tag>
-        <tag>日语</tag>
-        <tag>歌词翻译</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java基础面试题</title>
-    <url>/2025/03/05/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
-    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/java.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
-<h1 id="概念相关"><a href="#概念相关" class="headerlink" title="概念相关"></a>概念相关</h1><h2 id="Java的特点"><a href="#Java的特点" class="headerlink" title="Java的特点"></a>Java的特点</h2><ol>
-<li><strong>平台无关性</strong>：Java编译器将源码编译为字节码，字节码可以在任何装有Java虚拟机的平台上运行，不需要重新编译。</li>
-<li><strong>面向对象</strong>：Java是一门严格面向对象的语言，几乎一切都是对象。面向对象编程（OOP）特性使得代码更易于维护和重用。</li>
-<li><strong>内存管理</strong>：Java有自己的垃圾回收机制，自动管理内存和不再使用的对象。开发者不用手动管理内存，减少了内存泄露和其他内存相关的问题。</li>
-</ol>
-<h2 id="Java为什么能跨平台"><a href="#Java为什么能跨平台" class="headerlink" title="Java为什么能跨平台"></a>Java为什么能跨平台</h2><p>这主要依赖于Java虚拟机（JVM），开发者编写的Java源代码经编译后得到.class文件，即字节码文件。Java虚拟机可以将字节码翻译为特定平台下的机器码。</p>
-<p>所以运行Java程序必须要有JVM支持，即使将Java程序打包为可执行文件（例如.exe），它也需要JVM的支持。</p>
-<p>跨平台的是Java程序，而JVM是用C&#x2F;C++编写的，不可跨平台，不同平台需要安装适合的JVM。</p>
-<h2 id="JVM-JRE-JDK的关系"><a href="#JVM-JRE-JDK的关系" class="headerlink" title="JVM,JRE,JDK的关系"></a>JVM,JRE,JDK的关系</h2><ul>
-<li><strong>JVM</strong>：略</li>
-<li><strong>JDK</strong>是Java开发工具包，包含了JVM，编译器，调试器等开发工具，以及一系列的类库（如Java标准库和开发工具库）。即JDK提供了开发、编译、调试和运行Java程序的所需的全部工具和环境。</li>
-<li><strong>JRE</strong>是Java运行时环境，是Java程序运行的最小环境，包含了JVM和Java标准库。JRE不包含开发工具，只包含运行Java程序所需的最小环境。</li>
-</ul>
-<h2 id="为什么Java解释和编译都有"><a href="#为什么Java解释和编译都有" class="headerlink" title="为什么Java解释和编译都有"></a>为什么Java解释和编译都有</h2><ul>
-<li><strong>解释性</strong>：Java源代码被编译为字节码，JIT会把编译过的机器码保存下来下次使用。</li>
-<li><strong>编译性</strong>：JVM中有方法调用计数器，当调用次数达到一定阈值时，JVM会使用JIT编译字节码为机器码，下次再调用时直接执行机器码，提高性能。否则就是用解释器进行解释执行。</li>
-</ul>
-<h2 id="编译型语言和解释型语言的区别"><a href="#编译型语言和解释型语言的区别" class="headerlink" title="编译型语言和解释型语言的区别"></a>编译型语言和解释型语言的区别</h2><ul>
-<li><strong>编译型语言</strong>：编译型语言在编译时将源代码编译为目标代码（如机器码），然后再运行目标代码。编译型语言在编译时进行优化，提高性能，但跨平台性差。</li>
-<li><strong>解释型语言</strong>：解释型语言在运行时解释执行源代码，无需编译为目标代码。解释型语言在运行时进行优化，跨平台性好，但性能较低。</li>
-</ul>
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="八种基本的数据类型"><a href="#八种基本的数据类型" class="headerlink" title="八种基本的数据类型"></a>八种基本的数据类型</h2><p>Java支持的数据类分为两类：基本数据类型和引用数据类型</p>
-<p>基本数据类型有8中，可分为3类：</p>
-<ul>
-<li>数值型：整数型（byte，short，int，long），浮点型（float，double）</li>
-<li>字符型：char</li>
-<li>布尔型：boolean</li>
-</ul>
-<p>引用数据类型有：类、接口、数组…</p>
-<ul>
-<li>注意：<ol>
-<li>1字节（byte,boolean），2字节（short,char），4字节（int，float），8字节（long，double）</li>
-<li>浮点数的默认值为double，若需要float，需在末尾加上f或F。</li>
-<li>整型默认为int，若需要byte，short，long，需在末尾加上b、s、l。</li>
-<li>八种数据类型的包装类：除了char-&gt;Character、int-&gt;Integer，其他都是基本数据类型首字母大写。</li>
-<li>char类型是无符号的，不能为负，所以0开头</li>
-</ol>
-</li>
-</ul>
-<h2 id="int和long之间的转换"><a href="#int和long之间的转换" class="headerlink" title="int和long之间的转换"></a>int和long之间的转换</h2><ul>
-<li><strong>int转long</strong>：long数据类型的范围比int大，因此long转int是安全的，可通过直接赋值和强制类型转换实现。</li>
-<li><strong>long转int</strong>：long转为int可能会出现数据丢失或溢出的问题，若转换的数据超出int类型的范围，转换的结果是阶段后低位部分。</li>
-</ul>
-<h2 id="数据类型转换方式"><a href="#数据类型转换方式" class="headerlink" title="数据类型转换方式"></a>数据类型转换方式</h2><ul>
-<li><strong>自动类型转换(隐式转换)</strong>：目标类型范围大于源类型时，Java会自动将源类型转换为目标类型</li>
-<li><strong>强制类型转换(显式转换)</strong>：目标类型范围小于源类型时，需要使用强制类型转换，这可能导致数据丢失或溢出</li>
-<li><strong>字符串转换</strong>：Java提供了将字符串转换为其他数据类型的方法，如Integer.parseInt()、Double.parseDouble()等</li>
-<li><strong>数值之间转换</strong>：Java提供了将数值转换为其他数据类型的方法，如Integer.valueOf()、Double.valueOf()等</li>
-</ul>
-<h2 id="类型互换可能会出现那些问题"><a href="#类型互换可能会出现那些问题" class="headerlink" title="类型互换可能会出现那些问题"></a>类型互换可能会出现那些问题</h2><ul>
-<li><strong>数据丢失</strong>：如果目标类型范围小于源类型范围，可能会出现数据丢失的情况</li>
-<li><strong>数据溢出</strong>：如果目标类型范围大于源类型范围，可能会出现数据溢出的情况，转换的结果会额外填充高位部分，但源石数据爆粗不变</li>
-<li><strong>精度损失</strong>：在进行浮点类型的转换时，可能发生精度损失</li>
-<li><strong>类型不匹配</strong>：在进行类型转换时，需要确保源类型和目标类型是兼容的</li>
-</ul>
-<h2 id="为什么使用BigDecimal不用Double"><a href="#为什么使用BigDecimal不用Double" class="headerlink" title="为什么使用BigDecimal不用Double"></a>为什么使用BigDecimal不用Double</h2><p>double会出现精度丢失的问题，double执行的是二进制浮点运算，二进制在有些情况不能准确表示小数，就像十进制不能准确表示1&#x2F;3，也就是说二进制表示小数只能表示(1&#x2F;2)^n的任意组合</p>
-<p>这就会导致可能出现0.6无法购买0.5和0.1的商品</p>
-<p>而BigDecimal是使用字符串表示的，可以进行精确计算</p>
-<h2 id="装箱和拆箱是什么"><a href="#装箱和拆箱是什么" class="headerlink" title="装箱和拆箱是什么"></a>装箱和拆箱是什么</h2><p>装箱(boxing)和拆箱(unboxing)是指将基本数据类型和对应的包装类之间进行转换的过程</p>
-<p>赋值时，Java1.5以后，所有的装箱和拆箱都是有编译器完成，进行自动装箱和拆箱</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i;<span class="comment">//自动拆箱</span></span><br></pre></td></tr></table></figure>
-<p>方法调用时，可以直接传入原始数据或对象，编译器同样会进行转换</p>
-<p><strong>自动装箱的弊端</strong></p>
-<p>在一个循环中进行自动装箱，会产生多于的对象影响程序的性能</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++)&#123; sum+=i; &#125;</span><br></pre></td></tr></table></figure>
-<p>sum + i 中的 + 不适用于Integer对象，程序运行时会先将sum自动拆箱，再进行数值相加的操作，然后再进行自动装箱的操作转换为Integer对象，类似于</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> sum.intValue() + i;<span class="type">Integer</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(result);</span><br></pre></td></tr></table></figure>
-<p>故会在循环中产生大量无用的Integer对象，降低了程序的性能、加重了垃圾回收的工作量</p>
-<h2 id="Java为什么需要Integer"><a href="#Java为什么需要Integer" class="headerlink" title="Java为什么需要Integer"></a>Java为什么需要Integer</h2><p>将int类型包装为Integer对象好处很多，可以把属性(也就是数据)和处理数据的方法结合在一起，例如parseInt()方法</p>
-<p>还有个重要原因就是Java中绝大部分方法或类都是用来处理类类型对象的，例如ArrayList集合类只能以类作为它的存储对象</p>
-<p><strong>泛型中的应用</strong>：在Java中泛型只能使用引用类型</p>
-<p><strong>转换中的应用</strong>：Java中基本数据类型和引用类型不能直接进行转换，必须通过包装类实现</p>
-<p><strong>集合中的应用</strong>：在Java中集合类中的泛型只能是引用类型，不能是基本数据类型</p>
-<h2 id="int和Integer的区别"><a href="#int和Integer的区别" class="headerlink" title="int和Integer的区别"></a>int和Integer的区别</h2><ul>
-<li><p><strong>基本数据类型和引用类型</strong>：int是基本数据类型，不需要实例化，不用额外分配内存；Integer是引用类型，对象的引用和对象是分开存储的</p>
-</li>
-<li><p><strong>自动装箱拆箱</strong>：略</p>
-</li>
-<li><p><strong>空指针异常</strong>：Integer对象可以表示null，int不能表示null。对被赋予null值的Integer对象进行操作会出现空指针异常</p>
-</li>
-</ul>
-<h2 id="Integer缓存"><a href="#Integer缓存" class="headerlink" title="Integer缓存"></a>Integer缓存</h2><p>Java的Integer类内部实现了一个静态缓存池，用于存储特定范围内的整数值对应的Integer对象</p>
-<p>默认情况下，这个范围为-128至127，即在-128至127之间的整数值，都会被缓存在静态缓存池中，避免每次创建新的Integer对象，提高性能。可通过Integer.valueOf()方法来获取缓存池中的Integer对象，如果缓存池中不存在对应的Integer对象，则创建一个新的对象并放入缓存池中。</p>
-<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="如何理解面向对象，简单说说封装继承多态"><a href="#如何理解面向对象，简单说说封装继承多态" class="headerlink" title="如何理解面向对象，简单说说封装继承多态"></a>如何理解面向对象，简单说说封装继承多态</h2><p>面向对象是一种编程范式，它将现实中的事物抽象为对象，对象具有属性和方法。面向对象的设计思想是以对象为中心，通过对象之间的交互来完成程序的功能，具有灵活性和可扩展性，通过封装和继承可以更好地应对需求变化</p>
-<p>Java面向对象的三大特性：<strong>封装、继承、多态</strong>：</p>
-<ul>
-<li><strong>封装</strong>：封装是指将对象的属性和方法结合在一起，对外隐藏内部的细节，仅通过对象提供的接口与外界交互。增强了安全性并简化编程，使对象更加独立</li>
-<li><strong>继承</strong>：继承是指子类可以继承父类的属性和方法，从而实现代码的重用。子类可以扩展父类的功能，也可以覆盖父类的方法，从而实现代码的复用。</li>
-<li><strong>多态</strong>：多态是指一个对象在不同的情况下具有不同的行为，即对象的行为可以根据对象的状态或者类型而发生变化。多态性可分为编译时多态(重载)和运行时多态(重写)。多态使得对象的行为更加灵活和可扩展，从而提高程序的可维护性。</li>
-</ul>
-<p>多态表现于：</p>
-<ul>
-<li>方法重载：<ul>
-<li>方法重载是指在同一个类中定义多个同名方法，但参数列表不同(参数类型、个数、顺序)，编译时根据参数列表选择对应的方法进行调用。</li>
-<li>示例：对于一个 add 方法，可以定义为 add(int a, int b) 和 add(double a, double b)</li>
-</ul>
-</li>
-<li>方法重写：<ul>
-<li>方法重写是指子类重写父类的方法，使得子类具有父类方法的功能，但可以扩展或修改父类方法的实现。在运行时，JVM会根据对象的实际类型来决定调用哪个方法。</li>
-<li>示例：对于一个 Animal 类，可以定义一个 eat 方法，子类 Cat 和 Dog 都可以重写这个方法，使得 Cat 和 Dog 的 eat 方法具有不同的实现。</li>
-</ul>
-</li>
-<li>接口与实现：<ul>
-<li>多个类可以实现同一个接口，并且用接口类型的引用来调用这些类的方法。这使得程序在面对不同的实现时，保持。一贯的调用方式</li>
-<li>示例：定义一个接口 Animal，包含一个 eat 方法，然后定义两个实现类 Cat 和 Dog，实现 Animal 接口，使得 Cat 和 Dog 具有 eat 方法。</li>
-</ul>
-</li>
-<li></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java面试题</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>面试</tag>
-        <tag>Java基础</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL面试题</title>
     <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
     <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
@@ -518,9 +470,9 @@
         <category>MySQL面试题</category>
       </categories>
       <tags>
+        <tag>面试</tag>
         <tag>MySQL</tag>
         <tag>数据库</tag>
-        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
