@@ -1,6 +1,379 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>MySQL基础</title>
+    <url>/2025/03/08/MySQL%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h2 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h2><ol>
+<li>SQL语句可以单行或多行书写，以<strong>分号结尾</strong>。</li>
+<li>SQL语句可以使用空格&#x2F;缩进来增强语句的可读性。</li>
+<li>MySQL数据库的SQL语句不区分大小写，<strong>关键字</strong>建议使用大写。</li>
+<li>注释：<ul>
+<li>单行注释：–注释内容 或 #注释内容(MySQL特有)</li>
+<li>多行注释：&#x2F;*注释内容*&#x2F;</li>
+</ul>
+</li>
+</ol>
+<h2 id="DDL-数据定义语言"><a href="#DDL-数据定义语言" class="headerlink" title="DDL(数据定义语言)"></a>DDL(数据定义语言)</h2><ol>
+<li>数据库操作：</li>
+</ol>
+<ul>
+<li><strong>SHOW DATABASES;</strong></li>
+<li><strong>CREAT DATABASE</strong> 数据库名;</li>
+<li><strong>USE</strong> 数据库名;</li>
+<li><strong>SELECT DATABASE();</strong></li>
+<li><strong>DROP DATABASE</strong> 数据库名;</li>
+</ul>
+<ol start="2">
+<li>表操作：</li>
+</ol>
+<ul>
+<li><strong>SHOW TABLES;</strong></li>
+<li><strong>CREATE TABLE</strong> 表名 (字段1 数据类型,字段2 数据类型,…);</li>
+<li><strong>DESC</strong> 表名;</li>
+<li><strong>SHOW CREATE TABLE</strong> 表名;</li>
+<li><strong>ALTER TABLE</strong> 表名 <strong>ADD</strong> 字段 数据类型;</li>
+<li><strong>DROP TABLE</strong> 表名;</li>
+</ul>
+<h2 id="DML-数据操作语言"><a href="#DML-数据操作语言" class="headerlink" title="DML(数据操作语言)"></a>DML(数据操作语言)</h2><ul>
+<li>添加数据：<strong>INSERT INTO</strong> 表名 (字段1,字段2,…) <strong>VALUES</strong> (值1,值2,…),(值1,值2,…);</li>
+<li>修改数据：<strong>UPDATE</strong> 表名 <strong>SET</strong> 字段1&#x3D;值1,字段2&#x3D;值2,… <strong>WHERE</strong> 条件;</li>
+<li>删除数据：<strong>DELETE FROM</strong> 表名 <strong>WHERE</strong> 条件;</li>
+</ul>
+<h2 id="DQL-数据查询语言"><a href="#DQL-数据查询语言" class="headerlink" title="DQL(数据查询语言)"></a>DQL(数据查询语言)</h2><p><strong>SELECT</strong><br>&emsp;   字段列表 &emsp; -&gt; &emsp; 字段名 [<strong>AS</strong>] 别名<br><strong>FROM</strong><br>&emsp;  表名<br><strong>WHERE</strong><br>&emsp;  条件(分组前过滤) &emsp; -&gt; &emsp; 比较符号, 逻辑符号, like, between and, in,<br><strong>GROUP BY</strong><br>&emsp;  分组字段列表<br><strong>HAVING</strong><br>&emsp;  分组后条件列表(分组后过滤)<br><strong>ORDER BY</strong><br>&emsp;  排序列表 &emsp; -&gt; &emsp; 升序 ASC; 降序 DESC<br><strong>LIMIT</strong><br>&emsp;  分页条件(起始索引; 获取条数)</p>
+<h2 id="DCL-数据控制语言"><a href="#DCL-数据控制语言" class="headerlink" title="DCL(数据控制语言)"></a>DCL(数据控制语言)</h2><ol>
+<li>用户管理：</li>
+</ol>
+<ul>
+<li><strong>CREATE USER</strong> ‘用户名‘<strong>@</strong>‘主机名’ <strong>IDENTIFIED BY</strong> ‘密码’;</li>
+<li><strong>ALTER USER</strong> ‘用户名‘<strong>@</strong>‘主机名’ <strong>IDENTIFIED WITH mysql_native_password BY</strong> ‘新密码’;</li>
+<li><strong>DROP USER</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
+</ul>
+<ol start="2">
+<li>权限控制：</li>
+</ol>
+<ul>
+<li><strong>SHOW GRANTS FOR</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
+<li><strong>GRANT</strong> 权限列表 <strong>ON</strong> 数据库名.表名 <strong>TO</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
+<li><strong>REVOKE</strong> 权限列表 <strong>ON</strong> 数据库名.表名 <strong>FROM</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
+</ul>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h2><ul>
+<li><strong>CONCAT</strong>: 连接字符串, 例: CONCAT(‘a’,’b’,’c’) &#x3D;&#x3D; ‘abc’</li>
+<li><strong>LOWER, UPPER</strong>: 大小写转换, 例: LOWER(‘ABC’) &#x3D;&#x3D; ‘abc’</li>
+<li><strong>LPAD, RPAD</strong>: 左&#x2F;右填充字符串, 例: LPAD(‘abc’,5,’*’) &#x3D;&#x3D; ‘**abc’</li>
+<li><strong>TRIM</strong>: 去除字符串首尾空格, 例: TRIM(‘ abc ‘) &#x3D;&#x3D; ‘abc’</li>
+<li><strong>SUBSTRING</strong>: 截取字符串, 例: SUBSTRING(‘Hello MySQL’,1,5) &#x3D;&#x3D; ‘Hello’</li>
+</ul>
+<h2 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h2><ul>
+<li><strong>CEIL</strong>: 向上取整<blockquote>
+<p>CEIL(3.14) &#x3D;&#x3D; 4</p>
+</blockquote>
+</li>
+<li><strong>FLOOR</strong>: 向下取整<blockquote>
+<p>FLOOR(3.14) &#x3D;&#x3D; 3</p>
+</blockquote>
+</li>
+<li><strong>ROUND</strong>: 四舍五入<blockquote>
+<p>ROUND(3.14) &#x3D;&#x3D; 3</p>
+</blockquote>
+</li>
+<li><strong>MOD</strong>: 取余数<blockquote>
+<p>MOD(5,2) &#x3D;&#x3D; 1</p>
+</blockquote>
+</li>
+<li><strong>RAND</strong>: 随机数<blockquote>
+<p>RAND()</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h2><ul>
+<li><strong>CURDATE</strong>: 当前日期, 例: CURDATE()</li>
+<li><strong>CURTIME</strong>: 当前时间, 例: CURTIME()</li>
+<li><strong>NOW</strong>: 当前日期和时间, 例: NOW()</li>
+<li><strong>YEAR</strong>: 获取年份, 例: YEAR(NOW())</li>
+<li><strong>MONTH</strong>: 获取月份, 例: MONTH(NOW())</li>
+<li><strong>DAY</strong>: 获取日期, 例: DAY(NOW())</li>
+<li><strong>DATE_ADD, DATE_SUB</strong>: 日期加减, 例: DATE_ADD(NOW(),INTERVAL 1 DAY)</li>
+<li><strong>DATEDIFF</strong>: 日期差, 例: DATEDIFF(NOW(),’2023-01-01’)</li>
+<li><strong>DATE_FORMAT</strong>: 日期格式化, 例: DATE_FORMAT(NOW(),’%Y-%m-%d %H:%i:%s’)</li>
+</ul>
+<h2 id="流程函数"><a href="#流程函数" class="headerlink" title="流程函数"></a>流程函数</h2><ul>
+<li><strong>IF</strong>: 条件判断, 例: IF(条件,真值,假值)</li>
+<li><strong>IFNULL</strong>: 判断是否为NULL, 例: IFNULL(字段,’默认值’)</li>
+<li><strong>CASE […] WHEN… THEN… ELSE… END</strong>: 多条件判断, 例: CASE WHEN 条件1 THEN 真值1 WHEN 条件2 THEN 真值2 ELSE 假值 END</li>
+</ul>
+<h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><ul>
+<li><strong>NOT NULL</strong>: 非空约束, 例: 字段名 INT NOT NULL</li>
+<li><strong>UNIQUE</strong>: 唯一约束, 例: 字段名 INT UNIQUE</li>
+<li><strong>PRIMARY KEY</strong>: 主键约束, 例: 字段名 INT PRIMARY KEY</li>
+<li><strong>FOREIGN KEY</strong>: 外键约束, 建立两个表的连接, 确保数据的一致性和完整性, 例: 字段名 INT FOREIGN KEY REFERENCES 表名(字段名)</li>
+<li><strong>CHECK</strong>: 检查约束, 例: 字段名 INT CHECK(字段名 &gt; 0)</li>
+<li><strong>DEFAULT</strong>: 默认值约束, 例: 字段名 INT DEFAULT 0</li>
+</ul>
+<h1 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h1><ol>
+<li>多表关系：<ul>
+<li>一对多：在多的一方设置外键，关联一的一方的主键</li>
+<li>多对多：建立中间表，中间表包含两个外键，关联两张表的主键</li>
+<li>一对一：用于表结构拆分，在其中任何一方设置外键(UNIQUE)，关联另一方的主键</li>
+</ul>
+</li>
+<li>多表查询：<ul>
+<li>内连接：<ul>
+<li>隐式：SELECT * FROM 表1,表2 WHERE 表1.字段 &#x3D; 表2.字段;</li>
+<li>显示：SELECT * FROM 表1 INNER JOIN 表2 ON 表1.字段 &#x3D; 表2.字段;</li>
+</ul>
+</li>
+<li>外连接：<ul>
+<li>左外：SELECT * FROM 表1 LEFT OUTER JOIN 表2 ON 表1.字段 &#x3D; 表2.字段;</li>
+<li>右外：SELECT * FROM 表1 RIGHT OUTER JOIN 表2 ON 表1.字段 &#x3D; 表2.字段;</li>
+</ul>
+</li>
+<li>自连接：SELECT * FROM 表1 t1,表1 t2 WHERE t1.字段 &#x3D; t2.字段;</li>
+<li>子查询：SELECT * FROM 表1 WHERE 字段 IN (SELECT 字段 FROM 表2);</li>
+</ul>
+</li>
+</ol>
+<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><ol>
+<li>事务简介：<ul>
+<li>事务是一组操作的集合，这组操作，要么全部执行成功，要么全部执行失败</li>
+</ul>
+</li>
+<li>事务操作：<ul>
+<li>开启事务：SET AUTOCOMMIT &#x3D; 0;</li>
+<li>提交事务：COMMIT;</li>
+<li>回滚事务：ROLLBACK;</li>
+</ul>
+</li>
+<li>事务的四大特性:<ul>
+<li>原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持久性（Durability）</li>
+</ul>
+</li>
+<li>并发事务问题：<ul>
+<li>脏读：一个事务读取了另一个事务未提交的数据</li>
+<li>不可重复读：一个事务读取了另一个事务修改的数据</li>
+<li>幻读：一个事务新增了数据，另一个事务读取了新增的数据</li>
+</ul>
+</li>
+<li>隔离级别：<ul>
+<li>READ UNCOMMITTED：读未提交，允许脏读、不可重复读、幻读</li>
+<li>READ COMMITTED：读已提交，允许脏读、不可重复读，允许幻读</li>
+<li>REPEATABLE READ：可重复读，不允许脏读、不可重复读，允许幻读</li>
+<li>SERIALIZABLE：串行化，不允许脏读、不可重复读、幻读</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>数据库学习</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
+        <tag>MySQL基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MILABO歌词翻译学习</title>
+    <url>/2025/03/09/MILABO%E6%AD%8C%E8%AF%8D%E7%BF%BB%E8%AF%91%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="バレたくはないから歌わないけど"><a href="#バレたくはないから歌わないけど" class="headerlink" title="バレたくはないから歌わないけど"></a>バレたくはないから歌わないけど</h1><p>ba re ta ku wa na i ka ra u ta wa na i ke do<br>不想歌唱是因为我不愿展露</p>
+<h2 id="一、核心词汇"><a href="#一、核心词汇" class="headerlink" title="一、核心词汇"></a>一、核心词汇</h2><table>
+<thead>
+<tr>
+<th>日语词汇</th>
+<th>假名标注</th>
+<th>中文翻译</th>
+<th>词性&#x2F;功能</th>
+<th>学习重点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>バレたく</td>
+<td>ばれたく</td>
+<td>不想暴露</td>
+<td>动词否定愿望形</td>
+<td>动词「バレる」（暴露）的变形</td>
+</tr>
+<tr>
+<td>は</td>
+<td>は</td>
+<td>（强调助词）</td>
+<td>助词</td>
+<td>表对比或强调，用于突出否定</td>
+</tr>
+<tr>
+<td>ない</td>
+<td>ない</td>
+<td>不</td>
+<td>否定助动词</td>
+<td>基础否定后缀</td>
+</tr>
+<tr>
+<td>から</td>
+<td>から</td>
+<td>因为</td>
+<td>接续助词</td>
+<td>因果关系表达</td>
+</tr>
+<tr>
+<td>歌わない</td>
+<td>うたわない</td>
+<td>不唱歌</td>
+<td>动词否定形</td>
+<td>动词「歌う」（唱歌）的否定形</td>
+</tr>
+<tr>
+<td>けど</td>
+<td>けど</td>
+<td>但是</td>
+<td>转折助词</td>
+<td>口语化表达，暗示未言明的情绪</td>
+</tr>
+</tbody></table>
+<h2 id="二、核心句型"><a href="#二、核心句型" class="headerlink" title="二、核心句型"></a>二、核心句型</h2><p><strong>「～たくないから～ないけど」</strong></p>
+<ul>
+<li><p><strong>结构</strong>：<br>[动词ます形（去掉ます） + たくない] + から + [动词ない形] + けど</p>
+</li>
+<li><p><strong>意义</strong>：<br><strong>“因为不想做A，所以不做B，但…”</strong>（隐含矛盾或未完全表达的内容）</p>
+</li>
+</ul>
+<h2 id="三-语法要点"><a href="#三-语法要点" class="headerlink" title="三. 语法要点"></a>三. 语法要点</h2><ul>
+<li><p><strong>愿望否定形「～たくない」</strong><br>表示“不想做某事”，常用于第一人称。</p>
+<blockquote>
+<p>例：食べ<strong>たくない</strong>（不想吃）——食（た）</p>
+</blockquote>
+</li>
+<li><p><strong>因果关系「～から」</strong><br>连接前后句，强调原因导致结果。</p>
+<blockquote>
+<p>例：寒い<strong>から</strong>窓を閉める（因为冷，所以关窗）——寒（ひ）窓（か）閉（し）</p>
+</blockquote>
+</li>
+<li><p><strong>转折助词「けど」</strong><br>句末使用，暗示委婉转折或未尽之意。</p>
+<blockquote>
+<p>例：行きたい<strong>けど</strong>…（我想去，不过…）——行（い）</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="四、学习建议"><a href="#四、学习建议" class="headerlink" title="四、学习建议"></a>四、学习建议</h2><ol>
+<li><strong>重点记忆词汇</strong>：</li>
+</ol>
+<ul>
+<li>必背动词：<strong>歌う</strong>（唱歌）、<strong>バレる</strong>（暴露）</li>
+<li>基础助词：<strong>は</strong>（强调）、<strong>から</strong>（因为）、<strong>けど</strong>（但是）</li>
+</ul>
+<h2 id="五、扩展例句"><a href="#五、扩展例句" class="headerlink" title="五、扩展例句"></a>五、扩展例句</h2><ul>
+<li><p><strong>食べたくはないから食べないけど</strong>——食（た）<br>（因为不想吃，所以不吃，但…）</p>
+</li>
+<li><p><strong>行きたくはないから家にいるけど</strong>——行（い）家（いえ）<br>（因为不想去，所以待在家，但…）</p>
+</li>
+</ul>
+<hr>
+<h1 id="想ってないとかじゃないの"><a href="#想ってないとかじゃないの" class="headerlink" title="想ってないとかじゃないの"></a>想ってないとかじゃないの</h1><p>o mo tte na i to ka ja na i no<br>并不是没有这么想过啊</p>
+<p>いつも御別ればかり 考える人生も</p>
+<p>对总是考虑着离别的人生</p>
+<p>積極的に嬉しいから</p>
+<p>我也是感到积极高兴的</p>
+<p>会えばきっと足りなくて</p>
+<p>若只是相见 我一定不会满足</p>
+<p>会話の切れ端まで 歌詞で覚えるの</p>
+<p>就连会话的断片 我都会用歌词去记忆</p>
+<p>向いてくる</p>
+<p>你面向我了</p>
+<p>引っ付く横長の目 鬱陶しいけど</p>
+<p>对那吸引我的炯炯眼神感到烦躁</p>
+<p>逃げる準備に疲れたわ</p>
+<p>但我已经懒得躲闪</p>
+<p>あなたに幾度も 触れたって</p>
+<p>无论触碰你多少次</p>
+<p>大体ちょっとだけ頓知</p>
+<p>大概都会有一丝闪念</p>
+<p>空回りの本心 隠せちゃう</p>
+<p>使得我藏匿这爱胡思乱想的内心</p>
+<p>あたしのこと知らないで 因果応報叱らないで</p>
+<p>不要去了解我 也不要用因果报应咒骂我</p>
+<p>あたしのこと知らないで 因果応報叱らないで</p>
+<p>不要去了解我 也不要用因果报应咒骂我</p>
+<p>あたしのこと知らないで 因果応報叱らないで</p>
+<p>不要去了解我 也不要用因果报应咒骂我</p>
+<p>あたしのこと嫌わないで</p>
+<p>不要讨厌我啊</p>
+<p>もっと 仕草に揺れて 抑えきれないほどに</p>
+<p>就像快要无法控制一般 我的举止开始动摇</p>
+<p>リズムがなきゃ話も味っけない</p>
+<p>要是不来点节奏 这对话也显得乏味</p>
+<p>ミラーボール怖がって アコギ持ち替えたら</p>
+<p>我害怕灯球 但若给我换上一把木吉他</p>
+<p>まだ 恥ずかしく踊れるから</p>
+<p>我就能羞涩地继续这段舞蹈</p>
+<p>ずっと 浅はかです 帰りたくないけれど</p>
+<p>一直都是肤浅的样子 我不想回到过去</p>
+<p>言わないで もう身体に慣れない</p>
+<p>所以别说了 身体已经感到别扭</p>
+<p>変わってゆくから 私ねもっと</p>
+<p>会改变的 我啊 会更努力的</p>
+<p>ねぇ、見届けて 欲しがりでも</p>
+<p>呐，亲眼见证我 哪怕这只是我的欲求</p>
+<p>どう思っているとか</p>
+<p>关于我的各种想法</p>
+<p>伝えるのが 恥ずかしいんじゃなくて</p>
+<p>并不是不好意思袒露</p>
+<p>ハッピーな永遠歌〜</p>
+<p>而是这代表永恒的快乐歌谣</p>
+<p>告げそうになるから 控えさせてね それだけ</p>
+<p>我马上就能向你传达了 所以请你再等等噢 仅此而已</p>
+<p>またすぐ否定的になってしまうけど</p>
+<p>虽然马上又会再否定自己</p>
+<p>もしこの世の歌を 書き終えても</p>
+<p>若是把这个世界的歌都写到枯竭</p>
+<p>あなたに振り向いて欲しい 最後の歌〜</p>
+<p>我还是会留下一首希望能使你回眸的最终曲</p>
+<p>誰かのまつげと 草臥れたリスケ</p>
+<p>是谁的睫毛 与这令人厌烦的日程表</p>
+<p>夜は長くて 酔うのに必死ね</p>
+<p>夜还很长 拼了命只是为了将自己灌醉</p>
+<p>もっと 仕草に揺れて 抑えきれないほどに</p>
+<p>就像快要无法控制一般 我的身体开始律动</p>
+<p>リズムがなきゃ話も味っけない</p>
+<p>要是没有了节拍 这对话也会显得乏味</p>
+<p>ミラーボール怖がって アコギ持ち替えたら</p>
+<p>我害怕灯球 但若给我换上一把木吉他</p>
+<p>ねぇ、見届けて 欲しがりでも</p>
+<p>呐，亲眼见证这一切 哪怕这只是我的欲求</p>
+<p>あたしのこと知らないで 因果応報叱らないで</p>
+<p>不要去了解我 也不要用因果报应咒骂我</p>
+<p>あたしのこと知らないで 因果応報叱らないで</p>
+<p>不要去了解我 也不要用因果报应咒骂我</p>
+<p>あたしのこと識らないで 因果応報叱らないで</p>
+<p>不要去了解我 也不要用因果报应咒骂我</p>
+<p>私のこと嫌わないで</p>
+<p>不要讨厌我啊</p>
+<p>もっと 仕草に揺れて 抑えきれないほどに</p>
+<p>就像快要无法控制一般 我的动作更加摇摆</p>
+<p>リズムが泣きゃ 話も味っけない</p>
+<p>若是旋律变得悲伤 这对话也会显得乏味</p>
+<p>ミラーボール怖がって アコギ持ち替えたら</p>
+<p>我害怕灯球 但若能将木吉他换个握法</p>
+<p>まだ 恥ずかしく踊れるから</p>
+<p>我依然能羞涩地继续这段舞蹈</p>
+<p>ずっと 浅はかです 帰りたくないけれど</p>
+<p>一直都是肤浅的样子 我不想回到过去</p>
+<p>言わないで もう身体に鳴れない</p>
+<p>所以别说了 这些声音已经无法在我的内心回响</p>
+<p>変わってゆくから 私ねもっと</p>
+<p>会改变的 我啊 会更努力的</p>
+<p>寝ぇ 見届けて 欲しがりでも zz</p>
+<p>睡吧 然后见证我的未来 哪怕这只是我的欲求 zz</p>
+<p>这是MILABO的歌词，根据这个歌词给零基础日语学生一个教学</p>
+]]></content>
+      <categories>
+        <category>日语歌词翻译学习</category>
+      </categories>
+      <tags>
+        <tag>MILABO</tag>
+        <tag>ZTMY</tag>
+        <tag>日语</tag>
+        <tag>歌词翻译</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Java基础面试题</title>
     <url>/2025/03/05/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
     <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/java.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
@@ -124,206 +497,30 @@
       </tags>
   </entry>
   <entry>
-    <title>MILABO歌词翻译学习</title>
-    <url>/2025/03/09/MILABO%E6%AD%8C%E8%AF%8D%E7%BF%BB%E8%AF%91%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="バレたくはないから歌わないけど"><a href="#バレたくはないから歌わないけど" class="headerlink" title="バレたくはないから歌わないけど"></a>バレたくはないから歌わないけど</h1><p>ba re ta ku wa na i ka ra u ta wa na i ke do<br>不想歌唱是因为我不愿展露</p>
-<h2 id="一、核心词汇"><a href="#一、核心词汇" class="headerlink" title="一、核心词汇"></a>一、核心词汇</h2><table>
-<thead>
-<tr>
-<th>日语词汇</th>
-<th>假名标注</th>
-<th>中文翻译</th>
-<th>词性&#x2F;功能</th>
-<th>学习重点</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>バレたく</td>
-<td>ばれたく</td>
-<td>不想暴露</td>
-<td>动词否定愿望形</td>
-<td>动词「バレる」（暴露）的变形</td>
-</tr>
-<tr>
-<td>は</td>
-<td>は</td>
-<td>（强调助词）</td>
-<td>助词</td>
-<td>表对比或强调，用于突出否定</td>
-</tr>
-<tr>
-<td>ない</td>
-<td>ない</td>
-<td>不</td>
-<td>否定助动词</td>
-<td>基础否定后缀</td>
-</tr>
-<tr>
-<td>から</td>
-<td>から</td>
-<td>因为</td>
-<td>接续助词</td>
-<td>因果关系表达</td>
-</tr>
-<tr>
-<td>歌わない</td>
-<td>うたわない</td>
-<td>不唱歌</td>
-<td>动词否定形</td>
-<td>动词「歌う」（唱歌）的否定形</td>
-</tr>
-<tr>
-<td>けど</td>
-<td>けど</td>
-<td>但是</td>
-<td>转折助词</td>
-<td>口语化表达，暗示未言明的情绪</td>
-</tr>
-</tbody></table>
-<h2 id="二、核心句型"><a href="#二、核心句型" class="headerlink" title="二、核心句型"></a>二、核心句型</h2><p><strong>「～たくないから～ないけど」</strong></p>
-<ul>
-<li><p><strong>结构</strong>：<br>[动词ます形（去掉ます） + たくない] + から + [动词ない形] + けど</p>
-</li>
-<li><p><strong>意义</strong>：<br><strong>“因为不想做A，所以不做B，但…”</strong>（隐含矛盾或未完全表达的内容）</p>
-</li>
-</ul>
-<h2 id="三-语法要点"><a href="#三-语法要点" class="headerlink" title="三. 语法要点"></a>三. 语法要点</h2><ul>
-<li><p><strong>愿望否定形「～たくない」</strong><br>表示“不想做某事”，常用于第一人称。</p>
-<blockquote>
-<p>例：食べ<strong>たくない</strong>（不想吃）——食（た）</p>
-</blockquote>
-</li>
-<li><p><strong>因果关系「～から」</strong><br>连接前后句，强调原因导致结果。</p>
-<blockquote>
-<p>例：寒い<strong>から</strong>窓を閉める（因为冷，所以关窗）——寒（ひ）窓（か）閉（し）</p>
-</blockquote>
-</li>
-<li><p><strong>转折助词「けど」</strong><br>句末使用，暗示委婉转折或未尽之意。</p>
-<blockquote>
-<p>例：行きたい<strong>けど</strong>…（我想去，不过…）——行（い）</p>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h2 id="四、学习建议"><a href="#四、学习建议" class="headerlink" title="四、学习建议"></a>四、学习建议</h2><ol>
-<li><strong>重点记忆词汇</strong>：</li>
-</ol>
-<ul>
-<li>必背动词：<strong>歌う</strong>（唱歌）、<strong>バレる</strong>（暴露）</li>
-<li>基础助词：<strong>は</strong>（强调）、<strong>から</strong>（因为）、<strong>けど</strong>（但是）</li>
-</ul>
-<hr>
-<h2 id="五、扩展例句"><a href="#五、扩展例句" class="headerlink" title="五、扩展例句"></a>五、扩展例句</h2><ul>
-<li><p><strong>食べたくはないから食べないけど</strong>——食（た）<br>（因为不想吃，所以不吃，但…）</p>
-</li>
-<li><p><strong>行きたくはないから家にいるけど</strong>——行（い）家（いえ）<br>（因为不想去，所以待在家，但…）</p>
-</li>
-</ul>
-<h1 id="想ってないとかじゃないの"><a href="#想ってないとかじゃないの" class="headerlink" title="想ってないとかじゃないの"></a>想ってないとかじゃないの</h1><p>o mo tte na i to ka ja na i no<br>并不是没有这么想过啊</p>
-<p>いつも御別ればかり 考える人生も</p>
-<p>对总是考虑着离别的人生</p>
-<p>積極的に嬉しいから</p>
-<p>我也是感到积极高兴的</p>
-<p>会えばきっと足りなくて</p>
-<p>若只是相见 我一定不会满足</p>
-<p>会話の切れ端まで 歌詞で覚えるの</p>
-<p>就连会话的断片 我都会用歌词去记忆</p>
-<p>向いてくる</p>
-<p>你面向我了</p>
-<p>引っ付く横長の目 鬱陶しいけど</p>
-<p>对那吸引我的炯炯眼神感到烦躁</p>
-<p>逃げる準備に疲れたわ</p>
-<p>但我已经懒得躲闪</p>
-<p>あなたに幾度も 触れたって</p>
-<p>无论触碰你多少次</p>
-<p>大体ちょっとだけ頓知</p>
-<p>大概都会有一丝闪念</p>
-<p>空回りの本心 隠せちゃう</p>
-<p>使得我藏匿这爱胡思乱想的内心</p>
-<p>あたしのこと知らないで 因果応報叱らないで</p>
-<p>不要去了解我 也不要用因果报应咒骂我</p>
-<p>あたしのこと知らないで 因果応報叱らないで</p>
-<p>不要去了解我 也不要用因果报应咒骂我</p>
-<p>あたしのこと知らないで 因果応報叱らないで</p>
-<p>不要去了解我 也不要用因果报应咒骂我</p>
-<p>あたしのこと嫌わないで</p>
-<p>不要讨厌我啊</p>
-<p>もっと 仕草に揺れて 抑えきれないほどに</p>
-<p>就像快要无法控制一般 我的举止开始动摇</p>
-<p>リズムがなきゃ話も味っけない</p>
-<p>要是不来点节奏 这对话也显得乏味</p>
-<p>ミラーボール怖がって アコギ持ち替えたら</p>
-<p>我害怕灯球 但若给我换上一把木吉他</p>
-<p>まだ 恥ずかしく踊れるから</p>
-<p>我就能羞涩地继续这段舞蹈</p>
-<p>ずっと 浅はかです 帰りたくないけれど</p>
-<p>一直都是肤浅的样子 我不想回到过去</p>
-<p>言わないで もう身体に慣れない</p>
-<p>所以别说了 身体已经感到别扭</p>
-<p>変わってゆくから 私ねもっと</p>
-<p>会改变的 我啊 会更努力的</p>
-<p>ねぇ、見届けて 欲しがりでも</p>
-<p>呐，亲眼见证我 哪怕这只是我的欲求</p>
-<p>どう思っているとか</p>
-<p>关于我的各种想法</p>
-<p>伝えるのが 恥ずかしいんじゃなくて</p>
-<p>并不是不好意思袒露</p>
-<p>ハッピーな永遠歌〜</p>
-<p>而是这代表永恒的快乐歌谣</p>
-<p>告げそうになるから 控えさせてね それだけ</p>
-<p>我马上就能向你传达了 所以请你再等等噢 仅此而已</p>
-<p>またすぐ否定的になってしまうけど</p>
-<p>虽然马上又会再否定自己</p>
-<p>もしこの世の歌を 書き終えても</p>
-<p>若是把这个世界的歌都写到枯竭</p>
-<p>あなたに振り向いて欲しい 最後の歌〜</p>
-<p>我还是会留下一首希望能使你回眸的最终曲</p>
-<p>誰かのまつげと 草臥れたリスケ</p>
-<p>是谁的睫毛 与这令人厌烦的日程表</p>
-<p>夜は長くて 酔うのに必死ね</p>
-<p>夜还很长 拼了命只是为了将自己灌醉</p>
-<p>もっと 仕草に揺れて 抑えきれないほどに</p>
-<p>就像快要无法控制一般 我的身体开始律动</p>
-<p>リズムがなきゃ話も味っけない</p>
-<p>要是没有了节拍 这对话也会显得乏味</p>
-<p>ミラーボール怖がって アコギ持ち替えたら</p>
-<p>我害怕灯球 但若给我换上一把木吉他</p>
-<p>ねぇ、見届けて 欲しがりでも</p>
-<p>呐，亲眼见证这一切 哪怕这只是我的欲求</p>
-<p>あたしのこと知らないで 因果応報叱らないで</p>
-<p>不要去了解我 也不要用因果报应咒骂我</p>
-<p>あたしのこと知らないで 因果応報叱らないで</p>
-<p>不要去了解我 也不要用因果报应咒骂我</p>
-<p>あたしのこと識らないで 因果応報叱らないで</p>
-<p>不要去了解我 也不要用因果报应咒骂我</p>
-<p>私のこと嫌わないで</p>
-<p>不要讨厌我啊</p>
-<p>もっと 仕草に揺れて 抑えきれないほどに</p>
-<p>就像快要无法控制一般 我的动作更加摇摆</p>
-<p>リズムが泣きゃ 話も味っけない</p>
-<p>若是旋律变得悲伤 这对话也会显得乏味</p>
-<p>ミラーボール怖がって アコギ持ち替えたら</p>
-<p>我害怕灯球 但若能将木吉他换个握法</p>
-<p>まだ 恥ずかしく踊れるから</p>
-<p>我依然能羞涩地继续这段舞蹈</p>
-<p>ずっと 浅はかです 帰りたくないけれど</p>
-<p>一直都是肤浅的样子 我不想回到过去</p>
-<p>言わないで もう身体に鳴れない</p>
-<p>所以别说了 这些声音已经无法在我的内心回响</p>
-<p>変わってゆくから 私ねもっと</p>
-<p>会改变的 我啊 会更努力的</p>
-<p>寝ぇ 見届けて 欲しがりでも zz</p>
-<p>睡吧 然后见证我的未来 哪怕这只是我的欲求 zz</p>
-<p>这是MILABO的歌词，根据这个歌词给零基础日语学生一个教学</p>
+    <title>MySQL面试题</title>
+    <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
+<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
+<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
+<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
+<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
+<p>选择SQL还是NoSQL,考虑一下因素：</p>
+<p><strong>ACID vs BASE</strong></p>
+<p>关系型数据库支持ACID，即原子性、一致性、隔离性、持久性；相对而言，NoSQL采用更加宽松的模型BASE，即基本可用、软状态、最终一致性</p>
+<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
+<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
+<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
+<p><strong>扩展性对比</strong></p>
+<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
+<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
 ]]></content>
       <categories>
-        <category>日语歌词翻译学习</category>
+        <category>MySQL面试题</category>
       </categories>
       <tags>
-        <tag>MILABO</tag>
-        <tag>ZTMY</tag>
-        <tag>日语</tag>
-        <tag>歌词翻译</tag>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
+        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
@@ -536,204 +733,6 @@
         <tag>学习</tag>
         <tag>语法</tag>
         <tag>动词</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL基础</title>
-    <url>/2025/03/08/MySQL%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h2 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h2><ol>
-<li>SQL语句可以单行或多行书写，以<strong>分号结尾</strong>。</li>
-<li>SQL语句可以使用空格&#x2F;缩进来增强语句的可读性。</li>
-<li>MySQL数据库的SQL语句不区分大小写，<strong>关键字</strong>建议使用大写。</li>
-<li>注释：<ul>
-<li>单行注释：–注释内容 或 #注释内容(MySQL特有)</li>
-<li>多行注释：&#x2F;*注释内容*&#x2F;</li>
-</ul>
-</li>
-</ol>
-<h2 id="DDL-数据定义语言"><a href="#DDL-数据定义语言" class="headerlink" title="DDL(数据定义语言)"></a>DDL(数据定义语言)</h2><ol>
-<li>数据库操作：</li>
-</ol>
-<ul>
-<li><strong>SHOW DATABASES;</strong></li>
-<li><strong>CREAT DATABASE</strong> 数据库名;</li>
-<li><strong>USE</strong> 数据库名;</li>
-<li><strong>SELECT DATABASE();</strong></li>
-<li><strong>DROP DATABASE</strong> 数据库名;</li>
-</ul>
-<ol start="2">
-<li>表操作：</li>
-</ol>
-<ul>
-<li><strong>SHOW TABLES;</strong></li>
-<li><strong>CREATE TABLE</strong> 表名 (字段1 数据类型,字段2 数据类型,…);</li>
-<li><strong>DESC</strong> 表名;</li>
-<li><strong>SHOW CREATE TABLE</strong> 表名;</li>
-<li><strong>ALTER TABLE</strong> 表名 <strong>ADD</strong> 字段 数据类型;</li>
-<li><strong>DROP TABLE</strong> 表名;</li>
-</ul>
-<h2 id="DML-数据操作语言"><a href="#DML-数据操作语言" class="headerlink" title="DML(数据操作语言)"></a>DML(数据操作语言)</h2><ul>
-<li>添加数据：<strong>INSERT INTO</strong> 表名 (字段1,字段2,…) <strong>VALUES</strong> (值1,值2,…),(值1,值2,…);</li>
-<li>修改数据：<strong>UPDATE</strong> 表名 <strong>SET</strong> 字段1&#x3D;值1,字段2&#x3D;值2,… <strong>WHERE</strong> 条件;</li>
-<li>删除数据：<strong>DELETE FROM</strong> 表名 <strong>WHERE</strong> 条件;</li>
-</ul>
-<h2 id="DQL-数据查询语言"><a href="#DQL-数据查询语言" class="headerlink" title="DQL(数据查询语言)"></a>DQL(数据查询语言)</h2><p><strong>SELECT</strong><br>&emsp;   字段列表 &emsp; -&gt; &emsp; 字段名 [<strong>AS</strong>] 别名<br><strong>FROM</strong><br>&emsp;  表名<br><strong>WHERE</strong><br>&emsp;  条件(分组前过滤) &emsp; -&gt; &emsp; 比较符号, 逻辑符号, like, between and, in,<br><strong>GROUP BY</strong><br>&emsp;  分组字段列表<br><strong>HAVING</strong><br>&emsp;  分组后条件列表(分组后过滤)<br><strong>ORDER BY</strong><br>&emsp;  排序列表 &emsp; -&gt; &emsp; 升序 ASC; 降序 DESC<br><strong>LIMIT</strong><br>&emsp;  分页条件(起始索引; 获取条数)</p>
-<h2 id="DCL-数据控制语言"><a href="#DCL-数据控制语言" class="headerlink" title="DCL(数据控制语言)"></a>DCL(数据控制语言)</h2><ol>
-<li>用户管理：</li>
-</ol>
-<ul>
-<li><strong>CREATE USER</strong> ‘用户名‘<strong>@</strong>‘主机名’ <strong>IDENTIFIED BY</strong> ‘密码’;</li>
-<li><strong>ALTER USER</strong> ‘用户名‘<strong>@</strong>‘主机名’ <strong>IDENTIFIED WITH mysql_native_password BY</strong> ‘新密码’;</li>
-<li><strong>DROP USER</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
-</ul>
-<ol start="2">
-<li>权限控制：</li>
-</ol>
-<ul>
-<li><strong>SHOW GRANTS FOR</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
-<li><strong>GRANT</strong> 权限列表 <strong>ON</strong> 数据库名.表名 <strong>TO</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
-<li><strong>REVOKE</strong> 权限列表 <strong>ON</strong> 数据库名.表名 <strong>FROM</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
-</ul>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h2><ul>
-<li><strong>CONCAT</strong>: 连接字符串, 例: CONCAT(‘a’,’b’,’c’) &#x3D;&#x3D; ‘abc’</li>
-<li><strong>LOWER, UPPER</strong>: 大小写转换, 例: LOWER(‘ABC’) &#x3D;&#x3D; ‘abc’</li>
-<li><strong>LPAD, RPAD</strong>: 左&#x2F;右填充字符串, 例: LPAD(‘abc’,5,’*’) &#x3D;&#x3D; ‘**abc’</li>
-<li><strong>TRIM</strong>: 去除字符串首尾空格, 例: TRIM(‘ abc ‘) &#x3D;&#x3D; ‘abc’</li>
-<li><strong>SUBSTRING</strong>: 截取字符串, 例: SUBSTRING(‘Hello MySQL’,1,5) &#x3D;&#x3D; ‘Hello’</li>
-</ul>
-<h2 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h2><ul>
-<li><strong>CEIL</strong>: 向上取整<blockquote>
-<p>CEIL(3.14) &#x3D;&#x3D; 4</p>
-</blockquote>
-</li>
-<li><strong>FLOOR</strong>: 向下取整<blockquote>
-<p>FLOOR(3.14) &#x3D;&#x3D; 3</p>
-</blockquote>
-</li>
-<li><strong>ROUND</strong>: 四舍五入<blockquote>
-<p>ROUND(3.14) &#x3D;&#x3D; 3</p>
-</blockquote>
-</li>
-<li><strong>MOD</strong>: 取余数<blockquote>
-<p>MOD(5,2) &#x3D;&#x3D; 1</p>
-</blockquote>
-</li>
-<li><strong>RAND</strong>: 随机数<blockquote>
-<p>RAND()</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h2><ul>
-<li><strong>CURDATE</strong>: 当前日期, 例: CURDATE()</li>
-<li><strong>CURTIME</strong>: 当前时间, 例: CURTIME()</li>
-<li><strong>NOW</strong>: 当前日期和时间, 例: NOW()</li>
-<li><strong>YEAR</strong>: 获取年份, 例: YEAR(NOW())</li>
-<li><strong>MONTH</strong>: 获取月份, 例: MONTH(NOW())</li>
-<li><strong>DAY</strong>: 获取日期, 例: DAY(NOW())</li>
-<li><strong>DATE_ADD, DATE_SUB</strong>: 日期加减, 例: DATE_ADD(NOW(),INTERVAL 1 DAY)</li>
-<li><strong>DATEDIFF</strong>: 日期差, 例: DATEDIFF(NOW(),’2023-01-01’)</li>
-<li><strong>DATE_FORMAT</strong>: 日期格式化, 例: DATE_FORMAT(NOW(),’%Y-%m-%d %H:%i:%s’)</li>
-</ul>
-<h2 id="流程函数"><a href="#流程函数" class="headerlink" title="流程函数"></a>流程函数</h2><ul>
-<li><strong>IF</strong>: 条件判断, 例: IF(条件,真值,假值)</li>
-<li><strong>IFNULL</strong>: 判断是否为NULL, 例: IFNULL(字段,’默认值’)</li>
-<li><strong>CASE […] WHEN… THEN… ELSE… END</strong>: 多条件判断, 例: CASE WHEN 条件1 THEN 真值1 WHEN 条件2 THEN 真值2 ELSE 假值 END</li>
-</ul>
-<h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><ul>
-<li><strong>NOT NULL</strong>: 非空约束, 例: 字段名 INT NOT NULL</li>
-<li><strong>UNIQUE</strong>: 唯一约束, 例: 字段名 INT UNIQUE</li>
-<li><strong>PRIMARY KEY</strong>: 主键约束, 例: 字段名 INT PRIMARY KEY</li>
-<li><strong>FOREIGN KEY</strong>: 外键约束, 建立两个表的连接, 确保数据的一致性和完整性, 例: 字段名 INT FOREIGN KEY REFERENCES 表名(字段名)</li>
-<li><strong>CHECK</strong>: 检查约束, 例: 字段名 INT CHECK(字段名 &gt; 0)</li>
-<li><strong>DEFAULT</strong>: 默认值约束, 例: 字段名 INT DEFAULT 0</li>
-</ul>
-<h1 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h1><ol>
-<li>多表关系：<ul>
-<li>一对多：在多的一方设置外键，关联一的一方的主键</li>
-<li>多对多：建立中间表，中间表包含两个外键，关联两张表的主键</li>
-<li>一对一：用于表结构拆分，在其中任何一方设置外键(UNIQUE)，关联另一方的主键</li>
-</ul>
-</li>
-<li>多表查询：<ul>
-<li>内连接：<ul>
-<li>隐式：SELECT * FROM 表1,表2 WHERE 表1.字段 &#x3D; 表2.字段;</li>
-<li>显示：SELECT * FROM 表1 INNER JOIN 表2 ON 表1.字段 &#x3D; 表2.字段;</li>
-</ul>
-</li>
-<li>外连接：<ul>
-<li>左外：SELECT * FROM 表1 LEFT OUTER JOIN 表2 ON 表1.字段 &#x3D; 表2.字段;</li>
-<li>右外：SELECT * FROM 表1 RIGHT OUTER JOIN 表2 ON 表1.字段 &#x3D; 表2.字段;</li>
-</ul>
-</li>
-<li>自连接：SELECT * FROM 表1 t1,表1 t2 WHERE t1.字段 &#x3D; t2.字段;</li>
-<li>子查询：SELECT * FROM 表1 WHERE 字段 IN (SELECT 字段 FROM 表2);</li>
-</ul>
-</li>
-</ol>
-<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><ol>
-<li>事务简介：<ul>
-<li>事务是一组操作的集合，这组操作，要么全部执行成功，要么全部执行失败</li>
-</ul>
-</li>
-<li>事务操作：<ul>
-<li>开启事务：SET AUTOCOMMIT &#x3D; 0;</li>
-<li>提交事务：COMMIT;</li>
-<li>回滚事务：ROLLBACK;</li>
-</ul>
-</li>
-<li>事务的四大特性:<ul>
-<li>原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持久性（Durability）</li>
-</ul>
-</li>
-<li>并发事务问题：<ul>
-<li>脏读：一个事务读取了另一个事务未提交的数据</li>
-<li>不可重复读：一个事务读取了另一个事务修改的数据</li>
-<li>幻读：一个事务新增了数据，另一个事务读取了新增的数据</li>
-</ul>
-</li>
-<li>隔离级别：<ul>
-<li>READ UNCOMMITTED：读未提交，允许脏读、不可重复读、幻读</li>
-<li>READ COMMITTED：读已提交，允许脏读、不可重复读，允许幻读</li>
-<li>REPEATABLE READ：可重复读，不允许脏读、不可重复读，允许幻读</li>
-<li>SERIALIZABLE：串行化，不允许脏读、不可重复读、幻读</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-        <tag>数据库</tag>
-        <tag>MySQL基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL面试题</title>
-    <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
-    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
-<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
-<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
-<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
-<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
-<p>选择SQL还是NoSQL,考虑一下因素：</p>
-<p><strong>ACID vs BASE</strong></p>
-<p>关系型数据库支持ACID，即原子性、一致性、隔离性、持久性；相对而言，NoSQL采用更加宽松的模型BASE，即基本可用、软状态、最终一致性</p>
-<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
-<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
-<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
-<p><strong>扩展性对比</strong></p>
-<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
-<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
-]]></content>
-      <categories>
-        <category>MySQL面试题</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-        <tag>MySQL</tag>
-        <tag>数据库</tag>
       </tags>
   </entry>
 </search>
