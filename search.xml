@@ -697,6 +697,307 @@
       </tags>
   </entry>
   <entry>
+    <title>日语名词谓语句</title>
+    <url>/2025/03/12/%E6%97%A5%E8%AF%AD%E5%90%8D%E8%AF%8D%E8%B0%93%E8%AF%AD%E5%8F%A5/</url>
+    <content><![CDATA[<h1 id="だ"><a href="#だ" class="headerlink" title="~だ"></a>~だ</h1><blockquote>
+<p>是学生。<br>学生だ。——学生（がくせい）</p>
+</blockquote>
+<p>だ放句末，表示为是<br>だ后面只能加句号&#x2F;终助词 (终助词-&gt;表达语气)<br>だ后面加其他成分需要把だ改为で</p>
+<blockquote>
+<p>不是学生。<br>学生ではない。</p>
+</blockquote>
+<p>ではない表示否定，其中は作为助词时读作わ，ない是辅助形容词</p>
+<blockquote>
+<p>是学生吗。<br>学生か？</p>
+</blockquote>
+<p>其中か读作升调表达疑问，也可以直接升调读名词表示疑问</p>
+<h1 id="です"><a href="#です" class="headerlink" title="~です"></a>~です</h1><blockquote>
+<p>是学生。<br>学生です。</p>
+</blockquote>
+<p>です表达判断和对听话人的礼貌</p>
+<blockquote>
+<p>不是学生。<br>学生ではありません</p>
+</blockquote>
+<blockquote>
+<p>是学生吗？<br>学生ですか？</p>
+</blockquote>
+<p>以及升调，但不能省略</p>
+<blockquote>
+<p>是老师还是学生？<br>先生ですか、学生ですか。——先生（せんせい）</p>
+</blockquote>
+<h1 id="～である"><a href="#～である" class="headerlink" title="～である"></a>～である</h1><blockquote>
+<p>学生である</p>
+</blockquote>
+<p>正式的表达</p>
+<blockquote>
+<p>学生であります</p>
+</blockquote>
+<p>正式的基础上加上礼貌</p>
+<h1 id="でございます"><a href="#でございます" class="headerlink" title="~でございます"></a>~でございます</h1><blockquote>
+<p>毛利探偵事務所でございます——毛利（もうり）探偵（たんてい）事務所（じむしょ）</p>
+</blockquote>
+<p>郑重的礼貌</p>
+<h1 id="判断相关总结"><a href="#判断相关总结" class="headerlink" title="判断相关总结"></a>判断相关总结</h1><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">一般</th>
+<th align="center">礼貌</th>
+<th align="center">正式</th>
+<th align="center">正式+礼貌</th>
+<th align="center">郑重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">肯定</td>
+<td align="center">だ</td>
+<td align="center">です</td>
+<td align="center">である</td>
+<td align="center">であります</td>
+<td align="center">でございます</td>
+</tr>
+<tr>
+<td align="center">否定</td>
+<td align="center">ではない</td>
+<td align="center">ではありません</td>
+<td align="center">&#x2F;</td>
+<td align="center">&#x2F;</td>
+<td align="center">&#x2F;</td>
+</tr>
+</tbody></table>
+<h1 id="は-が"><a href="#は-が" class="headerlink" title="~は&#x2F;が"></a>~は&#x2F;が</h1><p>辅助词は，提示主题，重心为主题后的描述内容<br>格助词が，提示主语，重心为主语本身或动作主体</p>
+<blockquote>
+<p>-你是谁？<br>-我是学生。-&gt; 私は学生だ。</p>
+</blockquote>
+<blockquote>
+<p>-谁是学生？<br>-我是学生。 -&gt; 私が学生だ。</p>
+</blockquote>
+<h1 id="も"><a href="#も" class="headerlink" title="~も"></a>~も</h1><p>辅助词も，表示也</p>
+<blockquote>
+<p>我是学生，他也是学生。——彼（かれ）<br>私は学生です。かれも学生です。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>日语学习</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>名词谓语句</tag>
+        <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL面试题</title>
+    <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
+<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
+<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
+<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
+<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
+<p>选择SQL还是NoSQL,考虑一下因素：</p>
+<p><strong>ACID vs BASE</strong></p>
+<p>关系型数据库支持ACID，即<strong>原子性、一致性、隔离性、持久性</strong>；相对而言，NoSQL采用更加宽松的模型BASE，即<strong>基本可用、软状态、最终一致性</strong></p>
+<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
+<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
+<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
+<p><strong>扩展性对比</strong></p>
+<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
+<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
+<h2 id="数据库三大范式是什么"><a href="#数据库三大范式是什么" class="headerlink" title="数据库三大范式是什么"></a>数据库三大范式是什么</h2><p><strong>第一范式</strong>(1NF)：</p>
+<p>要求数据库表的每一列都是不可分割的原子数据项</p>
+<blockquote>
+<p>例：家庭信息：5口人，北京—应该为—家庭人口数：5口人 &amp; 家庭住址：北京</p>
+</blockquote>
+<p><strong>第二范式</strong>(2NF)：</p>
+<p>在1NF的基础上，非码属性必须完全依赖于候码(在1NF的基础上消除非主属性对主码的部分函数依赖)</p>
+<p>第二范式需要确保数据库表中的每一列都和主键相关，而不能只与主键的某一部分相关（主要针对联合主键而言）。</p>
+<blockquote>
+<p>主码：主码是从候选码中选择的一个属性或属性组，用于唯一标识元组。若候选码仅有一个，则它自动成为主码<br>候码：候选码是能够唯一标识关系中每个元组（记录）的最小属性或属性组。这里的“最小”指候选码的真子集不能成为候选码</p>
+</blockquote>
+<blockquote>
+<p>例：产品数量、产品折扣、产品价格与”订单号”和”产品号”都相关，但是订单金额和订单时间仅与”订单号”相关，与”产品号”无关， 这样就不满足第二范式的要求，需分成两个表</p>
+</blockquote>
+<p><strong>第三范式</strong>（3NF）：</p>
+<p>在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依<br>赖)</p>
+<p>第三范式需要确保数据表中的每一列数据都和主键直接相关，而不能间接相关。</p>
+<blockquote>
+<p>例：表中所有属性都完全依赖于学号，所以满足第二范式，但是”班主任性别”和”班主任年龄”直接依赖的是”班主任姓名”, 而不是主键”学号”，需分成两个表</p>
+</blockquote>
+<h2 id="MySQL怎么联表查询"><a href="#MySQL怎么联表查询" class="headerlink" title="MySQL怎么联表查询"></a>MySQL怎么联表查询</h2><p>数据库有四种联表查询类型：</p>
+<blockquote>
+<ol>
+<li>内连接(INNER JOIN)</li>
+<li>左外连接(LEFT JOIN)</li>
+<li>右外连接(RIGHT JOIN)</li>
+<li>全外连接(FULL JOIN)</li>
+</ol>
+</blockquote>
+<ol>
+<li><strong>内连接</strong>(INNER JOIN)： <ul>
+<li>返回两个表中有匹配关系的行</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">INNER JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回每个员工及其所在部门的名字</p>
+<ol start="2">
+<li><strong>左外连接</strong>(LEFT JOIN)<ul>
+<li>返回左表中的所有行，即使在右表中没有匹配的行。未匹配的右表列会包含NULL</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回每个员工及其所在部门的名字，包括没有分配部门的员工</p>
+<ol start="3">
+<li><strong>右外连接</strong>(RIGHT JOIN)<ul>
+<li>返回右表中的所有行，即使在左表中没有匹配的行。未匹配的左表列会包含NULL</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回每个员工及其所在部门的名字，包括没有分配员工的部门</p>
+<ol start="4">
+<li><strong>全外连接</strong>(FULL JOIN)<ul>
+<li>返回两个表中的所有行，包括非匹配行。在MySQL中，FULL JOIN 需要使用 UNION来实现，因为MySQL 不支持FULL JOIN</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id</span><br><span class="line"> </span><br><span class="line">UNION</span><br><span class="line"></span><br><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回所有员工和所有部门，包括没有匹配行的记录</p>
+<h2 id="MySQL如何避免重复插入数据"><a href="#MySQL如何避免重复插入数据" class="headerlink" title="MySQL如何避免重复插入数据"></a>MySQL如何避免重复插入数据</h2><ol>
+<li><strong>使用UNIQUE约束</strong></li>
+</ol>
+<p>在表的相关列添加上UNIQUE约束，确保每个值在该列中唯一</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE users(</span><br><span class="line">    id    INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">    emai1 VARCHAR(255) UNIQUE,</span><br><span class="line">    name  VARCHAR(255)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>如果尝试插入重复的email，MySQL会返回错误</p>
+<ol start="2">
+<li><strong>使用INSERT … ON DUPLICATE KEY UPDATE</strong></li>
+</ol>
+<p>这中语句允许在插入记录时处理重复键的情况。如果插入记录与现有记录有冲突，可以自己选择更新现有记录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;)</span><br><span class="line">ON DUPLICATE KEY UPDATE name = VALUES(name);</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><strong>使用INSERT IGNORE</strong></li>
+</ol>
+<p>该语句会在插入记录时忽略那些因为重复键而发生的错误</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT IGNORE INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;);</span><br></pre></td></tr></table></figure>
+<p>如果email已经存在，这条插入语句将被忽略而不会返回错误</p>
+<p>选择哪种方法取决于具体的需求：</p>
+<ul>
+<li>如果需要保证全局唯一性，使用UNIQUE约束是最佳做法</li>
+<li>如果需要插入和更新结合可以使用ON DUPLICATE KEY UPDATE</li>
+<li>对于快速忽略重复插入，INSERT IGNORE是合适的选择</li>
+</ul>
+<h2 id="CHAR-和-VARCHAR有什么区别"><a href="#CHAR-和-VARCHAR有什么区别" class="headerlink" title="CHAR 和 VARCHAR有什么区别"></a>CHAR 和 VARCHAR有什么区别</h2><ul>
+<li>CHAR是固定长度的字符串类型，定义时需要指定固定长度，存储时会在末尾补足空格。<br>   CHAR适合存储长度固定的数据，如固定长度的代码、状态等，存储空间固定，对于短字符串效率较高。</li>
+<li>VARCHAR是可变长度的字符串类型，定义时需要指定最大长度，实际存储时根据实际长度占用存储空间。<br>   VARCHAR适合存储长度可变的数据，如用户输入的文本、备注等，节约存储空间。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>MySQL面试题</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日语指示代词</title>
+    <url>/2025/03/12/%E6%97%A5%E8%AF%AD%E6%8C%87%E7%A4%BA%E4%BB%A3%E8%AF%8D/</url>
+    <content><![CDATA[<h1 id="指示代词"><a href="#指示代词" class="headerlink" title="指示代词"></a>指示代词</h1><h2 id="说话人和听话人处于不同位置"><a href="#说话人和听话人处于不同位置" class="headerlink" title="说话人和听话人处于不同位置"></a>说话人和听话人处于不同位置</h2><p><strong>こ</strong>-&gt;指向离说话人近的事物<br><strong>そ</strong>-&gt;指向离听话人近的事物<br><strong>あ</strong>-&gt;指向离说话人和听话人都远的事物<br><strong>ど</strong>-&gt;不定</p>
+<h2 id="说话人和听话人处于同一位置"><a href="#说话人和听话人处于同一位置" class="headerlink" title="说话人和听话人处于同一位置"></a>说话人和听话人处于同一位置</h2><p><strong>こ</strong>-&gt;指向较近的事物<br><strong>そ</strong>-&gt;指向稍远的事物<br><strong>あ</strong>-&gt;指向离得很远的事物<br><strong>ど</strong>-&gt;不定</p>
+<h1 id="れ、の、の"><a href="#れ、の、の" class="headerlink" title="れ、の、の"></a><del>れ、</del>の、<del>の</del></h1><blockquote>
+<p>这是书。<br>これは本だ。——本（ほん）</p>
+</blockquote>
+<blockquote>
+<p>这本书是我的。<br>この本は私の(本)だ。</p>
+</blockquote>
+<p>れ和の意思一样，れ后加助词，の后加名词</p>
+<h1 id="ような"><a href="#ような" class="headerlink" title="~ような"></a>~ような</h1><blockquote>
+<p>这样的书<br>このような本</p>
+</blockquote>
+<p>おう是名词，所以前面用の<br>可简写为~んな，更口语化</p>
+<blockquote>
+<p>这样的书<br>こんな本</p>
+</blockquote>
+<h1 id="こ"><a href="#こ" class="headerlink" title="~こ"></a>~こ</h1><blockquote>
+<p>这里是学校<br>ここは学校だ。——学校（がっこう）</p>
+</blockquote>
+<blockquote>
+<p>教室在哪儿？<br>教室はどこですか——教室（きょうしつ）<br>どこが教室ですか</p>
+</blockquote>
+<p>どこ是已知信息，教室是未知信息</p>
+<h1 id="ちら"><a href="#ちら" class="headerlink" title="~ちら"></a>~ちら</h1><blockquote>
+<p>这里是毛利侦探事务所<br>こちらは毛利探偵事務所でございます。——毛利（もうり）探偵（たんてい）事務所（じむしょ）</p>
+</blockquote>
+<p>郑重礼貌</p>
+<blockquote>
+<p>这位是我的老师<br>こちらは私の先生です。</p>
+</blockquote>
+<h1 id="指示代词总结"><a href="#指示代词总结" class="headerlink" title="指示代词总结"></a>指示代词总结</h1><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">こ</th>
+<th align="center">そ</th>
+<th align="center">あ</th>
+<th align="center">ど</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">~れ</td>
+<td align="center">これ</td>
+<td align="center">それ</td>
+<td align="center">あれ</td>
+<td align="center">どれ</td>
+</tr>
+<tr>
+<td align="center">~の</td>
+<td align="center">この</td>
+<td align="center">その</td>
+<td align="center">あの</td>
+<td align="center">どの</td>
+</tr>
+<tr>
+<td align="center">~ような</td>
+<td align="center">このような</td>
+<td align="center">そのような</td>
+<td align="center">あのような</td>
+<td align="center">どのような</td>
+</tr>
+<tr>
+<td align="center">~んな</td>
+<td align="center">こんな</td>
+<td align="center">そんな</td>
+<td align="center">あんな</td>
+<td align="center">どんな</td>
+</tr>
+<tr>
+<td align="center">~こ</td>
+<td align="center">ここ</td>
+<td align="center">そこ</td>
+<td align="center">あこ</td>
+<td align="center">どこ</td>
+</tr>
+<tr>
+<td align="center">~ちら</td>
+<td align="center">こちら</td>
+<td align="center">そちら</td>
+<td align="center">あちら</td>
+<td align="center">どちら</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>日语学习</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>指示代词</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>日语动词学习</title>
     <url>/2025/03/09/%E6%97%A5%E8%AF%AD%E5%8A%A8%E8%AF%8D%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="日语动词分类与变形规则详解"><a href="#日语动词分类与变形规则详解" class="headerlink" title="日语动词分类与变形规则详解"></a>日语动词分类与变形规则详解</h1><hr>
@@ -903,215 +1204,9 @@
       </categories>
       <tags>
         <tag>日语</tag>
+        <tag>语法</tag>
         <tag>语言学习</tag>
-        <tag>语法</tag>
         <tag>动词</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL面试题</title>
-    <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
-    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
-<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
-<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
-<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
-<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
-<p>选择SQL还是NoSQL,考虑一下因素：</p>
-<p><strong>ACID vs BASE</strong></p>
-<p>关系型数据库支持ACID，即<strong>原子性、一致性、隔离性、持久性</strong>；相对而言，NoSQL采用更加宽松的模型BASE，即<strong>基本可用、软状态、最终一致性</strong></p>
-<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
-<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
-<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
-<p><strong>扩展性对比</strong></p>
-<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
-<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
-<h2 id="数据库三大范式是什么"><a href="#数据库三大范式是什么" class="headerlink" title="数据库三大范式是什么"></a>数据库三大范式是什么</h2><p><strong>第一范式</strong>(1NF)：</p>
-<p>要求数据库表的每一列都是不可分割的原子数据项</p>
-<blockquote>
-<p>例：家庭信息：5口人，北京—应该为—家庭人口数：5口人 &amp; 家庭住址：北京</p>
-</blockquote>
-<p><strong>第二范式</strong>(2NF)：</p>
-<p>在1NF的基础上，非码属性必须完全依赖于候码(在1NF的基础上消除非主属性对主码的部分函数依赖)</p>
-<p>第二范式需要确保数据库表中的每一列都和主键相关，而不能只与主键的某一部分相关（主要针对联合主键而言）。</p>
-<blockquote>
-<p>主码：主码是从候选码中选择的一个属性或属性组，用于唯一标识元组。若候选码仅有一个，则它自动成为主码<br>候码：候选码是能够唯一标识关系中每个元组（记录）的最小属性或属性组。这里的“最小”指候选码的真子集不能成为候选码</p>
-</blockquote>
-<blockquote>
-<p>例：产品数量、产品折扣、产品价格与”订单号”和”产品号”都相关，但是订单金额和订单时间仅与”订单号”相关，与”产品号”无关， 这样就不满足第二范式的要求，需分成两个表</p>
-</blockquote>
-<p><strong>第三范式</strong>（3NF）：</p>
-<p>在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依<br>赖)</p>
-<p>第三范式需要确保数据表中的每一列数据都和主键直接相关，而不能间接相关。</p>
-<blockquote>
-<p>例：表中所有属性都完全依赖于学号，所以满足第二范式，但是”班主任性别”和”班主任年龄”直接依赖的是”班主任姓名”, 而不是主键”学号”，需分成两个表</p>
-</blockquote>
-<h2 id="MySQL怎么联表查询"><a href="#MySQL怎么联表查询" class="headerlink" title="MySQL怎么联表查询"></a>MySQL怎么联表查询</h2><p>数据库有四种联表查询类型：</p>
-<blockquote>
-<ol>
-<li>内连接(INNER JOIN)</li>
-<li>左外连接(LEFT JOIN)</li>
-<li>右外连接(RIGHT JOIN)</li>
-<li>全外连接(FULL JOIN)</li>
-</ol>
-</blockquote>
-<ol>
-<li><strong>内连接</strong>(INNER JOIN)： <ul>
-<li>返回两个表中有匹配关系的行</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">INNER JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回每个员工及其所在部门的名字</p>
-<ol start="2">
-<li><strong>左外连接</strong>(LEFT JOIN)<ul>
-<li>返回左表中的所有行，即使在右表中没有匹配的行。未匹配的右表列会包含NULL</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回每个员工及其所在部门的名字，包括没有分配部门的员工</p>
-<ol start="3">
-<li><strong>右外连接</strong>(RIGHT JOIN)<ul>
-<li>返回右表中的所有行，即使在左表中没有匹配的行。未匹配的左表列会包含NULL</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回每个员工及其所在部门的名字，包括没有分配员工的部门</p>
-<ol start="4">
-<li><strong>全外连接</strong>(FULL JOIN)<ul>
-<li>返回两个表中的所有行，包括非匹配行。在MySQL中，FULL JOIN 需要使用 UNION来实现，因为MySQL 不支持FULL JOIN</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id</span><br><span class="line"> </span><br><span class="line">UNION</span><br><span class="line"></span><br><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回所有员工和所有部门，包括没有匹配行的记录</p>
-<h2 id="MySQL如何避免重复插入数据"><a href="#MySQL如何避免重复插入数据" class="headerlink" title="MySQL如何避免重复插入数据"></a>MySQL如何避免重复插入数据</h2><ol>
-<li><strong>使用UNIQUE约束</strong></li>
-</ol>
-<p>在表的相关列添加上UNIQUE约束，确保每个值在该列中唯一</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE users(</span><br><span class="line">    id    INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">    emai1 VARCHAR(255) UNIQUE,</span><br><span class="line">    name  VARCHAR(255)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>如果尝试插入重复的email，MySQL会返回错误</p>
-<ol start="2">
-<li><strong>使用INSERT … ON DUPLICATE KEY UPDATE</strong></li>
-</ol>
-<p>这中语句允许在插入记录时处理重复键的情况。如果插入记录与现有记录有冲突，可以自己选择更新现有记录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;)</span><br><span class="line">ON DUPLICATE KEY UPDATE name = VALUES(name);</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><strong>使用INSERT IGNORE</strong></li>
-</ol>
-<p>该语句会在插入记录时忽略那些因为重复键而发生的错误</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT IGNORE INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;);</span><br></pre></td></tr></table></figure>
-<p>如果email已经存在，这条插入语句将被忽略而不会返回错误</p>
-<p>选择哪种方法取决于具体的需求：</p>
-<ul>
-<li>如果需要保证全局唯一性，使用UNIQUE约束是最佳做法</li>
-<li>如果需要插入和更新结合可以使用ON DUPLICATE KEY UPDATE</li>
-<li>对于快速忽略重复插入，INSERT IGNORE是合适的选择</li>
-</ul>
-<h2 id="CHAR-和-VARCHAR有什么区别"><a href="#CHAR-和-VARCHAR有什么区别" class="headerlink" title="CHAR 和 VARCHAR有什么区别"></a>CHAR 和 VARCHAR有什么区别</h2><ul>
-<li>CHAR是固定长度的字符串类型，定义时需要指定固定长度，存储时会在末尾补足空格。<br>   CHAR适合存储长度固定的数据，如固定长度的代码、状态等，存储空间固定，对于短字符串效率较高。</li>
-<li>VARCHAR是可变长度的字符串类型，定义时需要指定最大长度，实际存储时根据实际长度占用存储空间。<br>   VARCHAR适合存储长度可变的数据，如用户输入的文本、备注等，节约存储空间。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>MySQL面试题</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-        <tag>MySQL</tag>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日语名词谓语句</title>
-    <url>/2025/03/12/%E6%97%A5%E8%AF%AD%E5%90%8D%E8%AF%8D%E8%B0%93%E8%AF%AD%E5%8F%A5/</url>
-    <content><![CDATA[<h1 id="だ"><a href="#だ" class="headerlink" title="~だ"></a>~だ</h1><blockquote>
-<p>是学生。<br>学生だ。——学生（がくせい）</p>
-</blockquote>
-<p>だ放句末，表示为是<br>だ后面只能加句号&#x2F;终助词 (终助词-&gt;表达语气)<br>だ后面加其他成分需要把だ改为で</p>
-<blockquote>
-<p>不是学生。<br>学生ではない。</p>
-</blockquote>
-<p>ではない表示否定，其中は作为助词时读作わ，ない是辅助形容词</p>
-<blockquote>
-<p>是学生吗。<br>学生か？</p>
-</blockquote>
-<p>其中か读作升调表达疑问，也可以直接升调读名词表示疑问</p>
-<h1 id="です"><a href="#です" class="headerlink" title="~です"></a>~です</h1><blockquote>
-<p>是学生。<br>学生です。</p>
-</blockquote>
-<p>です表达判断和对听话人的礼貌</p>
-<blockquote>
-<p>不是学生。<br>学生ではありません</p>
-</blockquote>
-<blockquote>
-<p>是学生吗？<br>学生ですか？</p>
-</blockquote>
-<p>以及升调，但不能省略</p>
-<blockquote>
-<p>是老师还是学生？<br>先生ですか、学生ですか。</p>
-</blockquote>
-<h1 id="～である"><a href="#～である" class="headerlink" title="～である"></a>～である</h1><blockquote>
-<p>学生である</p>
-</blockquote>
-<p>正式的表达</p>
-<blockquote>
-<p>学生であります</p>
-</blockquote>
-<p>正式的基础上加上礼貌</p>
-<h1 id="でございます"><a href="#でございます" class="headerlink" title="~でございます"></a>~でございます</h1><blockquote>
-<p>毛利探偵事務所でございます——毛利（もうり）探偵（たんてい）事務所（じむしょ）</p>
-</blockquote>
-<p>郑重的礼貌</p>
-<h1 id="判断相关总结"><a href="#判断相关总结" class="headerlink" title="判断相关总结"></a>判断相关总结</h1><table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">一般</th>
-<th align="center">礼貌</th>
-<th align="center">正式</th>
-<th align="center">正式+礼貌</th>
-<th align="center">郑重</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">肯定</td>
-<td align="center">だ</td>
-<td align="center">です</td>
-<td align="center">である</td>
-<td align="center">であります</td>
-<td align="center">でございます</td>
-</tr>
-<tr>
-<td align="center">否定</td>
-<td align="center">ではない</td>
-<td align="center">ではありません</td>
-<td align="center">&#x2F;</td>
-<td align="center">&#x2F;</td>
-<td align="center">&#x2F;</td>
-</tr>
-</tbody></table>
-<h1 id="は-が"><a href="#は-が" class="headerlink" title="~は&#x2F;が"></a>~は&#x2F;が</h1><p>辅助词は，提示主题，重心为主题后的描述内容<br>格助词が，提示主语，重心为主语本身或动作主体</p>
-<blockquote>
-<p>-你是谁？<br>-我是学生。-&gt; 私は学生だ。</p>
-</blockquote>
-<blockquote>
-<p>-谁是学生？<br>-我是学生。 -&gt; 私が学生だ。</p>
-</blockquote>
-<h1 id="も"><a href="#も" class="headerlink" title="~も"></a>~も</h1><p>辅助词も，表示也</p>
-<blockquote>
-<p>我是学生，他也是学生。彼（かれ）<br>私は学生です。かれも学生です。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>日语学习</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>语法</tag>
-        <tag>名词谓语句</tag>
       </tags>
   </entry>
 </search>
