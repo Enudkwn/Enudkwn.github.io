@@ -461,6 +461,229 @@
       </tags>
   </entry>
   <entry>
+    <title>MySQL基础</title>
+    <url>/2025/03/08/MySQL%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h2 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h2><ol>
+<li>SQL语句可以单行或多行书写，以<strong>分号结尾</strong>。</li>
+<li>SQL语句可以使用空格&#x2F;缩进来增强语句的可读性。</li>
+<li>MySQL数据库的SQL语句不区分大小写，<strong>关键字</strong>建议使用大写。</li>
+<li>注释：<ul>
+<li>单行注释：–注释内容 或 #注释内容(MySQL特有)</li>
+<li>多行注释：&#x2F;*注释内容*&#x2F;</li>
+</ul>
+</li>
+</ol>
+<h2 id="DDL-数据定义语言"><a href="#DDL-数据定义语言" class="headerlink" title="DDL(数据定义语言)"></a>DDL(数据定义语言)</h2><ol>
+<li>数据库操作：</li>
+</ol>
+<ul>
+<li><strong>SHOW DATABASES;</strong></li>
+<li><strong>CREAT DATABASE</strong> 数据库名;</li>
+<li><strong>USE</strong> 数据库名;</li>
+<li><strong>SELECT DATABASE();</strong></li>
+<li><strong>DROP DATABASE</strong> 数据库名;</li>
+</ul>
+<ol start="2">
+<li>表操作：</li>
+</ol>
+<ul>
+<li><strong>SHOW TABLES;</strong></li>
+<li><strong>CREATE TABLE</strong> 表名 (字段1 数据类型,字段2 数据类型,…);</li>
+<li><strong>DESC</strong> 表名;</li>
+<li><strong>SHOW CREATE TABLE</strong> 表名;</li>
+<li><strong>ALTER TABLE</strong> 表名 <strong>ADD</strong> 字段 数据类型;</li>
+<li><strong>DROP TABLE</strong> 表名;</li>
+</ul>
+<h2 id="DML-数据操作语言"><a href="#DML-数据操作语言" class="headerlink" title="DML(数据操作语言)"></a>DML(数据操作语言)</h2><ul>
+<li>添加数据：<strong>INSERT INTO</strong> 表名 (字段1,字段2,…) <strong>VALUES</strong> (值1,值2,…),(值1,值2,…);</li>
+</ul>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO students (student_id, name, age)</span><br><span class="line">VALUES</span><br><span class="line">   (1001, &#x27;张三&#x27;, 20),</span><br><span class="line">   (1002, &#x27;李四&#x27;, 22);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改数据：<strong>UPDATE</strong> 表名 <strong>SET</strong> 字段1&#x3D;值1,字段2&#x3D;值2,… <strong>WHERE</strong> 条件;</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE students </span><br><span class="line">SET name = &#x27;李四&#x27;, age = 22 </span><br><span class="line">WHERE student_id = 1001;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除数据：<strong>DELETE FROM</strong> 表名 <strong>WHERE</strong> 条件;</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DELETE FROM students </span><br><span class="line">WHERE student_id &gt;= 1005;</span><br></pre></td></tr></table></figure>
+<h2 id="DQL-数据查询语言"><a href="#DQL-数据查询语言" class="headerlink" title="DQL(数据查询语言)"></a>DQL(数据查询语言)</h2><p><strong>SELECT</strong><br>&emsp;   字段列表 &emsp; -&gt; &emsp; 字段名 [<strong>AS</strong>] 别名<br><strong>FROM</strong><br>&emsp;  表名<br><strong>WHERE</strong><br>&emsp;  条件(分组前过滤) &emsp; -&gt; &emsp; 比较符号, 逻辑符号, like, between and, in,<br><strong>GROUP BY</strong><br>&emsp;  分组字段列表<br><strong>HAVING</strong><br>&emsp;  分组后条件列表(分组后过滤)<br><strong>ORDER BY</strong><br>&emsp;  排序列表 &emsp; -&gt; &emsp; 升序 ASC; 降序 DESC<br><strong>LIMIT</strong><br>&emsp;  分页条件(起始索引; 获取条数)</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT</span><br><span class="line">    customer_id AS 客户ID,</span><br><span class="line">    product_category AS 产品类别,</span><br><span class="line">    SUM(amount) AS total_amount  -- 计算每组的总金额，并为结果列起别名</span><br><span class="line">FROM</span><br><span class="line">    orders</span><br><span class="line">WHERE</span><br><span class="line">    order_date &gt; &#x27;2024-01-01&#x27;    -- 分组前过滤：仅筛选2024年后的订单</span><br><span class="line">GROUP BY</span><br><span class="line">    customer_id, product_category  -- 按客户和产品类别分组</span><br><span class="line">HAVING</span><br><span class="line">    total_amount &gt; 5000           -- 分组后过滤：仅保留总金额超过5000的分组</span><br><span class="line">ORDER BY</span><br><span class="line">    total_amount DESC             -- 按总金额降序排序</span><br><span class="line">LIMIT</span><br><span class="line">    5 OFFSET 0;                  -- 分页：返回前5条记录</span><br></pre></td></tr></table></figure>
+
+<h2 id="DCL-数据控制语言"><a href="#DCL-数据控制语言" class="headerlink" title="DCL(数据控制语言)"></a>DCL(数据控制语言)</h2><ol>
+<li>用户管理：</li>
+</ol>
+<ul>
+<li><strong>CREATE USER</strong> ‘用户名‘<strong>@</strong>‘主机名’ <strong>IDENTIFIED BY</strong> ‘密码’;</li>
+<li><strong>ALTER USER</strong> ‘用户名‘<strong>@</strong>‘主机名’ <strong>IDENTIFIED WITH mysql_native_password BY</strong> ‘新密码’;</li>
+<li><strong>DROP USER</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
+</ul>
+<ol start="2">
+<li>权限控制：</li>
+</ol>
+<ul>
+<li><strong>SHOW GRANTS FOR</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
+<li><strong>GRANT</strong> 权限列表 <strong>ON</strong> 数据库名.表名 <strong>TO</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
+<li><strong>REVOKE</strong> 权限列表 <strong>ON</strong> 数据库名.表名 <strong>FROM</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
+</ul>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h2><ul>
+<li><strong>CONCAT</strong>: 连接字符串<blockquote>
+<p>CONCAT(‘a’,’b’,’c’) &#x3D;&#x3D; ‘abc’</p>
+</blockquote>
+</li>
+<li><strong>LOWER, UPPER</strong>: 大小写转换<blockquote>
+<p>LOWER(‘ABC’) &#x3D;&#x3D; ‘abc’</p>
+</blockquote>
+</li>
+<li><strong>LPAD, RPAD</strong>: 左&#x2F;右填充字符串<blockquote>
+<p>LPAD(‘abc’,5,’*’) &#x3D;&#x3D; ‘**abc’</p>
+</blockquote>
+</li>
+<li><strong>TRIM</strong>: 去除字符串首尾空格<blockquote>
+<p>TRIM(‘ abc ‘) &#x3D;&#x3D; ‘abc’</p>
+</blockquote>
+</li>
+<li><strong>SUBSTRING</strong>: 截取字符串<blockquote>
+<p>SUBSTRING(‘Hello MySQL’,1,5) &#x3D;&#x3D; ‘Hello’</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h2><ul>
+<li><strong>CEIL</strong>: 向上取整<blockquote>
+<p>CEIL(3.14) &#x3D;&#x3D; 4</p>
+</blockquote>
+</li>
+<li><strong>FLOOR</strong>: 向下取整<blockquote>
+<p>FLOOR(3.14) &#x3D;&#x3D; 3</p>
+</blockquote>
+</li>
+<li><strong>ROUND</strong>: 四舍五入<blockquote>
+<p>ROUND(3.14) &#x3D;&#x3D; 3</p>
+</blockquote>
+</li>
+<li><strong>MOD</strong>: 取余数<blockquote>
+<p>MOD(5,2) &#x3D;&#x3D; 1</p>
+</blockquote>
+</li>
+<li><strong>RAND</strong>: 随机数<blockquote>
+<p>RAND()</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h2><ul>
+<li><strong>CURDATE</strong>: 当前日期</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT CURDATE(); -- 输出：2025-03-10  </span><br><span class="line">INSERT INTO orders (product, order_date) VALUES (&#x27;Laptop&#x27;, CURDATE()); -- 插入当前日期</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>CURTIME</strong>: 当前时间</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT CURTIME(); -- 输出：14:30:45  </span><br><span class="line">UPDATE logs SET login_time = CURTIME() WHERE user_id = 1001; -- 记录登录时间</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>NOW</strong>: 当前日期和时间</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT NOW(); -- 输出：2025-03-10 14:30:45  </span><br><span class="line">CREATE TABLE events (  </span><br><span class="line">    event_id INT,  </span><br><span class="line">    event_time DATETIME DEFAULT NOW()  -- 默认插入当前时间戳</span><br><span class="line">);  </span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>YEAR</strong>: 获取年份</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT YEAR(&#x27;2025-03-10&#x27;); -- 输出：2025  </span><br><span class="line">SELECT YEAR(order_date) AS order_year, COUNT(*) FROM orders GROUP BY order_year; -- 按年份统计订单</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>MONTH</strong>: 获取月份</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT MONTH(&#x27;2025-03-10&#x27;); -- 输出：3  </span><br><span class="line">SELECT MONTH(sale_date) AS month, SUM(revenue) FROM sales GROUP BY month; -- 按月统计收入</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>DAY</strong>: 获取日期</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT DAY(&#x27;2025-03-10&#x27;); -- 输出：10  </span><br><span class="line">SELECT DAY(login_date) AS day, COUNT(user_id) FROM logins GROUP BY day; -- 分析每日活跃用户</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>DATE_ADD, DATE_SUB</strong>: 日期加减</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 加7天  </span><br><span class="line">SELECT DATE_ADD(&#x27;2025-03-10&#x27;, INTERVAL 7 DAY); -- 输出：2025-03-17  </span><br><span class="line">-- 减3个月  </span><br><span class="line">SELECT DATE_SUB(&#x27;2025-03-10&#x27;, INTERVAL 3 MONTH); -- 输出：2024-12-10  </span><br><span class="line">-- 计算会员到期时间  </span><br><span class="line">SELECT user_id, DATE_ADD(subscribe_date, INTERVAL 1 YEAR) AS expire_date FROM subscriptions</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>DATEDIFF</strong>: 日期差</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT DATEDIFF(&#x27;2025-03-10&#x27;, &#x27;2025-02-01&#x27;); -- 输出：37  </span><br><span class="line">-- 分析项目周期  </span><br><span class="line">SELECT project_id, DATEDIFF(end_date, start_date) AS duration FROM projects</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>DATE_FORMAT</strong>: 日期格式化</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 格式化为 &quot;年-月-日 时:分:秒&quot;  </span><br><span class="line">SELECT DATE_FORMAT(NOW(), &#x27;%Y-%m-%d %H:%i:%s&#x27;); -- 输出：2025-03-10 14:30:45  </span><br><span class="line">-- 生成中文格式日期  </span><br><span class="line">SELECT DATE_FORMAT(NOW(), &#x27;%Y年%m月%d日 %H时&#x27;) AS formatted_date; -- 输出：2025年03月10日 14时</span><br></pre></td></tr></table></figure>
+
+<h2 id="流程函数"><a href="#流程函数" class="headerlink" title="流程函数"></a>流程函数</h2><ul>
+<li><strong>IF</strong>: 条件判断, 例: IF(条件,真值,假值)</li>
+<li><strong>IFNULL</strong>: 判断是否为NULL, 例: IFNULL(字段,’默认值’)</li>
+<li><strong>CASE […] WHEN… THEN… ELSE… END</strong>: 多条件判断, 例: CASE WHEN 条件1 THEN 真值1 WHEN 条件2 THEN 真值2 ELSE 假值 END</li>
+</ul>
+<h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><ul>
+<li><strong>NOT NULL</strong>: 非空约束, 例: 字段名 INT NOT NULL</li>
+<li><strong>UNIQUE</strong>: 唯一约束, 例: 字段名 INT UNIQUE</li>
+<li><strong>PRIMARY KEY</strong>: 主键约束, 例: 字段名 INT PRIMARY KEY</li>
+<li><strong>FOREIGN KEY</strong>: 外键约束, 建立两个表的连接, 确保数据的一致性和完整性, 例: 字段名 INT FOREIGN KEY REFERENCES 表名(字段名)</li>
+<li><strong>CHECK</strong>: 检查约束, 例: 字段名 INT CHECK(字段名 &gt; 0)</li>
+<li><strong>DEFAULT</strong>: 默认值约束, 例: 字段名 INT DEFAULT 0</li>
+</ul>
+<h1 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h1><ol>
+<li>多表关系：<ul>
+<li>一对多：在多的一方设置外键，关联一的一方的主键</li>
+<li>多对多：建立中间表，中间表包含两个外键，关联两张表的主键</li>
+<li>一对一：用于表结构拆分，在其中任何一方设置外键(UNIQUE)，关联另一方的主键</li>
+</ul>
+</li>
+<li>多表查询：<ul>
+<li>内连接：<ul>
+<li>隐式：SELECT * FROM 表1,表2 WHERE 表1.字段 &#x3D; 表2.字段;</li>
+<li>显示：SELECT * FROM 表1 INNER JOIN 表2 ON 表1.字段 &#x3D; 表2.字段;</li>
+</ul>
+</li>
+<li>外连接：<ul>
+<li>左外：SELECT * FROM 表1 LEFT OUTER JOIN 表2 ON 表1.字段 &#x3D; 表2.字段;</li>
+<li>右外：SELECT * FROM 表1 RIGHT OUTER JOIN 表2 ON 表1.字段 &#x3D; 表2.字段;</li>
+</ul>
+</li>
+<li>自连接：SELECT * FROM 表1 t1,表1 t2 WHERE t1.字段 &#x3D; t2.字段;</li>
+<li>子查询：SELECT * FROM 表1 WHERE 字段 IN (SELECT 字段 FROM 表2);</li>
+</ul>
+</li>
+</ol>
+<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><ol>
+<li>事务简介：<ul>
+<li>事务是一组操作的集合，这组操作，要么全部执行成功，要么全部执行失败</li>
+</ul>
+</li>
+<li>事务操作：<ul>
+<li>开启事务：SET AUTOCOMMIT &#x3D; 0;</li>
+<li>提交事务：COMMIT;</li>
+<li>回滚事务：ROLLBACK;</li>
+</ul>
+</li>
+<li>事务的四大特性:<ul>
+<li>原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持久性（Durability）</li>
+</ul>
+</li>
+<li>并发事务问题：<ul>
+<li>脏读：一个事务读取了另一个事务未提交的数据</li>
+<li>不可重复读：一个事务读取了另一个事务修改的数据</li>
+<li>幻读：一个事务新增了数据，另一个事务读取了新增的数据</li>
+</ul>
+</li>
+<li>隔离级别：<ul>
+<li>READ UNCOMMITTED：读未提交，允许脏读、不可重复读、幻读</li>
+<li>READ COMMITTED：读已提交，允许脏读、不可重复读，允许幻读</li>
+<li>REPEATABLE READ：可重复读，不允许脏读、不可重复读，允许幻读</li>
+<li>SERIALIZABLE：串行化，不允许脏读、不可重复读、幻读</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>数据库学习</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
+        <tag>MySQL基础</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL进阶</title>
     <url>/2025/03/10/MySQL%E8%BF%9B%E9%98%B6/</url>
     <content><![CDATA[]]></content>
@@ -686,229 +909,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL基础</title>
-    <url>/2025/03/08/MySQL%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h2 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h2><ol>
-<li>SQL语句可以单行或多行书写，以<strong>分号结尾</strong>。</li>
-<li>SQL语句可以使用空格&#x2F;缩进来增强语句的可读性。</li>
-<li>MySQL数据库的SQL语句不区分大小写，<strong>关键字</strong>建议使用大写。</li>
-<li>注释：<ul>
-<li>单行注释：–注释内容 或 #注释内容(MySQL特有)</li>
-<li>多行注释：&#x2F;*注释内容*&#x2F;</li>
-</ul>
-</li>
-</ol>
-<h2 id="DDL-数据定义语言"><a href="#DDL-数据定义语言" class="headerlink" title="DDL(数据定义语言)"></a>DDL(数据定义语言)</h2><ol>
-<li>数据库操作：</li>
-</ol>
-<ul>
-<li><strong>SHOW DATABASES;</strong></li>
-<li><strong>CREAT DATABASE</strong> 数据库名;</li>
-<li><strong>USE</strong> 数据库名;</li>
-<li><strong>SELECT DATABASE();</strong></li>
-<li><strong>DROP DATABASE</strong> 数据库名;</li>
-</ul>
-<ol start="2">
-<li>表操作：</li>
-</ol>
-<ul>
-<li><strong>SHOW TABLES;</strong></li>
-<li><strong>CREATE TABLE</strong> 表名 (字段1 数据类型,字段2 数据类型,…);</li>
-<li><strong>DESC</strong> 表名;</li>
-<li><strong>SHOW CREATE TABLE</strong> 表名;</li>
-<li><strong>ALTER TABLE</strong> 表名 <strong>ADD</strong> 字段 数据类型;</li>
-<li><strong>DROP TABLE</strong> 表名;</li>
-</ul>
-<h2 id="DML-数据操作语言"><a href="#DML-数据操作语言" class="headerlink" title="DML(数据操作语言)"></a>DML(数据操作语言)</h2><ul>
-<li>添加数据：<strong>INSERT INTO</strong> 表名 (字段1,字段2,…) <strong>VALUES</strong> (值1,值2,…),(值1,值2,…);</li>
-</ul>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO students (student_id, name, age)</span><br><span class="line">VALUES</span><br><span class="line">   (1001, &#x27;张三&#x27;, 20),</span><br><span class="line">   (1002, &#x27;李四&#x27;, 22);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改数据：<strong>UPDATE</strong> 表名 <strong>SET</strong> 字段1&#x3D;值1,字段2&#x3D;值2,… <strong>WHERE</strong> 条件;</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UPDATE students </span><br><span class="line">SET name = &#x27;李四&#x27;, age = 22 </span><br><span class="line">WHERE student_id = 1001;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除数据：<strong>DELETE FROM</strong> 表名 <strong>WHERE</strong> 条件;</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DELETE FROM students </span><br><span class="line">WHERE student_id &gt;= 1005;</span><br></pre></td></tr></table></figure>
-<h2 id="DQL-数据查询语言"><a href="#DQL-数据查询语言" class="headerlink" title="DQL(数据查询语言)"></a>DQL(数据查询语言)</h2><p><strong>SELECT</strong><br>&emsp;   字段列表 &emsp; -&gt; &emsp; 字段名 [<strong>AS</strong>] 别名<br><strong>FROM</strong><br>&emsp;  表名<br><strong>WHERE</strong><br>&emsp;  条件(分组前过滤) &emsp; -&gt; &emsp; 比较符号, 逻辑符号, like, between and, in,<br><strong>GROUP BY</strong><br>&emsp;  分组字段列表<br><strong>HAVING</strong><br>&emsp;  分组后条件列表(分组后过滤)<br><strong>ORDER BY</strong><br>&emsp;  排序列表 &emsp; -&gt; &emsp; 升序 ASC; 降序 DESC<br><strong>LIMIT</strong><br>&emsp;  分页条件(起始索引; 获取条数)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT</span><br><span class="line">    customer_id AS 客户ID,</span><br><span class="line">    product_category AS 产品类别,</span><br><span class="line">    SUM(amount) AS total_amount  -- 计算每组的总金额，并为结果列起别名</span><br><span class="line">FROM</span><br><span class="line">    orders</span><br><span class="line">WHERE</span><br><span class="line">    order_date &gt; &#x27;2024-01-01&#x27;    -- 分组前过滤：仅筛选2024年后的订单</span><br><span class="line">GROUP BY</span><br><span class="line">    customer_id, product_category  -- 按客户和产品类别分组</span><br><span class="line">HAVING</span><br><span class="line">    total_amount &gt; 5000           -- 分组后过滤：仅保留总金额超过5000的分组</span><br><span class="line">ORDER BY</span><br><span class="line">    total_amount DESC             -- 按总金额降序排序</span><br><span class="line">LIMIT</span><br><span class="line">    5 OFFSET 0;                  -- 分页：返回前5条记录</span><br></pre></td></tr></table></figure>
-
-<h2 id="DCL-数据控制语言"><a href="#DCL-数据控制语言" class="headerlink" title="DCL(数据控制语言)"></a>DCL(数据控制语言)</h2><ol>
-<li>用户管理：</li>
-</ol>
-<ul>
-<li><strong>CREATE USER</strong> ‘用户名‘<strong>@</strong>‘主机名’ <strong>IDENTIFIED BY</strong> ‘密码’;</li>
-<li><strong>ALTER USER</strong> ‘用户名‘<strong>@</strong>‘主机名’ <strong>IDENTIFIED WITH mysql_native_password BY</strong> ‘新密码’;</li>
-<li><strong>DROP USER</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
-</ul>
-<ol start="2">
-<li>权限控制：</li>
-</ol>
-<ul>
-<li><strong>SHOW GRANTS FOR</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
-<li><strong>GRANT</strong> 权限列表 <strong>ON</strong> 数据库名.表名 <strong>TO</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
-<li><strong>REVOKE</strong> 权限列表 <strong>ON</strong> 数据库名.表名 <strong>FROM</strong> ‘用户名‘<strong>@</strong>‘主机名’;</li>
-</ul>
-<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h2><ul>
-<li><strong>CONCAT</strong>: 连接字符串<blockquote>
-<p>CONCAT(‘a’,’b’,’c’) &#x3D;&#x3D; ‘abc’</p>
-</blockquote>
-</li>
-<li><strong>LOWER, UPPER</strong>: 大小写转换<blockquote>
-<p>LOWER(‘ABC’) &#x3D;&#x3D; ‘abc’</p>
-</blockquote>
-</li>
-<li><strong>LPAD, RPAD</strong>: 左&#x2F;右填充字符串<blockquote>
-<p>LPAD(‘abc’,5,’*’) &#x3D;&#x3D; ‘**abc’</p>
-</blockquote>
-</li>
-<li><strong>TRIM</strong>: 去除字符串首尾空格<blockquote>
-<p>TRIM(‘ abc ‘) &#x3D;&#x3D; ‘abc’</p>
-</blockquote>
-</li>
-<li><strong>SUBSTRING</strong>: 截取字符串<blockquote>
-<p>SUBSTRING(‘Hello MySQL’,1,5) &#x3D;&#x3D; ‘Hello’</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h2><ul>
-<li><strong>CEIL</strong>: 向上取整<blockquote>
-<p>CEIL(3.14) &#x3D;&#x3D; 4</p>
-</blockquote>
-</li>
-<li><strong>FLOOR</strong>: 向下取整<blockquote>
-<p>FLOOR(3.14) &#x3D;&#x3D; 3</p>
-</blockquote>
-</li>
-<li><strong>ROUND</strong>: 四舍五入<blockquote>
-<p>ROUND(3.14) &#x3D;&#x3D; 3</p>
-</blockquote>
-</li>
-<li><strong>MOD</strong>: 取余数<blockquote>
-<p>MOD(5,2) &#x3D;&#x3D; 1</p>
-</blockquote>
-</li>
-<li><strong>RAND</strong>: 随机数<blockquote>
-<p>RAND()</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h2><ul>
-<li><strong>CURDATE</strong>: 当前日期</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT CURDATE(); -- 输出：2025-03-10  </span><br><span class="line">INSERT INTO orders (product, order_date) VALUES (&#x27;Laptop&#x27;, CURDATE()); -- 插入当前日期</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>CURTIME</strong>: 当前时间</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT CURTIME(); -- 输出：14:30:45  </span><br><span class="line">UPDATE logs SET login_time = CURTIME() WHERE user_id = 1001; -- 记录登录时间</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>NOW</strong>: 当前日期和时间</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT NOW(); -- 输出：2025-03-10 14:30:45  </span><br><span class="line">CREATE TABLE events (  </span><br><span class="line">    event_id INT,  </span><br><span class="line">    event_time DATETIME DEFAULT NOW()  -- 默认插入当前时间戳</span><br><span class="line">);  </span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>YEAR</strong>: 获取年份</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT YEAR(&#x27;2025-03-10&#x27;); -- 输出：2025  </span><br><span class="line">SELECT YEAR(order_date) AS order_year, COUNT(*) FROM orders GROUP BY order_year; -- 按年份统计订单</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>MONTH</strong>: 获取月份</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT MONTH(&#x27;2025-03-10&#x27;); -- 输出：3  </span><br><span class="line">SELECT MONTH(sale_date) AS month, SUM(revenue) FROM sales GROUP BY month; -- 按月统计收入</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>DAY</strong>: 获取日期</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT DAY(&#x27;2025-03-10&#x27;); -- 输出：10  </span><br><span class="line">SELECT DAY(login_date) AS day, COUNT(user_id) FROM logins GROUP BY day; -- 分析每日活跃用户</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>DATE_ADD, DATE_SUB</strong>: 日期加减</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 加7天  </span><br><span class="line">SELECT DATE_ADD(&#x27;2025-03-10&#x27;, INTERVAL 7 DAY); -- 输出：2025-03-17  </span><br><span class="line">-- 减3个月  </span><br><span class="line">SELECT DATE_SUB(&#x27;2025-03-10&#x27;, INTERVAL 3 MONTH); -- 输出：2024-12-10  </span><br><span class="line">-- 计算会员到期时间  </span><br><span class="line">SELECT user_id, DATE_ADD(subscribe_date, INTERVAL 1 YEAR) AS expire_date FROM subscriptions</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>DATEDIFF</strong>: 日期差</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT DATEDIFF(&#x27;2025-03-10&#x27;, &#x27;2025-02-01&#x27;); -- 输出：37  </span><br><span class="line">-- 分析项目周期  </span><br><span class="line">SELECT project_id, DATEDIFF(end_date, start_date) AS duration FROM projects</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>DATE_FORMAT</strong>: 日期格式化</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">-- 格式化为 &quot;年-月-日 时:分:秒&quot;  </span><br><span class="line">SELECT DATE_FORMAT(NOW(), &#x27;%Y-%m-%d %H:%i:%s&#x27;); -- 输出：2025-03-10 14:30:45  </span><br><span class="line">-- 生成中文格式日期  </span><br><span class="line">SELECT DATE_FORMAT(NOW(), &#x27;%Y年%m月%d日 %H时&#x27;) AS formatted_date; -- 输出：2025年03月10日 14时</span><br></pre></td></tr></table></figure>
-
-<h2 id="流程函数"><a href="#流程函数" class="headerlink" title="流程函数"></a>流程函数</h2><ul>
-<li><strong>IF</strong>: 条件判断, 例: IF(条件,真值,假值)</li>
-<li><strong>IFNULL</strong>: 判断是否为NULL, 例: IFNULL(字段,’默认值’)</li>
-<li><strong>CASE […] WHEN… THEN… ELSE… END</strong>: 多条件判断, 例: CASE WHEN 条件1 THEN 真值1 WHEN 条件2 THEN 真值2 ELSE 假值 END</li>
-</ul>
-<h1 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h1><ul>
-<li><strong>NOT NULL</strong>: 非空约束, 例: 字段名 INT NOT NULL</li>
-<li><strong>UNIQUE</strong>: 唯一约束, 例: 字段名 INT UNIQUE</li>
-<li><strong>PRIMARY KEY</strong>: 主键约束, 例: 字段名 INT PRIMARY KEY</li>
-<li><strong>FOREIGN KEY</strong>: 外键约束, 建立两个表的连接, 确保数据的一致性和完整性, 例: 字段名 INT FOREIGN KEY REFERENCES 表名(字段名)</li>
-<li><strong>CHECK</strong>: 检查约束, 例: 字段名 INT CHECK(字段名 &gt; 0)</li>
-<li><strong>DEFAULT</strong>: 默认值约束, 例: 字段名 INT DEFAULT 0</li>
-</ul>
-<h1 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h1><ol>
-<li>多表关系：<ul>
-<li>一对多：在多的一方设置外键，关联一的一方的主键</li>
-<li>多对多：建立中间表，中间表包含两个外键，关联两张表的主键</li>
-<li>一对一：用于表结构拆分，在其中任何一方设置外键(UNIQUE)，关联另一方的主键</li>
-</ul>
-</li>
-<li>多表查询：<ul>
-<li>内连接：<ul>
-<li>隐式：SELECT * FROM 表1,表2 WHERE 表1.字段 &#x3D; 表2.字段;</li>
-<li>显示：SELECT * FROM 表1 INNER JOIN 表2 ON 表1.字段 &#x3D; 表2.字段;</li>
-</ul>
-</li>
-<li>外连接：<ul>
-<li>左外：SELECT * FROM 表1 LEFT OUTER JOIN 表2 ON 表1.字段 &#x3D; 表2.字段;</li>
-<li>右外：SELECT * FROM 表1 RIGHT OUTER JOIN 表2 ON 表1.字段 &#x3D; 表2.字段;</li>
-</ul>
-</li>
-<li>自连接：SELECT * FROM 表1 t1,表1 t2 WHERE t1.字段 &#x3D; t2.字段;</li>
-<li>子查询：SELECT * FROM 表1 WHERE 字段 IN (SELECT 字段 FROM 表2);</li>
-</ul>
-</li>
-</ol>
-<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><ol>
-<li>事务简介：<ul>
-<li>事务是一组操作的集合，这组操作，要么全部执行成功，要么全部执行失败</li>
-</ul>
-</li>
-<li>事务操作：<ul>
-<li>开启事务：SET AUTOCOMMIT &#x3D; 0;</li>
-<li>提交事务：COMMIT;</li>
-<li>回滚事务：ROLLBACK;</li>
-</ul>
-</li>
-<li>事务的四大特性:<ul>
-<li>原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）、持久性（Durability）</li>
-</ul>
-</li>
-<li>并发事务问题：<ul>
-<li>脏读：一个事务读取了另一个事务未提交的数据</li>
-<li>不可重复读：一个事务读取了另一个事务修改的数据</li>
-<li>幻读：一个事务新增了数据，另一个事务读取了新增的数据</li>
-</ul>
-</li>
-<li>隔离级别：<ul>
-<li>READ UNCOMMITTED：读未提交，允许脏读、不可重复读、幻读</li>
-<li>READ COMMITTED：读已提交，允许脏读、不可重复读，允许幻读</li>
-<li>REPEATABLE READ：可重复读，不允许脏读、不可重复读，允许幻读</li>
-<li>SERIALIZABLE：串行化，不允许脏读、不可重复读、幻读</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>数据库学习</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-        <tag>数据库</tag>
-        <tag>MySQL基础</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL面试题</title>
     <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
     <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
@@ -1022,6 +1022,96 @@
         <tag>面试</tag>
         <tag>MySQL</tag>
         <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日语名词谓语句</title>
+    <url>/2025/03/12/%E6%97%A5%E8%AF%AD%E5%90%8D%E8%AF%8D%E8%B0%93%E8%AF%AD%E5%8F%A5/</url>
+    <content><![CDATA[<h1 id="だ"><a href="#だ" class="headerlink" title="~だ"></a>~だ</h1><blockquote>
+<p>是学生。<br>学生だ。——学生（がくせい）</p>
+</blockquote>
+<p>だ放句末，表示为是<br>だ后面只能加句号&#x2F;终助词 (终助词-&gt;表达语气)<br>だ后面加其他成分需要把だ改为で</p>
+<blockquote>
+<p>不是学生。<br>学生ではない。</p>
+</blockquote>
+<p>ではない表示否定，其中は作为助词时读作わ，ない是辅助形容词</p>
+<blockquote>
+<p>是学生吗。<br>学生か？</p>
+</blockquote>
+<p>其中か读作升调表达疑问，也可以直接升调读名词表示疑问</p>
+<h1 id="です"><a href="#です" class="headerlink" title="~です"></a>~です</h1><blockquote>
+<p>是学生。<br>学生です。</p>
+</blockquote>
+<p>です表达判断和对听话人的礼貌</p>
+<blockquote>
+<p>不是学生。<br>学生ではありません</p>
+</blockquote>
+<blockquote>
+<p>是学生吗？<br>学生ですか？</p>
+</blockquote>
+<p>以及升调，但不能省略</p>
+<blockquote>
+<p>是老师还是学生？<br>先生ですか、学生ですか。</p>
+</blockquote>
+<h1 id="～である"><a href="#～である" class="headerlink" title="～である"></a>～である</h1><blockquote>
+<p>学生である</p>
+</blockquote>
+<p>正式的表达</p>
+<blockquote>
+<p>学生であります</p>
+</blockquote>
+<p>正式的基础上加上礼貌</p>
+<h1 id="でございます"><a href="#でございます" class="headerlink" title="~でございます"></a>~でございます</h1><blockquote>
+<p>毛利探偵事務所でございます——毛利（もうり）探偵（たんてい）事務所（じむしょ）</p>
+</blockquote>
+<p>郑重的礼貌</p>
+<h1 id="判断相关总结"><a href="#判断相关总结" class="headerlink" title="判断相关总结"></a>判断相关总结</h1><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">一般</th>
+<th align="center">礼貌</th>
+<th align="center">正式</th>
+<th align="center">正式+礼貌</th>
+<th align="center">郑重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">肯定</td>
+<td align="center">だ</td>
+<td align="center">です</td>
+<td align="center">である</td>
+<td align="center">であります</td>
+<td align="center">でございます</td>
+</tr>
+<tr>
+<td align="center">否定</td>
+<td align="center">ではない</td>
+<td align="center">ではありません</td>
+<td align="center">&#x2F;</td>
+<td align="center">&#x2F;</td>
+<td align="center">&#x2F;</td>
+</tr>
+</tbody></table>
+<h1 id="は-が"><a href="#は-が" class="headerlink" title="~は&#x2F;が"></a>~は&#x2F;が</h1><p>辅助词は，提示主题，重心为主题后的描述内容<br>格助词が，提示主语，重心为主语本身或动作主体</p>
+<blockquote>
+<p>-你是谁？<br>-我是学生。-&gt; 私は学生だ。</p>
+</blockquote>
+<blockquote>
+<p>-谁是学生？<br>-我是学生。 -&gt; 私が学生だ。</p>
+</blockquote>
+<h1 id="も"><a href="#も" class="headerlink" title="~も"></a>~も</h1><p>辅助词も，表示也</p>
+<blockquote>
+<p>我是学生，他也是学生。彼（かれ）<br>私は学生です。かれも学生です。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>日语学习</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>语法</tag>
+        <tag>名词谓语句</tag>
       </tags>
   </entry>
 </search>
