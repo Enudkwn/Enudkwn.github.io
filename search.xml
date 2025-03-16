@@ -697,122 +697,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL面试题</title>
-    <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
-    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
-<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
-<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
-<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
-<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
-<p>选择SQL还是NoSQL,考虑一下因素：</p>
-<p><strong>ACID vs BASE</strong></p>
-<p>关系型数据库支持ACID，即<strong>原子性、一致性、隔离性、持久性</strong>；相对而言，NoSQL采用更加宽松的模型BASE，即<strong>基本可用、软状态、最终一致性</strong></p>
-<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
-<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
-<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
-<p><strong>扩展性对比</strong></p>
-<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
-<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
-<h2 id="数据库三大范式是什么"><a href="#数据库三大范式是什么" class="headerlink" title="数据库三大范式是什么"></a>数据库三大范式是什么</h2><p><strong>第一范式</strong>(1NF)：</p>
-<p>要求数据库表的每一列都是不可分割的原子数据项</p>
-<blockquote>
-<p>例：家庭信息：5口人，北京—应该为—家庭人口数：5口人 &amp; 家庭住址：北京</p>
-</blockquote>
-<p><strong>第二范式</strong>(2NF)：</p>
-<p>在1NF的基础上，非码属性必须完全依赖于候码(在1NF的基础上消除非主属性对主码的部分函数依赖)</p>
-<p>第二范式需要确保数据库表中的每一列都和主键相关，而不能只与主键的某一部分相关（主要针对联合主键而言）。</p>
-<blockquote>
-<p>主码：主码是从候选码中选择的一个属性或属性组，用于唯一标识元组。若候选码仅有一个，则它自动成为主码<br>候码：候选码是能够唯一标识关系中每个元组（记录）的最小属性或属性组。这里的“最小”指候选码的真子集不能成为候选码</p>
-</blockquote>
-<blockquote>
-<p>例：产品数量、产品折扣、产品价格与”订单号”和”产品号”都相关，但是订单金额和订单时间仅与”订单号”相关，与”产品号”无关， 这样就不满足第二范式的要求，需分成两个表</p>
-</blockquote>
-<p><strong>第三范式</strong>（3NF）：</p>
-<p>在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依<br>赖)</p>
-<p>第三范式需要确保数据表中的每一列数据都和主键直接相关，而不能间接相关。</p>
-<blockquote>
-<p>例：表中所有属性都完全依赖于学号，所以满足第二范式，但是”班主任性别”和”班主任年龄”直接依赖的是”班主任姓名”, 而不是主键”学号”，需分成两个表</p>
-</blockquote>
-<h2 id="MySQL怎么联表查询"><a href="#MySQL怎么联表查询" class="headerlink" title="MySQL怎么联表查询"></a>MySQL怎么联表查询</h2><p>数据库有四种联表查询类型：</p>
-<blockquote>
-<ol>
-<li>内连接(INNER JOIN)</li>
-<li>左外连接(LEFT JOIN)</li>
-<li>右外连接(RIGHT JOIN)</li>
-<li>全外连接(FULL JOIN)</li>
-</ol>
-</blockquote>
-<ol>
-<li><strong>内连接</strong>(INNER JOIN)： <ul>
-<li>返回两个表中有匹配关系的行</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">INNER JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回每个员工及其所在部门的名字</p>
-<ol start="2">
-<li><strong>左外连接</strong>(LEFT JOIN)<ul>
-<li>返回左表中的所有行，即使在右表中没有匹配的行。未匹配的右表列会包含NULL</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回每个员工及其所在部门的名字，包括没有分配部门的员工</p>
-<ol start="3">
-<li><strong>右外连接</strong>(RIGHT JOIN)<ul>
-<li>返回右表中的所有行，即使在左表中没有匹配的行。未匹配的左表列会包含NULL</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回每个员工及其所在部门的名字，包括没有分配员工的部门</p>
-<ol start="4">
-<li><strong>全外连接</strong>(FULL JOIN)<ul>
-<li>返回两个表中的所有行，包括非匹配行。在MySQL中，FULL JOIN 需要使用 UNION来实现，因为MySQL 不支持FULL JOIN</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id</span><br><span class="line"> </span><br><span class="line">UNION</span><br><span class="line"></span><br><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回所有员工和所有部门，包括没有匹配行的记录</p>
-<h2 id="MySQL如何避免重复插入数据"><a href="#MySQL如何避免重复插入数据" class="headerlink" title="MySQL如何避免重复插入数据"></a>MySQL如何避免重复插入数据</h2><ol>
-<li><strong>使用UNIQUE约束</strong></li>
-</ol>
-<p>在表的相关列添加上UNIQUE约束，确保每个值在该列中唯一</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE users(</span><br><span class="line">    id    INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">    emai1 VARCHAR(255) UNIQUE,</span><br><span class="line">    name  VARCHAR(255)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>如果尝试插入重复的email，MySQL会返回错误</p>
-<ol start="2">
-<li><strong>使用INSERT … ON DUPLICATE KEY UPDATE</strong></li>
-</ol>
-<p>这中语句允许在插入记录时处理重复键的情况。如果插入记录与现有记录有冲突，可以自己选择更新现有记录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;)</span><br><span class="line">ON DUPLICATE KEY UPDATE name = VALUES(name);</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><strong>使用INSERT IGNORE</strong></li>
-</ol>
-<p>该语句会在插入记录时忽略那些因为重复键而发生的错误</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT IGNORE INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;);</span><br></pre></td></tr></table></figure>
-<p>如果email已经存在，这条插入语句将被忽略而不会返回错误</p>
-<p>选择哪种方法取决于具体的需求：</p>
-<ul>
-<li>如果需要保证全局唯一性，使用UNIQUE约束是最佳做法</li>
-<li>如果需要插入和更新结合可以使用ON DUPLICATE KEY UPDATE</li>
-<li>对于快速忽略重复插入，INSERT IGNORE是合适的选择</li>
-</ul>
-<h2 id="CHAR-和-VARCHAR有什么区别"><a href="#CHAR-和-VARCHAR有什么区别" class="headerlink" title="CHAR 和 VARCHAR有什么区别"></a>CHAR 和 VARCHAR有什么区别</h2><ul>
-<li>CHAR是固定长度的字符串类型，定义时需要指定固定长度，存储时会在末尾补足空格。<br>   CHAR适合存储长度固定的数据，如固定长度的代码、状态等，存储空间固定，对于短字符串效率较高。</li>
-<li>VARCHAR是可变长度的字符串类型，定义时需要指定最大长度，实际存储时根据实际长度占用存储空间。<br>   VARCHAR适合存储长度可变的数据，如用户输入的文本、备注等，节约存储空间。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>MySQL面试题</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-        <tag>MySQL</tag>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>日语动词学习</title>
     <url>/2025/03/09/%E6%97%A5%E8%AF%AD%E5%8A%A8%E8%AF%8D%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="日语动词分类与变形规则详解"><a href="#日语动词分类与变形规则详解" class="headerlink" title="日语动词分类与变形规则详解"></a>日语动词分类与变形规则详解</h1><hr>
@@ -1025,54 +909,342 @@
       </tags>
   </entry>
   <entry>
-    <title>日语人称代词</title>
-    <url>/2025/03/13/%E6%97%A5%E8%AF%AD%E4%BA%BA%E7%A7%B0%E4%BB%A3%E8%AF%8D/</url>
-    <content><![CDATA[<h1 id="第一人称"><a href="#第一人称" class="headerlink" title="第一人称"></a>第一人称</h1><ul>
-<li>私(わたし)—–女&#x2F;男女正式</li>
-<li>私(わたくし)—–正式礼貌</li>
-<li>僕(ボク)—–男，非正式</li>
-<li>俺(おれ)—–粗俗，上对下</li>
-<li>俺様(おれ様)—–男性专用，粗俗</li>
-<li>あたし—–女</li>
-<li>うち—–关西，女</li>
+    <title>日语动词的构成与分类</title>
+    <url>/2025/03/15/%E6%97%A5%E8%AF%AD%E5%8A%A8%E8%AF%8D%E7%9A%84%E6%9E%84%E6%88%90%E4%B8%8E%E5%88%86%E7%B1%BB/</url>
+    <content><![CDATA[<h1 id="动词构成"><a href="#动词构成" class="headerlink" title="动词构成"></a>动词构成</h1><p>読ま  れ  てい  なかっ  た——読（よ）</p>
+<p>词干 语态  体    肯否  时态</p>
+<h1 id="自动词-他动词"><a href="#自动词-他动词" class="headerlink" title="自动词&#x2F;他动词"></a>自动词&#x2F;他动词</h1><blockquote>
+<p>燃烧—自动词<br>点燃—他动词</p>
+</blockquote>
+<ul>
+<li>他動詞 → 自動詞</li>
+<li>す → eる → aる</li>
+<li>eる → 五段動詞</li>
 </ul>
-<h1 id="第二人称"><a href="#第二人称" class="headerlink" title="第二人称"></a>第二人称</h1><ul>
-<li>あなた—–不下对上，亲爱的</li>
-<li>君(きみ)——-对男，同辈&#x2F;晚辈</li>
-<li>お前(おまえ)—–对男，同辈&#x2F;晚辈，没礼貌</li>
-<li>あんな——由あなた转来，礼貌度低一些</li>
-<li>僕(ぼく)—–对不认识的孩子</li>
+<blockquote>
+<p>壊す（他動詞） → 壊れる（自動詞）<br>始める（他動詞） → 始まる（自動詞）<br>つける（他動詞） → つく（自動詞）</p>
+</blockquote>
+<h1 id="が-を"><a href="#が-を" class="headerlink" title="が&#x2F;を"></a><del>が&#x2F;</del>を</h1><blockquote>
+<p>我跑。<br>私<strong>が</strong>走る。<br>（假名标注：私（わたし）が走（はし）る）</p>
+</blockquote>
+<blockquote>
+<p>我吃饭。<br>私がご飯<strong>を</strong>食べる。<br>（假名标注：私（わたし）がご飯（ごはん）を食（た）べる）</p>
+</blockquote>
+<h1 id="日语五段动词活用表"><a href="#日语五段动词活用表" class="headerlink" title="日语五段动词活用表"></a>日语五段动词活用表</h1><h2 id="动词活用规则说明"><a href="#动词活用规则说明" class="headerlink" title="动词活用规则说明"></a>动词活用规则说明</h2><p>五段动词根据词尾假名在五十音图中的段位进行变化，共分为五种基本活用形。本表按行分类展示典型动词的活用形式。</p>
+<h2 id="五段动词活用表"><a href="#五段动词活用表" class="headerlink" title="五段动词活用表"></a>五段动词活用表</h2><table>
+<thead>
+<tr>
+<th>动词词例（基本形）</th>
+<th>未然形（否定&#x2F;意志）</th>
+<th>连用形（ます形&#x2F;中顿）</th>
+<th>终止形・连体形（结句&#x2F;修饰）</th>
+<th>假定形（条件）</th>
+<th>命令形（指令）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>あ行</strong></td>
+<td>あ段</td>
+<td>い段</td>
+<td>う段</td>
+<td>え段</td>
+<td>お段</td>
+</tr>
+<tr>
+<td>書く（かく）</td>
+<td>書か</td>
+<td>書き</td>
+<td>書く</td>
+<td>書け</td>
+<td>書こ</td>
+</tr>
+<tr>
+<td>話す（はなす）</td>
+<td>話さ</td>
+<td>話し</td>
+<td>話す</td>
+<td>話せ</td>
+<td>話そ</td>
+</tr>
+<tr>
+<td>待つ（まつ）</td>
+<td>待た</td>
+<td>待ち</td>
+<td>待つ</td>
+<td>待て</td>
+<td>待と</td>
+</tr>
+<tr>
+<td>死ぬ（しぬ）</td>
+<td>死な</td>
+<td>死に</td>
+<td>死ぬ</td>
+<td>死ね</td>
+<td>死の</td>
+</tr>
+<tr>
+<td>呼ぶ（よぶ）</td>
+<td>呼ば</td>
+<td>呼び</td>
+<td>呼ぶ</td>
+<td>呼べ</td>
+<td>呼ぼ</td>
+</tr>
+<tr>
+<td>読む（よむ）</td>
+<td>読ま</td>
+<td>読み</td>
+<td>読む</td>
+<td>読め</td>
+<td>読も</td>
+</tr>
+<tr>
+<td>切る（きる）</td>
+<td>切ら</td>
+<td>切り</td>
+<td>切る</td>
+<td>切れ</td>
+<td>切ろ</td>
+</tr>
+<tr>
+<td>買う（かう）</td>
+<td>買わ</td>
+<td>買い</td>
+<td>買う</td>
+<td>買え</td>
+<td>買お</td>
+</tr>
+</tbody></table>
+<h2 id="表格使用说明"><a href="#表格使用说明" class="headerlink" title="表格使用说明"></a>表格使用说明</h2><ol>
+<li><p><strong>活用形功能</strong>：</p>
+<ul>
+<li><strong>未然形</strong>：接否定助动词「ない」或表意志（如：書かない、書こう）</li>
+<li><strong>连用形</strong>：接敬体「ます」（書き→書きます）或表中顿（書き、）</li>
+<li><strong>终止形</strong>：用于结句（書く）</li>
+<li><strong>连体形</strong>：修饰名词（書く本）</li>
+<li><strong>假定形</strong>：接「ば」表条件（書けば）</li>
+<li><strong>命令形</strong>：直接表指令（書け！）</li>
 </ul>
-<h1 id="第三人称"><a href="#第三人称" class="headerlink" title="第三人称"></a>第三人称</h1><h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><ul>
-<li>彼(かれ)-他</li>
-<li>彼女(かのじょ)-她</li>
-<li>こ&#x2F;そ&#x2F;あいつ(没礼貌)</li>
+</li>
+<li><p><strong>记忆技巧</strong>：</p>
+<ul>
+<li>活用段位口诀：<strong>あ・い・う・え・お</strong>（ 未然→连用→终止→假定→命令）</li>
+<li>特殊注意：「死ぬ」为ナ行唯一五段动词，「買う」词尾实际发音为「ワ行」</li>
 </ul>
-<h2 id="モノ"><a href="#モノ" class="headerlink" title="モノ"></a>モノ</h2><p>こ&#x2F;そ&#x2F;あ&#x2F;どれ</p>
-<h1 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h1><ul>
-<li>私<strong>たち</strong>—–礼貌：中</li>
-<li>あなた<strong>がた</strong>—–礼貌：高</li>
-<li>彼<strong>ら</strong>—–礼貌：低</li>
-<li>私ども—–礼节：高；自谦</li>
+</li>
+</ol>
+<h1 id="日语一段动词活用表"><a href="#日语一段动词活用表" class="headerlink" title="日语一段动词活用表"></a>日语一段动词活用表</h1><h2 id="动词分类规则"><a href="#动词分类规则" class="headerlink" title="动词分类规则"></a>动词分类规则</h2><p>一段动词以「る」结尾，且词尾前一个假名在「い段」或「え段」上（如：見る、食べる）</p>
+<h2 id="一段动词活用表"><a href="#一段动词活用表" class="headerlink" title="一段动词活用表"></a>一段动词活用表</h2><table>
+<thead>
+<tr>
+<th>动词词例（基本形）</th>
+<th>未然形</th>
+<th>连用形</th>
+<th>终止形・连体形</th>
+<th>假定形</th>
+<th>命令形</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>見る（みる）</td>
+<td>見（み）</td>
+<td>見（み）</td>
+<td>見る</td>
+<td>見れ（みれ）</td>
+<td>見ろ（みろ）&#x2F;見よ（みよ）</td>
+</tr>
+<tr>
+<td>起きる（おきる）</td>
+<td>起き（おき）</td>
+<td>起き（おき）</td>
+<td>起きる</td>
+<td>起きれ（おきれ）</td>
+<td>起きろ（おきろ）&#x2F;起きよ（おきよ）</td>
+</tr>
+<tr>
+<td>食べる（たべる）</td>
+<td>食べ（たべ）</td>
+<td>食べ（たべ）</td>
+<td>食べる</td>
+<td>食べれ（たべれ）</td>
+<td>食べろ（たべろ）&#x2F;食べよ（たべよ）</td>
+</tr>
+</tbody></table>
+<h2 id="活用说明"><a href="#活用说明" class="headerlink" title="活用说明"></a>活用说明</h2><h3 id="各活用形功能"><a href="#各活用形功能" class="headerlink" title="各活用形功能"></a>各活用形功能</h3><table>
+<thead>
+<tr>
+<th>活用形</th>
+<th>主要用法</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>未然形</strong></td>
+<td>接否定助动词「ない」表否定</td>
+<td>食べ<strong>ない</strong>（不吃）</td>
+</tr>
+<tr>
+<td><strong>连用形</strong></td>
+<td>接「ます」「て」等助词</td>
+<td>食べ<strong>ます</strong>（吃）</td>
+</tr>
+<tr>
+<td><strong>终止形</strong></td>
+<td>结束句子</td>
+<td>本を読む**（读书）**</td>
+</tr>
+<tr>
+<td><strong>连体形</strong></td>
+<td>修饰名词</td>
+<td>読む<strong>本</strong>（要读的书）</td>
+</tr>
+<tr>
+<td><strong>假定形</strong></td>
+<td>接「ば」表条件</td>
+<td>食べ<strong>れ</strong>ば（如果吃）</td>
+</tr>
+<tr>
+<td><strong>命令形</strong></td>
+<td>直接表达命令（ろ→口语，よ→书面）</td>
+<td>食べ<strong>ろ</strong>！&#x2F;食べ<strong>よ</strong>！</td>
+</tr>
+</tbody></table>
+<h3 id="特殊注意"><a href="#特殊注意" class="headerlink" title="特殊注意"></a>特殊注意</h3><ol>
+<li><strong>命令形区别</strong>：<ul>
+<li>「ろ」型（现代常用）：見<strong>ろ</strong>、起き<strong>ろ</strong></li>
+<li>「よ」型（古典残留）：見<strong>よ</strong>、起き<strong>よ</strong></li>
 </ul>
-<h1 id="敬称"><a href="#敬称" class="headerlink" title="敬称"></a>敬称</h1><ul>
-<li>佐藤様—–不分上下级，对尊敬的，店家对客人</li>
-<li>佐藤さん—–常见，尊敬度略低</li>
-<li>佐藤君—–同辈晚辈</li>
-<li>佐藤ちやん—–亲近</li>
-<li>部長(ぶちょう)殿—–上对下，古老</li>
-<li>佐藤氏</li>
+</li>
+<li><strong>假定形接续</strong>：<br>需后续接「ば」（例：食べ<strong>れ</strong>ば ➔ 食べ<strong>れば</strong>）</li>
+</ol>
+<h2 id="动词识别技巧"><a href="#动词识别技巧" class="headerlink" title="动词识别技巧"></a>动词识别技巧</h2><ul>
+<li>一段动词词干固定不变（例：食べる → 食べ＋る）</li>
+<li>区别于五段动词：読む（五段） vs 食べる（一段）</li>
 </ul>
-<h1 id="呼び捨て（よびすて）"><a href="#呼び捨て（よびすて）" class="headerlink" title="呼び捨て（よびすて）"></a>呼び捨て（よびすて）</h1><p>姓名后不加敬称：</p>
-<p>关系亲密的两个人</p>
-<p>或公司内对公司外的人说公司里其他人</p>
 ]]></content>
       <categories>
         <category>日语学习</category>
       </categories>
       <tags>
         <tag>日语</tag>
-        <tag>人称代词</tag>
+        <tag>动词</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL面试题</title>
+    <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
+<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
+<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
+<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
+<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
+<p>选择SQL还是NoSQL,考虑一下因素：</p>
+<p><strong>ACID vs BASE</strong></p>
+<p>关系型数据库支持ACID，即<strong>原子性、一致性、隔离性、持久性</strong>；相对而言，NoSQL采用更加宽松的模型BASE，即<strong>基本可用、软状态、最终一致性</strong></p>
+<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
+<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
+<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
+<p><strong>扩展性对比</strong></p>
+<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
+<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
+<h2 id="数据库三大范式是什么"><a href="#数据库三大范式是什么" class="headerlink" title="数据库三大范式是什么"></a>数据库三大范式是什么</h2><p><strong>第一范式</strong>(1NF)：</p>
+<p>要求数据库表的每一列都是不可分割的原子数据项</p>
+<blockquote>
+<p>例：家庭信息：5口人，北京—应该为—家庭人口数：5口人 &amp; 家庭住址：北京</p>
+</blockquote>
+<p><strong>第二范式</strong>(2NF)：</p>
+<p>在1NF的基础上，非码属性必须完全依赖于候码(在1NF的基础上消除非主属性对主码的部分函数依赖)</p>
+<p>第二范式需要确保数据库表中的每一列都和主键相关，而不能只与主键的某一部分相关（主要针对联合主键而言）。</p>
+<blockquote>
+<p>主码：主码是从候选码中选择的一个属性或属性组，用于唯一标识元组。若候选码仅有一个，则它自动成为主码<br>候码：候选码是能够唯一标识关系中每个元组（记录）的最小属性或属性组。这里的“最小”指候选码的真子集不能成为候选码</p>
+</blockquote>
+<blockquote>
+<p>例：产品数量、产品折扣、产品价格与”订单号”和”产品号”都相关，但是订单金额和订单时间仅与”订单号”相关，与”产品号”无关， 这样就不满足第二范式的要求，需分成两个表</p>
+</blockquote>
+<p><strong>第三范式</strong>（3NF）：</p>
+<p>在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依<br>赖)</p>
+<p>第三范式需要确保数据表中的每一列数据都和主键直接相关，而不能间接相关。</p>
+<blockquote>
+<p>例：表中所有属性都完全依赖于学号，所以满足第二范式，但是”班主任性别”和”班主任年龄”直接依赖的是”班主任姓名”, 而不是主键”学号”，需分成两个表</p>
+</blockquote>
+<h2 id="MySQL怎么联表查询"><a href="#MySQL怎么联表查询" class="headerlink" title="MySQL怎么联表查询"></a>MySQL怎么联表查询</h2><p>数据库有四种联表查询类型：</p>
+<blockquote>
+<ol>
+<li>内连接(INNER JOIN)</li>
+<li>左外连接(LEFT JOIN)</li>
+<li>右外连接(RIGHT JOIN)</li>
+<li>全外连接(FULL JOIN)</li>
+</ol>
+</blockquote>
+<ol>
+<li><strong>内连接</strong>(INNER JOIN)： <ul>
+<li>返回两个表中有匹配关系的行</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">INNER JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回每个员工及其所在部门的名字</p>
+<ol start="2">
+<li><strong>左外连接</strong>(LEFT JOIN)<ul>
+<li>返回左表中的所有行，即使在右表中没有匹配的行。未匹配的右表列会包含NULL</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回每个员工及其所在部门的名字，包括没有分配部门的员工</p>
+<ol start="3">
+<li><strong>右外连接</strong>(RIGHT JOIN)<ul>
+<li>返回右表中的所有行，即使在左表中没有匹配的行。未匹配的左表列会包含NULL</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回每个员工及其所在部门的名字，包括没有分配员工的部门</p>
+<ol start="4">
+<li><strong>全外连接</strong>(FULL JOIN)<ul>
+<li>返回两个表中的所有行，包括非匹配行。在MySQL中，FULL JOIN 需要使用 UNION来实现，因为MySQL 不支持FULL JOIN</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id</span><br><span class="line"> </span><br><span class="line">UNION</span><br><span class="line"></span><br><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回所有员工和所有部门，包括没有匹配行的记录</p>
+<h2 id="MySQL如何避免重复插入数据"><a href="#MySQL如何避免重复插入数据" class="headerlink" title="MySQL如何避免重复插入数据"></a>MySQL如何避免重复插入数据</h2><ol>
+<li><strong>使用UNIQUE约束</strong></li>
+</ol>
+<p>在表的相关列添加上UNIQUE约束，确保每个值在该列中唯一</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE users(</span><br><span class="line">    id    INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">    emai1 VARCHAR(255) UNIQUE,</span><br><span class="line">    name  VARCHAR(255)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>如果尝试插入重复的email，MySQL会返回错误</p>
+<ol start="2">
+<li><strong>使用INSERT … ON DUPLICATE KEY UPDATE</strong></li>
+</ol>
+<p>这中语句允许在插入记录时处理重复键的情况。如果插入记录与现有记录有冲突，可以自己选择更新现有记录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;)</span><br><span class="line">ON DUPLICATE KEY UPDATE name = VALUES(name);</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><strong>使用INSERT IGNORE</strong></li>
+</ol>
+<p>该语句会在插入记录时忽略那些因为重复键而发生的错误</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT IGNORE INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;);</span><br></pre></td></tr></table></figure>
+<p>如果email已经存在，这条插入语句将被忽略而不会返回错误</p>
+<p>选择哪种方法取决于具体的需求：</p>
+<ul>
+<li>如果需要保证全局唯一性，使用UNIQUE约束是最佳做法</li>
+<li>如果需要插入和更新结合可以使用ON DUPLICATE KEY UPDATE</li>
+<li>对于快速忽略重复插入，INSERT IGNORE是合适的选择</li>
+</ul>
+<h2 id="CHAR-和-VARCHAR有什么区别"><a href="#CHAR-和-VARCHAR有什么区别" class="headerlink" title="CHAR 和 VARCHAR有什么区别"></a>CHAR 和 VARCHAR有什么区别</h2><ul>
+<li>CHAR是固定长度的字符串类型，定义时需要指定固定长度，存储时会在末尾补足空格。<br>   CHAR适合存储长度固定的数据，如固定长度的代码、状态等，存储空间固定，对于短字符串效率较高。</li>
+<li>VARCHAR是可变长度的字符串类型，定义时需要指定最大长度，实际存储时根据实际长度占用存储空间。<br>   VARCHAR适合存储长度可变的数据，如用户输入的文本、备注等，节约存储空间。</li>
+</ul>
+<h2 id="Text数据类型可以无限大吗"><a href="#Text数据类型可以无限大吗" class="headerlink" title="Text数据类型可以无限大吗?"></a>Text数据类型可以无限大吗?</h2><p>MySQL 3种text类型的最大长度如下:<br>   TEXT: 65,535bytes ~ 64kb<br>   MEDIUMTEXT: 16,777,215bytes ~ 16Mb<br>   LONGTEXT: 4,294,967,295bytes ~ 4Gb</p>
+]]></content>
+      <categories>
+        <category>MySQL面试题</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
       </tags>
   </entry>
   <entry>
@@ -1171,6 +1343,170 @@
       </tags>
   </entry>
   <entry>
+    <title>日语形容词、形容动词</title>
+    <url>/2025/03/13/%E6%97%A5%E8%AF%AD%E5%BD%A2%E5%AE%B9%E8%AF%8D%E3%80%81%E5%BD%A2%E5%AE%B9%E5%8A%A8%E8%AF%8D/</url>
+    <content><![CDATA[<h1 id="日语形容词与形容动词语法总结"><a href="#日语形容词与形容动词语法总结" class="headerlink" title="日语形容词与形容动词语法总结"></a>日语形容词与形容动词语法总结</h1><h2 id="一、形容词（い形容詞）"><a href="#一、形容词（い形容詞）" class="headerlink" title="一、形容词（い形容詞）"></a>一、形容词（い形容詞）</h2><h3 id="1-基本特征"><a href="#1-基本特征" class="headerlink" title="1. 基本特征"></a>1. 基本特征</h3><ul>
+<li><strong>词尾</strong>：以「い」结尾（例：青い、寒い）</li>
+<li><strong>语法功能</strong>：<ul>
+<li><strong>终止形</strong>：直接作谓语，无需加「だ」<br><em>例：空は青いです（天空是蓝色的）</em></li>
+<li><strong>连体形</strong>：直接修饰名词，不加「の」<br><em>例：青い空（蓝色的天空）</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-活用规则"><a href="#2-活用规则" class="headerlink" title="2. 活用规则"></a>2. 活用规则</h3><table>
+<thead>
+<tr>
+<th>语法功能</th>
+<th>变形规则</th>
+<th>例词（寒い）</th>
+<th>例句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>否定形</strong></td>
+<td>い → く + ない</td>
+<td>寒くない</td>
+<td>この本は面白くないです</td>
+</tr>
+<tr>
+<td><strong>过去肯定形</strong></td>
+<td>い → かった</td>
+<td>寒かった</td>
+<td>昨日は寒かったです</td>
+</tr>
+<tr>
+<td><strong>过去否定形</strong></td>
+<td>い → く + なかった</td>
+<td>寒くなかった</td>
+<td>昨日は寒くなかったです</td>
+</tr>
+<tr>
+<td><strong>连用形</strong></td>
+<td>い → く</td>
+<td>寒く</td>
+<td>寒くて眠れない</td>
+</tr>
+</tbody></table>
+<h3 id="3-特殊用法"><a href="#3-特殊用法" class="headerlink" title="3. 特殊用法"></a>3. 特殊用法</h3><ul>
+<li><strong>中顿形</strong>：い → くて，表并列或原因<br><em>例：教室は大きく、静かだ（教室又大又安静）</em></li>
+<li><strong>副词化</strong>：い → く，修饰动词<br><em>例：速く走る（跑得快）</em></li>
+<li><strong>名词化</strong>：词干 + さ&#x2F;み&#x2F;く（例：高さ、深み、近く）</li>
+</ul>
+<hr>
+<h2 id="二、形容动词（な形容詞）"><a href="#二、形容动词（な形容詞）" class="headerlink" title="二、形容动词（な形容詞）"></a>二、形容动词（な形容詞）</h2><h3 id="1-基本特征-1"><a href="#1-基本特征-1" class="headerlink" title="1. 基本特征"></a>1. 基本特征</h3><ul>
+<li><strong>词尾</strong>：基本形以「だ」结尾（例：静かだ、有名だ）</li>
+<li><strong>语法功能</strong>：<ul>
+<li><strong>终止形</strong>：直接作谓语<br><em>例：教室は静かです（教室安静）</em></li>
+<li><strong>连体形</strong>：だ → な + 名词<br><em>例：静かな教室（安静的教室）</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-活用规则-1"><a href="#2-活用规则-1" class="headerlink" title="2. 活用规则"></a>2. 活用规则</h3><table>
+<thead>
+<tr>
+<th>语法功能</th>
+<th>变形规则</th>
+<th>例词（静かだ）</th>
+<th>例句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>否定形</strong></td>
+<td>だ → ではない</td>
+<td>静かではない</td>
+<td>あの俳優は有名ではありません</td>
+</tr>
+<tr>
+<td><strong>过去肯定形</strong></td>
+<td>だ → だった</td>
+<td>静かだった</td>
+<td>昨日教室は静かでした</td>
+</tr>
+<tr>
+<td><strong>过去否定形</strong></td>
+<td>だ → ではなかった</td>
+<td>静かではなかった</td>
+<td>昨日教室は静かではありませんでした</td>
+</tr>
+<tr>
+<td><strong>连用形</strong></td>
+<td>だ → で&#x2F;に&#x2F;だっ</td>
+<td>静かで、静かに</td>
+<td>静かで広い部屋</td>
+</tr>
+</tbody></table>
+<h3 id="3-特殊用法-1"><a href="#3-特殊用法-1" class="headerlink" title="3. 特殊用法"></a>3. 特殊用法</h3><ul>
+<li><strong>中顿形</strong>：だ → で，表并列或原因<br><em>例：教室は静かで、大きい（教室安静且大）</em></li>
+<li><strong>副词化</strong>：だ → に，修饰动词<br><em>例：静かに食べる（安静地吃饭）</em></li>
+<li><strong>名词化</strong>：词干 + さ（例：静かさ、便利さ）</li>
+</ul>
+<hr>
+<h2 id="三、连体词"><a href="#三、连体词" class="headerlink" title="三、连体词"></a>三、连体词</h2><h3 id="1-定义与用法"><a href="#1-定义与用法" class="headerlink" title="1. 定义与用法"></a>1. 定义与用法</h3><ul>
+<li><strong>特征</strong>：直接修饰名词，无活用变化<br><em>例：大きな机（大桌子）、同じ色（相同颜色）</em></li>
+<li><strong>常见词</strong>：<ul>
+<li>大きな・小さな（大小）</li>
+<li>色んな（各种）</li>
+<li>同じ（相同）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="四、易错点与注意事项"><a href="#四、易错点与注意事项" class="headerlink" title="四、易错点与注意事项"></a>四、易错点与注意事项</h2><ol>
+<li><strong>形容词与形容动词的混淆</strong>：<ul>
+<li>以「い」结尾的形容动词（例：きれい、嫌い）需加「な」修饰名词<br><em>例：きれいな服（漂亮衣服）</em></li>
+</ul>
+</li>
+<li><strong>过去否定形错误</strong>：<ul>
+<li>正确：寒<strong>く</strong>なかった（×寒くてなかった）</li>
+</ul>
+</li>
+<li><strong>特殊活用词</strong>：<ul>
+<li>形容词「いい」活用需换为「よい」（例：よかった）</li>
+<li>形容动词「同じ」直接修饰名词（例：同じ人）</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="五、综合对比表"><a href="#五、综合对比表" class="headerlink" title="五、综合对比表"></a>五、综合对比表</h2><table>
+<thead>
+<tr>
+<th>语法功能</th>
+<th>形容词（青い）</th>
+<th>形容动词（静かだ）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>终止形</strong></td>
+<td>青い &#x2F; 青いです</td>
+<td>静かだ &#x2F; 静かです</td>
+</tr>
+<tr>
+<td><strong>连体形</strong></td>
+<td>青い空</td>
+<td>静かな教室</td>
+</tr>
+<tr>
+<td><strong>否定形</strong></td>
+<td>青くない</td>
+<td>静かではない</td>
+</tr>
+<tr>
+<td><strong>过去形</strong></td>
+<td>青かった</td>
+<td>静かだった</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>日语学习</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>形容词</tag>
+        <tag>形容动词</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>日语名词谓语句</title>
     <url>/2025/03/12/%E6%97%A5%E8%AF%AD%E5%90%8D%E8%AF%8D%E8%B0%93%E8%AF%AD%E5%8F%A5/</url>
     <content><![CDATA[<h1 id="だ"><a href="#だ" class="headerlink" title="~だ"></a>~だ</h1><blockquote>
@@ -1258,6 +1594,57 @@
         <tag>日语</tag>
         <tag>语法</tag>
         <tag>名词谓语句</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日语人称代词</title>
+    <url>/2025/03/13/%E6%97%A5%E8%AF%AD%E4%BA%BA%E7%A7%B0%E4%BB%A3%E8%AF%8D/</url>
+    <content><![CDATA[<h1 id="第一人称"><a href="#第一人称" class="headerlink" title="第一人称"></a>第一人称</h1><ul>
+<li>私(わたし)—–女&#x2F;男女正式</li>
+<li>私(わたくし)—–正式礼貌</li>
+<li>僕(ボク)—–男，非正式</li>
+<li>俺(おれ)—–粗俗，上对下</li>
+<li>俺様(おれ様)—–男性专用，粗俗</li>
+<li>あたし—–女</li>
+<li>うち—–关西，女</li>
+</ul>
+<h1 id="第二人称"><a href="#第二人称" class="headerlink" title="第二人称"></a>第二人称</h1><ul>
+<li>あなた—–不下对上，亲爱的</li>
+<li>君(きみ)——-对男，同辈&#x2F;晚辈</li>
+<li>お前(おまえ)—–对男，同辈&#x2F;晚辈，没礼貌</li>
+<li>あんな——由あなた转来，礼貌度低一些</li>
+<li>僕(ぼく)—–对不认识的孩子</li>
+</ul>
+<h1 id="第三人称"><a href="#第三人称" class="headerlink" title="第三人称"></a>第三人称</h1><h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><ul>
+<li>彼(かれ)-他</li>
+<li>彼女(かのじょ)-她</li>
+<li>こ&#x2F;そ&#x2F;あいつ(没礼貌)</li>
+</ul>
+<h2 id="モノ"><a href="#モノ" class="headerlink" title="モノ"></a>モノ</h2><p>こ&#x2F;そ&#x2F;あ&#x2F;どれ</p>
+<h1 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h1><ul>
+<li>私<strong>たち</strong>—–礼貌：中</li>
+<li>あなた<strong>がた</strong>—–礼貌：高</li>
+<li>彼<strong>ら</strong>—–礼貌：低</li>
+<li>私ども—–礼节：高；自谦</li>
+</ul>
+<h1 id="敬称"><a href="#敬称" class="headerlink" title="敬称"></a>敬称</h1><ul>
+<li>佐藤様—–不分上下级，对尊敬的，店家对客人</li>
+<li>佐藤さん—–常见，尊敬度略低</li>
+<li>佐藤君—–同辈晚辈</li>
+<li>佐藤ちやん—–亲近</li>
+<li>部長(ぶちょう)殿—–上对下，古老</li>
+<li>佐藤氏</li>
+</ul>
+<h1 id="呼び捨て（よびすて）"><a href="#呼び捨て（よびすて）" class="headerlink" title="呼び捨て（よびすて）"></a>呼び捨て（よびすて）</h1><p>姓名后不加敬称：</p>
+<p>关系亲密的两个人</p>
+<p>或公司内对公司外的人说公司里其他人</p>
+]]></content>
+      <categories>
+        <category>日语学习</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>人称代词</tag>
       </tags>
   </entry>
 </search>
