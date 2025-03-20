@@ -1,208 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>MySQL进阶</title>
-    <url>/2025/03/10/MySQL%E8%BF%9B%E9%98%B6/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>数据库学习</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-        <tag>数据库</tag>
-        <tag>MySQL进阶</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日语n5语法</title>
-    <url>/2025/03/17/%E6%97%A5%E8%AF%ADn5%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="四大句型"><a href="#四大句型" class="headerlink" title="四大句型"></a>四大句型</h1><ol>
-<li>意义：造句</li>
-<li>类型：名词句，形容词句，形容动词句，动词句</li>
-</ol>
-<h2 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h2><ul>
-<li>敬体：陌生人，上级，长辈(敬体标志：です、ます)</li>
-<li>简体：熟悉的朋友，下级，晚辈</li>
-</ul>
-<h3 id="简体"><a href="#简体" class="headerlink" title="简体"></a>简体</h3><table>
-<thead>
-<tr>
-<th>简体表</th>
-<th>肯定</th>
-<th>否定</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>现在、将来</td>
-<td>私は学生<strong>だ</strong></td>
-<td>私は学生<strong>ではない</strong></td>
-</tr>
-<tr>
-<td>过去</td>
-<td>私は学生<strong>だった</strong></td>
-<td>私は学生<strong>ではなかった</strong></td>
-</tr>
-</tbody></table>
-<h3 id="敬体"><a href="#敬体" class="headerlink" title="敬体"></a>敬体</h3><table>
-<thead>
-<tr>
-<th>敬体表</th>
-<th>肯定</th>
-<th>否定</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>现在、将来</td>
-<td>私は学生<strong>です</strong></td>
-<td>私は学生<strong>ではありません</strong></td>
-</tr>
-<tr>
-<td>过去</td>
-<td>私は学生<strong>でした</strong></td>
-<td>私は学生<strong>ではありませんでした</strong></td>
-</tr>
-</tbody></table>
-<h2 id="形容词"><a href="#形容词" class="headerlink" title="形容词"></a>形容词</h2><ul>
-<li>一类形容词&#x3D;い形容词&#x3D;形容词：以い结尾</li>
-<li>二类形容词&#x3D;な形容词&#x3D;形容动词：不以い结尾</li>
-</ul>
-<h3 id="简体-1"><a href="#简体-1" class="headerlink" title="简体"></a>简体</h3><table>
-<thead>
-<tr>
-<th></th>
-<th>肯定</th>
-<th>否定</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>现在、将来</td>
-<td>今日は寒<strong>い</strong></td>
-<td>今日は寒<strong>くない</strong></td>
-</tr>
-<tr>
-<td>过去</td>
-<td>寒<strong>かった</strong></td>
-<td>寒<strong>くなかった</strong></td>
-</tr>
-</tbody></table>
-<h3 id="敬体-1"><a href="#敬体-1" class="headerlink" title="敬体"></a>敬体</h3><table>
-<thead>
-<tr>
-<th>敬体表</th>
-<th>肯定</th>
-<th>否定</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>现在、将来</td>
-<td>今日は寒<strong>い</strong>です</td>
-<td>今日は寒<strong>くない</strong>です</td>
-</tr>
-<tr>
-<td>过去</td>
-<td>寒<strong>かった</strong>です</td>
-<td>寒<strong>くなかった</strong>です</td>
-</tr>
-</tbody></table>
-<h2 id="形容动词"><a href="#形容动词" class="headerlink" title="形容动词"></a>形容动词</h2><h3 id="简体-2"><a href="#简体-2" class="headerlink" title="简体"></a>简体</h3><p>和名词句一样</p>
-<h3 id="敬体-2"><a href="#敬体-2" class="headerlink" title="敬体"></a>敬体</h3><p>和名词句一样</p>
-<h2 id="动词"><a href="#动词" class="headerlink" title="动词"></a>动词</h2><h3 id="简体-3"><a href="#简体-3" class="headerlink" title="简体"></a>简体</h3><table>
-<thead>
-<tr>
-<th>敬体表</th>
-<th>肯定</th>
-<th>否定</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>现在、将来</td>
-<td>ご飯を食べ<strong>る</strong></td>
-<td>ご飯を食べ<strong>ない</strong></td>
-</tr>
-<tr>
-<td>过去</td>
-<td>ご飯を食べ<strong>た</strong></td>
-<td>ご飯を食べ<strong>なかった</strong></td>
-</tr>
-</tbody></table>
-<h3 id="敬体-3"><a href="#敬体-3" class="headerlink" title="敬体"></a>敬体</h3><table>
-<thead>
-<tr>
-<th>敬体表</th>
-<th>肯定</th>
-<th>否定</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>现在、将来</td>
-<td>ご飯を食べ<strong>ます</strong></td>
-<td>ご飯を食べません</td>
-</tr>
-<tr>
-<td>过去</td>
-<td>ご飯を食べ<strong>ました</strong></td>
-<td>ご飯を食べませんでした</td>
-</tr>
-</tbody></table>
-<h1 id="动词变形"><a href="#动词变形" class="headerlink" title="动词变形"></a>动词变形</h1><p>为什么变形：为了满足各种表达需求(否定，过去，假设，命令等)</p>
-<p>有几种变形：</p>
-<table>
-<thead>
-<tr>
-<th><strong>语法体系</strong></th>
-<th>连用形①</th>
-<th>连用形②</th>
-<th>未然形</th>
-<th>意志形</th>
-<th>命令形</th>
-<th>假定形</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>学校语法</strong></td>
-<td>连用形①</td>
-<td>连用形②</td>
-<td>未然形</td>
-<td>意志形</td>
-<td>命令形</td>
-<td>假定形</td>
-</tr>
-<tr>
-<td><strong>日语教育语法</strong></td>
-<td>ます形</td>
-<td>て形・た形</td>
-<td>ない形</td>
-<td>意向形</td>
-<td>命令形</td>
-<td>ば形</td>
-</tr>
-</tbody></table>
-<h2 id="原形"><a href="#原形" class="headerlink" title="原形"></a>原形</h2><p>动词最原始的形式，可以在词典里找到的形态<br>所以也叫辞书形，字典形，普通形，基本形</p>
-<h3 id="动词原形的分类"><a href="#动词原形的分类" class="headerlink" title="动词原形的分类"></a>动词原形的分类</h3><p>一类：1.<strong>不以る结尾</strong> 2.以る结尾，る前假名在<strong>あ、う、お</strong>段上</p>
-<p>二类：以る结尾，る前假名在<strong>い、え</strong>段上</p>
-<p>三类：<strong>する</strong>（サ变）、<strong>くる</strong>（カ变）</p>
-<p>常见的特殊一类动词：</p>
-<ul>
-<li>帰る（かえる）、走る（はしる）、滑る（すべる）、入る（はいる）</li>
-<li>減る（へる）、知る（しる）、要る（いる）、散る（ちる）</li>
-</ul>
-<h4 id="相关句型"><a href="#相关句型" class="headerlink" title="相关句型"></a>相关句型</h4><h5 id="前に-まえに"><a href="#前に-まえに" class="headerlink" title="前に(まえに)"></a>前に(まえに)</h5><p>在…之前；原型+前に</p>
-<blockquote>
-<p>ご飯を食べる前に、手を洗ってください<br>寝る前に、音楽を聴きます</p>
-</blockquote>
-<p>反义：後で(あとで)；に形+後で</p>
-<h5 id="ことです"><a href="#ことです" class="headerlink" title="ことです"></a>ことです</h5><p>是~（事情）；原型+ことです</p>
-<h2 id="ます形"><a href="#ます形" class="headerlink" title="ます形"></a>ます形</h2><h2 id="て形"><a href="#て形" class="headerlink" title="て形"></a>て形</h2><h2 id="た形"><a href="#た形" class="headerlink" title="た形"></a>た形</h2><h2 id="ない形"><a href="#ない形" class="headerlink" title="ない形"></a>ない形</h2><h1 id="助词"><a href="#助词" class="headerlink" title="助词"></a>助词</h1><h2 id="格助词"><a href="#格助词" class="headerlink" title="格助词"></a>格助词</h2><h2 id="接续助词"><a href="#接续助词" class="headerlink" title="接续助词"></a>接续助词</h2><h2 id="辅助词"><a href="#辅助词" class="headerlink" title="辅助词"></a>辅助词</h2><h2 id="终助词"><a href="#终助词" class="headerlink" title="终助词"></a>终助词</h2><h1 id="功能用语"><a href="#功能用语" class="headerlink" title="功能用语"></a>功能用语</h1><h2 id="存在句"><a href="#存在句" class="headerlink" title="存在句"></a>存在句</h2><h2 id="比较句"><a href="#比较句" class="headerlink" title="比较句"></a>比较句</h2><h2 id="はが句"><a href="#はが句" class="headerlink" title="はが句"></a>はが句</h2><h2 id="表示变换"><a href="#表示变换" class="headerlink" title="表示变换"></a>表示变换</h2><h2 id="指示代词"><a href="#指示代词" class="headerlink" title="指示代词"></a>指示代词</h2><h2 id="解释说明"><a href="#解释说明" class="headerlink" title="解释说明"></a>解释说明</h2>]]></content>
-      <categories>
-        <category>日语学习</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>语法</tag>
-        <tag>n5</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Java基础面试题</title>
     <url>/2025/03/05/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
     <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/java.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
@@ -323,174 +121,6 @@
         <tag>Java</tag>
         <tag>面试</tag>
         <tag>Java基础</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日语人称代词</title>
-    <url>/2025/03/13/%E6%97%A5%E8%AF%AD%E4%BA%BA%E7%A7%B0%E4%BB%A3%E8%AF%8D/</url>
-    <content><![CDATA[<h1 id="第一人称"><a href="#第一人称" class="headerlink" title="第一人称"></a>第一人称</h1><ul>
-<li>私(わたし)—–女&#x2F;男女正式</li>
-<li>私(わたくし)—–正式礼貌</li>
-<li>僕(ボク)—–男，非正式</li>
-<li>俺(おれ)—–粗俗，上对下</li>
-<li>俺様(おれ様)—–男性专用，粗俗</li>
-<li>あたし—–女</li>
-<li>うち—–关西，女</li>
-</ul>
-<h1 id="第二人称"><a href="#第二人称" class="headerlink" title="第二人称"></a>第二人称</h1><ul>
-<li>あなた—–不下对上，亲爱的</li>
-<li>君(きみ)——-对男，同辈&#x2F;晚辈</li>
-<li>お前(おまえ)—–对男，同辈&#x2F;晚辈，没礼貌</li>
-<li>あんな——由あなた转来，礼貌度低一些</li>
-<li>僕(ぼく)—–对不认识的孩子</li>
-</ul>
-<h1 id="第三人称"><a href="#第三人称" class="headerlink" title="第三人称"></a>第三人称</h1><h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><ul>
-<li>彼(かれ)-他</li>
-<li>彼女(かのじょ)-她</li>
-<li>こ&#x2F;そ&#x2F;あいつ(没礼貌)</li>
-</ul>
-<h2 id="モノ"><a href="#モノ" class="headerlink" title="モノ"></a>モノ</h2><p>こ&#x2F;そ&#x2F;あ&#x2F;どれ</p>
-<h1 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h1><ul>
-<li>私<strong>たち</strong>—–礼貌：中</li>
-<li>あなた<strong>がた</strong>—–礼貌：高</li>
-<li>彼<strong>ら</strong>—–礼貌：低</li>
-<li>私ども—–礼节：高；自谦</li>
-</ul>
-<h1 id="敬称"><a href="#敬称" class="headerlink" title="敬称"></a>敬称</h1><ul>
-<li>佐藤様—–不分上下级，对尊敬的，店家对客人</li>
-<li>佐藤さん—–常见，尊敬度略低</li>
-<li>佐藤君—–同辈晚辈</li>
-<li>佐藤ちやん—–亲近</li>
-<li>部長(ぶちょう)殿—–上对下，古老</li>
-<li>佐藤氏</li>
-</ul>
-<h1 id="呼び捨て（よびすて）"><a href="#呼び捨て（よびすて）" class="headerlink" title="呼び捨て（よびすて）"></a>呼び捨て（よびすて）</h1><p>姓名后不加敬称：</p>
-<p>关系亲密的两个人</p>
-<p>或公司内对公司外的人说公司里其他人</p>
-]]></content>
-      <categories>
-        <category>日语学习</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>人称代词</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL面试题</title>
-    <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
-    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
-<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
-<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
-<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
-<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
-<p>选择SQL还是NoSQL,考虑一下因素：</p>
-<p><strong>ACID vs BASE</strong></p>
-<p>关系型数据库支持ACID，即<strong>原子性、一致性、隔离性、持久性</strong>；相对而言，NoSQL采用更加宽松的模型BASE，即<strong>基本可用、软状态、最终一致性</strong></p>
-<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
-<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
-<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
-<p><strong>扩展性对比</strong></p>
-<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
-<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
-<h2 id="数据库三大范式是什么"><a href="#数据库三大范式是什么" class="headerlink" title="数据库三大范式是什么"></a>数据库三大范式是什么</h2><p><strong>第一范式</strong>(1NF)：</p>
-<p>要求数据库表的每一列都是不可分割的原子数据项</p>
-<blockquote>
-<p>例：家庭信息：5口人，北京—应该为—家庭人口数：5口人 &amp; 家庭住址：北京</p>
-</blockquote>
-<p><strong>第二范式</strong>(2NF)：</p>
-<p>在1NF的基础上，非码属性必须完全依赖于候码(在1NF的基础上消除非主属性对主码的部分函数依赖)</p>
-<p>第二范式需要确保数据库表中的每一列都和主键相关，而不能只与主键的某一部分相关（主要针对联合主键而言）。</p>
-<blockquote>
-<p>主码：主码是从候选码中选择的一个属性或属性组，用于唯一标识元组。若候选码仅有一个，则它自动成为主码<br>候码：候选码是能够唯一标识关系中每个元组（记录）的最小属性或属性组。这里的“最小”指候选码的真子集不能成为候选码</p>
-</blockquote>
-<blockquote>
-<p>例：产品数量、产品折扣、产品价格与”订单号”和”产品号”都相关，但是订单金额和订单时间仅与”订单号”相关，与”产品号”无关， 这样就不满足第二范式的要求，需分成两个表</p>
-</blockquote>
-<p><strong>第三范式</strong>（3NF）：</p>
-<p>在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依<br>赖)</p>
-<p>第三范式需要确保数据表中的每一列数据都和主键直接相关，而不能间接相关。</p>
-<blockquote>
-<p>例：表中所有属性都完全依赖于学号，所以满足第二范式，但是”班主任性别”和”班主任年龄”直接依赖的是”班主任姓名”, 而不是主键”学号”，需分成两个表</p>
-</blockquote>
-<h2 id="MySQL怎么联表查询"><a href="#MySQL怎么联表查询" class="headerlink" title="MySQL怎么联表查询"></a>MySQL怎么联表查询</h2><p>数据库有四种联表查询类型：</p>
-<blockquote>
-<ol>
-<li>内连接(INNER JOIN)</li>
-<li>左外连接(LEFT JOIN)</li>
-<li>右外连接(RIGHT JOIN)</li>
-<li>全外连接(FULL JOIN)</li>
-</ol>
-</blockquote>
-<ol>
-<li><strong>内连接</strong>(INNER JOIN)： <ul>
-<li>返回两个表中有匹配关系的行</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">INNER JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回每个员工及其所在部门的名字</p>
-<ol start="2">
-<li><strong>左外连接</strong>(LEFT JOIN)<ul>
-<li>返回左表中的所有行，即使在右表中没有匹配的行。未匹配的右表列会包含NULL</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回每个员工及其所在部门的名字，包括没有分配部门的员工</p>
-<ol start="3">
-<li><strong>右外连接</strong>(RIGHT JOIN)<ul>
-<li>返回右表中的所有行，即使在左表中没有匹配的行。未匹配的左表列会包含NULL</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回每个员工及其所在部门的名字，包括没有分配员工的部门</p>
-<ol start="4">
-<li><strong>全外连接</strong>(FULL JOIN)<ul>
-<li>返回两个表中的所有行，包括非匹配行。在MySQL中，FULL JOIN 需要使用 UNION来实现，因为MySQL 不支持FULL JOIN</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id</span><br><span class="line"> </span><br><span class="line">UNION</span><br><span class="line"></span><br><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回所有员工和所有部门，包括没有匹配行的记录</p>
-<h2 id="MySQL如何避免重复插入数据"><a href="#MySQL如何避免重复插入数据" class="headerlink" title="MySQL如何避免重复插入数据"></a>MySQL如何避免重复插入数据</h2><ol>
-<li><strong>使用UNIQUE约束</strong></li>
-</ol>
-<p>在表的相关列添加上UNIQUE约束，确保每个值在该列中唯一</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE users(</span><br><span class="line">    id    INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">    emai1 VARCHAR(255) UNIQUE,</span><br><span class="line">    name  VARCHAR(255)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>如果尝试插入重复的email，MySQL会返回错误</p>
-<ol start="2">
-<li><strong>使用INSERT … ON DUPLICATE KEY UPDATE</strong></li>
-</ol>
-<p>这中语句允许在插入记录时处理重复键的情况。如果插入记录与现有记录有冲突，可以自己选择更新现有记录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;)</span><br><span class="line">ON DUPLICATE KEY UPDATE name = VALUES(name);</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><strong>使用INSERT IGNORE</strong></li>
-</ol>
-<p>该语句会在插入记录时忽略那些因为重复键而发生的错误</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT IGNORE INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;);</span><br></pre></td></tr></table></figure>
-<p>如果email已经存在，这条插入语句将被忽略而不会返回错误</p>
-<p>选择哪种方法取决于具体的需求：</p>
-<ul>
-<li>如果需要保证全局唯一性，使用UNIQUE约束是最佳做法</li>
-<li>如果需要插入和更新结合可以使用ON DUPLICATE KEY UPDATE</li>
-<li>对于快速忽略重复插入，INSERT IGNORE是合适的选择</li>
-</ul>
-<h2 id="CHAR-和-VARCHAR有什么区别"><a href="#CHAR-和-VARCHAR有什么区别" class="headerlink" title="CHAR 和 VARCHAR有什么区别"></a>CHAR 和 VARCHAR有什么区别</h2><ul>
-<li>CHAR是固定长度的字符串类型，定义时需要指定固定长度，存储时会在末尾补足空格。<br>   CHAR适合存储长度固定的数据，如固定长度的代码、状态等，存储空间固定，对于短字符串效率较高。</li>
-<li>VARCHAR是可变长度的字符串类型，定义时需要指定最大长度，实际存储时根据实际长度占用存储空间。<br>   VARCHAR适合存储长度可变的数据，如用户输入的文本、备注等，节约存储空间。</li>
-</ul>
-<h2 id="Text数据类型可以无限大吗"><a href="#Text数据类型可以无限大吗" class="headerlink" title="Text数据类型可以无限大吗?"></a>Text数据类型可以无限大吗?</h2><p>MySQL 3种text类型的最大长度如下:<br>   TEXT: 65,535bytes ~ 64kb<br>   MEDIUMTEXT: 16,777,215bytes ~ 16Mb<br>   LONGTEXT: 4,294,967,295bytes ~ 4Gb</p>
-]]></content>
-      <categories>
-        <category>MySQL面试题</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-        <tag>数据库</tag>
-        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
@@ -824,222 +454,230 @@
         <category>日语歌词翻译学习</category>
       </categories>
       <tags>
-        <tag>日语</tag>
         <tag>MILABO</tag>
         <tag>ZTMY</tag>
+        <tag>日语</tag>
         <tag>歌词翻译</tag>
       </tags>
   </entry>
   <entry>
-    <title>日语动词学习</title>
-    <url>/2025/03/09/%E6%97%A5%E8%AF%AD%E5%8A%A8%E8%AF%8D%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="日语动词分类与变形规则详解"><a href="#日语动词分类与变形规则详解" class="headerlink" title="日语动词分类与变形规则详解"></a>日语动词分类与变形规则详解</h1><hr>
-<h2 id="一、动词分类（3大类）"><a href="#一、动词分类（3大类）" class="headerlink" title="一、动词分类（3大类）"></a>一、动词分类（3大类）</h2><h3 id="1-一类动词（五段动词）"><a href="#1-一类动词（五段动词）" class="headerlink" title="1. 一类动词（五段动词）"></a>1. <strong>一类动词（五段动词）</strong></h3><ul>
-<li><strong>特征</strong>：<ul>
-<li>不以「る」结尾；</li>
-<li>以「る」结尾时，倒数第二个假名在「あ&#x2F;う&#x2F;お」段。</li>
-</ul>
-</li>
-<li><strong>示例</strong>：<ul>
-<li><strong>行（い）く</strong>（去）</li>
-<li><strong>話（はな）す</strong>（说）</li>
-<li><strong>飲（の）む</strong>（喝）</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-二类动词（一段动词）"><a href="#2-二类动词（一段动词）" class="headerlink" title="2. 二类动词（一段动词）"></a>2. <strong>二类动词（一段动词）</strong></h3><ul>
-<li><strong>特征</strong>：<ul>
-<li>以「る」结尾，倒数第二个假名在「い&#x2F;え」段。</li>
-</ul>
-</li>
-<li><strong>示例</strong>：<ul>
-<li><strong>食（た）べる</strong>（吃）</li>
-<li><strong>見（み）る</strong>（看）</li>
-<li><strong>寝（ね）る</strong>（睡觉）</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-三类动词（不规则动词）"><a href="#3-三类动词（不规则动词）" class="headerlink" title="3. 三类动词（不规则动词）"></a>3. <strong>三类动词（不规则动词）</strong></h3><ul>
-<li><strong>特征</strong>：<ul>
-<li>仅两个动词：<strong>する</strong>（做）、<strong>来（く）る</strong>（来）。</li>
-</ul>
-</li>
-<li><strong>示例</strong>：<ul>
-<li><strong>勉強（べんきょう）する</strong>（学习）</li>
-<li><strong>旅行（りょこう）する</strong>（旅行）</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="二、基础变形规则（附示例）"><a href="#二、基础变形规则（附示例）" class="headerlink" title="二、基础变形规则（附示例）"></a>二、基础变形规则（附示例）</h2><h3 id="1-ます形（礼貌形）"><a href="#1-ます形（礼貌形）" class="headerlink" title="1. ます形（礼貌形）"></a>1. <strong>ます形（礼貌形）</strong></h3><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>规则</th>
-<th>示例（原形 → ます形）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>一类动词</td>
-<td>词尾变「い段」+ ます</td>
-<td>行く → 行（い）きます</td>
-</tr>
-<tr>
-<td>二类动词</td>
-<td>去「る」+ ます</td>
-<td>食べる → 食（た）べます</td>
-</tr>
-<tr>
-<td>三类动词</td>
-<td>する→ します &#x2F; 来る→ 来（き）ます</td>
-<td>勉強する → 勉強します</td>
-</tr>
-</tbody></table>
-<h3 id="2-ない形（否定形）"><a href="#2-ない形（否定形）" class="headerlink" title="2. ない形（否定形）"></a>2. <strong>ない形（否定形）</strong></h3><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>规则</th>
-<th>示例（原形 → ない形）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>一类动词</td>
-<td>词尾变「あ段」+ ない</td>
-<td>話す → 話（はな）さない</td>
-</tr>
-<tr>
-<td>二类动词</td>
-<td>去「る」+ ない</td>
-<td>見る → 見（み）ない</td>
-</tr>
-<tr>
-<td>三类动词</td>
-<td>する→ しない &#x2F; 来る→ 来（こ）ない</td>
-<td>来る → 来（こ）ない</td>
-</tr>
-</tbody></table>
-<h3 id="3-可能形（“能-可以”）"><a href="#3-可能形（“能-可以”）" class="headerlink" title="3. 可能形（“能&#x2F;可以”）"></a>3. <strong>可能形（“能&#x2F;可以”）</strong></h3><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>规则</th>
-<th>示例（原形 → 可能形）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>一类动词</td>
-<td>词尾变「え段」+ る</td>
-<td>書（か）く → 書（か）ける</td>
-</tr>
-<tr>
-<td>二类动词</td>
-<td>去「る」+ られる</td>
-<td>食べる → 食（た）べられる</td>
-</tr>
-<tr>
-<td>三类动词</td>
-<td>する→ できる &#x2F; 来る→ 来（こ）られる</td>
-<td>勉強する → 勉強できる</td>
-</tr>
-</tbody></table>
-<h3 id="4-命令形（强制语气）"><a href="#4-命令形（强制语气）" class="headerlink" title="4. 命令形（强制语气）"></a>4. <strong>命令形（强制语气）</strong></h3><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>规则</th>
-<th>示例（原形 → 命令形）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>一类动词</td>
-<td>词尾变「え段」</td>
-<td>行く → 行（い）け！</td>
-</tr>
-<tr>
-<td>二类动词</td>
-<td>去「る」+ ろ&#x2F;よ</td>
-<td>食べる → 食（た）べろ！</td>
-</tr>
-<tr>
-<td>三类动词</td>
-<td>する→ しろ &#x2F; 来る→ 来（こ）い</td>
-<td>来る → 来（こ）い！</td>
-</tr>
-</tbody></table>
-<h3 id="5-意志形（“打算-想要”）"><a href="#5-意志形（“打算-想要”）" class="headerlink" title="5. 意志形（“打算&#x2F;想要”）"></a>5. <strong>意志形（“打算&#x2F;想要”）</strong></h3><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>规则</th>
-<th>示例（原形 → 意志形）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>一类动词</td>
-<td>词尾变「お段」+ う</td>
-<td>行く → 行（い）こう</td>
-</tr>
-<tr>
-<td>二类动词</td>
-<td>去「る」+ よう</td>
-<td>食べる → 食（た）べよう</td>
-</tr>
-<tr>
-<td>三类动词</td>
-<td>する→ しよう &#x2F; 来る→ 来（こ）よう</td>
-<td>勉強する → 勉強しよう</td>
-</tr>
-</tbody></table>
-<h3 id="6-假定形（“如果…”）"><a href="#6-假定形（“如果…”）" class="headerlink" title="6. 假定形（“如果…”）"></a>6. <strong>假定形（“如果…”）</strong></h3><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>规则</th>
-<th>示例（原形 → 假定形）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>一类动词</td>
-<td>词尾变「え段」+ ば</td>
-<td>行く → 行（い）けば</td>
-</tr>
-<tr>
-<td>二类动词</td>
-<td>去「る」+ れば</td>
-<td>食べる → 食（た）べれば</td>
-</tr>
-<tr>
-<td>三类动词</td>
-<td>する→ すれば &#x2F; 来る→ 来（く）れば</td>
-<td>来る → 来（く）れば</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="三、综合示例"><a href="#三、综合示例" class="headerlink" title="三、综合示例"></a>三、综合示例</h2><h3 id="1-ます形-否定形"><a href="#1-ます形-否定形" class="headerlink" title="1. ます形 + 否定形"></a>1. <strong>ます形 + 否定形</strong></h3><ul>
-<li><strong>寒（さむ）いから窓（まど）を閉（し）める</strong>（因为冷，所以关窗）<br>→ 寒いから窓を閉めます &#x2F; 閉めません。</li>
-</ul>
-<h3 id="2-可能形-命令形"><a href="#2-可能形-命令形" class="headerlink" title="2. 可能形 + 命令形"></a>2. <strong>可能形 + 命令形</strong></h3><ul>
-<li><strong>書（か）ける！早（はや）く書（か）け！</strong>（能写！快点写！）</li>
-</ul>
-<h3 id="3-假定形-意志形"><a href="#3-假定形-意志形" class="headerlink" title="3. 假定形 + 意志形"></a>3. <strong>假定形 + 意志形</strong></h3><ul>
-<li><strong>行（い）けば、楽（たの）しくなるよ</strong>（如果去的话，会变开心的）。</li>
-</ul>
-<hr>
-<h2 id="四、学习建议"><a href="#四、学习建议" class="headerlink" title="四、学习建议"></a>四、学习建议</h2><ol>
-<li><strong>分类记忆法</strong>：先判断动词类别（看词尾），再套用规则变形。</li>
-<li><strong>高频动词练习</strong>：如「する」「来る」「食べる」。</li>
-<li><strong>活用表格整理</strong>：自制表格对比不同变形形式（例：行く→行きます&#x2F;行かない&#x2F;行ける）。</li>
+    <title>MySQL进阶</title>
+    <url>/2025/03/10/MySQL%E8%BF%9B%E9%98%B6/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>数据库学习</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
+        <tag>MySQL进阶</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL面试题</title>
+    <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
+<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
+<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
+<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
+<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
+<p>选择SQL还是NoSQL,考虑一下因素：</p>
+<p><strong>ACID vs BASE</strong></p>
+<p>关系型数据库支持ACID，即<strong>原子性、一致性、隔离性、持久性</strong>；相对而言，NoSQL采用更加宽松的模型BASE，即<strong>基本可用、软状态、最终一致性</strong></p>
+<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
+<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
+<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
+<p><strong>扩展性对比</strong></p>
+<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
+<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
+<h2 id="数据库三大范式是什么"><a href="#数据库三大范式是什么" class="headerlink" title="数据库三大范式是什么"></a>数据库三大范式是什么</h2><p><strong>第一范式</strong>(1NF)：</p>
+<p>要求数据库表的每一列都是不可分割的原子数据项</p>
+<blockquote>
+<p>例：家庭信息：5口人，北京—应该为—家庭人口数：5口人 &amp; 家庭住址：北京</p>
+</blockquote>
+<p><strong>第二范式</strong>(2NF)：</p>
+<p>在1NF的基础上，非码属性必须完全依赖于候码(在1NF的基础上消除非主属性对主码的部分函数依赖)</p>
+<p>第二范式需要确保数据库表中的每一列都和主键相关，而不能只与主键的某一部分相关（主要针对联合主键而言）。</p>
+<blockquote>
+<p>主码：主码是从候选码中选择的一个属性或属性组，用于唯一标识元组。若候选码仅有一个，则它自动成为主码<br>候码：候选码是能够唯一标识关系中每个元组（记录）的最小属性或属性组。这里的“最小”指候选码的真子集不能成为候选码</p>
+</blockquote>
+<blockquote>
+<p>例：产品数量、产品折扣、产品价格与”订单号”和”产品号”都相关，但是订单金额和订单时间仅与”订单号”相关，与”产品号”无关， 这样就不满足第二范式的要求，需分成两个表</p>
+</blockquote>
+<p><strong>第三范式</strong>（3NF）：</p>
+<p>在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依<br>赖)</p>
+<p>第三范式需要确保数据表中的每一列数据都和主键直接相关，而不能间接相关。</p>
+<blockquote>
+<p>例：表中所有属性都完全依赖于学号，所以满足第二范式，但是”班主任性别”和”班主任年龄”直接依赖的是”班主任姓名”, 而不是主键”学号”，需分成两个表</p>
+</blockquote>
+<h2 id="MySQL怎么联表查询"><a href="#MySQL怎么联表查询" class="headerlink" title="MySQL怎么联表查询"></a>MySQL怎么联表查询</h2><p>数据库有四种联表查询类型：</p>
+<blockquote>
+<ol>
+<li>内连接(INNER JOIN)</li>
+<li>左外连接(LEFT JOIN)</li>
+<li>右外连接(RIGHT JOIN)</li>
+<li>全外连接(FULL JOIN)</li>
 </ol>
+</blockquote>
+<ol>
+<li><strong>内连接</strong>(INNER JOIN)： <ul>
+<li>返回两个表中有匹配关系的行</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">INNER JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回每个员工及其所在部门的名字</p>
+<ol start="2">
+<li><strong>左外连接</strong>(LEFT JOIN)<ul>
+<li>返回左表中的所有行，即使在右表中没有匹配的行。未匹配的右表列会包含NULL</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回每个员工及其所在部门的名字，包括没有分配部门的员工</p>
+<ol start="3">
+<li><strong>右外连接</strong>(RIGHT JOIN)<ul>
+<li>返回右表中的所有行，即使在左表中没有匹配的行。未匹配的左表列会包含NULL</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回每个员工及其所在部门的名字，包括没有分配员工的部门</p>
+<ol start="4">
+<li><strong>全外连接</strong>(FULL JOIN)<ul>
+<li>返回两个表中的所有行，包括非匹配行。在MySQL中，FULL JOIN 需要使用 UNION来实现，因为MySQL 不支持FULL JOIN</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id</span><br><span class="line"> </span><br><span class="line">UNION</span><br><span class="line"></span><br><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回所有员工和所有部门，包括没有匹配行的记录</p>
+<h2 id="MySQL如何避免重复插入数据"><a href="#MySQL如何避免重复插入数据" class="headerlink" title="MySQL如何避免重复插入数据"></a>MySQL如何避免重复插入数据</h2><ol>
+<li><strong>使用UNIQUE约束</strong></li>
+</ol>
+<p>在表的相关列添加上UNIQUE约束，确保每个值在该列中唯一</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE users(</span><br><span class="line">    id    INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">    emai1 VARCHAR(255) UNIQUE,</span><br><span class="line">    name  VARCHAR(255)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>如果尝试插入重复的email，MySQL会返回错误</p>
+<ol start="2">
+<li><strong>使用INSERT … ON DUPLICATE KEY UPDATE</strong></li>
+</ol>
+<p>这中语句允许在插入记录时处理重复键的情况。如果插入记录与现有记录有冲突，可以自己选择更新现有记录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;)</span><br><span class="line">ON DUPLICATE KEY UPDATE name = VALUES(name);</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><strong>使用INSERT IGNORE</strong></li>
+</ol>
+<p>该语句会在插入记录时忽略那些因为重复键而发生的错误</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT IGNORE INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;);</span><br></pre></td></tr></table></figure>
+<p>如果email已经存在，这条插入语句将被忽略而不会返回错误</p>
+<p>选择哪种方法取决于具体的需求：</p>
+<ul>
+<li>如果需要保证全局唯一性，使用UNIQUE约束是最佳做法</li>
+<li>如果需要插入和更新结合可以使用ON DUPLICATE KEY UPDATE</li>
+<li>对于快速忽略重复插入，INSERT IGNORE是合适的选择</li>
+</ul>
+<h2 id="CHAR-和-VARCHAR有什么区别"><a href="#CHAR-和-VARCHAR有什么区别" class="headerlink" title="CHAR 和 VARCHAR有什么区别"></a>CHAR 和 VARCHAR有什么区别</h2><ul>
+<li>CHAR是固定长度的字符串类型，定义时需要指定固定长度，存储时会在末尾补足空格。<br>   CHAR适合存储长度固定的数据，如固定长度的代码、状态等，存储空间固定，对于短字符串效率较高。</li>
+<li>VARCHAR是可变长度的字符串类型，定义时需要指定最大长度，实际存储时根据实际长度占用存储空间。<br>   VARCHAR适合存储长度可变的数据，如用户输入的文本、备注等，节约存储空间。</li>
+</ul>
+<h2 id="Text数据类型可以无限大吗"><a href="#Text数据类型可以无限大吗" class="headerlink" title="Text数据类型可以无限大吗?"></a>Text数据类型可以无限大吗?</h2><p>MySQL 3种text类型的最大长度如下:<br>   TEXT: 65,535bytes ~ 64kb<br>   MEDIUMTEXT: 16,777,215bytes ~ 16Mb<br>   LONGTEXT: 4,294,967,295bytes ~ 4Gb</p>
+]]></content>
+      <categories>
+        <category>MySQL面试题</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日语名词谓语句</title>
+    <url>/2025/03/12/%E6%97%A5%E8%AF%AD%E5%90%8D%E8%AF%8D%E8%B0%93%E8%AF%AD%E5%8F%A5/</url>
+    <content><![CDATA[<h1 id="だ"><a href="#だ" class="headerlink" title="~だ"></a>~だ</h1><blockquote>
+<p>是学生。<br>学生だ。——学生（がくせい）</p>
+</blockquote>
+<p>だ放句末，表示为是<br>だ后面只能加句号&#x2F;终助词 (终助词-&gt;表达语气)<br>だ后面加其他成分需要把だ改为で</p>
+<blockquote>
+<p>不是学生。<br>学生ではない。</p>
+</blockquote>
+<p>ではない表示否定，其中は作为助词时读作わ，ない是辅助形容词</p>
+<blockquote>
+<p>是学生吗。<br>学生か？</p>
+</blockquote>
+<p>其中か读作升调表达疑问，也可以直接升调读名词表示疑问</p>
+<h1 id="です"><a href="#です" class="headerlink" title="~です"></a>~です</h1><blockquote>
+<p>是学生。<br>学生です。</p>
+</blockquote>
+<p>です表达判断和对听话人的礼貌</p>
+<blockquote>
+<p>不是学生。<br>学生ではありません</p>
+</blockquote>
+<blockquote>
+<p>是学生吗？<br>学生ですか？</p>
+</blockquote>
+<p>以及升调，但不能省略</p>
+<blockquote>
+<p>是老师还是学生？<br>先生ですか、学生ですか。——先生（せんせい）</p>
+</blockquote>
+<h1 id="～である"><a href="#～である" class="headerlink" title="～である"></a>～である</h1><blockquote>
+<p>学生である</p>
+</blockquote>
+<p>正式的表达</p>
+<blockquote>
+<p>学生であります</p>
+</blockquote>
+<p>正式的基础上加上礼貌</p>
+<h1 id="でございます"><a href="#でございます" class="headerlink" title="~でございます"></a>~でございます</h1><blockquote>
+<p>毛利探偵事務所でございます——毛利（もうり）探偵（たんてい）事務所（じむしょ）</p>
+</blockquote>
+<p>郑重的礼貌</p>
+<h1 id="判断相关总结"><a href="#判断相关总结" class="headerlink" title="判断相关总结"></a>判断相关总结</h1><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">一般</th>
+<th align="center">礼貌</th>
+<th align="center">正式</th>
+<th align="center">正式+礼貌</th>
+<th align="center">郑重</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">肯定</td>
+<td align="center">だ</td>
+<td align="center">です</td>
+<td align="center">である</td>
+<td align="center">であります</td>
+<td align="center">でございます</td>
+</tr>
+<tr>
+<td align="center">否定</td>
+<td align="center">ではない</td>
+<td align="center">ではありません</td>
+<td align="center">&#x2F;</td>
+<td align="center">&#x2F;</td>
+<td align="center">&#x2F;</td>
+</tr>
+</tbody></table>
+<h1 id="は-が"><a href="#は-が" class="headerlink" title="~は&#x2F;が"></a>~は&#x2F;が</h1><p>辅助词は，提示主题，重心为主题后的描述内容<br>格助词が，提示主语，重心为主语本身或动作主体</p>
+<blockquote>
+<p>-你是谁？<br>-我是学生。-&gt; 私は学生だ。</p>
+</blockquote>
+<blockquote>
+<p>-谁是学生？<br>-我是学生。 -&gt; 私が学生だ。</p>
+</blockquote>
+<h1 id="も"><a href="#も" class="headerlink" title="~も"></a>~も</h1><p>辅助词も，表示也</p>
+<blockquote>
+<p>我是学生，他也是学生。——彼（かれ）<br>私は学生です。かれも学生です。</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>日语学习</category>
       </categories>
       <tags>
         <tag>日语</tag>
+        <tag>名词谓语句</tag>
         <tag>语法</tag>
-        <tag>语言学习</tag>
-        <tag>动词</tag>
       </tags>
   </entry>
   <entry>
@@ -1266,352 +904,286 @@
       </tags>
   </entry>
   <entry>
-    <title>日语形容词、形容动词</title>
-    <url>/2025/03/13/%E6%97%A5%E8%AF%AD%E5%BD%A2%E5%AE%B9%E8%AF%8D%E3%80%81%E5%BD%A2%E5%AE%B9%E5%8A%A8%E8%AF%8D/</url>
-    <content><![CDATA[<h1 id="日语形容词与形容动词语法总结"><a href="#日语形容词与形容动词语法总结" class="headerlink" title="日语形容词与形容动词语法总结"></a>日语形容词与形容动词语法总结</h1><h2 id="一、形容词（い形容詞）"><a href="#一、形容词（い形容詞）" class="headerlink" title="一、形容词（い形容詞）"></a>一、形容词（い形容詞）</h2><h3 id="1-基本特征"><a href="#1-基本特征" class="headerlink" title="1. 基本特征"></a>1. 基本特征</h3><ul>
-<li><strong>词尾</strong>：以「い」结尾（例：青い、寒い）</li>
-<li><strong>语法功能</strong>：<ul>
-<li><strong>终止形</strong>：直接作谓语，无需加「だ」<br><em>例：空は青いです（天空是蓝色的）</em></li>
-<li><strong>连体形</strong>：直接修饰名词，不加「の」<br><em>例：青い空（蓝色的天空）</em></li>
+    <title>日语人称代词</title>
+    <url>/2025/03/13/%E6%97%A5%E8%AF%AD%E4%BA%BA%E7%A7%B0%E4%BB%A3%E8%AF%8D/</url>
+    <content><![CDATA[<h1 id="第一人称"><a href="#第一人称" class="headerlink" title="第一人称"></a>第一人称</h1><ul>
+<li>私(わたし)—–女&#x2F;男女正式</li>
+<li>私(わたくし)—–正式礼貌</li>
+<li>僕(ボク)—–男，非正式</li>
+<li>俺(おれ)—–粗俗，上对下</li>
+<li>俺様(おれ様)—–男性专用，粗俗</li>
+<li>あたし—–女</li>
+<li>うち—–关西，女</li>
 </ul>
-</li>
+<h1 id="第二人称"><a href="#第二人称" class="headerlink" title="第二人称"></a>第二人称</h1><ul>
+<li>あなた—–不下对上，亲爱的</li>
+<li>君(きみ)——-对男，同辈&#x2F;晚辈</li>
+<li>お前(おまえ)—–对男，同辈&#x2F;晚辈，没礼貌</li>
+<li>あんな——由あなた转来，礼貌度低一些</li>
+<li>僕(ぼく)—–对不认识的孩子</li>
 </ul>
-<h3 id="2-活用规则"><a href="#2-活用规则" class="headerlink" title="2. 活用规则"></a>2. 活用规则</h3><table>
-<thead>
-<tr>
-<th>语法功能</th>
-<th>变形规则</th>
-<th>例词（寒い）</th>
-<th>例句</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>否定形</strong></td>
-<td>い → く + ない</td>
-<td>寒くない</td>
-<td>この本は面白くないです</td>
-</tr>
-<tr>
-<td><strong>过去肯定形</strong></td>
-<td>い → かった</td>
-<td>寒かった</td>
-<td>昨日は寒かったです</td>
-</tr>
-<tr>
-<td><strong>过去否定形</strong></td>
-<td>い → く + なかった</td>
-<td>寒くなかった</td>
-<td>昨日は寒くなかったです</td>
-</tr>
-<tr>
-<td><strong>连用形</strong></td>
-<td>い → く</td>
-<td>寒く</td>
-<td>寒くて眠れない</td>
-</tr>
-</tbody></table>
-<h3 id="3-特殊用法"><a href="#3-特殊用法" class="headerlink" title="3. 特殊用法"></a>3. 特殊用法</h3><ul>
-<li><strong>中顿形</strong>：い → くて，表并列或原因<br><em>例：教室は大きく、静かだ（教室又大又安静）</em></li>
-<li><strong>副词化</strong>：い → く，修饰动词<br><em>例：速く走る（跑得快）</em></li>
-<li><strong>名词化</strong>：词干 + さ&#x2F;み&#x2F;く（例：高さ、深み、近く）</li>
+<h1 id="第三人称"><a href="#第三人称" class="headerlink" title="第三人称"></a>第三人称</h1><h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><ul>
+<li>彼(かれ)-他</li>
+<li>彼女(かのじょ)-她</li>
+<li>こ&#x2F;そ&#x2F;あいつ(没礼貌)</li>
 </ul>
-<hr>
-<h2 id="二、形容动词（な形容詞）"><a href="#二、形容动词（な形容詞）" class="headerlink" title="二、形容动词（な形容詞）"></a>二、形容动词（な形容詞）</h2><h3 id="1-基本特征-1"><a href="#1-基本特征-1" class="headerlink" title="1. 基本特征"></a>1. 基本特征</h3><ul>
-<li><strong>词尾</strong>：基本形以「だ」结尾（例：静かだ、有名だ）</li>
-<li><strong>语法功能</strong>：<ul>
-<li><strong>终止形</strong>：直接作谓语<br><em>例：教室は静かです（教室安静）</em></li>
-<li><strong>连体形</strong>：だ → な + 名词<br><em>例：静かな教室（安静的教室）</em></li>
+<h2 id="モノ"><a href="#モノ" class="headerlink" title="モノ"></a>モノ</h2><p>こ&#x2F;そ&#x2F;あ&#x2F;どれ</p>
+<h1 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h1><ul>
+<li>私<strong>たち</strong>—–礼貌：中</li>
+<li>あなた<strong>がた</strong>—–礼貌：高</li>
+<li>彼<strong>ら</strong>—–礼貌：低</li>
+<li>私ども—–礼节：高；自谦</li>
 </ul>
-</li>
+<h1 id="敬称"><a href="#敬称" class="headerlink" title="敬称"></a>敬称</h1><ul>
+<li>佐藤様—–不分上下级，对尊敬的，店家对客人</li>
+<li>佐藤さん—–常见，尊敬度略低</li>
+<li>佐藤君—–同辈晚辈</li>
+<li>佐藤ちやん—–亲近</li>
+<li>部長(ぶちょう)殿—–上对下，古老</li>
+<li>佐藤氏</li>
 </ul>
-<h3 id="2-活用规则-1"><a href="#2-活用规则-1" class="headerlink" title="2. 活用规则"></a>2. 活用规则</h3><table>
-<thead>
-<tr>
-<th>语法功能</th>
-<th>变形规则</th>
-<th>例词（静かだ）</th>
-<th>例句</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>否定形</strong></td>
-<td>だ → ではない</td>
-<td>静かではない</td>
-<td>あの俳優は有名ではありません</td>
-</tr>
-<tr>
-<td><strong>过去肯定形</strong></td>
-<td>だ → だった</td>
-<td>静かだった</td>
-<td>昨日教室は静かでした</td>
-</tr>
-<tr>
-<td><strong>过去否定形</strong></td>
-<td>だ → ではなかった</td>
-<td>静かではなかった</td>
-<td>昨日教室は静かではありませんでした</td>
-</tr>
-<tr>
-<td><strong>连用形</strong></td>
-<td>だ → で&#x2F;に&#x2F;だっ</td>
-<td>静かで、静かに</td>
-<td>静かで広い部屋</td>
-</tr>
-</tbody></table>
-<h3 id="3-特殊用法-1"><a href="#3-特殊用法-1" class="headerlink" title="3. 特殊用法"></a>3. 特殊用法</h3><ul>
-<li><strong>中顿形</strong>：だ → で，表并列或原因<br><em>例：教室は静かで、大きい（教室安静且大）</em></li>
-<li><strong>副词化</strong>：だ → に，修饰动词<br><em>例：静かに食べる（安静地吃饭）</em></li>
-<li><strong>名词化</strong>：词干 + さ（例：静かさ、便利さ）</li>
-</ul>
-<hr>
-<h2 id="三、连体词"><a href="#三、连体词" class="headerlink" title="三、连体词"></a>三、连体词</h2><h3 id="1-定义与用法"><a href="#1-定义与用法" class="headerlink" title="1. 定义与用法"></a>1. 定义与用法</h3><ul>
-<li><strong>特征</strong>：直接修饰名词，无活用变化<br><em>例：大きな机（大桌子）、同じ色（相同颜色）</em></li>
-<li><strong>常见词</strong>：<ul>
-<li>大きな・小さな（大小）</li>
-<li>色んな（各种）</li>
-<li>同じ（相同）</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="四、易错点与注意事项"><a href="#四、易错点与注意事项" class="headerlink" title="四、易错点与注意事项"></a>四、易错点与注意事项</h2><ol>
-<li><strong>形容词与形容动词的混淆</strong>：<ul>
-<li>以「い」结尾的形容动词（例：きれい、嫌い）需加「な」修饰名词<br><em>例：きれいな服（漂亮衣服）</em></li>
-</ul>
-</li>
-<li><strong>过去否定形错误</strong>：<ul>
-<li>正确：寒<strong>く</strong>なかった（×寒くてなかった）</li>
-</ul>
-</li>
-<li><strong>特殊活用词</strong>：<ul>
-<li>形容词「いい」活用需换为「よい」（例：よかった）</li>
-<li>形容动词「同じ」直接修饰名词（例：同じ人）</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="五、综合对比表"><a href="#五、综合对比表" class="headerlink" title="五、综合对比表"></a>五、综合对比表</h2><table>
-<thead>
-<tr>
-<th>语法功能</th>
-<th>形容词（青い）</th>
-<th>形容动词（静かだ）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>终止形</strong></td>
-<td>青い &#x2F; 青いです</td>
-<td>静かだ &#x2F; 静かです</td>
-</tr>
-<tr>
-<td><strong>连体形</strong></td>
-<td>青い空</td>
-<td>静かな教室</td>
-</tr>
-<tr>
-<td><strong>否定形</strong></td>
-<td>青くない</td>
-<td>静かではない</td>
-</tr>
-<tr>
-<td><strong>过去形</strong></td>
-<td>青かった</td>
-<td>静かだった</td>
-</tr>
-</tbody></table>
+<h1 id="呼び捨て（よびすて）"><a href="#呼び捨て（よびすて）" class="headerlink" title="呼び捨て（よびすて）"></a>呼び捨て（よびすて）</h1><p>姓名后不加敬称：</p>
+<p>关系亲密的两个人</p>
+<p>或公司内对公司外的人说公司里其他人</p>
 ]]></content>
       <categories>
         <category>日语学习</category>
       </categories>
       <tags>
         <tag>日语</tag>
-        <tag>形容词</tag>
-        <tag>形容动词</tag>
+        <tag>人称代词</tag>
       </tags>
   </entry>
   <entry>
-    <title>日语名词谓语句</title>
-    <url>/2025/03/12/%E6%97%A5%E8%AF%AD%E5%90%8D%E8%AF%8D%E8%B0%93%E8%AF%AD%E5%8F%A5/</url>
-    <content><![CDATA[<h1 id="だ"><a href="#だ" class="headerlink" title="~だ"></a>~だ</h1><blockquote>
-<p>是学生。<br>学生だ。——学生（がくせい）</p>
-</blockquote>
-<p>だ放句末，表示为是<br>だ后面只能加句号&#x2F;终助词 (终助词-&gt;表达语气)<br>だ后面加其他成分需要把だ改为で</p>
-<blockquote>
-<p>不是学生。<br>学生ではない。</p>
-</blockquote>
-<p>ではない表示否定，其中は作为助词时读作わ，ない是辅助形容词</p>
-<blockquote>
-<p>是学生吗。<br>学生か？</p>
-</blockquote>
-<p>其中か读作升调表达疑问，也可以直接升调读名词表示疑问</p>
-<h1 id="です"><a href="#です" class="headerlink" title="~です"></a>~です</h1><blockquote>
-<p>是学生。<br>学生です。</p>
-</blockquote>
-<p>です表达判断和对听话人的礼貌</p>
-<blockquote>
-<p>不是学生。<br>学生ではありません</p>
-</blockquote>
-<blockquote>
-<p>是学生吗？<br>学生ですか？</p>
-</blockquote>
-<p>以及升调，但不能省略</p>
-<blockquote>
-<p>是老师还是学生？<br>先生ですか、学生ですか。——先生（せんせい）</p>
-</blockquote>
-<h1 id="～である"><a href="#～である" class="headerlink" title="～である"></a>～である</h1><blockquote>
-<p>学生である</p>
-</blockquote>
-<p>正式的表达</p>
-<blockquote>
-<p>学生であります</p>
-</blockquote>
-<p>正式的基础上加上礼貌</p>
-<h1 id="でございます"><a href="#でございます" class="headerlink" title="~でございます"></a>~でございます</h1><blockquote>
-<p>毛利探偵事務所でございます——毛利（もうり）探偵（たんてい）事務所（じむしょ）</p>
-</blockquote>
-<p>郑重的礼貌</p>
-<h1 id="判断相关总结"><a href="#判断相关总结" class="headerlink" title="判断相关总结"></a>判断相关总结</h1><table>
+    <title>日语n5语法</title>
+    <url>/2025/03/17/%E6%97%A5%E8%AF%ADn5%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<h1 id="四大句型"><a href="#四大句型" class="headerlink" title="四大句型"></a>四大句型</h1><ol>
+<li>意义：造句</li>
+<li>类型：名词句，形容词句，形容动词句，动词句</li>
+</ol>
+<hr>
+<h2 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h2><ul>
+<li>敬体：陌生人，上级，长辈(敬体标志：です、ます)</li>
+<li>简体：熟悉的朋友，下级，晚辈</li>
+</ul>
+<h3 id="简体"><a href="#简体" class="headerlink" title="简体"></a>简体</h3><table>
 <thead>
 <tr>
-<th align="center"></th>
-<th align="center">一般</th>
-<th align="center">礼貌</th>
-<th align="center">正式</th>
-<th align="center">正式+礼貌</th>
-<th align="center">郑重</th>
+<th>简体表</th>
+<th>肯定</th>
+<th>否定</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">肯定</td>
-<td align="center">だ</td>
-<td align="center">です</td>
-<td align="center">である</td>
-<td align="center">であります</td>
-<td align="center">でございます</td>
+<td>现在、将来</td>
+<td>私は学生<strong>だ</strong></td>
+<td>私は学生<strong>ではない</strong></td>
 </tr>
 <tr>
-<td align="center">否定</td>
-<td align="center">ではない</td>
-<td align="center">ではありません</td>
-<td align="center">&#x2F;</td>
-<td align="center">&#x2F;</td>
-<td align="center">&#x2F;</td>
+<td>过去</td>
+<td>私は学生<strong>だった</strong></td>
+<td>私は学生<strong>ではなかった</strong></td>
 </tr>
 </tbody></table>
-<h1 id="は-が"><a href="#は-が" class="headerlink" title="~は&#x2F;が"></a>~は&#x2F;が</h1><p>辅助词は，提示主题，重心为主题后的描述内容<br>格助词が，提示主语，重心为主语本身或动作主体</p>
+<h3 id="敬体"><a href="#敬体" class="headerlink" title="敬体"></a>敬体</h3><table>
+<thead>
+<tr>
+<th>敬体表</th>
+<th>肯定</th>
+<th>否定</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>现在、将来</td>
+<td>私は学生<strong>です</strong></td>
+<td>私は学生<strong>ではありません</strong></td>
+</tr>
+<tr>
+<td>过去</td>
+<td>私は学生<strong>でした</strong></td>
+<td>私は学生<strong>ではありませんでした</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="形容词"><a href="#形容词" class="headerlink" title="形容词"></a>形容词</h2><ul>
+<li>一类形容词&#x3D;い形容词&#x3D;形容词：以い结尾</li>
+<li>二类形容词&#x3D;な形容词&#x3D;形容动词：不以い结尾</li>
+</ul>
+<h3 id="简体-1"><a href="#简体-1" class="headerlink" title="简体"></a>简体</h3><table>
+<thead>
+<tr>
+<th></th>
+<th>肯定</th>
+<th>否定</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>现在、将来</td>
+<td>今日は寒<strong>い</strong></td>
+<td>今日は寒<strong>くない</strong></td>
+</tr>
+<tr>
+<td>过去</td>
+<td>寒<strong>かった</strong></td>
+<td>寒<strong>くなかった</strong></td>
+</tr>
+</tbody></table>
+<h3 id="敬体-1"><a href="#敬体-1" class="headerlink" title="敬体"></a>敬体</h3><table>
+<thead>
+<tr>
+<th>敬体表</th>
+<th>肯定</th>
+<th>否定</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>现在、将来</td>
+<td>今日は寒<strong>い</strong>です</td>
+<td>今日は寒<strong>くない</strong>です</td>
+</tr>
+<tr>
+<td>过去</td>
+<td>寒<strong>かった</strong>です</td>
+<td>寒<strong>くなかった</strong>です</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="形容动词"><a href="#形容动词" class="headerlink" title="形容动词"></a>形容动词</h2><h3 id="简体-2"><a href="#简体-2" class="headerlink" title="简体"></a>简体</h3><p>和名词句一样</p>
+<h3 id="敬体-2"><a href="#敬体-2" class="headerlink" title="敬体"></a>敬体</h3><h2 id="和名词句一样"><a href="#和名词句一样" class="headerlink" title="和名词句一样"></a>和名词句一样</h2><h2 id="动词"><a href="#动词" class="headerlink" title="动词"></a>动词</h2><h3 id="简体-3"><a href="#简体-3" class="headerlink" title="简体"></a>简体</h3><table>
+<thead>
+<tr>
+<th>敬体表</th>
+<th>肯定</th>
+<th>否定</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>现在、将来</td>
+<td>ご飯を食べ<strong>る</strong></td>
+<td>ご飯を食べ<strong>ない</strong></td>
+</tr>
+<tr>
+<td>过去</td>
+<td>ご飯を食べ<strong>た</strong></td>
+<td>ご飯を食べ<strong>なかった</strong></td>
+</tr>
+</tbody></table>
+<h3 id="敬体-3"><a href="#敬体-3" class="headerlink" title="敬体"></a>敬体</h3><table>
+<thead>
+<tr>
+<th>敬体表</th>
+<th>肯定</th>
+<th>否定</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>现在、将来</td>
+<td>ご飯を食べ<strong>ます</strong></td>
+<td>ご飯を食べません</td>
+</tr>
+<tr>
+<td>过去</td>
+<td>ご飯を食べ<strong>ました</strong></td>
+<td>ご飯を食べませんでした</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="动词变形"><a href="#动词变形" class="headerlink" title="动词变形"></a>动词变形</h1><p>为什么变形：为了满足各种表达需求(否定，过去，假设，命令等)</p>
+<p>有几种变形：</p>
+<table>
+<thead>
+<tr>
+<th><strong>语法体系</strong></th>
+<th>连用形①</th>
+<th>连用形②</th>
+<th>未然形</th>
+<th>意志形</th>
+<th>命令形</th>
+<th>假定形</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>学校语法</strong></td>
+<td>连用形①</td>
+<td>连用形②</td>
+<td>未然形</td>
+<td>意志形</td>
+<td>命令形</td>
+<td>假定形</td>
+</tr>
+<tr>
+<td><strong>日语教育语法</strong></td>
+<td>ます形</td>
+<td>て形・た形</td>
+<td>ない形</td>
+<td>意向形</td>
+<td>命令形</td>
+<td>ば形</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="原形"><a href="#原形" class="headerlink" title="原形"></a>原形</h2><p>动词最原始的形式，可以在词典里找到的形态<br>所以也叫辞书形，字典形，普通形，基本形</p>
+<h3 id="动词原形的分类"><a href="#动词原形的分类" class="headerlink" title="动词原形的分类"></a>动词原形的分类</h3><p><strong>一类</strong>：1.<strong>不以る结尾</strong> 2.以る结尾，る前假名在<strong>あ、う、お</strong>段上</p>
+<p><strong>二类</strong>：以る结尾，る前假名在<strong>い、え</strong>段上</p>
+<p><strong>三类</strong>：<strong>する</strong>（サ变）、<strong>くる</strong>（カ变）</p>
+<p>常见的特殊一类动词：</p>
+<ul>
+<li>帰る（かえる）、走る（はしる）、滑る（すべる）、入る（はいる）</li>
+<li>減る（へる）、知る（しる）、要る（いる）、散る（ちる）</li>
+</ul>
+<h3 id="相关句型"><a href="#相关句型" class="headerlink" title="相关句型"></a>相关句型</h3><h4 id="前に-まえに"><a href="#前に-まえに" class="headerlink" title="前に(まえに)"></a>前に(まえに)</h4><p>在…之前；原型+前に</p>
 <blockquote>
-<p>-你是谁？<br>-我是学生。-&gt; 私は学生だ。</p>
+<p>ご飯を食べる前に、手を洗ってください——手(て)洗(あら)</p>
 </blockquote>
 <blockquote>
-<p>-谁是学生？<br>-我是学生。 -&gt; 私が学生だ。</p>
+<p>寝る前に、音楽を聴きます——寝(ね)音楽(おんがく)聴(き)</p>
 </blockquote>
-<h1 id="も"><a href="#も" class="headerlink" title="~も"></a>~も</h1><p>辅助词も，表示也</p>
+<p>反义：後で(あとで)；に形+後で</p>
+<h4 id="ことです"><a href="#ことです" class="headerlink" title="ことです"></a>ことです</h4><p>是~（事情）；原型+ことです</p>
 <blockquote>
-<p>我是学生，他也是学生。——彼（かれ）<br>私は学生です。かれも学生です。</p>
+<p>私の趣味は音楽を聴くことです——趣味（しゅみ）（shumi）</p>
 </blockquote>
-]]></content>
+<h4 id="ことがある"><a href="#ことがある" class="headerlink" title="ことがある"></a>ことがある</h4><p>有时；原型+ことがある</p>
+<p>有过；た形+ことがある</p>
+<blockquote>
+<p>日本へ行くことがある–我有时会去日本</p>
+</blockquote>
+<blockquote>
+<p>日本へ行ったことがある–我有去过日本的经验</p>
+</blockquote>
+<h4 id="ことができる"><a href="#ことができる" class="headerlink" title="ことができる"></a>ことができる</h4><p>能力、可能性；原型+ことができる</p>
+<blockquote>
+<p>李さんは日本語を話すことができる（能力）——日本語（にほんご）話（はな）</p>
+</blockquote>
+<blockquote>
+<p>この店は、カードで払うことができる（可能性）—— 店（みせ）払（はら）</p>
+</blockquote>
+<hr>
+<h2 id="ます形"><a href="#ます形" class="headerlink" title="ます形"></a>ます形</h2><ol>
+<li>意义：表示尊敬</li>
+<li>作用：<br>①作名词：休み（やすみ）;笑い（わらい）;早起き（はやおき）<br>②作复合词：習い始める（ならいはじめる）</li>
+<li>变形规则：“先分类，再变形”<br>一类：う → い+ます<br>二类：去掉る + ます<br>三类：する → します；来る（くる） → きます</li>
+</ol>
+<h3 id="相关句型-1"><a href="#相关句型-1" class="headerlink" title="相关句型"></a>相关句型</h3><h4 id="たい"><a href="#たい" class="headerlink" title="たい"></a>たい</h4><p>想做某事；ます形+たい</p>
+<p>想要东西；~がほしい</p>
+<blockquote>
+<p>　ジュースを飲みたい——飲（の）</p>
+</blockquote>
+<blockquote>
+<p>アイスを食べたい</p>
+</blockquote>
+<blockquote>
+<p>会いたい（我想你了）——会（あ）</p>
+</blockquote>
+<h4 id="ませんが"><a href="#ませんが" class="headerlink" title="ませんが"></a>ませんが</h4><p>表示委婉的邀请；ます形+ませんが</p>
+<h2 id="て形"><a href="#て形" class="headerlink" title="て形"></a>て形</h2><h2 id="た形"><a href="#た形" class="headerlink" title="た形"></a>た形</h2><h2 id="ない形"><a href="#ない形" class="headerlink" title="ない形"></a>ない形</h2><h1 id="助词"><a href="#助词" class="headerlink" title="助词"></a>助词</h1><h2 id="格助词"><a href="#格助词" class="headerlink" title="格助词"></a>格助词</h2><h2 id="接续助词"><a href="#接续助词" class="headerlink" title="接续助词"></a>接续助词</h2><h2 id="辅助词"><a href="#辅助词" class="headerlink" title="辅助词"></a>辅助词</h2><h2 id="终助词"><a href="#终助词" class="headerlink" title="终助词"></a>终助词</h2><h1 id="功能用语"><a href="#功能用语" class="headerlink" title="功能用语"></a>功能用语</h1><h2 id="存在句"><a href="#存在句" class="headerlink" title="存在句"></a>存在句</h2><h2 id="比较句"><a href="#比较句" class="headerlink" title="比较句"></a>比较句</h2><h2 id="はが句"><a href="#はが句" class="headerlink" title="はが句"></a>はが句</h2><h2 id="表示变换"><a href="#表示变换" class="headerlink" title="表示变换"></a>表示变换</h2><h2 id="指示代词"><a href="#指示代词" class="headerlink" title="指示代词"></a>指示代词</h2><h2 id="解释说明"><a href="#解释说明" class="headerlink" title="解释说明"></a>解释说明</h2>]]></content>
       <categories>
         <category>日语学习</category>
       </categories>
       <tags>
         <tag>日语</tag>
         <tag>语法</tag>
-        <tag>名词谓语句</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日语指示代词</title>
-    <url>/2025/03/12/%E6%97%A5%E8%AF%AD%E6%8C%87%E7%A4%BA%E4%BB%A3%E8%AF%8D/</url>
-    <content><![CDATA[<h1 id="指示代词"><a href="#指示代词" class="headerlink" title="指示代词"></a>指示代词</h1><h2 id="说话人和听话人处于不同位置"><a href="#说话人和听话人处于不同位置" class="headerlink" title="说话人和听话人处于不同位置"></a>说话人和听话人处于不同位置</h2><p><strong>こ</strong>-&gt;指向离说话人近的事物<br><strong>そ</strong>-&gt;指向离听话人近的事物<br><strong>あ</strong>-&gt;指向离说话人和听话人都远的事物<br><strong>ど</strong>-&gt;不定</p>
-<h2 id="说话人和听话人处于同一位置"><a href="#说话人和听话人处于同一位置" class="headerlink" title="说话人和听话人处于同一位置"></a>说话人和听话人处于同一位置</h2><p><strong>こ</strong>-&gt;指向较近的事物<br><strong>そ</strong>-&gt;指向稍远的事物<br><strong>あ</strong>-&gt;指向离得很远的事物<br><strong>ど</strong>-&gt;不定</p>
-<h1 id="れ、の、の"><a href="#れ、の、の" class="headerlink" title="れ、の、の"></a><del>れ、</del>の、<del>の</del></h1><blockquote>
-<p>这是书。<br>これは本だ。——本（ほん）</p>
-</blockquote>
-<blockquote>
-<p>这本书是我的。<br>この本は私の(本)だ。</p>
-</blockquote>
-<p>れ和の意思一样，れ后加助词，の后加名词</p>
-<h1 id="ような"><a href="#ような" class="headerlink" title="~ような"></a>~ような</h1><blockquote>
-<p>这样的书<br>このような本</p>
-</blockquote>
-<p>おう是名词，所以前面用の<br>可简写为~んな，更口语化</p>
-<blockquote>
-<p>这样的书<br>こんな本</p>
-</blockquote>
-<h1 id="こ"><a href="#こ" class="headerlink" title="~こ"></a>~こ</h1><blockquote>
-<p>这里是学校<br>ここは学校だ。——学校（がっこう）</p>
-</blockquote>
-<blockquote>
-<p>教室在哪儿？<br>教室はどこですか——教室（きょうしつ）<br>どこが教室ですか</p>
-</blockquote>
-<p>どこ是已知信息，教室是未知信息</p>
-<h1 id="ちら"><a href="#ちら" class="headerlink" title="~ちら"></a>~ちら</h1><blockquote>
-<p>这里是毛利侦探事务所<br>こちらは毛利探偵事務所でございます。——毛利（もうり）探偵（たんてい）事務所（じむしょ）</p>
-</blockquote>
-<p>郑重礼貌</p>
-<blockquote>
-<p>这位是我的老师<br>こちらは私の先生です。</p>
-</blockquote>
-<h1 id="指示代词总结"><a href="#指示代词总结" class="headerlink" title="指示代词总结"></a>指示代词总结</h1><table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">こ</th>
-<th align="center">そ</th>
-<th align="center">あ</th>
-<th align="center">ど</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">~れ</td>
-<td align="center">これ</td>
-<td align="center">それ</td>
-<td align="center">あれ</td>
-<td align="center">どれ</td>
-</tr>
-<tr>
-<td align="center">~の</td>
-<td align="center">この</td>
-<td align="center">その</td>
-<td align="center">あの</td>
-<td align="center">どの</td>
-</tr>
-<tr>
-<td align="center">~ような</td>
-<td align="center">このような</td>
-<td align="center">そのような</td>
-<td align="center">あのような</td>
-<td align="center">どのような</td>
-</tr>
-<tr>
-<td align="center">~んな</td>
-<td align="center">こんな</td>
-<td align="center">そんな</td>
-<td align="center">あんな</td>
-<td align="center">どんな</td>
-</tr>
-<tr>
-<td align="center">~こ</td>
-<td align="center">ここ</td>
-<td align="center">そこ</td>
-<td align="center">あこ</td>
-<td align="center">どこ</td>
-</tr>
-<tr>
-<td align="center">~ちら</td>
-<td align="center">こちら</td>
-<td align="center">そちら</td>
-<td align="center">あちら</td>
-<td align="center">どちら</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>日语学习</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>指示代词</tag>
+        <tag>n5</tag>
       </tags>
   </entry>
   <entry>
@@ -1925,6 +1497,477 @@
       <tags>
         <tag>日语</tag>
         <tag>动词</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日语动词学习</title>
+    <url>/2025/03/09/%E6%97%A5%E8%AF%AD%E5%8A%A8%E8%AF%8D%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="日语动词分类与变形规则详解"><a href="#日语动词分类与变形规则详解" class="headerlink" title="日语动词分类与变形规则详解"></a>日语动词分类与变形规则详解</h1><hr>
+<h2 id="一、动词分类（3大类）"><a href="#一、动词分类（3大类）" class="headerlink" title="一、动词分类（3大类）"></a>一、动词分类（3大类）</h2><h3 id="1-一类动词（五段动词）"><a href="#1-一类动词（五段动词）" class="headerlink" title="1. 一类动词（五段动词）"></a>1. <strong>一类动词（五段动词）</strong></h3><ul>
+<li><strong>特征</strong>：<ul>
+<li>不以「る」结尾；</li>
+<li>以「る」结尾时，倒数第二个假名在「あ&#x2F;う&#x2F;お」段。</li>
+</ul>
+</li>
+<li><strong>示例</strong>：<ul>
+<li><strong>行（い）く</strong>（去）</li>
+<li><strong>話（はな）す</strong>（说）</li>
+<li><strong>飲（の）む</strong>（喝）</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-二类动词（一段动词）"><a href="#2-二类动词（一段动词）" class="headerlink" title="2. 二类动词（一段动词）"></a>2. <strong>二类动词（一段动词）</strong></h3><ul>
+<li><strong>特征</strong>：<ul>
+<li>以「る」结尾，倒数第二个假名在「い&#x2F;え」段。</li>
+</ul>
+</li>
+<li><strong>示例</strong>：<ul>
+<li><strong>食（た）べる</strong>（吃）</li>
+<li><strong>見（み）る</strong>（看）</li>
+<li><strong>寝（ね）る</strong>（睡觉）</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-三类动词（不规则动词）"><a href="#3-三类动词（不规则动词）" class="headerlink" title="3. 三类动词（不规则动词）"></a>3. <strong>三类动词（不规则动词）</strong></h3><ul>
+<li><strong>特征</strong>：<ul>
+<li>仅两个动词：<strong>する</strong>（做）、<strong>来（く）る</strong>（来）。</li>
+</ul>
+</li>
+<li><strong>示例</strong>：<ul>
+<li><strong>勉強（べんきょう）する</strong>（学习）</li>
+<li><strong>旅行（りょこう）する</strong>（旅行）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="二、基础变形规则（附示例）"><a href="#二、基础变形规则（附示例）" class="headerlink" title="二、基础变形规则（附示例）"></a>二、基础变形规则（附示例）</h2><h3 id="1-ます形（礼貌形）"><a href="#1-ます形（礼貌形）" class="headerlink" title="1. ます形（礼貌形）"></a>1. <strong>ます形（礼貌形）</strong></h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>规则</th>
+<th>示例（原形 → ます形）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一类动词</td>
+<td>词尾变「い段」+ ます</td>
+<td>行く → 行（い）きます</td>
+</tr>
+<tr>
+<td>二类动词</td>
+<td>去「る」+ ます</td>
+<td>食べる → 食（た）べます</td>
+</tr>
+<tr>
+<td>三类动词</td>
+<td>する→ します &#x2F; 来る→ 来（き）ます</td>
+<td>勉強する → 勉強します</td>
+</tr>
+</tbody></table>
+<h3 id="2-ない形（否定形）"><a href="#2-ない形（否定形）" class="headerlink" title="2. ない形（否定形）"></a>2. <strong>ない形（否定形）</strong></h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>规则</th>
+<th>示例（原形 → ない形）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一类动词</td>
+<td>词尾变「あ段」+ ない</td>
+<td>話す → 話（はな）さない</td>
+</tr>
+<tr>
+<td>二类动词</td>
+<td>去「る」+ ない</td>
+<td>見る → 見（み）ない</td>
+</tr>
+<tr>
+<td>三类动词</td>
+<td>する→ しない &#x2F; 来る→ 来（こ）ない</td>
+<td>来る → 来（こ）ない</td>
+</tr>
+</tbody></table>
+<h3 id="3-可能形（“能-可以”）"><a href="#3-可能形（“能-可以”）" class="headerlink" title="3. 可能形（“能&#x2F;可以”）"></a>3. <strong>可能形（“能&#x2F;可以”）</strong></h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>规则</th>
+<th>示例（原形 → 可能形）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一类动词</td>
+<td>词尾变「え段」+ る</td>
+<td>書（か）く → 書（か）ける</td>
+</tr>
+<tr>
+<td>二类动词</td>
+<td>去「る」+ られる</td>
+<td>食べる → 食（た）べられる</td>
+</tr>
+<tr>
+<td>三类动词</td>
+<td>する→ できる &#x2F; 来る→ 来（こ）られる</td>
+<td>勉強する → 勉強できる</td>
+</tr>
+</tbody></table>
+<h3 id="4-命令形（强制语气）"><a href="#4-命令形（强制语气）" class="headerlink" title="4. 命令形（强制语气）"></a>4. <strong>命令形（强制语气）</strong></h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>规则</th>
+<th>示例（原形 → 命令形）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一类动词</td>
+<td>词尾变「え段」</td>
+<td>行く → 行（い）け！</td>
+</tr>
+<tr>
+<td>二类动词</td>
+<td>去「る」+ ろ&#x2F;よ</td>
+<td>食べる → 食（た）べろ！</td>
+</tr>
+<tr>
+<td>三类动词</td>
+<td>する→ しろ &#x2F; 来る→ 来（こ）い</td>
+<td>来る → 来（こ）い！</td>
+</tr>
+</tbody></table>
+<h3 id="5-意志形（“打算-想要”）"><a href="#5-意志形（“打算-想要”）" class="headerlink" title="5. 意志形（“打算&#x2F;想要”）"></a>5. <strong>意志形（“打算&#x2F;想要”）</strong></h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>规则</th>
+<th>示例（原形 → 意志形）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一类动词</td>
+<td>词尾变「お段」+ う</td>
+<td>行く → 行（い）こう</td>
+</tr>
+<tr>
+<td>二类动词</td>
+<td>去「る」+ よう</td>
+<td>食べる → 食（た）べよう</td>
+</tr>
+<tr>
+<td>三类动词</td>
+<td>する→ しよう &#x2F; 来る→ 来（こ）よう</td>
+<td>勉強する → 勉強しよう</td>
+</tr>
+</tbody></table>
+<h3 id="6-假定形（“如果…”）"><a href="#6-假定形（“如果…”）" class="headerlink" title="6. 假定形（“如果…”）"></a>6. <strong>假定形（“如果…”）</strong></h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>规则</th>
+<th>示例（原形 → 假定形）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一类动词</td>
+<td>词尾变「え段」+ ば</td>
+<td>行く → 行（い）けば</td>
+</tr>
+<tr>
+<td>二类动词</td>
+<td>去「る」+ れば</td>
+<td>食べる → 食（た）べれば</td>
+</tr>
+<tr>
+<td>三类动词</td>
+<td>する→ すれば &#x2F; 来る→ 来（く）れば</td>
+<td>来る → 来（く）れば</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="三、综合示例"><a href="#三、综合示例" class="headerlink" title="三、综合示例"></a>三、综合示例</h2><h3 id="1-ます形-否定形"><a href="#1-ます形-否定形" class="headerlink" title="1. ます形 + 否定形"></a>1. <strong>ます形 + 否定形</strong></h3><ul>
+<li><strong>寒（さむ）いから窓（まど）を閉（し）める</strong>（因为冷，所以关窗）<br>→ 寒いから窓を閉めます &#x2F; 閉めません。</li>
+</ul>
+<h3 id="2-可能形-命令形"><a href="#2-可能形-命令形" class="headerlink" title="2. 可能形 + 命令形"></a>2. <strong>可能形 + 命令形</strong></h3><ul>
+<li><strong>書（か）ける！早（はや）く書（か）け！</strong>（能写！快点写！）</li>
+</ul>
+<h3 id="3-假定形-意志形"><a href="#3-假定形-意志形" class="headerlink" title="3. 假定形 + 意志形"></a>3. <strong>假定形 + 意志形</strong></h3><ul>
+<li><strong>行（い）けば、楽（たの）しくなるよ</strong>（如果去的话，会变开心的）。</li>
+</ul>
+<hr>
+<h2 id="四、学习建议"><a href="#四、学习建议" class="headerlink" title="四、学习建议"></a>四、学习建议</h2><ol>
+<li><strong>分类记忆法</strong>：先判断动词类别（看词尾），再套用规则变形。</li>
+<li><strong>高频动词练习</strong>：如「する」「来る」「食べる」。</li>
+<li><strong>活用表格整理</strong>：自制表格对比不同变形形式（例：行く→行きます&#x2F;行かない&#x2F;行ける）。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>日语学习</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>语法</tag>
+        <tag>动词</tag>
+        <tag>语言学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日语形容词、形容动词</title>
+    <url>/2025/03/13/%E6%97%A5%E8%AF%AD%E5%BD%A2%E5%AE%B9%E8%AF%8D%E3%80%81%E5%BD%A2%E5%AE%B9%E5%8A%A8%E8%AF%8D/</url>
+    <content><![CDATA[<h1 id="日语形容词与形容动词语法总结"><a href="#日语形容词与形容动词语法总结" class="headerlink" title="日语形容词与形容动词语法总结"></a>日语形容词与形容动词语法总结</h1><h2 id="一、形容词（い形容詞）"><a href="#一、形容词（い形容詞）" class="headerlink" title="一、形容词（い形容詞）"></a>一、形容词（い形容詞）</h2><h3 id="1-基本特征"><a href="#1-基本特征" class="headerlink" title="1. 基本特征"></a>1. 基本特征</h3><ul>
+<li><strong>词尾</strong>：以「い」结尾（例：青い、寒い）</li>
+<li><strong>语法功能</strong>：<ul>
+<li><strong>终止形</strong>：直接作谓语，无需加「だ」<br><em>例：空は青いです（天空是蓝色的）</em></li>
+<li><strong>连体形</strong>：直接修饰名词，不加「の」<br><em>例：青い空（蓝色的天空）</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-活用规则"><a href="#2-活用规则" class="headerlink" title="2. 活用规则"></a>2. 活用规则</h3><table>
+<thead>
+<tr>
+<th>语法功能</th>
+<th>变形规则</th>
+<th>例词（寒い）</th>
+<th>例句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>否定形</strong></td>
+<td>い → く + ない</td>
+<td>寒くない</td>
+<td>この本は面白くないです</td>
+</tr>
+<tr>
+<td><strong>过去肯定形</strong></td>
+<td>い → かった</td>
+<td>寒かった</td>
+<td>昨日は寒かったです</td>
+</tr>
+<tr>
+<td><strong>过去否定形</strong></td>
+<td>い → く + なかった</td>
+<td>寒くなかった</td>
+<td>昨日は寒くなかったです</td>
+</tr>
+<tr>
+<td><strong>连用形</strong></td>
+<td>い → く</td>
+<td>寒く</td>
+<td>寒くて眠れない</td>
+</tr>
+</tbody></table>
+<h3 id="3-特殊用法"><a href="#3-特殊用法" class="headerlink" title="3. 特殊用法"></a>3. 特殊用法</h3><ul>
+<li><strong>中顿形</strong>：い → くて，表并列或原因<br><em>例：教室は大きく、静かだ（教室又大又安静）</em></li>
+<li><strong>副词化</strong>：い → く，修饰动词<br><em>例：速く走る（跑得快）</em></li>
+<li><strong>名词化</strong>：词干 + さ&#x2F;み&#x2F;く（例：高さ、深み、近く）</li>
+</ul>
+<hr>
+<h2 id="二、形容动词（な形容詞）"><a href="#二、形容动词（な形容詞）" class="headerlink" title="二、形容动词（な形容詞）"></a>二、形容动词（な形容詞）</h2><h3 id="1-基本特征-1"><a href="#1-基本特征-1" class="headerlink" title="1. 基本特征"></a>1. 基本特征</h3><ul>
+<li><strong>词尾</strong>：基本形以「だ」结尾（例：静かだ、有名だ）</li>
+<li><strong>语法功能</strong>：<ul>
+<li><strong>终止形</strong>：直接作谓语<br><em>例：教室は静かです（教室安静）</em></li>
+<li><strong>连体形</strong>：だ → な + 名词<br><em>例：静かな教室（安静的教室）</em></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-活用规则-1"><a href="#2-活用规则-1" class="headerlink" title="2. 活用规则"></a>2. 活用规则</h3><table>
+<thead>
+<tr>
+<th>语法功能</th>
+<th>变形规则</th>
+<th>例词（静かだ）</th>
+<th>例句</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>否定形</strong></td>
+<td>だ → ではない</td>
+<td>静かではない</td>
+<td>あの俳優は有名ではありません</td>
+</tr>
+<tr>
+<td><strong>过去肯定形</strong></td>
+<td>だ → だった</td>
+<td>静かだった</td>
+<td>昨日教室は静かでした</td>
+</tr>
+<tr>
+<td><strong>过去否定形</strong></td>
+<td>だ → ではなかった</td>
+<td>静かではなかった</td>
+<td>昨日教室は静かではありませんでした</td>
+</tr>
+<tr>
+<td><strong>连用形</strong></td>
+<td>だ → で&#x2F;に&#x2F;だっ</td>
+<td>静かで、静かに</td>
+<td>静かで広い部屋</td>
+</tr>
+</tbody></table>
+<h3 id="3-特殊用法-1"><a href="#3-特殊用法-1" class="headerlink" title="3. 特殊用法"></a>3. 特殊用法</h3><ul>
+<li><strong>中顿形</strong>：だ → で，表并列或原因<br><em>例：教室は静かで、大きい（教室安静且大）</em></li>
+<li><strong>副词化</strong>：だ → に，修饰动词<br><em>例：静かに食べる（安静地吃饭）</em></li>
+<li><strong>名词化</strong>：词干 + さ（例：静かさ、便利さ）</li>
+</ul>
+<hr>
+<h2 id="三、连体词"><a href="#三、连体词" class="headerlink" title="三、连体词"></a>三、连体词</h2><h3 id="1-定义与用法"><a href="#1-定义与用法" class="headerlink" title="1. 定义与用法"></a>1. 定义与用法</h3><ul>
+<li><strong>特征</strong>：直接修饰名词，无活用变化<br><em>例：大きな机（大桌子）、同じ色（相同颜色）</em></li>
+<li><strong>常见词</strong>：<ul>
+<li>大きな・小さな（大小）</li>
+<li>色んな（各种）</li>
+<li>同じ（相同）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="四、易错点与注意事项"><a href="#四、易错点与注意事项" class="headerlink" title="四、易错点与注意事项"></a>四、易错点与注意事项</h2><ol>
+<li><strong>形容词与形容动词的混淆</strong>：<ul>
+<li>以「い」结尾的形容动词（例：きれい、嫌い）需加「な」修饰名词<br><em>例：きれいな服（漂亮衣服）</em></li>
+</ul>
+</li>
+<li><strong>过去否定形错误</strong>：<ul>
+<li>正确：寒<strong>く</strong>なかった（×寒くてなかった）</li>
+</ul>
+</li>
+<li><strong>特殊活用词</strong>：<ul>
+<li>形容词「いい」活用需换为「よい」（例：よかった）</li>
+<li>形容动词「同じ」直接修饰名词（例：同じ人）</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="五、综合对比表"><a href="#五、综合对比表" class="headerlink" title="五、综合对比表"></a>五、综合对比表</h2><table>
+<thead>
+<tr>
+<th>语法功能</th>
+<th>形容词（青い）</th>
+<th>形容动词（静かだ）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>终止形</strong></td>
+<td>青い &#x2F; 青いです</td>
+<td>静かだ &#x2F; 静かです</td>
+</tr>
+<tr>
+<td><strong>连体形</strong></td>
+<td>青い空</td>
+<td>静かな教室</td>
+</tr>
+<tr>
+<td><strong>否定形</strong></td>
+<td>青くない</td>
+<td>静かではない</td>
+</tr>
+<tr>
+<td><strong>过去形</strong></td>
+<td>青かった</td>
+<td>静かだった</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>日语学习</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>形容词</tag>
+        <tag>形容动词</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日语指示代词</title>
+    <url>/2025/03/12/%E6%97%A5%E8%AF%AD%E6%8C%87%E7%A4%BA%E4%BB%A3%E8%AF%8D/</url>
+    <content><![CDATA[<h1 id="指示代词"><a href="#指示代词" class="headerlink" title="指示代词"></a>指示代词</h1><h2 id="说话人和听话人处于不同位置"><a href="#说话人和听话人处于不同位置" class="headerlink" title="说话人和听话人处于不同位置"></a>说话人和听话人处于不同位置</h2><p><strong>こ</strong>-&gt;指向离说话人近的事物<br><strong>そ</strong>-&gt;指向离听话人近的事物<br><strong>あ</strong>-&gt;指向离说话人和听话人都远的事物<br><strong>ど</strong>-&gt;不定</p>
+<h2 id="说话人和听话人处于同一位置"><a href="#说话人和听话人处于同一位置" class="headerlink" title="说话人和听话人处于同一位置"></a>说话人和听话人处于同一位置</h2><p><strong>こ</strong>-&gt;指向较近的事物<br><strong>そ</strong>-&gt;指向稍远的事物<br><strong>あ</strong>-&gt;指向离得很远的事物<br><strong>ど</strong>-&gt;不定</p>
+<h1 id="れ、の、の"><a href="#れ、の、の" class="headerlink" title="れ、の、の"></a><del>れ、</del>の、<del>の</del></h1><blockquote>
+<p>这是书。<br>これは本だ。——本（ほん）</p>
+</blockquote>
+<blockquote>
+<p>这本书是我的。<br>この本は私の(本)だ。</p>
+</blockquote>
+<p>れ和の意思一样，れ后加助词，の后加名词</p>
+<h1 id="ような"><a href="#ような" class="headerlink" title="~ような"></a>~ような</h1><blockquote>
+<p>这样的书<br>このような本</p>
+</blockquote>
+<p>おう是名词，所以前面用の<br>可简写为~んな，更口语化</p>
+<blockquote>
+<p>这样的书<br>こんな本</p>
+</blockquote>
+<h1 id="こ"><a href="#こ" class="headerlink" title="~こ"></a>~こ</h1><blockquote>
+<p>这里是学校<br>ここは学校だ。——学校（がっこう）</p>
+</blockquote>
+<blockquote>
+<p>教室在哪儿？<br>教室はどこですか——教室（きょうしつ）<br>どこが教室ですか</p>
+</blockquote>
+<p>どこ是已知信息，教室是未知信息</p>
+<h1 id="ちら"><a href="#ちら" class="headerlink" title="~ちら"></a>~ちら</h1><blockquote>
+<p>这里是毛利侦探事务所<br>こちらは毛利探偵事務所でございます。——毛利（もうり）探偵（たんてい）事務所（じむしょ）</p>
+</blockquote>
+<p>郑重礼貌</p>
+<blockquote>
+<p>这位是我的老师<br>こちらは私の先生です。</p>
+</blockquote>
+<h1 id="指示代词总结"><a href="#指示代词总结" class="headerlink" title="指示代词总结"></a>指示代词总结</h1><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">こ</th>
+<th align="center">そ</th>
+<th align="center">あ</th>
+<th align="center">ど</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">~れ</td>
+<td align="center">これ</td>
+<td align="center">それ</td>
+<td align="center">あれ</td>
+<td align="center">どれ</td>
+</tr>
+<tr>
+<td align="center">~の</td>
+<td align="center">この</td>
+<td align="center">その</td>
+<td align="center">あの</td>
+<td align="center">どの</td>
+</tr>
+<tr>
+<td align="center">~ような</td>
+<td align="center">このような</td>
+<td align="center">そのような</td>
+<td align="center">あのような</td>
+<td align="center">どのような</td>
+</tr>
+<tr>
+<td align="center">~んな</td>
+<td align="center">こんな</td>
+<td align="center">そんな</td>
+<td align="center">あんな</td>
+<td align="center">どんな</td>
+</tr>
+<tr>
+<td align="center">~こ</td>
+<td align="center">ここ</td>
+<td align="center">そこ</td>
+<td align="center">あこ</td>
+<td align="center">どこ</td>
+</tr>
+<tr>
+<td align="center">~ちら</td>
+<td align="center">こちら</td>
+<td align="center">そちら</td>
+<td align="center">あちら</td>
+<td align="center">どちら</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>日语学习</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>指示代词</tag>
       </tags>
   </entry>
 </search>
