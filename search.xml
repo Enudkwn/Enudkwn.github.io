@@ -1,129 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Java基础面试题</title>
-    <url>/2025/03/05/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
-    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/java.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
-<h1 id="概念相关"><a href="#概念相关" class="headerlink" title="概念相关"></a>概念相关</h1><h2 id="Java的特点"><a href="#Java的特点" class="headerlink" title="Java的特点"></a>Java的特点</h2><ol>
-<li><strong>平台无关性</strong>：Java编译器将源码编译为字节码，字节码可以在任何装有Java虚拟机的平台上运行，不需要重新编译。</li>
-<li><strong>面向对象</strong>：Java是一门严格面向对象的语言，几乎一切都是对象。面向对象编程（OOP）特性使得代码更易于维护和重用。</li>
-<li><strong>内存管理</strong>：Java有自己的垃圾回收机制，自动管理内存和不再使用的对象。开发者不用手动管理内存，减少了内存泄露和其他内存相关的问题。</li>
-</ol>
-<h2 id="Java为什么能跨平台"><a href="#Java为什么能跨平台" class="headerlink" title="Java为什么能跨平台"></a>Java为什么能跨平台</h2><p>这主要依赖于Java虚拟机（JVM），开发者编写的Java源代码经编译后得到.class文件，即字节码文件。Java虚拟机可以将字节码翻译为特定平台下的机器码。</p>
-<p>所以运行Java程序必须要有JVM支持，即使将Java程序打包为可执行文件（例如.exe），它也需要JVM的支持。</p>
-<p>跨平台的是Java程序，而JVM是用C&#x2F;C++编写的，不可跨平台，不同平台需要安装适合的JVM。</p>
-<h2 id="JVM-JRE-JDK的关系"><a href="#JVM-JRE-JDK的关系" class="headerlink" title="JVM,JRE,JDK的关系"></a>JVM,JRE,JDK的关系</h2><ul>
-<li><strong>JVM</strong>：略</li>
-<li><strong>JDK</strong>是Java开发工具包，包含了JVM，编译器，调试器等开发工具，以及一系列的类库（如Java标准库和开发工具库）。即JDK提供了开发、编译、调试和运行Java程序的所需的全部工具和环境。</li>
-<li><strong>JRE</strong>是Java运行时环境，是Java程序运行的最小环境，包含了JVM和Java标准库。JRE不包含开发工具，只包含运行Java程序所需的最小环境。</li>
-</ul>
-<h2 id="为什么Java解释和编译都有"><a href="#为什么Java解释和编译都有" class="headerlink" title="为什么Java解释和编译都有"></a>为什么Java解释和编译都有</h2><ul>
-<li><strong>解释性</strong>：Java源代码被编译为字节码，JIT会把编译过的机器码保存下来下次使用。</li>
-<li><strong>编译性</strong>：JVM中有方法调用计数器，当调用次数达到一定阈值时，JVM会使用JIT编译字节码为机器码，下次再调用时直接执行机器码，提高性能。否则就是用解释器进行解释执行。</li>
-</ul>
-<h2 id="编译型语言和解释型语言的区别"><a href="#编译型语言和解释型语言的区别" class="headerlink" title="编译型语言和解释型语言的区别"></a>编译型语言和解释型语言的区别</h2><ul>
-<li><strong>编译型语言</strong>：编译型语言在编译时将源代码编译为目标代码（如机器码），然后再运行目标代码。编译型语言在编译时进行优化，提高性能，但跨平台性差。</li>
-<li><strong>解释型语言</strong>：解释型语言在运行时解释执行源代码，无需编译为目标代码。解释型语言在运行时进行优化，跨平台性好，但性能较低。</li>
-</ul>
-<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="八种基本的数据类型"><a href="#八种基本的数据类型" class="headerlink" title="八种基本的数据类型"></a>八种基本的数据类型</h2><p>Java支持的数据类分为两类：基本数据类型和引用数据类型</p>
-<p>基本数据类型有8中，可分为3类：</p>
-<ul>
-<li>数值型：整数型（byte，short，int，long），浮点型（float，double）</li>
-<li>字符型：char</li>
-<li>布尔型：boolean</li>
-</ul>
-<p>引用数据类型有：类、接口、数组…</p>
-<ul>
-<li>注意：<ol>
-<li>1字节（byte,boolean），2字节（short,char），4字节（int，float），8字节（long，double）</li>
-<li>浮点数的默认值为double，若需要float，需在末尾加上f或F。</li>
-<li>整型默认为int，若需要byte，short，long，需在末尾加上b、s、l。</li>
-<li>八种数据类型的包装类：除了char-&gt;Character、int-&gt;Integer，其他都是基本数据类型首字母大写。</li>
-<li>char类型是无符号的，不能为负，所以0开头</li>
-</ol>
-</li>
-</ul>
-<h2 id="int和long之间的转换"><a href="#int和long之间的转换" class="headerlink" title="int和long之间的转换"></a>int和long之间的转换</h2><ul>
-<li><strong>int转long</strong>：long数据类型的范围比int大，因此long转int是安全的，可通过直接赋值和强制类型转换实现。</li>
-<li><strong>long转int</strong>：long转为int可能会出现数据丢失或溢出的问题，若转换的数据超出int类型的范围，转换的结果是阶段后低位部分。</li>
-</ul>
-<h2 id="数据类型转换方式"><a href="#数据类型转换方式" class="headerlink" title="数据类型转换方式"></a>数据类型转换方式</h2><ul>
-<li><strong>自动类型转换(隐式转换)</strong>：目标类型范围大于源类型时，Java会自动将源类型转换为目标类型</li>
-<li><strong>强制类型转换(显式转换)</strong>：目标类型范围小于源类型时，需要使用强制类型转换，这可能导致数据丢失或溢出</li>
-<li><strong>字符串转换</strong>：Java提供了将字符串转换为其他数据类型的方法，如Integer.parseInt()、Double.parseDouble()等</li>
-<li><strong>数值之间转换</strong>：Java提供了将数值转换为其他数据类型的方法，如Integer.valueOf()、Double.valueOf()等</li>
-</ul>
-<h2 id="类型互换可能会出现那些问题"><a href="#类型互换可能会出现那些问题" class="headerlink" title="类型互换可能会出现那些问题"></a>类型互换可能会出现那些问题</h2><ul>
-<li><strong>数据丢失</strong>：如果目标类型范围小于源类型范围，可能会出现数据丢失的情况</li>
-<li><strong>数据溢出</strong>：如果目标类型范围大于源类型范围，可能会出现数据溢出的情况，转换的结果会额外填充高位部分，但源石数据爆粗不变</li>
-<li><strong>精度损失</strong>：在进行浮点类型的转换时，可能发生精度损失</li>
-<li><strong>类型不匹配</strong>：在进行类型转换时，需要确保源类型和目标类型是兼容的</li>
-</ul>
-<h2 id="为什么使用BigDecimal不用Double"><a href="#为什么使用BigDecimal不用Double" class="headerlink" title="为什么使用BigDecimal不用Double"></a>为什么使用BigDecimal不用Double</h2><p>double会出现精度丢失的问题，double执行的是二进制浮点运算，二进制在有些情况不能准确表示小数，就像十进制不能准确表示1&#x2F;3，也就是说二进制表示小数只能表示(1&#x2F;2)^n的任意组合</p>
-<p>这就会导致可能出现0.6无法购买0.5和0.1的商品</p>
-<p>而BigDecimal是使用字符串表示的，可以进行精确计算</p>
-<h2 id="装箱和拆箱是什么"><a href="#装箱和拆箱是什么" class="headerlink" title="装箱和拆箱是什么"></a>装箱和拆箱是什么</h2><p>装箱(boxing)和拆箱(unboxing)是指将基本数据类型和对应的包装类之间进行转换的过程</p>
-<p>赋值时，Java1.5以后，所有的装箱和拆箱都是有编译器完成，进行自动装箱和拆箱</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i;<span class="comment">//自动拆箱</span></span><br></pre></td></tr></table></figure>
-<p>方法调用时，可以直接传入原始数据或对象，编译器同样会进行转换</p>
-<p><strong>自动装箱的弊端</strong></p>
-<p>在一个循环中进行自动装箱，会产生多于的对象影响程序的性能</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++)&#123; sum+=i; &#125;</span><br></pre></td></tr></table></figure>
-<p>sum + i 中的 + 不适用于Integer对象，程序运行时会先将sum自动拆箱，再进行数值相加的操作，然后再进行自动装箱的操作转换为Integer对象，类似于</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> sum.intValue() + i;<span class="type">Integer</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(result);</span><br></pre></td></tr></table></figure>
-<p>故会在循环中产生大量无用的Integer对象，降低了程序的性能、加重了垃圾回收的工作量</p>
-<h2 id="Java为什么需要Integer"><a href="#Java为什么需要Integer" class="headerlink" title="Java为什么需要Integer"></a>Java为什么需要Integer</h2><p>将int类型包装为Integer对象好处很多，可以把属性(也就是数据)和处理数据的方法结合在一起，例如parseInt()方法</p>
-<p>还有个重要原因就是Java中绝大部分方法或类都是用来处理类类型对象的，例如ArrayList集合类只能以类作为它的存储对象</p>
-<p><strong>泛型中的应用</strong>：在Java中泛型只能使用引用类型</p>
-<p><strong>转换中的应用</strong>：Java中基本数据类型和引用类型不能直接进行转换，必须通过包装类实现</p>
-<p><strong>集合中的应用</strong>：在Java中集合类中的泛型只能是引用类型，不能是基本数据类型</p>
-<h2 id="int和Integer的区别"><a href="#int和Integer的区别" class="headerlink" title="int和Integer的区别"></a>int和Integer的区别</h2><ul>
-<li><p><strong>基本数据类型和引用类型</strong>：int是基本数据类型，不需要实例化，不用额外分配内存；Integer是引用类型，对象的引用和对象是分开存储的</p>
-</li>
-<li><p><strong>自动装箱拆箱</strong>：略</p>
-</li>
-<li><p><strong>空指针异常</strong>：Integer对象可以表示null，int不能表示null。对被赋予null值的Integer对象进行操作会出现空指针异常</p>
-</li>
-</ul>
-<h2 id="Integer缓存"><a href="#Integer缓存" class="headerlink" title="Integer缓存"></a>Integer缓存</h2><p>Java的Integer类内部实现了一个静态缓存池，用于存储特定范围内的整数值对应的Integer对象</p>
-<p>默认情况下，这个范围为-128至127，即在-128至127之间的整数值，都会被缓存在静态缓存池中，避免每次创建新的Integer对象，提高性能。可通过Integer.valueOf()方法来获取缓存池中的Integer对象，如果缓存池中不存在对应的Integer对象，则创建一个新的对象并放入缓存池中。</p>
-<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="如何理解面向对象，简单说说封装继承多态"><a href="#如何理解面向对象，简单说说封装继承多态" class="headerlink" title="如何理解面向对象，简单说说封装继承多态"></a>如何理解面向对象，简单说说封装继承多态</h2><p>面向对象是一种编程范式，它将现实中的事物抽象为对象，对象具有属性和方法。面向对象的设计思想是以对象为中心，通过对象之间的交互来完成程序的功能，具有灵活性和可扩展性，通过封装和继承可以更好地应对需求变化</p>
-<p>Java面向对象的三大特性：<strong>封装、继承、多态</strong>：</p>
-<ul>
-<li><strong>封装</strong>：封装是指将对象的属性和方法结合在一起，对外隐藏内部的细节，仅通过对象提供的接口与外界交互。增强了安全性并简化编程，使对象更加独立</li>
-<li><strong>继承</strong>：继承是指子类可以继承父类的属性和方法，从而实现代码的重用。子类可以扩展父类的功能，也可以覆盖父类的方法，从而实现代码的复用。</li>
-<li><strong>多态</strong>：多态是指一个对象在不同的情况下具有不同的行为，即对象的行为可以根据对象的状态或者类型而发生变化。多态性可分为编译时多态(重载)和运行时多态(重写)。多态使得对象的行为更加灵活和可扩展，从而提高程序的可维护性。</li>
-</ul>
-<p>多态表现于：</p>
-<ul>
-<li>方法重载：<ul>
-<li>方法重载是指在同一个类中定义多个同名方法，但参数列表不同(参数类型、个数、顺序)，编译时根据参数列表选择对应的方法进行调用。</li>
-<li>示例：对于一个 add 方法，可以定义为 add(int a, int b) 和 add(double a, double b)</li>
-</ul>
-</li>
-<li>方法重写：<ul>
-<li>方法重写是指子类重写父类的方法，使得子类具有父类方法的功能，但可以扩展或修改父类方法的实现。在运行时，JVM会根据对象的实际类型来决定调用哪个方法。</li>
-<li>示例：对于一个 Animal 类，可以定义一个 eat 方法，子类 Cat 和 Dog 都可以重写这个方法，使得 Cat 和 Dog 的 eat 方法具有不同的实现。</li>
-</ul>
-</li>
-<li>接口与实现：<ul>
-<li>多个类可以实现同一个接口，并且用接口类型的引用来调用这些类的方法。这使得程序在面对不同的实现时，保持。一贯的调用方式</li>
-<li>示例：定义一个接口 Animal，包含一个 eat 方法，然后定义两个实现类 Cat 和 Dog，实现 Animal 接口，使得 Cat 和 Dog 具有 eat 方法。</li>
-</ul>
-</li>
-<li></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java面试题</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>面试</tag>
-        <tag>Java基础</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MILABO歌词翻译学习</title>
     <url>/2025/03/09/MILABO%E6%AD%8C%E8%AF%8D%E7%BF%BB%E8%AF%91%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<h1 id="バレたくはないから歌わないけど"><a href="#バレたくはないから歌わないけど" class="headerlink" title="バレたくはないから歌わないけど"></a>バレたくはないから歌わないけど</h1><p>ba re ta ku wa na i ka ra u ta wa na i ke do<br>不想歌唱是因为我不愿展露</p>
@@ -461,226 +338,6 @@
       </tags>
   </entry>
   <entry>
-    <title>MySQL进阶</title>
-    <url>/2025/03/10/MySQL%E8%BF%9B%E9%98%B6/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>数据库学习</category>
-      </categories>
-      <tags>
-        <tag>MySQL</tag>
-        <tag>数据库</tag>
-        <tag>MySQL进阶</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL面试题</title>
-    <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
-    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
-<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
-<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
-<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
-<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
-<p>选择SQL还是NoSQL,考虑一下因素：</p>
-<p><strong>ACID vs BASE</strong></p>
-<p>关系型数据库支持ACID，即<strong>原子性、一致性、隔离性、持久性</strong>；相对而言，NoSQL采用更加宽松的模型BASE，即<strong>基本可用、软状态、最终一致性</strong></p>
-<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
-<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
-<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
-<p><strong>扩展性对比</strong></p>
-<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
-<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
-<h2 id="数据库三大范式是什么"><a href="#数据库三大范式是什么" class="headerlink" title="数据库三大范式是什么"></a>数据库三大范式是什么</h2><p><strong>第一范式</strong>(1NF)：</p>
-<p>要求数据库表的每一列都是不可分割的原子数据项</p>
-<blockquote>
-<p>例：家庭信息：5口人，北京—应该为—家庭人口数：5口人 &amp; 家庭住址：北京</p>
-</blockquote>
-<p><strong>第二范式</strong>(2NF)：</p>
-<p>在1NF的基础上，非码属性必须完全依赖于候码(在1NF的基础上消除非主属性对主码的部分函数依赖)</p>
-<p>第二范式需要确保数据库表中的每一列都和主键相关，而不能只与主键的某一部分相关（主要针对联合主键而言）。</p>
-<blockquote>
-<p>主码：主码是从候选码中选择的一个属性或属性组，用于唯一标识元组。若候选码仅有一个，则它自动成为主码<br>候码：候选码是能够唯一标识关系中每个元组（记录）的最小属性或属性组。这里的“最小”指候选码的真子集不能成为候选码</p>
-</blockquote>
-<blockquote>
-<p>例：产品数量、产品折扣、产品价格与”订单号”和”产品号”都相关，但是订单金额和订单时间仅与”订单号”相关，与”产品号”无关， 这样就不满足第二范式的要求，需分成两个表</p>
-</blockquote>
-<p><strong>第三范式</strong>（3NF）：</p>
-<p>在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依<br>赖)</p>
-<p>第三范式需要确保数据表中的每一列数据都和主键直接相关，而不能间接相关。</p>
-<blockquote>
-<p>例：表中所有属性都完全依赖于学号，所以满足第二范式，但是”班主任性别”和”班主任年龄”直接依赖的是”班主任姓名”, 而不是主键”学号”，需分成两个表</p>
-</blockquote>
-<h2 id="MySQL怎么联表查询"><a href="#MySQL怎么联表查询" class="headerlink" title="MySQL怎么联表查询"></a>MySQL怎么联表查询</h2><p>数据库有四种联表查询类型：</p>
-<blockquote>
-<ol>
-<li>内连接(INNER JOIN)</li>
-<li>左外连接(LEFT JOIN)</li>
-<li>右外连接(RIGHT JOIN)</li>
-<li>全外连接(FULL JOIN)</li>
-</ol>
-</blockquote>
-<ol>
-<li><strong>内连接</strong>(INNER JOIN)： <ul>
-<li>返回两个表中有匹配关系的行</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">INNER JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回每个员工及其所在部门的名字</p>
-<ol start="2">
-<li><strong>左外连接</strong>(LEFT JOIN)<ul>
-<li>返回左表中的所有行，即使在右表中没有匹配的行。未匹配的右表列会包含NULL</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回每个员工及其所在部门的名字，包括没有分配部门的员工</p>
-<ol start="3">
-<li><strong>右外连接</strong>(RIGHT JOIN)<ul>
-<li>返回右表中的所有行，即使在左表中没有匹配的行。未匹配的左表列会包含NULL</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回每个员工及其所在部门的名字，包括没有分配员工的部门</p>
-<ol start="4">
-<li><strong>全外连接</strong>(FULL JOIN)<ul>
-<li>返回两个表中的所有行，包括非匹配行。在MySQL中，FULL JOIN 需要使用 UNION来实现，因为MySQL 不支持FULL JOIN</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id</span><br><span class="line"> </span><br><span class="line">UNION</span><br><span class="line"></span><br><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
-<p>这个查询返回所有员工和所有部门，包括没有匹配行的记录</p>
-<h2 id="MySQL如何避免重复插入数据"><a href="#MySQL如何避免重复插入数据" class="headerlink" title="MySQL如何避免重复插入数据"></a>MySQL如何避免重复插入数据</h2><ol>
-<li><strong>使用UNIQUE约束</strong></li>
-</ol>
-<p>在表的相关列添加上UNIQUE约束，确保每个值在该列中唯一</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE users(</span><br><span class="line">    id    INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">    emai1 VARCHAR(255) UNIQUE,</span><br><span class="line">    name  VARCHAR(255)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>如果尝试插入重复的email，MySQL会返回错误</p>
-<ol start="2">
-<li><strong>使用INSERT … ON DUPLICATE KEY UPDATE</strong></li>
-</ol>
-<p>这中语句允许在插入记录时处理重复键的情况。如果插入记录与现有记录有冲突，可以自己选择更新现有记录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;)</span><br><span class="line">ON DUPLICATE KEY UPDATE name = VALUES(name);</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><strong>使用INSERT IGNORE</strong></li>
-</ol>
-<p>该语句会在插入记录时忽略那些因为重复键而发生的错误</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT IGNORE INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;);</span><br></pre></td></tr></table></figure>
-<p>如果email已经存在，这条插入语句将被忽略而不会返回错误</p>
-<p>选择哪种方法取决于具体的需求：</p>
-<ul>
-<li>如果需要保证全局唯一性，使用UNIQUE约束是最佳做法</li>
-<li>如果需要插入和更新结合可以使用ON DUPLICATE KEY UPDATE</li>
-<li>对于快速忽略重复插入，INSERT IGNORE是合适的选择</li>
-</ul>
-<h2 id="CHAR-和-VARCHAR有什么区别"><a href="#CHAR-和-VARCHAR有什么区别" class="headerlink" title="CHAR 和 VARCHAR有什么区别"></a>CHAR 和 VARCHAR有什么区别</h2><ul>
-<li>CHAR是固定长度的字符串类型，定义时需要指定固定长度，存储时会在末尾补足空格。<br>   CHAR适合存储长度固定的数据，如固定长度的代码、状态等，存储空间固定，对于短字符串效率较高。</li>
-<li>VARCHAR是可变长度的字符串类型，定义时需要指定最大长度，实际存储时根据实际长度占用存储空间。<br>   VARCHAR适合存储长度可变的数据，如用户输入的文本、备注等，节约存储空间。</li>
-</ul>
-<h2 id="Text数据类型可以无限大吗"><a href="#Text数据类型可以无限大吗" class="headerlink" title="Text数据类型可以无限大吗?"></a>Text数据类型可以无限大吗?</h2><p>MySQL 3种text类型的最大长度如下:<br>   TEXT: 65,535bytes ~ 64kb<br>   MEDIUMTEXT: 16,777,215bytes ~ 16Mb<br>   LONGTEXT: 4,294,967,295bytes ~ 4Gb</p>
-]]></content>
-      <categories>
-        <category>MySQL面试题</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-        <tag>MySQL</tag>
-        <tag>数据库</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>日语名词谓语句</title>
-    <url>/2025/03/12/%E6%97%A5%E8%AF%AD%E5%90%8D%E8%AF%8D%E8%B0%93%E8%AF%AD%E5%8F%A5/</url>
-    <content><![CDATA[<h1 id="だ"><a href="#だ" class="headerlink" title="~だ"></a>~だ</h1><blockquote>
-<p>是学生。<br>学生だ。——学生（がくせい）</p>
-</blockquote>
-<p>だ放句末，表示为是<br>だ后面只能加句号&#x2F;终助词 (终助词-&gt;表达语气)<br>だ后面加其他成分需要把だ改为で</p>
-<blockquote>
-<p>不是学生。<br>学生ではない。</p>
-</blockquote>
-<p>ではない表示否定，其中は作为助词时读作わ，ない是辅助形容词</p>
-<blockquote>
-<p>是学生吗。<br>学生か？</p>
-</blockquote>
-<p>其中か读作升调表达疑问，也可以直接升调读名词表示疑问</p>
-<h1 id="です"><a href="#です" class="headerlink" title="~です"></a>~です</h1><blockquote>
-<p>是学生。<br>学生です。</p>
-</blockquote>
-<p>です表达判断和对听话人的礼貌</p>
-<blockquote>
-<p>不是学生。<br>学生ではありません</p>
-</blockquote>
-<blockquote>
-<p>是学生吗？<br>学生ですか？</p>
-</blockquote>
-<p>以及升调，但不能省略</p>
-<blockquote>
-<p>是老师还是学生？<br>先生ですか、学生ですか。——先生（せんせい）</p>
-</blockquote>
-<h1 id="～である"><a href="#～である" class="headerlink" title="～である"></a>～である</h1><blockquote>
-<p>学生である</p>
-</blockquote>
-<p>正式的表达</p>
-<blockquote>
-<p>学生であります</p>
-</blockquote>
-<p>正式的基础上加上礼貌</p>
-<h1 id="でございます"><a href="#でございます" class="headerlink" title="~でございます"></a>~でございます</h1><blockquote>
-<p>毛利探偵事務所でございます——毛利（もうり）探偵（たんてい）事務所（じむしょ）</p>
-</blockquote>
-<p>郑重的礼貌</p>
-<h1 id="判断相关总结"><a href="#判断相关总结" class="headerlink" title="判断相关总结"></a>判断相关总结</h1><table>
-<thead>
-<tr>
-<th align="center"></th>
-<th align="center">一般</th>
-<th align="center">礼貌</th>
-<th align="center">正式</th>
-<th align="center">正式+礼貌</th>
-<th align="center">郑重</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">肯定</td>
-<td align="center">だ</td>
-<td align="center">です</td>
-<td align="center">である</td>
-<td align="center">であります</td>
-<td align="center">でございます</td>
-</tr>
-<tr>
-<td align="center">否定</td>
-<td align="center">ではない</td>
-<td align="center">ではありません</td>
-<td align="center">&#x2F;</td>
-<td align="center">&#x2F;</td>
-<td align="center">&#x2F;</td>
-</tr>
-</tbody></table>
-<h1 id="は-が"><a href="#は-が" class="headerlink" title="~は&#x2F;が"></a>~は&#x2F;が</h1><p>辅助词は，提示主题，重心为主题后的描述内容<br>格助词が，提示主语，重心为主语本身或动作主体</p>
-<blockquote>
-<p>-你是谁？<br>-我是学生。-&gt; 私は学生だ。</p>
-</blockquote>
-<blockquote>
-<p>-谁是学生？<br>-我是学生。 -&gt; 私が学生だ。</p>
-</blockquote>
-<h1 id="も"><a href="#も" class="headerlink" title="~も"></a>~も</h1><p>辅助词も，表示也</p>
-<blockquote>
-<p>我是学生，他也是学生。——彼（かれ）<br>私は学生です。かれも学生です。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>日语学习</category>
-      </categories>
-      <tags>
-        <tag>日语</tag>
-        <tag>名词谓语句</tag>
-        <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>MySQL基础</title>
     <url>/2025/03/08/MySQL%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><h2 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h2><ol>
@@ -904,54 +561,349 @@
       </tags>
   </entry>
   <entry>
-    <title>日语人称代词</title>
-    <url>/2025/03/13/%E6%97%A5%E8%AF%AD%E4%BA%BA%E7%A7%B0%E4%BB%A3%E8%AF%8D/</url>
-    <content><![CDATA[<h1 id="第一人称"><a href="#第一人称" class="headerlink" title="第一人称"></a>第一人称</h1><ul>
-<li>私(わたし)—–女&#x2F;男女正式</li>
-<li>私(わたくし)—–正式礼貌</li>
-<li>僕(ボク)—–男，非正式</li>
-<li>俺(おれ)—–粗俗，上对下</li>
-<li>俺様(おれ様)—–男性专用，粗俗</li>
-<li>あたし—–女</li>
-<li>うち—–关西，女</li>
+    <title>Java基础面试题</title>
+    <url>/2025/03/05/Java%E5%9F%BA%E7%A1%80%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/java.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
+<h1 id="概念相关"><a href="#概念相关" class="headerlink" title="概念相关"></a>概念相关</h1><h2 id="Java的特点"><a href="#Java的特点" class="headerlink" title="Java的特点"></a>Java的特点</h2><ol>
+<li><strong>平台无关性</strong>：Java编译器将源码编译为字节码，字节码可以在任何装有Java虚拟机的平台上运行，不需要重新编译。</li>
+<li><strong>面向对象</strong>：Java是一门严格面向对象的语言，几乎一切都是对象。面向对象编程（OOP）特性使得代码更易于维护和重用。</li>
+<li><strong>内存管理</strong>：Java有自己的垃圾回收机制，自动管理内存和不再使用的对象。开发者不用手动管理内存，减少了内存泄露和其他内存相关的问题。</li>
+</ol>
+<h2 id="Java为什么能跨平台"><a href="#Java为什么能跨平台" class="headerlink" title="Java为什么能跨平台"></a>Java为什么能跨平台</h2><p>这主要依赖于Java虚拟机（JVM），开发者编写的Java源代码经编译后得到.class文件，即字节码文件。Java虚拟机可以将字节码翻译为特定平台下的机器码。</p>
+<p>所以运行Java程序必须要有JVM支持，即使将Java程序打包为可执行文件（例如.exe），它也需要JVM的支持。</p>
+<p>跨平台的是Java程序，而JVM是用C&#x2F;C++编写的，不可跨平台，不同平台需要安装适合的JVM。</p>
+<h2 id="JVM-JRE-JDK的关系"><a href="#JVM-JRE-JDK的关系" class="headerlink" title="JVM,JRE,JDK的关系"></a>JVM,JRE,JDK的关系</h2><ul>
+<li><strong>JVM</strong>：略</li>
+<li><strong>JDK</strong>是Java开发工具包，包含了JVM，编译器，调试器等开发工具，以及一系列的类库（如Java标准库和开发工具库）。即JDK提供了开发、编译、调试和运行Java程序的所需的全部工具和环境。</li>
+<li><strong>JRE</strong>是Java运行时环境，是Java程序运行的最小环境，包含了JVM和Java标准库。JRE不包含开发工具，只包含运行Java程序所需的最小环境。</li>
 </ul>
-<h1 id="第二人称"><a href="#第二人称" class="headerlink" title="第二人称"></a>第二人称</h1><ul>
-<li>あなた—–不下对上，亲爱的</li>
-<li>君(きみ)——-对男，同辈&#x2F;晚辈</li>
-<li>お前(おまえ)—–对男，同辈&#x2F;晚辈，没礼貌</li>
-<li>あんな——由あなた转来，礼貌度低一些</li>
-<li>僕(ぼく)—–对不认识的孩子</li>
+<h2 id="为什么Java解释和编译都有"><a href="#为什么Java解释和编译都有" class="headerlink" title="为什么Java解释和编译都有"></a>为什么Java解释和编译都有</h2><ul>
+<li><strong>解释性</strong>：Java源代码被编译为字节码，JIT会把编译过的机器码保存下来下次使用。</li>
+<li><strong>编译性</strong>：JVM中有方法调用计数器，当调用次数达到一定阈值时，JVM会使用JIT编译字节码为机器码，下次再调用时直接执行机器码，提高性能。否则就是用解释器进行解释执行。</li>
 </ul>
-<h1 id="第三人称"><a href="#第三人称" class="headerlink" title="第三人称"></a>第三人称</h1><h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><ul>
-<li>彼(かれ)-他</li>
-<li>彼女(かのじょ)-她</li>
-<li>こ&#x2F;そ&#x2F;あいつ(没礼貌)</li>
+<h2 id="编译型语言和解释型语言的区别"><a href="#编译型语言和解释型语言的区别" class="headerlink" title="编译型语言和解释型语言的区别"></a>编译型语言和解释型语言的区别</h2><ul>
+<li><strong>编译型语言</strong>：编译型语言在编译时将源代码编译为目标代码（如机器码），然后再运行目标代码。编译型语言在编译时进行优化，提高性能，但跨平台性差。</li>
+<li><strong>解释型语言</strong>：解释型语言在运行时解释执行源代码，无需编译为目标代码。解释型语言在运行时进行优化，跨平台性好，但性能较低。</li>
 </ul>
-<h2 id="モノ"><a href="#モノ" class="headerlink" title="モノ"></a>モノ</h2><p>こ&#x2F;そ&#x2F;あ&#x2F;どれ</p>
-<h1 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h1><ul>
-<li>私<strong>たち</strong>—–礼貌：中</li>
-<li>あなた<strong>がた</strong>—–礼貌：高</li>
-<li>彼<strong>ら</strong>—–礼貌：低</li>
-<li>私ども—–礼节：高；自谦</li>
+<h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="八种基本的数据类型"><a href="#八种基本的数据类型" class="headerlink" title="八种基本的数据类型"></a>八种基本的数据类型</h2><p>Java支持的数据类分为两类：基本数据类型和引用数据类型</p>
+<p>基本数据类型有8中，可分为3类：</p>
+<ul>
+<li>数值型：整数型（byte，short，int，long），浮点型（float，double）</li>
+<li>字符型：char</li>
+<li>布尔型：boolean</li>
 </ul>
-<h1 id="敬称"><a href="#敬称" class="headerlink" title="敬称"></a>敬称</h1><ul>
-<li>佐藤様—–不分上下级，对尊敬的，店家对客人</li>
-<li>佐藤さん—–常见，尊敬度略低</li>
-<li>佐藤君—–同辈晚辈</li>
-<li>佐藤ちやん—–亲近</li>
-<li>部長(ぶちょう)殿—–上对下，古老</li>
-<li>佐藤氏</li>
+<p>引用数据类型有：类、接口、数组…</p>
+<ul>
+<li>注意：<ol>
+<li>1字节（byte,boolean），2字节（short,char），4字节（int，float），8字节（long，double）</li>
+<li>浮点数的默认值为double，若需要float，需在末尾加上f或F。</li>
+<li>整型默认为int，若需要byte，short，long，需在末尾加上b、s、l。</li>
+<li>八种数据类型的包装类：除了char-&gt;Character、int-&gt;Integer，其他都是基本数据类型首字母大写。</li>
+<li>char类型是无符号的，不能为负，所以0开头</li>
+</ol>
+</li>
 </ul>
-<h1 id="呼び捨て（よびすて）"><a href="#呼び捨て（よびすて）" class="headerlink" title="呼び捨て（よびすて）"></a>呼び捨て（よびすて）</h1><p>姓名后不加敬称：</p>
-<p>关系亲密的两个人</p>
-<p>或公司内对公司外的人说公司里其他人</p>
+<h2 id="int和long之间的转换"><a href="#int和long之间的转换" class="headerlink" title="int和long之间的转换"></a>int和long之间的转换</h2><ul>
+<li><strong>int转long</strong>：long数据类型的范围比int大，因此long转int是安全的，可通过直接赋值和强制类型转换实现。</li>
+<li><strong>long转int</strong>：long转为int可能会出现数据丢失或溢出的问题，若转换的数据超出int类型的范围，转换的结果是阶段后低位部分。</li>
+</ul>
+<h2 id="数据类型转换方式"><a href="#数据类型转换方式" class="headerlink" title="数据类型转换方式"></a>数据类型转换方式</h2><ul>
+<li><strong>自动类型转换(隐式转换)</strong>：目标类型范围大于源类型时，Java会自动将源类型转换为目标类型</li>
+<li><strong>强制类型转换(显式转换)</strong>：目标类型范围小于源类型时，需要使用强制类型转换，这可能导致数据丢失或溢出</li>
+<li><strong>字符串转换</strong>：Java提供了将字符串转换为其他数据类型的方法，如Integer.parseInt()、Double.parseDouble()等</li>
+<li><strong>数值之间转换</strong>：Java提供了将数值转换为其他数据类型的方法，如Integer.valueOf()、Double.valueOf()等</li>
+</ul>
+<h2 id="类型互换可能会出现那些问题"><a href="#类型互换可能会出现那些问题" class="headerlink" title="类型互换可能会出现那些问题"></a>类型互换可能会出现那些问题</h2><ul>
+<li><strong>数据丢失</strong>：如果目标类型范围小于源类型范围，可能会出现数据丢失的情况</li>
+<li><strong>数据溢出</strong>：如果目标类型范围大于源类型范围，可能会出现数据溢出的情况，转换的结果会额外填充高位部分，但源石数据爆粗不变</li>
+<li><strong>精度损失</strong>：在进行浮点类型的转换时，可能发生精度损失</li>
+<li><strong>类型不匹配</strong>：在进行类型转换时，需要确保源类型和目标类型是兼容的</li>
+</ul>
+<h2 id="为什么使用BigDecimal不用Double"><a href="#为什么使用BigDecimal不用Double" class="headerlink" title="为什么使用BigDecimal不用Double"></a>为什么使用BigDecimal不用Double</h2><p>double会出现精度丢失的问题，double执行的是二进制浮点运算，二进制在有些情况不能准确表示小数，就像十进制不能准确表示1&#x2F;3，也就是说二进制表示小数只能表示(1&#x2F;2)^n的任意组合</p>
+<p>这就会导致可能出现0.6无法购买0.5和0.1的商品</p>
+<p>而BigDecimal是使用字符串表示的，可以进行精确计算</p>
+<h2 id="装箱和拆箱是什么"><a href="#装箱和拆箱是什么" class="headerlink" title="装箱和拆箱是什么"></a>装箱和拆箱是什么</h2><p>装箱(boxing)和拆箱(unboxing)是指将基本数据类型和对应的包装类之间进行转换的过程</p>
+<p>赋值时，Java1.5以后，所有的装箱和拆箱都是有编译器完成，进行自动装箱和拆箱</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i;<span class="comment">//自动拆箱</span></span><br></pre></td></tr></table></figure>
+<p>方法调用时，可以直接传入原始数据或对象，编译器同样会进行转换</p>
+<p><strong>自动装箱的弊端</strong></p>
+<p>在一个循环中进行自动装箱，会产生多于的对象影响程序的性能</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++)&#123; sum+=i; &#125;</span><br></pre></td></tr></table></figure>
+<p>sum + i 中的 + 不适用于Integer对象，程序运行时会先将sum自动拆箱，再进行数值相加的操作，然后再进行自动装箱的操作转换为Integer对象，类似于</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> sum.intValue() + i;<span class="type">Integer</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Integer</span>(result);</span><br></pre></td></tr></table></figure>
+<p>故会在循环中产生大量无用的Integer对象，降低了程序的性能、加重了垃圾回收的工作量</p>
+<h2 id="Java为什么需要Integer"><a href="#Java为什么需要Integer" class="headerlink" title="Java为什么需要Integer"></a>Java为什么需要Integer</h2><p>将int类型包装为Integer对象好处很多，可以把属性(也就是数据)和处理数据的方法结合在一起，例如parseInt()方法</p>
+<p>还有个重要原因就是Java中绝大部分方法或类都是用来处理类类型对象的，例如ArrayList集合类只能以类作为它的存储对象</p>
+<p><strong>泛型中的应用</strong>：在Java中泛型只能使用引用类型</p>
+<p><strong>转换中的应用</strong>：Java中基本数据类型和引用类型不能直接进行转换，必须通过包装类实现</p>
+<p><strong>集合中的应用</strong>：在Java中集合类中的泛型只能是引用类型，不能是基本数据类型</p>
+<h2 id="int和Integer的区别"><a href="#int和Integer的区别" class="headerlink" title="int和Integer的区别"></a>int和Integer的区别</h2><ul>
+<li><p><strong>基本数据类型和引用类型</strong>：int是基本数据类型，不需要实例化，不用额外分配内存；Integer是引用类型，对象的引用和对象是分开存储的</p>
+</li>
+<li><p><strong>自动装箱拆箱</strong>：略</p>
+</li>
+<li><p><strong>空指针异常</strong>：Integer对象可以表示null，int不能表示null。对被赋予null值的Integer对象进行操作会出现空指针异常</p>
+</li>
+</ul>
+<h2 id="Integer缓存"><a href="#Integer缓存" class="headerlink" title="Integer缓存"></a>Integer缓存</h2><p>Java的Integer类内部实现了一个静态缓存池，用于存储特定范围内的整数值对应的Integer对象</p>
+<p>默认情况下，这个范围为-128至127，即在-128至127之间的整数值，都会被缓存在静态缓存池中，避免每次创建新的Integer对象，提高性能。可通过Integer.valueOf()方法来获取缓存池中的Integer对象，如果缓存池中不存在对应的Integer对象，则创建一个新的对象并放入缓存池中。</p>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><h2 id="如何理解面向对象，简单说说封装继承多态"><a href="#如何理解面向对象，简单说说封装继承多态" class="headerlink" title="如何理解面向对象，简单说说封装继承多态"></a>如何理解面向对象，简单说说封装继承多态</h2><p>面向对象是一种编程范式，它将现实中的事物抽象为对象，对象具有属性和方法。面向对象的设计思想是以对象为中心，通过对象之间的交互来完成程序的功能，具有灵活性和可扩展性，通过封装和继承可以更好地应对需求变化</p>
+<p>Java面向对象的三大特性：<strong>封装、继承、多态</strong>：</p>
+<ul>
+<li><strong>封装</strong>：封装是指将对象的属性和方法结合在一起，对外隐藏内部的细节，仅通过对象提供的接口与外界交互。增强了安全性并简化编程，使对象更加独立</li>
+<li><strong>继承</strong>：继承是指子类可以继承父类的属性和方法，从而实现代码的重用。子类可以扩展父类的功能，也可以覆盖父类的方法，从而实现代码的复用。</li>
+<li><strong>多态</strong>：多态是指一个对象在不同的情况下具有不同的行为，即对象的行为可以根据对象的状态或者类型而发生变化。多态性可分为编译时多态(重载)和运行时多态(重写)。多态使得对象的行为更加灵活和可扩展，从而提高程序的可维护性。</li>
+</ul>
+<p>多态表现于：</p>
+<ul>
+<li>方法重载：<ul>
+<li>方法重载是指在同一个类中定义多个同名方法，但参数列表不同(参数类型、个数、顺序)，编译时根据参数列表选择对应的方法进行调用。</li>
+<li>示例：对于一个 add 方法，可以定义为 add(int a, int b) 和 add(double a, double b)</li>
+</ul>
+</li>
+<li>方法重写：<ul>
+<li>方法重写是指子类重写父类的方法，使得子类具有父类方法的功能，但可以扩展或修改父类方法的实现。在运行时，JVM会根据对象的实际类型来决定调用哪个方法。</li>
+<li>示例：对于一个 Animal 类，可以定义一个 eat 方法，子类 Cat 和 Dog 都可以重写这个方法，使得 Cat 和 Dog 的 eat 方法具有不同的实现。</li>
+</ul>
+</li>
+<li>接口与实现：<ul>
+<li>多个类可以实现同一个接口，并且用接口类型的引用来调用这些类的方法。这使得程序在面对不同的实现时，保持。一贯的调用方式</li>
+<li>示例：定义一个接口 Animal，包含一个 eat 方法，然后定义两个实现类 Cat 和 Dog，实现 Animal 接口，使得 Cat 和 Dog 具有 eat 方法。</li>
+</ul>
+</li>
+<li></li>
+</ul>
 ]]></content>
       <categories>
-        <category>日语学习</category>
+        <category>Java面试题</category>
       </categories>
       <tags>
-        <tag>日语</tag>
-        <tag>人称代词</tag>
+        <tag>Java</tag>
+        <tag>面试</tag>
+        <tag>Java基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL面试题</title>
+    <url>/2025/03/06/MySQL%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
+    <content><![CDATA[<p>(总结于<a href="https://xiaolincoding.com/interview/mysql.html">小林coding</a>，缩减了部分内容，仅供学习参考，正在更新中)</p>
+<h1 id="SQL基础"><a href="#SQL基础" class="headerlink" title="SQL基础"></a>SQL基础</h1><h2 id="NOSQL和SQL的区别"><a href="#NOSQL和SQL的区别" class="headerlink" title="NOSQL和SQL的区别"></a>NOSQL和SQL的区别</h2><p><strong>SQL</strong>数据库，指关系型数据库，主要代表：SQL Server、Oracle、MySQL(开源)、PostgreSQL(开源)</p>
+<p>关系型数据库存储结构化数据，这些数据逻辑上以行列二维表格的形式存在，每一列代表数据的一个属性，每一行代表一个数据实体</p>
+<p><strong>NoSQL</strong>指非关系型数据库，主要代表：MongoDB、Redis</p>
+<p>NoSQL数据库逻辑上提供了不同于二维表的存储方式，存储方式可以使JSON文档、哈希表或者其他</p>
+<p>选择SQL还是NoSQL,考虑一下因素：</p>
+<p><strong>ACID vs BASE</strong></p>
+<p>关系型数据库支持ACID，即<strong>原子性、一致性、隔离性、持久性</strong>；相对而言，NoSQL采用更加宽松的模型BASE，即<strong>基本可用、软状态、最终一致性</strong></p>
+<p>从实用的角度出发，我们需要考虑对于面对的应用场景，ACID是否是必须的。</p>
+<p>比如银行应用就必须保证 ACID，否则一笔钱可能被使用两次；<br>又比如社交软件不必保证ACID，因为一条状态的更新对于所有用户读取先后时间有数秒不同并不影响使用</p>
+<p>对于需要保证ACID的应用，我们可以优先考虑SQL。反之则可以优先考虑NoSQL</p>
+<p><strong>扩展性对比</strong></p>
+<p>NoSQL数据之间无关系，这样就非常容易扩展，也无形之间，在架构的层面上带来了可扩展的能力。比如 redis 自带主从复制模式、 哨兵模式、切片集群模式.</p>
+<p>相反关系型数据库的数据之间存在关联性，水平扩展较难，需要解决跨服务器JOIN，分布式事务等问 题。</p>
+<h2 id="数据库三大范式是什么"><a href="#数据库三大范式是什么" class="headerlink" title="数据库三大范式是什么"></a>数据库三大范式是什么</h2><p><strong>第一范式</strong>(1NF)：</p>
+<p>要求数据库表的每一列都是不可分割的原子数据项</p>
+<blockquote>
+<p>例：家庭信息：5口人，北京—应该为—家庭人口数：5口人 &amp; 家庭住址：北京</p>
+</blockquote>
+<p><strong>第二范式</strong>(2NF)：</p>
+<p>在1NF的基础上，非码属性必须完全依赖于候码(在1NF的基础上消除非主属性对主码的部分函数依赖)</p>
+<p>第二范式需要确保数据库表中的每一列都和主键相关，而不能只与主键的某一部分相关（主要针对联合主键而言）。</p>
+<blockquote>
+<p>主码：主码是从候选码中选择的一个属性或属性组，用于唯一标识元组。若候选码仅有一个，则它自动成为主码<br>候码：候选码是能够唯一标识关系中每个元组（记录）的最小属性或属性组。这里的“最小”指候选码的真子集不能成为候选码</p>
+</blockquote>
+<blockquote>
+<p>例：产品数量、产品折扣、产品价格与”订单号”和”产品号”都相关，但是订单金额和订单时间仅与”订单号”相关，与”产品号”无关， 这样就不满足第二范式的要求，需分成两个表</p>
+</blockquote>
+<p><strong>第三范式</strong>（3NF）：</p>
+<p>在2NF基础上，任何非主属性不依赖于其它非主属性（在2NF基础上消除传递依<br>赖)</p>
+<p>第三范式需要确保数据表中的每一列数据都和主键直接相关，而不能间接相关。</p>
+<blockquote>
+<p>例：表中所有属性都完全依赖于学号，所以满足第二范式，但是”班主任性别”和”班主任年龄”直接依赖的是”班主任姓名”, 而不是主键”学号”，需分成两个表</p>
+</blockquote>
+<h2 id="MySQL怎么联表查询"><a href="#MySQL怎么联表查询" class="headerlink" title="MySQL怎么联表查询"></a>MySQL怎么联表查询</h2><p>数据库有四种联表查询类型：</p>
+<blockquote>
+<ol>
+<li>内连接(INNER JOIN)</li>
+<li>左外连接(LEFT JOIN)</li>
+<li>右外连接(RIGHT JOIN)</li>
+<li>全外连接(FULL JOIN)</li>
+</ol>
+</blockquote>
+<ol>
+<li><strong>内连接</strong>(INNER JOIN)： <ul>
+<li>返回两个表中有匹配关系的行</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">INNER JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回每个员工及其所在部门的名字</p>
+<ol start="2">
+<li><strong>左外连接</strong>(LEFT JOIN)<ul>
+<li>返回左表中的所有行，即使在右表中没有匹配的行。未匹配的右表列会包含NULL</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回每个员工及其所在部门的名字，包括没有分配部门的员工</p>
+<ol start="3">
+<li><strong>右外连接</strong>(RIGHT JOIN)<ul>
+<li>返回右表中的所有行，即使在左表中没有匹配的行。未匹配的左表列会包含NULL</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回每个员工及其所在部门的名字，包括没有分配员工的部门</p>
+<ol start="4">
+<li><strong>全外连接</strong>(FULL JOIN)<ul>
+<li>返回两个表中的所有行，包括非匹配行。在MySQL中，FULL JOIN 需要使用 UNION来实现，因为MySQL 不支持FULL JOIN</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT employees.name, departments.name</span><br><span class="line"> FROM employees</span><br><span class="line">LEFT JoIN departments</span><br><span class="line">ON employees.department_id = departments.id</span><br><span class="line"> </span><br><span class="line">UNION</span><br><span class="line"></span><br><span class="line">SELECT employees.name, departments.name</span><br><span class="line">FROM employees</span><br><span class="line">RIGHT JOIN departments</span><br><span class="line">ON employees.department_id = departments.id;</span><br></pre></td></tr></table></figure>
+<p>这个查询返回所有员工和所有部门，包括没有匹配行的记录</p>
+<h2 id="MySQL如何避免重复插入数据"><a href="#MySQL如何避免重复插入数据" class="headerlink" title="MySQL如何避免重复插入数据"></a>MySQL如何避免重复插入数据</h2><ol>
+<li><strong>使用UNIQUE约束</strong></li>
+</ol>
+<p>在表的相关列添加上UNIQUE约束，确保每个值在该列中唯一</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">CREATE TABLE users(</span><br><span class="line">    id    INT PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">    emai1 VARCHAR(255) UNIQUE,</span><br><span class="line">    name  VARCHAR(255)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>如果尝试插入重复的email，MySQL会返回错误</p>
+<ol start="2">
+<li><strong>使用INSERT … ON DUPLICATE KEY UPDATE</strong></li>
+</ol>
+<p>这中语句允许在插入记录时处理重复键的情况。如果插入记录与现有记录有冲突，可以自己选择更新现有记录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;)</span><br><span class="line">ON DUPLICATE KEY UPDATE name = VALUES(name);</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><strong>使用INSERT IGNORE</strong></li>
+</ol>
+<p>该语句会在插入记录时忽略那些因为重复键而发生的错误</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">INSERT IGNORE INTO users (email, name)</span><br><span class="line">VALUES (&#x27;example@example.com&#x27;, &#x27;John Doe&#x27;);</span><br></pre></td></tr></table></figure>
+<p>如果email已经存在，这条插入语句将被忽略而不会返回错误</p>
+<p>选择哪种方法取决于具体的需求：</p>
+<ul>
+<li>如果需要保证全局唯一性，使用UNIQUE约束是最佳做法</li>
+<li>如果需要插入和更新结合可以使用ON DUPLICATE KEY UPDATE</li>
+<li>对于快速忽略重复插入，INSERT IGNORE是合适的选择</li>
+</ul>
+<h2 id="CHAR-和-VARCHAR有什么区别"><a href="#CHAR-和-VARCHAR有什么区别" class="headerlink" title="CHAR 和 VARCHAR有什么区别"></a>CHAR 和 VARCHAR有什么区别</h2><ul>
+<li>CHAR是固定长度的字符串类型，定义时需要指定固定长度，存储时会在末尾补足空格。<br>   CHAR适合存储长度固定的数据，如固定长度的代码、状态等，存储空间固定，对于短字符串效率较高。</li>
+<li>VARCHAR是可变长度的字符串类型，定义时需要指定最大长度，实际存储时根据实际长度占用存储空间。<br>   VARCHAR适合存储长度可变的数据，如用户输入的文本、备注等，节约存储空间。</li>
+</ul>
+<h2 id="Text数据类型可以无限大吗"><a href="#Text数据类型可以无限大吗" class="headerlink" title="Text数据类型可以无限大吗?"></a>Text数据类型可以无限大吗?</h2><p>MySQL 3种text类型的最大长度如下:<br>   TEXT: 65,535bytes ~ 64kb<br>   MEDIUMTEXT: 16,777,215bytes ~ 16Mb<br>   LONGTEXT: 4,294,967,295bytes ~ 4Gb</p>
+<h2 id="说一下外键约束"><a href="#说一下外键约束" class="headerlink" title="说一下外键约束"></a>说一下外键约束</h2><p>外键约束的作用是维护表与表之间的关系，确保数据的完整性和一致性</p>
+<h2 id="MySQL的关键字in和exist"><a href="#MySQL的关键字in和exist" class="headerlink" title="MySQL的关键字in和exist"></a>MySQL的关键字in和exist</h2><p>在MySQL中，IN和EXISTS都是用来处理子查询的关键词，但它们在功能、性能和使用场景上有各自的特点和区别</p>
+<ul>
+<li><strong>IN</strong><br>IN用于检查左边的表达式<strong>是否存在于右边的列表或子查询的结果集</strong>中。如果存在，则IN返回TRUE，否则返回FALSE。</li>
+</ul>
+<p>语法结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name IN (value1, value2, ...);</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name IN (SELECT column_name FROM another_table WHERE condition);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>EXISTS</strong><br>EXISTS用于判断子查询是否<strong>至少能返回一行数据</strong>。它不关心子查询返回什么数据，只关心是否有结果。如果子查询有结果，则EXISTS返回TRUE否则返回FALSE</li>
+</ul>
+<p>语法结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT column_name(s)</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE EXISTS (SELECT column_name FROM another_table WHERE condition);</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SELECT * FROM Customers</span><br><span class="line">WHERE EXISTS (SELECT 1 FROM Orders WHERE Orders.CustomerID = Customers.CustomerID);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>MySQL面试题</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
+        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
@@ -1133,49 +1085,71 @@
 </ul>
 <h3 id="相关句型"><a href="#相关句型" class="headerlink" title="相关句型"></a>相关句型</h3><h4 id="前に-まえに"><a href="#前に-まえに" class="headerlink" title="前に(まえに)"></a>前に(まえに)</h4><p>在…之前；原型+前に</p>
 <blockquote>
-<p>ご飯を食べる前に、手を洗ってください——手(て)洗(あら)</p>
+<p>ご飯を食べる<strong>前に</strong>、手を洗ってください——手(て)洗(あら)</p>
 </blockquote>
 <blockquote>
-<p>寝る前に、音楽を聴きます——寝(ね)音楽(おんがく)聴(き)</p>
+<p>寝る<strong>前に</strong>、音楽を聴きます——寝(ね)音楽(おんがく)聴(き)</p>
 </blockquote>
 <p>反义：後で(あとで)；に形+後で</p>
 <h4 id="ことです"><a href="#ことです" class="headerlink" title="ことです"></a>ことです</h4><p>是~（事情）；原型+ことです</p>
 <blockquote>
-<p>私の趣味は音楽を聴くことです——趣味（しゅみ）（shumi）</p>
+<p>私の趣味は音楽を聴く<strong>ことです</strong>——趣味（しゅみ）（shumi）</p>
 </blockquote>
 <h4 id="ことがある"><a href="#ことがある" class="headerlink" title="ことがある"></a>ことがある</h4><p>有时；原型+ことがある</p>
 <p>有过；た形+ことがある</p>
 <blockquote>
-<p>日本へ行くことがある–我有时会去日本</p>
+<p>日本へ行く<strong>ことがある-</strong>-我有时会去日本</p>
 </blockquote>
 <blockquote>
-<p>日本へ行ったことがある–我有去过日本的经验</p>
+<p>日本へ行った<strong>ことがある</strong>–我有去过日本的经验</p>
 </blockquote>
 <h4 id="ことができる"><a href="#ことができる" class="headerlink" title="ことができる"></a>ことができる</h4><p>能力、可能性；原型+ことができる</p>
 <blockquote>
-<p>李さんは日本語を話すことができる（能力）——日本語（にほんご）話（はな）</p>
+<p>李さんは日本語を話す<strong>ことができる</strong>（能力）——日本語（にほんご）話（はな）</p>
 </blockquote>
 <blockquote>
-<p>この店は、カードで払うことができる（可能性）—— 店（みせ）払（はら）</p>
+<p>この店は、カードで払う<strong>ことができる</strong>（可能性）—— 店（みせ）払（はら）</p>
 </blockquote>
 <hr>
 <h2 id="ます形"><a href="#ます形" class="headerlink" title="ます形"></a>ます形</h2><ol>
-<li>意义：表示尊敬</li>
-<li>作用：<br>①作名词：休み（やすみ）;笑い（わらい）;早起き（はやおき）<br>②作复合词：習い始める（ならいはじめる）</li>
-<li>变形规则：“先分类，再变形”<br>一类：う → い+ます<br>二类：去掉る + ます<br>三类：する → します；来る（くる） → きます</li>
+<li><strong>意义</strong>：表示尊敬</li>
+<li><strong>作用</strong>：<br>①作名词：休み（やすみ）;笑い（わらい）;早起き（はやおき）<br>②作复合词：習い始める（ならいはじめる）</li>
+<li><strong>变形规则</strong>：“先分类，再变形”<br>一类：う → い+ます<br>二类：去掉る + ます<br>三类：する → します；来る（くる） → きます</li>
 </ol>
 <h3 id="相关句型-1"><a href="#相关句型-1" class="headerlink" title="相关句型"></a>相关句型</h3><h4 id="たい"><a href="#たい" class="headerlink" title="たい"></a>たい</h4><p>想做某事；ます形+たい</p>
 <p>想要东西；~がほしい</p>
 <blockquote>
-<p>　ジュースを飲みたい——飲（の）</p>
+<p>ジュースを飲み<strong>たい</strong>——飲（の）</p>
 </blockquote>
 <blockquote>
-<p>アイスを食べたい</p>
+<p>アイスを食べ<strong>たい</strong></p>
 </blockquote>
 <blockquote>
-<p>会いたい（我想你了）——会（あ）</p>
+<p>会い<strong>たい</strong>（我想你了）——会（あ）</p>
 </blockquote>
 <h4 id="ませんが"><a href="#ませんが" class="headerlink" title="ませんが"></a>ませんが</h4><p>表示委婉的邀请；ます形+ませんが</p>
+<blockquote>
+<p>一緒に映画を見<strong>ませんが</strong>——一緒（いっしょ）映画（えいが）</p>
+</blockquote>
+<blockquote>
+<p>一緒にコーヒーを飲み<strong>ませんが</strong>—–飲（の）</p>
+</blockquote>
+<h4 id="ましょう"><a href="#ましょう" class="headerlink" title="ましょう"></a>ましょう</h4><p>表示提议；ます形+ましょう</p>
+<blockquote>
+<p>一緒に映画を見<strong>ましょう</strong></p>
+</blockquote>
+<blockquote>
+<p>一緒にコーヒーを飲み<strong>ましょう</strong></p>
+</blockquote>
+<h4 id="ましょうか"><a href="#ましょうか" class="headerlink" title="ましょうか"></a>ましょうか</h4><p>①提议②征求同意；ます形+ましょうか</p>
+<blockquote>
+<p>今すぐ、出かけ<strong>ましょうか</strong>——今（いま）出（で）</p>
+</blockquote>
+<blockquote>
+<p>その荷物、私が持ちょ<strong>ましょうか</strong>——荷物（にもつ）持（もち）</p>
+</blockquote>
+<h4 id="に行く・に来る"><a href="#に行く・に来る" class="headerlink" title="に行く・に来る"></a>に行く・に来る</h4><p>去做&#x2F;来做 </p>
+<p><strong>用法</strong>：场所+へ+ます形+に行く・に来る——行（い）来（く）</p>
 <h2 id="て形"><a href="#て形" class="headerlink" title="て形"></a>て形</h2><h2 id="た形"><a href="#た形" class="headerlink" title="た形"></a>た形</h2><h2 id="ない形"><a href="#ない形" class="headerlink" title="ない形"></a>ない形</h2><h1 id="助词"><a href="#助词" class="headerlink" title="助词"></a>助词</h1><h2 id="格助词"><a href="#格助词" class="headerlink" title="格助词"></a>格助词</h2><h2 id="接续助词"><a href="#接续助词" class="headerlink" title="接续助词"></a>接续助词</h2><h2 id="辅助词"><a href="#辅助词" class="headerlink" title="辅助词"></a>辅助词</h2><h2 id="终助词"><a href="#终助词" class="headerlink" title="终助词"></a>终助词</h2><h1 id="功能用语"><a href="#功能用语" class="headerlink" title="功能用语"></a>功能用语</h1><h2 id="存在句"><a href="#存在句" class="headerlink" title="存在句"></a>存在句</h2><h2 id="比较句"><a href="#比较句" class="headerlink" title="比较句"></a>比较句</h2><h2 id="はが句"><a href="#はが句" class="headerlink" title="はが句"></a>はが句</h2><h2 id="表示变换"><a href="#表示变换" class="headerlink" title="表示变换"></a>表示变换</h2><h2 id="指示代词"><a href="#指示代词" class="headerlink" title="指示代词"></a>指示代词</h2><h2 id="解释说明"><a href="#解释说明" class="headerlink" title="解释说明"></a>解释说明</h2>]]></content>
       <categories>
         <category>日语学习</category>
@@ -1184,6 +1158,282 @@
         <tag>日语</tag>
         <tag>语法</tag>
         <tag>n5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日语人称代词</title>
+    <url>/2025/03/13/%E6%97%A5%E8%AF%AD%E4%BA%BA%E7%A7%B0%E4%BB%A3%E8%AF%8D/</url>
+    <content><![CDATA[<h1 id="第一人称"><a href="#第一人称" class="headerlink" title="第一人称"></a>第一人称</h1><ul>
+<li>私(わたし)—–女&#x2F;男女正式</li>
+<li>私(わたくし)—–正式礼貌</li>
+<li>僕(ボク)—–男，非正式</li>
+<li>俺(おれ)—–粗俗，上对下</li>
+<li>俺様(おれ様)—–男性专用，粗俗</li>
+<li>あたし—–女</li>
+<li>うち—–关西，女</li>
+</ul>
+<h1 id="第二人称"><a href="#第二人称" class="headerlink" title="第二人称"></a>第二人称</h1><ul>
+<li>あなた—–不下对上，亲爱的</li>
+<li>君(きみ)——-对男，同辈&#x2F;晚辈</li>
+<li>お前(おまえ)—–对男，同辈&#x2F;晚辈，没礼貌</li>
+<li>あんな——由あなた转来，礼貌度低一些</li>
+<li>僕(ぼく)—–对不认识的孩子</li>
+</ul>
+<h1 id="第三人称"><a href="#第三人称" class="headerlink" title="第三人称"></a>第三人称</h1><h2 id="人物"><a href="#人物" class="headerlink" title="人物"></a>人物</h2><ul>
+<li>彼(かれ)-他</li>
+<li>彼女(かのじょ)-她</li>
+<li>こ&#x2F;そ&#x2F;あいつ(没礼貌)</li>
+</ul>
+<h2 id="モノ"><a href="#モノ" class="headerlink" title="モノ"></a>モノ</h2><p>こ&#x2F;そ&#x2F;あ&#x2F;どれ</p>
+<h1 id="复数"><a href="#复数" class="headerlink" title="复数"></a>复数</h1><ul>
+<li>私<strong>たち</strong>—–礼貌：中</li>
+<li>あなた<strong>がた</strong>—–礼貌：高</li>
+<li>彼<strong>ら</strong>—–礼貌：低</li>
+<li>私ども—–礼节：高；自谦</li>
+</ul>
+<h1 id="敬称"><a href="#敬称" class="headerlink" title="敬称"></a>敬称</h1><ul>
+<li>佐藤様—–不分上下级，对尊敬的，店家对客人</li>
+<li>佐藤さん—–常见，尊敬度略低</li>
+<li>佐藤君—–同辈晚辈</li>
+<li>佐藤ちやん—–亲近</li>
+<li>部長(ぶちょう)殿—–上对下，古老</li>
+<li>佐藤氏</li>
+</ul>
+<h1 id="呼び捨て（よびすて）"><a href="#呼び捨て（よびすて）" class="headerlink" title="呼び捨て（よびすて）"></a>呼び捨て（よびすて）</h1><p>姓名后不加敬称：</p>
+<p>关系亲密的两个人</p>
+<p>或公司内对公司外的人说公司里其他人</p>
+]]></content>
+      <categories>
+        <category>日语学习</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>人称代词</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MySQL进阶</title>
+    <url>/2025/03/10/MySQL%E8%BF%9B%E9%98%B6/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>数据库学习</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>数据库</tag>
+        <tag>MySQL进阶</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日语动词学习</title>
+    <url>/2025/03/09/%E6%97%A5%E8%AF%AD%E5%8A%A8%E8%AF%8D%E5%AD%A6%E4%B9%A0/</url>
+    <content><![CDATA[<h1 id="日语动词分类与变形规则详解"><a href="#日语动词分类与变形规则详解" class="headerlink" title="日语动词分类与变形规则详解"></a>日语动词分类与变形规则详解</h1><hr>
+<h2 id="一、动词分类（3大类）"><a href="#一、动词分类（3大类）" class="headerlink" title="一、动词分类（3大类）"></a>一、动词分类（3大类）</h2><h3 id="1-一类动词（五段动词）"><a href="#1-一类动词（五段动词）" class="headerlink" title="1. 一类动词（五段动词）"></a>1. <strong>一类动词（五段动词）</strong></h3><ul>
+<li><strong>特征</strong>：<ul>
+<li>不以「る」结尾；</li>
+<li>以「る」结尾时，倒数第二个假名在「あ&#x2F;う&#x2F;お」段。</li>
+</ul>
+</li>
+<li><strong>示例</strong>：<ul>
+<li><strong>行（い）く</strong>（去）</li>
+<li><strong>話（はな）す</strong>（说）</li>
+<li><strong>飲（の）む</strong>（喝）</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-二类动词（一段动词）"><a href="#2-二类动词（一段动词）" class="headerlink" title="2. 二类动词（一段动词）"></a>2. <strong>二类动词（一段动词）</strong></h3><ul>
+<li><strong>特征</strong>：<ul>
+<li>以「る」结尾，倒数第二个假名在「い&#x2F;え」段。</li>
+</ul>
+</li>
+<li><strong>示例</strong>：<ul>
+<li><strong>食（た）べる</strong>（吃）</li>
+<li><strong>見（み）る</strong>（看）</li>
+<li><strong>寝（ね）る</strong>（睡觉）</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-三类动词（不规则动词）"><a href="#3-三类动词（不规则动词）" class="headerlink" title="3. 三类动词（不规则动词）"></a>3. <strong>三类动词（不规则动词）</strong></h3><ul>
+<li><strong>特征</strong>：<ul>
+<li>仅两个动词：<strong>する</strong>（做）、<strong>来（く）る</strong>（来）。</li>
+</ul>
+</li>
+<li><strong>示例</strong>：<ul>
+<li><strong>勉強（べんきょう）する</strong>（学习）</li>
+<li><strong>旅行（りょこう）する</strong>（旅行）</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="二、基础变形规则（附示例）"><a href="#二、基础变形规则（附示例）" class="headerlink" title="二、基础变形规则（附示例）"></a>二、基础变形规则（附示例）</h2><h3 id="1-ます形（礼貌形）"><a href="#1-ます形（礼貌形）" class="headerlink" title="1. ます形（礼貌形）"></a>1. <strong>ます形（礼貌形）</strong></h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>规则</th>
+<th>示例（原形 → ます形）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一类动词</td>
+<td>词尾变「い段」+ ます</td>
+<td>行く → 行（い）きます</td>
+</tr>
+<tr>
+<td>二类动词</td>
+<td>去「る」+ ます</td>
+<td>食べる → 食（た）べます</td>
+</tr>
+<tr>
+<td>三类动词</td>
+<td>する→ します &#x2F; 来る→ 来（き）ます</td>
+<td>勉強する → 勉強します</td>
+</tr>
+</tbody></table>
+<h3 id="2-ない形（否定形）"><a href="#2-ない形（否定形）" class="headerlink" title="2. ない形（否定形）"></a>2. <strong>ない形（否定形）</strong></h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>规则</th>
+<th>示例（原形 → ない形）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一类动词</td>
+<td>词尾变「あ段」+ ない</td>
+<td>話す → 話（はな）さない</td>
+</tr>
+<tr>
+<td>二类动词</td>
+<td>去「る」+ ない</td>
+<td>見る → 見（み）ない</td>
+</tr>
+<tr>
+<td>三类动词</td>
+<td>する→ しない &#x2F; 来る→ 来（こ）ない</td>
+<td>来る → 来（こ）ない</td>
+</tr>
+</tbody></table>
+<h3 id="3-可能形（“能-可以”）"><a href="#3-可能形（“能-可以”）" class="headerlink" title="3. 可能形（“能&#x2F;可以”）"></a>3. <strong>可能形（“能&#x2F;可以”）</strong></h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>规则</th>
+<th>示例（原形 → 可能形）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一类动词</td>
+<td>词尾变「え段」+ る</td>
+<td>書（か）く → 書（か）ける</td>
+</tr>
+<tr>
+<td>二类动词</td>
+<td>去「る」+ られる</td>
+<td>食べる → 食（た）べられる</td>
+</tr>
+<tr>
+<td>三类动词</td>
+<td>する→ できる &#x2F; 来る→ 来（こ）られる</td>
+<td>勉強する → 勉強できる</td>
+</tr>
+</tbody></table>
+<h3 id="4-命令形（强制语气）"><a href="#4-命令形（强制语气）" class="headerlink" title="4. 命令形（强制语气）"></a>4. <strong>命令形（强制语气）</strong></h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>规则</th>
+<th>示例（原形 → 命令形）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一类动词</td>
+<td>词尾变「え段」</td>
+<td>行く → 行（い）け！</td>
+</tr>
+<tr>
+<td>二类动词</td>
+<td>去「る」+ ろ&#x2F;よ</td>
+<td>食べる → 食（た）べろ！</td>
+</tr>
+<tr>
+<td>三类动词</td>
+<td>する→ しろ &#x2F; 来る→ 来（こ）い</td>
+<td>来る → 来（こ）い！</td>
+</tr>
+</tbody></table>
+<h3 id="5-意志形（“打算-想要”）"><a href="#5-意志形（“打算-想要”）" class="headerlink" title="5. 意志形（“打算&#x2F;想要”）"></a>5. <strong>意志形（“打算&#x2F;想要”）</strong></h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>规则</th>
+<th>示例（原形 → 意志形）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一类动词</td>
+<td>词尾变「お段」+ う</td>
+<td>行く → 行（い）こう</td>
+</tr>
+<tr>
+<td>二类动词</td>
+<td>去「る」+ よう</td>
+<td>食べる → 食（た）べよう</td>
+</tr>
+<tr>
+<td>三类动词</td>
+<td>する→ しよう &#x2F; 来る→ 来（こ）よう</td>
+<td>勉強する → 勉強しよう</td>
+</tr>
+</tbody></table>
+<h3 id="6-假定形（“如果…”）"><a href="#6-假定形（“如果…”）" class="headerlink" title="6. 假定形（“如果…”）"></a>6. <strong>假定形（“如果…”）</strong></h3><table>
+<thead>
+<tr>
+<th>类别</th>
+<th>规则</th>
+<th>示例（原形 → 假定形）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一类动词</td>
+<td>词尾变「え段」+ ば</td>
+<td>行く → 行（い）けば</td>
+</tr>
+<tr>
+<td>二类动词</td>
+<td>去「る」+ れば</td>
+<td>食べる → 食（た）べれば</td>
+</tr>
+<tr>
+<td>三类动词</td>
+<td>する→ すれば &#x2F; 来る→ 来（く）れば</td>
+<td>来る → 来（く）れば</td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="三、综合示例"><a href="#三、综合示例" class="headerlink" title="三、综合示例"></a>三、综合示例</h2><h3 id="1-ます形-否定形"><a href="#1-ます形-否定形" class="headerlink" title="1. ます形 + 否定形"></a>1. <strong>ます形 + 否定形</strong></h3><ul>
+<li><strong>寒（さむ）いから窓（まど）を閉（し）める</strong>（因为冷，所以关窗）<br>→ 寒いから窓を閉めます &#x2F; 閉めません。</li>
+</ul>
+<h3 id="2-可能形-命令形"><a href="#2-可能形-命令形" class="headerlink" title="2. 可能形 + 命令形"></a>2. <strong>可能形 + 命令形</strong></h3><ul>
+<li><strong>書（か）ける！早（はや）く書（か）け！</strong>（能写！快点写！）</li>
+</ul>
+<h3 id="3-假定形-意志形"><a href="#3-假定形-意志形" class="headerlink" title="3. 假定形 + 意志形"></a>3. <strong>假定形 + 意志形</strong></h3><ul>
+<li><strong>行（い）けば、楽（たの）しくなるよ</strong>（如果去的话，会变开心的）。</li>
+</ul>
+<hr>
+<h2 id="四、学习建议"><a href="#四、学习建议" class="headerlink" title="四、学习建议"></a>四、学习建议</h2><ol>
+<li><strong>分类记忆法</strong>：先判断动词类别（看词尾），再套用规则变形。</li>
+<li><strong>高频动词练习</strong>：如「する」「来る」「食べる」。</li>
+<li><strong>活用表格整理</strong>：自制表格对比不同变形形式（例：行く→行きます&#x2F;行かない&#x2F;行ける）。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>日语学习</category>
+      </categories>
+      <tags>
+        <tag>日语</tag>
+        <tag>语法</tag>
+        <tag>语言学习</tag>
+        <tag>动词</tag>
       </tags>
   </entry>
   <entry>
@@ -1500,206 +1750,85 @@
       </tags>
   </entry>
   <entry>
-    <title>日语动词学习</title>
-    <url>/2025/03/09/%E6%97%A5%E8%AF%AD%E5%8A%A8%E8%AF%8D%E5%AD%A6%E4%B9%A0/</url>
-    <content><![CDATA[<h1 id="日语动词分类与变形规则详解"><a href="#日语动词分类与变形规则详解" class="headerlink" title="日语动词分类与变形规则详解"></a>日语动词分类与变形规则详解</h1><hr>
-<h2 id="一、动词分类（3大类）"><a href="#一、动词分类（3大类）" class="headerlink" title="一、动词分类（3大类）"></a>一、动词分类（3大类）</h2><h3 id="1-一类动词（五段动词）"><a href="#1-一类动词（五段动词）" class="headerlink" title="1. 一类动词（五段动词）"></a>1. <strong>一类动词（五段动词）</strong></h3><ul>
-<li><strong>特征</strong>：<ul>
-<li>不以「る」结尾；</li>
-<li>以「る」结尾时，倒数第二个假名在「あ&#x2F;う&#x2F;お」段。</li>
-</ul>
-</li>
-<li><strong>示例</strong>：<ul>
-<li><strong>行（い）く</strong>（去）</li>
-<li><strong>話（はな）す</strong>（说）</li>
-<li><strong>飲（の）む</strong>（喝）</li>
-</ul>
-</li>
-</ul>
-<h3 id="2-二类动词（一段动词）"><a href="#2-二类动词（一段动词）" class="headerlink" title="2. 二类动词（一段动词）"></a>2. <strong>二类动词（一段动词）</strong></h3><ul>
-<li><strong>特征</strong>：<ul>
-<li>以「る」结尾，倒数第二个假名在「い&#x2F;え」段。</li>
-</ul>
-</li>
-<li><strong>示例</strong>：<ul>
-<li><strong>食（た）べる</strong>（吃）</li>
-<li><strong>見（み）る</strong>（看）</li>
-<li><strong>寝（ね）る</strong>（睡觉）</li>
-</ul>
-</li>
-</ul>
-<h3 id="3-三类动词（不规则动词）"><a href="#3-三类动词（不规则动词）" class="headerlink" title="3. 三类动词（不规则动词）"></a>3. <strong>三类动词（不规则动词）</strong></h3><ul>
-<li><strong>特征</strong>：<ul>
-<li>仅两个动词：<strong>する</strong>（做）、<strong>来（く）る</strong>（来）。</li>
-</ul>
-</li>
-<li><strong>示例</strong>：<ul>
-<li><strong>勉強（べんきょう）する</strong>（学习）</li>
-<li><strong>旅行（りょこう）する</strong>（旅行）</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="二、基础变形规则（附示例）"><a href="#二、基础变形规则（附示例）" class="headerlink" title="二、基础变形规则（附示例）"></a>二、基础变形规则（附示例）</h2><h3 id="1-ます形（礼貌形）"><a href="#1-ます形（礼貌形）" class="headerlink" title="1. ます形（礼貌形）"></a>1. <strong>ます形（礼貌形）</strong></h3><table>
+    <title>日语名词谓语句</title>
+    <url>/2025/03/12/%E6%97%A5%E8%AF%AD%E5%90%8D%E8%AF%8D%E8%B0%93%E8%AF%AD%E5%8F%A5/</url>
+    <content><![CDATA[<h1 id="だ"><a href="#だ" class="headerlink" title="~だ"></a>~だ</h1><blockquote>
+<p>是学生。<br>学生だ。——学生（がくせい）</p>
+</blockquote>
+<p>だ放句末，表示为是<br>だ后面只能加句号&#x2F;终助词 (终助词-&gt;表达语气)<br>だ后面加其他成分需要把だ改为で</p>
+<blockquote>
+<p>不是学生。<br>学生ではない。</p>
+</blockquote>
+<p>ではない表示否定，其中は作为助词时读作わ，ない是辅助形容词</p>
+<blockquote>
+<p>是学生吗。<br>学生か？</p>
+</blockquote>
+<p>其中か读作升调表达疑问，也可以直接升调读名词表示疑问</p>
+<h1 id="です"><a href="#です" class="headerlink" title="~です"></a>~です</h1><blockquote>
+<p>是学生。<br>学生です。</p>
+</blockquote>
+<p>です表达判断和对听话人的礼貌</p>
+<blockquote>
+<p>不是学生。<br>学生ではありません</p>
+</blockquote>
+<blockquote>
+<p>是学生吗？<br>学生ですか？</p>
+</blockquote>
+<p>以及升调，但不能省略</p>
+<blockquote>
+<p>是老师还是学生？<br>先生ですか、学生ですか。——先生（せんせい）</p>
+</blockquote>
+<h1 id="～である"><a href="#～である" class="headerlink" title="～である"></a>～である</h1><blockquote>
+<p>学生である</p>
+</blockquote>
+<p>正式的表达</p>
+<blockquote>
+<p>学生であります</p>
+</blockquote>
+<p>正式的基础上加上礼貌</p>
+<h1 id="でございます"><a href="#でございます" class="headerlink" title="~でございます"></a>~でございます</h1><blockquote>
+<p>毛利探偵事務所でございます——毛利（もうり）探偵（たんてい）事務所（じむしょ）</p>
+</blockquote>
+<p>郑重的礼貌</p>
+<h1 id="判断相关总结"><a href="#判断相关总结" class="headerlink" title="判断相关总结"></a>判断相关总结</h1><table>
 <thead>
 <tr>
-<th>类别</th>
-<th>规则</th>
-<th>示例（原形 → ます形）</th>
+<th align="center"></th>
+<th align="center">一般</th>
+<th align="center">礼貌</th>
+<th align="center">正式</th>
+<th align="center">正式+礼貌</th>
+<th align="center">郑重</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>一类动词</td>
-<td>词尾变「い段」+ ます</td>
-<td>行く → 行（い）きます</td>
+<td align="center">肯定</td>
+<td align="center">だ</td>
+<td align="center">です</td>
+<td align="center">である</td>
+<td align="center">であります</td>
+<td align="center">でございます</td>
 </tr>
 <tr>
-<td>二类动词</td>
-<td>去「る」+ ます</td>
-<td>食べる → 食（た）べます</td>
-</tr>
-<tr>
-<td>三类动词</td>
-<td>する→ します &#x2F; 来る→ 来（き）ます</td>
-<td>勉強する → 勉強します</td>
+<td align="center">否定</td>
+<td align="center">ではない</td>
+<td align="center">ではありません</td>
+<td align="center">&#x2F;</td>
+<td align="center">&#x2F;</td>
+<td align="center">&#x2F;</td>
 </tr>
 </tbody></table>
-<h3 id="2-ない形（否定形）"><a href="#2-ない形（否定形）" class="headerlink" title="2. ない形（否定形）"></a>2. <strong>ない形（否定形）</strong></h3><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>规则</th>
-<th>示例（原形 → ない形）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>一类动词</td>
-<td>词尾变「あ段」+ ない</td>
-<td>話す → 話（はな）さない</td>
-</tr>
-<tr>
-<td>二类动词</td>
-<td>去「る」+ ない</td>
-<td>見る → 見（み）ない</td>
-</tr>
-<tr>
-<td>三类动词</td>
-<td>する→ しない &#x2F; 来る→ 来（こ）ない</td>
-<td>来る → 来（こ）ない</td>
-</tr>
-</tbody></table>
-<h3 id="3-可能形（“能-可以”）"><a href="#3-可能形（“能-可以”）" class="headerlink" title="3. 可能形（“能&#x2F;可以”）"></a>3. <strong>可能形（“能&#x2F;可以”）</strong></h3><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>规则</th>
-<th>示例（原形 → 可能形）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>一类动词</td>
-<td>词尾变「え段」+ る</td>
-<td>書（か）く → 書（か）ける</td>
-</tr>
-<tr>
-<td>二类动词</td>
-<td>去「る」+ られる</td>
-<td>食べる → 食（た）べられる</td>
-</tr>
-<tr>
-<td>三类动词</td>
-<td>する→ できる &#x2F; 来る→ 来（こ）られる</td>
-<td>勉強する → 勉強できる</td>
-</tr>
-</tbody></table>
-<h3 id="4-命令形（强制语气）"><a href="#4-命令形（强制语气）" class="headerlink" title="4. 命令形（强制语气）"></a>4. <strong>命令形（强制语气）</strong></h3><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>规则</th>
-<th>示例（原形 → 命令形）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>一类动词</td>
-<td>词尾变「え段」</td>
-<td>行く → 行（い）け！</td>
-</tr>
-<tr>
-<td>二类动词</td>
-<td>去「る」+ ろ&#x2F;よ</td>
-<td>食べる → 食（た）べろ！</td>
-</tr>
-<tr>
-<td>三类动词</td>
-<td>する→ しろ &#x2F; 来る→ 来（こ）い</td>
-<td>来る → 来（こ）い！</td>
-</tr>
-</tbody></table>
-<h3 id="5-意志形（“打算-想要”）"><a href="#5-意志形（“打算-想要”）" class="headerlink" title="5. 意志形（“打算&#x2F;想要”）"></a>5. <strong>意志形（“打算&#x2F;想要”）</strong></h3><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>规则</th>
-<th>示例（原形 → 意志形）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>一类动词</td>
-<td>词尾变「お段」+ う</td>
-<td>行く → 行（い）こう</td>
-</tr>
-<tr>
-<td>二类动词</td>
-<td>去「る」+ よう</td>
-<td>食べる → 食（た）べよう</td>
-</tr>
-<tr>
-<td>三类动词</td>
-<td>する→ しよう &#x2F; 来る→ 来（こ）よう</td>
-<td>勉強する → 勉強しよう</td>
-</tr>
-</tbody></table>
-<h3 id="6-假定形（“如果…”）"><a href="#6-假定形（“如果…”）" class="headerlink" title="6. 假定形（“如果…”）"></a>6. <strong>假定形（“如果…”）</strong></h3><table>
-<thead>
-<tr>
-<th>类别</th>
-<th>规则</th>
-<th>示例（原形 → 假定形）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>一类动词</td>
-<td>词尾变「え段」+ ば</td>
-<td>行く → 行（い）けば</td>
-</tr>
-<tr>
-<td>二类动词</td>
-<td>去「る」+ れば</td>
-<td>食べる → 食（た）べれば</td>
-</tr>
-<tr>
-<td>三类动词</td>
-<td>する→ すれば &#x2F; 来る→ 来（く）れば</td>
-<td>来る → 来（く）れば</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="三、综合示例"><a href="#三、综合示例" class="headerlink" title="三、综合示例"></a>三、综合示例</h2><h3 id="1-ます形-否定形"><a href="#1-ます形-否定形" class="headerlink" title="1. ます形 + 否定形"></a>1. <strong>ます形 + 否定形</strong></h3><ul>
-<li><strong>寒（さむ）いから窓（まど）を閉（し）める</strong>（因为冷，所以关窗）<br>→ 寒いから窓を閉めます &#x2F; 閉めません。</li>
-</ul>
-<h3 id="2-可能形-命令形"><a href="#2-可能形-命令形" class="headerlink" title="2. 可能形 + 命令形"></a>2. <strong>可能形 + 命令形</strong></h3><ul>
-<li><strong>書（か）ける！早（はや）く書（か）け！</strong>（能写！快点写！）</li>
-</ul>
-<h3 id="3-假定形-意志形"><a href="#3-假定形-意志形" class="headerlink" title="3. 假定形 + 意志形"></a>3. <strong>假定形 + 意志形</strong></h3><ul>
-<li><strong>行（い）けば、楽（たの）しくなるよ</strong>（如果去的话，会变开心的）。</li>
-</ul>
-<hr>
-<h2 id="四、学习建议"><a href="#四、学习建议" class="headerlink" title="四、学习建议"></a>四、学习建议</h2><ol>
-<li><strong>分类记忆法</strong>：先判断动词类别（看词尾），再套用规则变形。</li>
-<li><strong>高频动词练习</strong>：如「する」「来る」「食べる」。</li>
-<li><strong>活用表格整理</strong>：自制表格对比不同变形形式（例：行く→行きます&#x2F;行かない&#x2F;行ける）。</li>
-</ol>
+<h1 id="は-が"><a href="#は-が" class="headerlink" title="~は&#x2F;が"></a>~は&#x2F;が</h1><p>辅助词は，提示主题，重心为主题后的描述内容<br>格助词が，提示主语，重心为主语本身或动作主体</p>
+<blockquote>
+<p>-你是谁？<br>-我是学生。-&gt; 私は学生だ。</p>
+</blockquote>
+<blockquote>
+<p>-谁是学生？<br>-我是学生。 -&gt; 私が学生だ。</p>
+</blockquote>
+<h1 id="も"><a href="#も" class="headerlink" title="~も"></a>~も</h1><p>辅助词も，表示也</p>
+<blockquote>
+<p>我是学生，他也是学生。——彼（かれ）<br>私は学生です。かれも学生です。</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>日语学习</category>
@@ -1707,8 +1836,7 @@
       <tags>
         <tag>日语</tag>
         <tag>语法</tag>
-        <tag>动词</tag>
-        <tag>语言学习</tag>
+        <tag>名词谓语句</tag>
       </tags>
   </entry>
   <entry>
